@@ -1,0 +1,13 @@
+<section class="py-5">
+    <div class="row row-gap-3">
+        <span class="col-sm-6 col-xl-3" *ngFor="let item of data">
+            <div class="d-flex flex-column shadow-sm p-4 rounded-3 h-100">
+                <div class="fs-120 main-text align-self-end">
+                    <app-icon [icon]="item.icon"></app-icon>
+                </div>
+                <div class="fs-110 fw-medium">{{item.label | translate}}</div>
+                <p class="opacity-75 fs-90 mt-2">{{item.caption | translate}}</p>
+            </div>
+        </span>
+    </div>
+</section>

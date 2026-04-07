@@ -1,0 +1,105 @@
+<ng-container [ngSwitch]="type">
+  <ng-container *ngSwitchCase="'transfer'">
+    <div class="d-flex gap-2 item">
+      <span class="main-text">
+        <app-icon *ngIf="getIcon(item.type)" [icon]="getIcon(item.type)"></app-icon>
+      </span>
+      <span class="d-flex justify-content-between align-items-start gap-3 w-100">
+        <span>
+          <div class="fs-90 fw-medium text-capitalize text-dark">
+            {{ item.name}}
+          </div>
+
+          <div class="fs-90 text-secondary">
+            {{ item.country_name }}
+          </div>
+        </span>
+      </span>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'flight'">
+    <div class="d-flex gap-2 item">
+      <span class="main-text">
+        <app-icon *ngIf="getIcon(item.type)" [icon]="getIcon(item.type)"></app-icon>
+      </span>
+
+      <span class="d-flex justify-content-between align-items-start gap-3 w-100">
+        <span>
+          <div class="fs-90 fw-medium text-capitalize text-dark">
+            {{ item.city_name }}, {{ item.country_name }}
+          </div>
+
+          <div class="fs-90 text-secondary">
+            {{ 'airport' | translate }} {{ item.name }}
+          </div>
+        </span>
+
+        <span class="third-bg main-text p-2 rounded-3 fs-80 ms-3 align-self-start">
+          {{ item.code }}
+        </span>
+      </span>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'hotel'">
+    <div class="d-flex gap-2 item">
+      <span class="main-text">
+        <app-icon *ngIf="getIcon(item.type)" [icon]="getIcon(item.type)"></app-icon>
+      </span>
+
+      <span class="d-flex justify-content-between align-items-start gap-3 w-100">
+        <span>
+          <div class="fs-90 fw-medium text-capitalize text-dark">
+            <div *ngIf="item.type === 'hotel'; else notHotel">
+              {{ item.name || item.destination }}
+            </div>
+
+            <ng-template #notHotel>
+              {{ item.city_name }}
+            </ng-template>
+          </div>
+
+          <div class="fs-90 text-secondary">
+            {{ item.country_name }}
+          </div>
+        </span>
+
+        <span class="third-bg main-text p-2 rounded-3 fs-80 ms-3 align-self-start">
+          <div *ngIf="item.type === 'hotel'; else not">
+            {{ item.country_id }}
+          </div>
+
+          <ng-template #not>
+            {{ item.country_id }}
+          </ng-template>
+        </span>
+      </span>
+    </div>
+  </ng-container>
+
+
+  <ng-container *ngSwitchDefault>
+    <div class="d-flex gap-2 item">
+      <span class="main-text">
+        <app-icon *ngIf="getIcon(item.type)" [icon]="getIcon(item.type)"></app-icon>
+      </span>
+
+      <span class="d-flex justify-content-between align-items-start gap-3 w-100">
+        <span>
+          <div class="fs-90 fw-medium text-capitalize text-dark">
+            {{ item.city_name }}
+          </div>
+
+          <div class="fs-90 text-secondary">
+            {{ item.country_name }}
+          </div>
+        </span>
+
+        <span class="third-bg main-text p-2 rounded-3 fs-80 ms-3 align-self-start">
+          {{ item.country_id }}
+        </span>
+      </span>
+    </div>
+  </ng-container>
+</ng-container>

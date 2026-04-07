@@ -1,0 +1,22 @@
+<ng-container>
+    <app-top-banner [target]="'faq' | translate"></app-top-banner>
+    <section class="container-xl py-5">
+        <div class="text-center">
+            <div class="main-text">{{"frequently_asked_questions" | translate}}</div>
+            <div class="fs-1 fw-600">{{'faq_title' | translate}}</div>
+            <div class="fs-120 text-secondary">{{"faq_page_text" | translate}}</div>
+        </div>
+    </section>
+    <div class="d-flex justify-content-center gap-3">
+        <ng-container *ngFor="let item of data">
+            <span role="button" class="py-2 px-3 rounded"
+                [ngClass]="{'border':item.value !== service, 'main-border third-bg main-text':item.value === service}"
+                (click)="setValue(item.value)">
+                {{item.label | translate}}
+            </span>
+        </ng-container>
+    </div>
+    <div class="mt-5">
+        <app-faq-display [service]="service"></app-faq-display>
+    </div>
+</ng-container>

@@ -1,0 +1,40 @@
+<ng-container>
+    <div class="row justify-content-center  align-items-center">
+        <span class="col-lg-10 col-xl-7">
+            <div class="bg-white rounded-3 p-3 w-100 text-center" style="border: 1px dashed var(--main);">
+                <div class="row">
+                    <span class="col-sm-6 col-lg-4 my-3">
+                        <ng-container>
+                            <div class="text-secondary fw-300">{{"order_number" | translate}}</div>
+                            <div class="mt-2">
+                                <p-skeleton width="100%" height="20px" styleClass="rounded-2" />
+                            </div>
+                        </ng-container>
+                    </span>
+
+                    <span class="col-sm-6 col-lg-4 my-3">
+                        <ng-container>
+                            <div class="text-secondary fw-300">{{"dates" | translate}}</div>
+                            <div class="mt-2">
+                                <p-skeleton width="100%" height="20px" styleClass="rounded-2" />
+                            </div>
+                        </ng-container>
+                    </span>
+
+                    <span class="col-sm-6 col-lg-4 my-3">
+                        <ng-container>
+                            <div class="text-secondary fw-300">{{"dates" | translate}}</div>
+                            <div class="mt-2">
+                                <p-skeleton width="100%" height="20px" styleClass="rounded-2" />
+                            </div>
+                        </ng-container>
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-sm rounded-3 my-4 p-3 w-100">
+                <p-skeleton width="100%" height="360px" styleClass="rounded-2" />
+            </div>
+        </span>
+    </div>
+</ng-container>

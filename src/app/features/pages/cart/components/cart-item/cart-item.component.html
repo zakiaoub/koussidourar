@@ -1,0 +1,49 @@
+<ng-container>
+    <div class="item-card bg-white p-2 border shadow-sm rounded-4 text-capitalize">
+        <div class="d-flex gap-2">
+            <span class="size-45 rounded-circle main-text third-bg">
+                <ng-container *ngIf="item?.service === 'flight'">
+                    <i class="bi bi-airplane-fill"></i>
+                </ng-container>
+                <ng-container *ngIf="item?.service === 'hotel'">
+                    <i class="bi bi-building-fill"></i>
+                </ng-container>
+
+                <ng-container *ngIf="item?.service === 'activity'">
+                    <i class="bi bi-bicycle"></i>
+                </ng-container>
+
+                <ng-container *ngIf="item?.service === 'transfer'">
+                    <i class="bi bi-car-front-fill"></i>
+                </ng-container>
+            </span>
+            <span>
+                <div class="fw-medium">{{item.service_name.slice(0,30)}} <ng-container
+                        *ngIf="item.service_name.length > 30">...</ng-container></div>
+                <div class="fs-80">
+                    {{item.country}}
+                </div>
+            </span>
+        </div>
+
+        <div class="mt-2 fs-90">{{item?.checkin | date: 'MMM d'}} - {{item?.checkout | date: 'MMM d'}}</div>
+        <div class="d-flex justify-content-between align-items-end gap-3 mt-3">
+            <span class="fs-5 fw-medium">
+                <app-amount [value]="item?.amount_total"></app-amount>
+            </span>
+            <span>
+                <div class="cursor-pointer border light-bg red-text p-2 d-flex justify-content-center align-items-center gap-1 fs-90 rounded lh-1 h-100"
+                    (click)="deleteCartItem(item?.id)">
+                    <span>
+                        <ng-container *ngIf="isLoading()">
+                            <app-spinner [isWhite]="false" [size]="10"></app-spinner>
+                        </ng-container>
+                        <ng-container *ngIf="!isLoading()">
+                            <app-icon icon="trash3"></app-icon>
+                        </ng-container>
+                    </span>
+                </div>
+            </span>
+        </div>
+    </div>
+</ng-container>

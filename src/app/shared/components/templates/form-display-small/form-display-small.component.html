@@ -1,0 +1,151 @@
+<div class="third-bg rounded-4 d-block d-xl-none mb-3">
+    <div class="p-2">
+        <div [ngSwitch]="service">
+            <ng-container *ngSwitchCase="'flight'">
+                <div class="border bg-white rounded-3 py-2 px-3 d-flex justify-content-between align-items-end gap-3">
+                    <span>
+                        <div class="text-capitalize fs-110">
+                            {{params?.Itineraries[0]?.DepartureCityName}} - {{params?.Itineraries[0]?.ArrivalCityName}}
+                        </div>
+                        <div class="d-flex text-secondary">
+                            <span>
+                                {{params?.Itineraries[0]?.Date | date:'MMMM dd'}}
+                                <ng-container *ngIf="params?.Trip === 'RT'">
+                                    - {{params?.Itineraries[1]?.Date | date:'MMMM dd'}}
+                                </ng-container>
+                            </span>
+                            <span class="mx-3">|</span>
+                            <span>
+                                {{params?.Adult}} {{"adults" | translate}}, {{params?.Child}} {{"childs" | translate}}
+                            </span>
+                        </div>
+                    </span>
+                    <span role="button" class="main-text">
+                        <app-icon icon="pen"></app-icon>
+                    </span>
+                </div>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'attraction'">
+                <div class="border bg-white rounded-3 py-2 px-3 d-flex justify-content-between align-items-end">
+                    <span>
+                        <div class="text-capitalize fs-110">
+                            {{params?.CityName}}
+                        </div>
+                        <div class="d-flex text-secondary">
+                            <span>
+                                {{params?.DateFrom | date:'MMMM dd'}} -
+                                {{params?.DateTo | date:'MMMM dd'}}
+                            </span>
+                            <span class="mx-3">|</span>
+                            <span>
+                                {{params?.Adult}} {{"adults" | translate}}, {{params?.Child}} {{"childs" | translate}}
+                            </span>
+                        </div>
+                    </span>
+                    <span role="button" class="main-text">
+                        <app-icon icon="pen"></app-icon>
+                    </span>
+                </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'hotel'">
+                <div class="border bg-white rounded-3 py-2 px-3 d-flex justify-content-between align-items-end gap-3">
+                    <span>
+                        <div class="text-capitalize fs-110 fw-medium">
+                            {{params?.city_name}}
+                        </div>
+                        <div class="d-flex text-secondary">
+                            <span>
+                                {{parseDate(params?.checkin) | date:'MMMM dd'}} -
+                                {{parseDate(params?.checkout) | date:'MMMM dd'}}
+                            </span>
+                            <span class="mx-3">|</span>
+                            <span>
+                                {{params?.rooms | sum:'adult'}} {{"adults" | translate}}, {{params?.rooms |
+                                sum:'child'}} {{"childs" | translate}}
+                            </span>
+                        </div>
+                    </span>
+                    <span role="button" class="main-text">
+                        <app-icon icon="pen"></app-icon>
+                    </span>
+                </div>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'transfer'">
+                <div class="border bg-white rounded-3 py-2 px-3 d-flex justify-content-between align-items-end">
+                    <span>
+                        <div class="text-capitalize fs-110">
+                            {{params.From?.CountryName}}
+                        </div>
+                        <div class="d-flex text-secondary">
+                            <span>
+                                {{params?.DateFrom | date:'MMMM dd'}} -
+                                {{params?.DateReturn | date:'MMMM dd'}}
+                            </span>
+                            <span class="mx-3">|</span>
+                            <span>
+                                {{params?.Adult}} {{"adults" | translate}}, {{params?.Child}} {{"childs" | translate}}
+                            </span>
+                        </div>
+                    </span>
+                    <span role="button" class="main-text">
+                        <app-icon icon="pen"></app-icon>
+                    </span>
+                </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'packages/hotel'">
+                <div class="border bg-white rounded-3 py-2 px-3 d-flex justify-content-between align-items-end">
+                    <span>
+                        <div class="text-capitalize fs-110">
+                            {{params?.flight.Itineraries[0]?.DepartureCityName}} -
+                            {{params?.flight.Itineraries[0]?.ArrivalCityName}}
+                        </div>
+                        <div class="d-flex text-secondary">
+                            <span>
+                                {{params?.flight.Itineraries[0]?.Date | date:'MMMM dd'}}
+                                <ng-container *ngIf="params?.flight.Trip === 'RT'">
+                                    - {{params?.flight.Itineraries[1]?.Date | date:'MMMM dd'}}
+                                </ng-container>
+                            </span>
+                            <span class="mx-3">|</span>
+                            <span>
+                                {{params?.flight.Adult}} {{"adults" | translate}}, {{params?.flight.Child}} {{"childs" |
+                                translate}}
+                            </span>
+                        </div>
+                    </span>
+                    <span role="button" class="main-text">
+                        <app-icon icon="pen"></app-icon>
+                    </span>
+                </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'packages/flight'">
+                <div class="border bg-white rounded-3 py-2 px-3 d-flex justify-content-between align-items-end">
+                    <span>
+                        <div class="text-capitalize fs-110">
+                            {{params?.flight.Itineraries[0]?.DepartureCityName}} -
+                            {{params?.flight.Itineraries[0]?.ArrivalCityName}}
+                        </div>
+                        <div class="d-flex text-secondary">
+                            <span>
+                                {{params?.flight.Itineraries[0]?.Date | date:'MMMM dd'}}
+                                <ng-container *ngIf="params?.flight.Trip === 'RT'">
+                                    - {{params?.flight.Itineraries[1]?.Date | date:'MMMM dd'}}
+                                </ng-container>
+                            </span>
+                            <span class="mx-3">|</span>
+                            <span>
+                                {{params?.flight.Adult}} {{"adults" | translate}}, {{params?.flight.Child}} {{"childs" |
+                                translate}}
+                            </span>
+                        </div>
+                    </span>
+                    <span role="button" class="main-text">
+                        <app-icon icon="pen"></app-icon>
+                    </span>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

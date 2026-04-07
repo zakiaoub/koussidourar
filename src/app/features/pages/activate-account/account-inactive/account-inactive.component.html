@@ -1,0 +1,26 @@
+<ng-container>
+    <div class="fs-1 fw-medium">{{"account_not_activated" | translate}}</div>
+    <p class="fs-110 opacity-75">{{"account_not_activated_caption" | translate}}</p>
+    <div class="mt-4 d-flex flex-column text-center">
+        <div class="size-60 bg-danger bg-opacity-10 fs-4 red-text rounded-circle align-self-center">
+            <app-icon icon="exclamation-triangle-fill"></app-icon>
+        </div>
+        <div class="fs-4 mt-3 fw-medium">{{"activation_required" | translate}} </div>
+        <p class="text-enter text-secondary mt-1">{{"activation_required_caption" | translate}}</p>
+        <div class="mt-4 w-100 fs-90">
+            <div class="row justify-content-center row-gap-4">
+                <span class="col-md-6 col-xl-5">
+                    <a href="/contact"
+                        class="d-inline-block main-border main-text bg-white p-4 w-100 rounded-3 w-100">{{"contact_us" |
+                        translate}}</a>
+                </span>
+                <span class="col-md-6 col-xl-5">
+                    <button class="d-inline-block main-bg-gradient p-4 w-100 rounded-3 text-white w-100"
+                        (click)="reloadPage()">{{"refresh_the_page"
+                        |
+                        translate}}</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</ng-container>

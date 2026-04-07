@@ -1,0 +1,30 @@
+<ng-container>
+    <app-top-banner [target]="'blog'"></app-top-banner>
+    <section class="container-xl py-5">
+        <div class="d-inline-flex gap-1 bg-white py-1 px-2 rounded shadow-sm">
+            <span [ngClass]="getTag(data()?.category).color">
+                <app-icon [icon]="getTag(data()?.category).icon"></app-icon>
+            </span>
+            <span>
+                {{data()?.category | translate}}
+            </span>
+        </div>
+        <h2 class="fs-2 mt-3">{{data()?.title}}</h2>
+        <div class="mt-4">
+            <app-images-carousel [data]="data()?.images"></app-images-carousel>
+        </div>
+        <div class="row justify-content-between mt-4">
+            <span class="col-xl-7">
+                <p class="opacity-75">{{data()?.intro}}</p>
+                <hr class="border-secondary my-4" />
+                <app-product-description [text]="data()?.content" [limit]="120"></app-product-description>
+                <hr class="border-secondary my-4" />
+                <app-product-amenties [title]="'tags'" [data]="data()?.tags"></app-product-amenties>
+            </span>
+            <span class="col-xl-4">
+                <app-blog-post-recap [duration]="data()?.duration"
+                    [created_at]="data()?.created_at"></app-blog-post-recap>
+            </span>
+        </div>
+    </section>
+</ng-container>

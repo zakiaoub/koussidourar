@@ -1,0 +1,71 @@
+<ng-container>
+        <ng-container *ngIf="isQrCode">
+        <app-voucher-header [data]="data"></app-voucher-header>
+        <hr class="border-secondary my-4" />
+    </ng-container>
+    <div class="main-border-2 rounded-3">
+        <div class="main-bg text-white p-3 text-capitalize">
+            <div class="d-flex align-items-center gap-2">
+                <span class="fs-4 fw-medium text-capitalize">
+                    <div>{{data?.service}}</div>
+                </span>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <span class="col-md-9">
+                <div class="p-4">
+                    <div class="fs-120">
+                        <div><span class="fw-medium">{{"client_name" | translate}} :</span> {{data?.holder}}</div>
+                        <div class="my-2"><span class="fw-medium">{{"checkin" | translate}} :</span>
+                            {{parsedate(data?.checkin) |
+                            date:"MMMM dd, Y"}}
+                        </div>
+                        <div><span class="fw-medium">{{"checkout" | translate}} :</span> {{parsedate(data?.checkout) |
+                            date:"MMMM dd, Y"}}</div>
+                    </div>
+                </div>
+            </span>
+            <span class="col-md-3 d-flex justify-content-end align-self-center" *ngIf="isQrCode">
+                <div class="main-border-2 border-top-0 border-end-0 border-bottom-0 px-4">
+                    <qrcode [qrdata]="`${appUrl}/bookings/details/${data?.bookingNumber}`" [width]="120"
+                        [colorDark]="'#2d2d30'" [colorLight]="'#f2f4f6'">
+                    </qrcode>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <ng-container *ngFor="let itin of data?.transfer?.itinerary; let i = index">
+        <div class="lower-border p-3 mt-5 rounded-3 position-relative text-center">
+            <div class="position-absolute bg-white lower-text px-3 fs-110 fw-medium" style="top: -15px; left: 25px;">
+                {{"itinerary" | translate}} {{i+1}}
+            </div>
+            <div class="row row-gap-3">
+                <span class="col-sm-6">
+                    <div class="lower-bg text-white text-center py-1">{{"departure" | translate}}</div>
+                    <div class="text-start py-2">
+                        <div class="fw-medium ">{{itin.from}}</div>
+                    </div>
+                </span>
+                <span class="col-sm-6">
+                    <div class="lower-bg text-white text-center py-1">{{"arrival" | translate}}</div>
+                    <div class="text-start py-2">
+
+                        <div class="fw-medium text-capitalize">{{itin.to}}</div>
+                    </div>
+                </span>
+            </div>
+            <div class="fs-110 text-start mt-3">
+                {{itin.description}}
+            </div>
+        </div>
+    </ng-container>
+
+    <div class="mt-5">
+        <app-product-cancellation-policy [data]="data?.cancellationPolicies"></app-product-cancellation-policy>
+    </div>
+
+    <ng-container *ngIf="data?.confirmedDate">
+        <app-voucher-footer [date]="data?.confirmedDate"></app-voucher-footer>
+    </ng-container>
+</ng-container>

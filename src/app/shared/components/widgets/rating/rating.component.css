@@ -1,0 +1,15 @@
+.rating {
+  color: var(--orange);
+  cursor: pointer;
+  fill:white;
+}
+
+.rating .filled {
+  color: var(--orange);
+  fill:var(--orange);
+}
+
+.rating span {
+  transition: color 0.2s;
+}
+

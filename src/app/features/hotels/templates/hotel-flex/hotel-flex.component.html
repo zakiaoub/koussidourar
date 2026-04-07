@@ -1,0 +1,132 @@
+<ng-container>
+  <div class="d-flex flex-column gap-4">
+    <ng-container *ngFor="let hotel of items; let i = index">
+      <div class="item-card bg-white rounded-4 overflow-hidden">
+        <div class="row">
+          <span class="col-md-3">
+            <div class="h-100 overflow-hidden">
+              <img class="image" [src]="hotel.image" width="100%" height="200px"
+                style="max-height: 200px; min-height: 100%" (error)="dis.handleImgError($event, defaultImages)" />
+            </div>
+          </span>
+          <span class="col-md-9">
+            <div class="p-3 ps-md-0">
+              <div class="row row-gap-3">
+                <span class="col-sm-8">
+                  <div class="d-flex flex-column justify-content-between h-100">
+                    <div>
+                      <div>
+                        <app-rating [rating]="hotel.category" [readonly]="true"></app-rating>
+                      </div>
+                      <div class="fs-110 fw-500 text-capitalize">
+                        {{ hotel.name }}
+                      </div>
+                      <div class="fs-90 d-none d-sm-flex flex-wrap align-items-center gap-1 mt-1">
+                        <span class="text-secondary text-capitalize">{{
+                          hotel.address
+                          }}</span>
+                        <span class="fs-120">
+                          <app-icon icon="dot"></app-icon>
+                        </span>
+                        <button [disabled]="true"
+                          class="bg-transparent blue-text text-decoration-underline cursor-pointer p-0"
+                          (click)="openMapForHotel(hotel)">
+                          {{ "show_on_map" | translate }}
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="fs-90 mt-1 d-none d-sm-block">
+                      {{ "stay_at_this_hotel" | translate }} {{ hotel.category }}
+                      {{ "stars_for" | translate }} {{ hotel.nights }}
+                      {{ "nights" | translate }} -
+                      {{ "which_is_located_at" | translate }} {{ hotel.address }},
+                      {{ hotel.city_name }}.
+                    </div>
+
+                    <div class="d-none d-sm-flex gap-2 mt-2">
+                      <span class="bg-white border rounded p-2 fs-80"
+                        *ngFor="let amenity of hotel.amenities.slice(0, 2)">
+                        <div class="d-flex align-items-center gap-1">
+                          <span>
+                            <img src="assets/icons/status/success.png" alt="check illustration" [width]="15"
+                              [height]="15" />
+                          </span>
+                          <span>{{ amenity }}</span>
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+                </span>
+                <span class="col-sm-4">
+                  <div class="row align-items-center justify-content-between h-100">
+                    <span class="col-sm-12 d-none d-sm-block">
+                      <div class="d-flex align-items-start justify-content-end">
+                        <span>
+                          <div>{{ hotel.note | notation | translate }}</div>
+                          <a target="_blank" [href]="hotel.trip_advisor_reviews" class="fs-80 blue-text">{{
+                            hotel.trip_advisor_review_count }}
+                            {{ "reviews" | translate }}</a>
+                        </span>
+                        <span class="green-bg text-white p-2 rounded-2 ms-3 fs-90 fw-medium">
+                          <ng-container *ngIf="hotel.note >= 3">{{
+                            hotel.note | fixed: 1
+                            }}</ng-container>
+                          <ng-container *ngIf="hotel.note < 3">{{
+                            3 | fixed: 1
+                            }}</ng-container>
+                        </span>
+                      </div>
+                    </span>
+
+                    <span class="col-6 col-sm-12">
+                      <div class="text-end">
+                        <div class="fs-4 fw-medium" *ngIf="isTruePriceLoad()">
+                          <app-amount [value]="hotel.amount"></app-amount>
+                        </div>
+                        <div class="px-5" *ngIf="!isTruePriceLoad()">
+                          <app-spinner [isWhite]="false" [size]="30"></app-spinner>
+                        </div>
+                      </div>
+                    </span>
+
+                    <span class="col-6 col-sm-12 d-flex justify-content-end justify-self-end">
+                      <app-button [class]="'fs-80 p-2 main-bg main-border text-white rounded-3 width-160 text-center'"
+                        [title]="'view_details'" [isLoading]="isLoading()[hotel.id]" (action)="getRooms(hotel)"
+                        [disabled]="!isTruePriceLoad()"></app-button>
+                    </span>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div *ngIf="i === 0">
+        <app-ad-attraction></app-ad-attraction>
+      </div>
+    </ng-container>
+  </div>
+
+  <div *ngIf="showMap" #mapContainer class="bg-white position-fixed top-0 start-0"
+    style="width: 100vw; height: 100vh; z-index: 9999">
+    <div *ngIf="!isMapLoaded" class="d-flex align-items-center justify-content-center w-100 h-100">
+      <div class="fs-5">{{ "loading_map" | translate }}</div>
+    </div>
+
+    <google-map [options]="mapOptions" [width]="'100%'" [height]="'100%'" (tilesloaded)="onMapReady()">
+      <map-marker *ngIf="selectedHotel" [position]="{
+          lat: toFloat(selectedHotel.latitude),
+          lng: toFloat(selectedHotel.longitude),
+        }" [title]="selectedHotel.name" [options]="{ animation: 1 }">
+      </map-marker>
+    </google-map>
+
+    <div class="position-absolute top-0 end-0 p-4">
+      <button (click)="closeMap()" class="size-60 bg-white rounded shadow-sm fs-3">
+        <app-icon icon="x"></app-icon>
+      </button>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,4 @@
+.overlay {
+    background: rgba(255, 255, 255, 1);
+    transition: opacity 0.5s ease;
+  }

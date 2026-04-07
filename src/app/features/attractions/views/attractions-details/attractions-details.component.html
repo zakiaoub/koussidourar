@@ -1,0 +1,56 @@
+<ng-container>
+  <app-session-time [type]="'details'"></app-session-time>
+  <app-session-expired [target]="'attraction'"></app-session-expired>
+  <app-stepper [currentStep]="2"></app-stepper>
+
+  <ng-container *ngIf="isLoading()">
+    <app-skeleton-details [service]="'attraction'"></app-skeleton-details>
+  </ng-container>
+
+  <ng-container *ngIf="error()">
+    <app-error-request caption="error_attraction_message"></app-error-request>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading() && !error()">
+    <section class="container-xl py-4">
+      <h2 class="text-capitalize">{{ data()?.activity?.Name }}</h2>
+      <div class="mt-4">
+        <app-images-carousel [data]="data()?.images"></app-images-carousel>
+      </div>
+      <div class="row flex-xl-row flex-sm-column-reverse">
+        <span class="col-xl-8 my-3">
+          <div class="pe-xl-4">
+            <app-attraction-infos [data]="data()"></app-attraction-infos>
+            <hr class="border-secondary my-4" />
+
+            <app-product-description [title]="'overview'" [text]="data()?.descriptions[0].value"
+              [limit]="90"></app-product-description>
+            <hr class="border-secondary my-4" />
+            <app-product-included [included]="data()?.extraIncluded"
+              [excluded]="data()?.extraExcluded"></app-product-included>
+            <hr class="border-secondary my-4" />
+            <app-product-rate-comment [data]="data()?.rateComment" title="important_information" stringReplace="//" />
+            <hr class="border-secondary my-4" />
+            <div id="attraction-availability">
+              <app-attraction-options [data]="data()" [searchToken]="searchToken"></app-attraction-options>
+            </div>
+          </div>
+        </span>
+        <span class="col-xl-4 my-3">
+          <div class="row">
+            <span class="col-12">
+              <app-attraction-recap [data]="data()"></app-attraction-recap>
+            </span>
+
+            <!-- <span class="col-xl-12 d-none d-xl-block">
+              <app-weather [lat]="data.activity.latitude" [lon]="data.activity.longitude"
+                [city]="data.activity.City"></app-weather>
+            </span> -->
+          </div>
+        </span>
+      </div>
+      <hr class="border-secondary my-4" />
+      <app-attraction-others [searchToken]="searchToken" [activityCode]="activityCode" />
+    </section>
+  </ng-container>
+</ng-container>

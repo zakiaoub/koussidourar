@@ -1,0 +1,5 @@
+/* Route outlet + pages : laisser le flux naturel pour le scroll tactile */
+:host {
+  display: block;
+  min-height: 0;
+}

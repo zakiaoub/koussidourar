@@ -1,0 +1,8 @@
+<div [ngSwitch]="layout">
+    <ng-container *ngSwitchCase="'flight'">
+        <app-skeleton-flight></app-skeleton-flight>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <app-skeleton-attraction [activeButton]="layout"></app-skeleton-attraction>
+    </ng-container>
+</div>

@@ -1,0 +1,66 @@
+[
+  {
+    "col": "col-md-6",
+    "id": "service-contact",
+    "label": "service",
+    "formControlName": "service",
+    "icon": "headset",
+    "type": "text",
+    "placeholder": "",
+    "readonly": true,
+    "minlength": null,
+    "maxlength": null,
+    "keyFilter": null,
+    "showMessage": true
+  },
+  {
+    "col": "col-md-6",
+    "id": "full_name-contact",
+    "label": "full_name",
+    "formControlName": "full_name",
+    "icon": "person",
+    "type": "text",
+    "placeholder": "",
+    "readonly": false,
+    "minlength": 2,
+    "maxlength": 100,
+    "keyFilter": null,
+    "showMessage": true
+  },
+  {
+    "col": "col-md-6",
+    "id": "email-contact",
+    "label": "email",
+    "formControlName": "email",
+    "icon": "envelope",
+    "type": "email",
+    "placeholder": "",
+    "readonly": false,
+    "minlength": null,
+    "maxlength": null,
+    "keyFilter": null,
+    "showMessage": true
+  },
+  {
+    "col": "col-md-6",
+    "id": "phone-contact",
+    "label": "phone",
+    "formControlName": "phone",
+    "icon": "telephone",
+    "placeholder": "",
+    "readonly": false,
+    "showMessage": true
+  },
+   {
+    "col": "col-12",
+    "id": "message-contact",
+    "label": "message",
+    "formControlName": "message",
+    "placeholder": "content",
+    "readonly": false,
+    "minlength": 20,
+    "maxlength": 500,
+    "rows":8,
+    "showMessage": true
+  }
+]

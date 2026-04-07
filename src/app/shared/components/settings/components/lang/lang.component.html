@@ -1,0 +1,14 @@
+<div class="row">
+    <span class="col-xl-3 my-3" role="button" *ngFor="let lang of flags" (click)="switchLanguage(lang.key)">
+        <div class="d-flex">
+            <span>
+                <img [src]="lang.value" [alt]="lang.key" width="16" height="16" />
+            </span>
+            <span class="mx-2">
+                <div class="fw-400">{{lang.title}}</div>
+                <div class="text-secondary fw-light">{{lang.country}}</div>
+            </span>
+
+        </div>
+    </span>
+</div>

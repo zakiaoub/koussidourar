@@ -1,0 +1,18 @@
+<div class="bw-booking">
+<div class="bw-toolbar">
+    <div class="bw-toolbar__left">
+        <div class="bw-pill-group">
+            <button type="button" class="bw-pill" *ngFor="let type of data" [class.bw-pill--active]="transferType === type.code"
+                (click)="setTransferType(type.code)">
+                {{ type.title | translate }}
+            </button>
+        </div>
+    </div>
+    <div class="bw-toolbar__right bw-help-inline bw-visible-lg">
+        <app-icon icon="person"></app-icon>
+        <a href="contact">{{ "need_some_help" | translate }}</a>
+    </div>
+</div>
+<app-transfers-search-form [transferType]="transferType" [fetchCities]="fetchCities.bind(this)"
+    [terminals]="terminals"></app-transfers-search-form>
+</div>

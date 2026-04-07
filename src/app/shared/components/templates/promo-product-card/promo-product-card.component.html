@@ -1,0 +1,11 @@
+<div class="item-img-scale rounded-3 shadow-sm h-100 position-relative">
+    <img [src]="image" width="100%" height="100%"  style="max-height: 320px; min-height: 320px;"/>
+
+    <div class="position-absolute top-0 start-0 w-100 h-100 p-4 gradient">
+        <div class="d-flex flex-column justify-content-end h-100">
+            <p class="text-white fw-medium fs-5 text-center">{{text |
+                translate}}</p>
+            <app-button [type]="'button'" [class]="'d-block text-center lower-bg-gradient text-white p-3 rounded-3 w-100'" [title]="'lets_go'" (action)="navigate(href)" [isLoading]="isLoading"></app-button>
+        </div>
+    </div>
+</div>

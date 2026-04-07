@@ -1,0 +1,16 @@
+<ng-container>
+    <div class="fw-400 lower-text">{{title | translate}}</div>
+    <div class="mt-2">
+        <div *ngFor="let item of displayedData" class="d-flex justify-content-between align-items-center my-1">
+            <span class="fs-90">
+                <!-- <app-check [id]="item.id" [label]="item.label" [(checked)]="item.checked">
+                </app-check> -->
+            </span>
+            <span class="text-secondary fs-80">{{item.count}}</span>
+        </div>
+        <button class="p-0 mt-2 fw-300 fs-90 main-text text-decoration-underline bg-white" (click)="toggleShowAll()"
+            *ngIf="data.length > 4">
+            {{ showAll ? ('show_less' | translate) : ('show_more' | translate) }}
+        </button>
+    </div>
+</ng-container>

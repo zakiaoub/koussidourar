@@ -1,0 +1,15 @@
+.equalizer-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100px;
+  width: 100%;
+}
+
+.equalizer-bar {
+  width: 8px;
+  height: 10%;
+  background: var(--grey);
+  transition: height 0.3s ease-in-out, background 0.3s ease-in-out;
+  margin: 0 3px 0 3px;
+}

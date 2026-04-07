@@ -1,0 +1,52 @@
+<div class="rounded-3 shadow-sm">
+    <div class="grey-bg py-3 px-4 border-bottom rounded-top-3">
+        <div class="d-flex gap-2">
+            <span class="main-text">
+                <app-icon icon="info-circle-fill"></app-icon>
+            </span>
+            <span>{{"reservation_information" | translate}}</span>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="row row-gap-4">
+            <span class="col-6 col-md-4 col-lg-3">
+                <ng-container>
+                    <div class="text-secondary text-uppercase fw-500 fs-80">{{"holder" | translate}}</div>
+                    <div class="fw-medium mt-2 fs-110 text-capitalize">{{data()?.holder}}</div>
+                </ng-container>
+            </span>
+            <span class="col-6 col-md-4 col-lg-3">
+                <ng-container>
+                    <div class="text-secondary text-uppercase fw-500 fs-80">{{"type" | translate}}</div>
+                    <div class="fw-medium mt-2 fs-110">{{data()?.bookingType | translate}}</div>
+                </ng-container>
+            </span>
+            <span class="col-6 col-md-4 col-lg-3">
+                <ng-container>
+                    <div class="text-secondary text-uppercase fw-500 fs-80">{{"checkin" | translate}}</div>
+                    <div class="fw-medium mt-2 fs-110">{{parseDate(data()?.checkin) | date:'MMM dd, Y'}}</div>
+                </ng-container>
+            </span>
+            <span class="col-6 col-md-4 col-lg-3">
+                <ng-container>
+                    <div class="text-secondary text-uppercase fw-500 fs-80">{{"checkout" | translate}}</div>
+                    <div class="fw-medium mt-2 fs-110">{{parseDate(data()?.checkout) | date:'MMM dd, Y'}}</div>
+                </ng-container>
+            </span>
+            <span class="col-6 col-md-4 col-lg-3">
+                <ng-container>
+                    <div class="text-secondary text-uppercase fw-500 fs-80">{{"confirmation_date" | translate}}
+                    </div>
+                    <div class="fw-medium mt-2 fs-110">{{parseDate(data()?.confirmedDate) | date:'MMM dd, Y'}}</div>
+                </ng-container>
+            </span>
+            <span class="col-6 col-md-4 col-lg-3">
+                <ng-container>
+                    <div class="text-secondary text-uppercase fw-500 fs-80">{{"payment_deadline" | translate}}
+                    </div>
+                    <div class="fw-medium mt-2 fs-110">{{parseDate(data()?.paymentDateLimit) | date:'MMM dd, Y'}}</div>
+                </ng-container>
+            </span>
+        </div>
+    </div>
+</div>

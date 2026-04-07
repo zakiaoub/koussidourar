@@ -1,0 +1,12 @@
+<button type="submit"
+    class="height-60 rounded border-0 main-bg-gradient w-100 text-white fs-90 fw-300 d-flex justify-content-center align-items-center"
+    [disabled]="disabled">
+    <ng-container *ngIf="!isLoading">
+        <div class="fs-5">
+            <app-icon icon="search"></app-icon>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="isLoading">
+        <app-spinner></app-spinner>
+    </ng-container>
+</button>

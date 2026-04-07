@@ -1,0 +1,85 @@
+<div class="d-flex flex-column gap-3">
+  <ng-container *ngFor="let item of items; let i = index">
+    <div [ngClass]="{'green-bg p-1 rounded-4': i === 0 }">
+      <div *ngIf="i === 0" class="text-white py-2 px-1 fw-medium d-flex align-items-center gap-2">
+        <span>
+          <img src="assets/icons/interface/award.png" [width]="20" [height]="20" />
+        </span>
+        <span>{{ "the_cheapest_flight_for_you" | translate }}</span>
+      </div>
+      <div role="button" class="item-card bg-white rounded-4 w-100" (mouseenter)="overlay[item?.RateKey] = true"
+        (mouseleave)="overlay[item?.RateKey] = false">
+        <div class="row justify-content-between">
+          <span class="col-md-9 align-self-center">
+            <div *ngFor="
+              let Itinerary of item.Itinerary;
+              let j = index;
+              let last = last
+            ">
+              <app-flights-itinerary [Itinerary]="Itinerary" [stops]="Itinerary.stops" [airportsName]="airportsName">
+              </app-flights-itinerary>
+              <div class="px-3">
+                <hr class="border-secondary my-0" *ngIf="!last" />
+              </div>
+            </div>
+          </span>
+          <span class="col-md-3">
+
+            <div class="h-100 py-2">
+              <app-flight-card [amount]="item.TotalAmount" [luggages]="item.Luggages"
+                [availStatus]="item.Itinerary[0].Segments[0].AvailStatus" [itineraries]="item.Itinerary.length">
+                <app-button *ngIf="item.count > 0" [class]="'fs-80 p-3 blue-border bg-primary bg-opacity-25 blue-text rounded-3 w-100 text-center shadow w-100'"
+                  [title]="'other_schedule'"
+                  (action)="showDialog(i)"></app-button>
+
+                <app-button [class]="'fs-90 p-3 main-bg main-border text-white rounded-3 w-100 text-center shadow w-100'"
+                  [title]="'book'" [isLoading]="isLoading()[item.RateKey]"
+                  (action)="getCheckRate(item, item.RateKey)"></app-button>
+              </app-flight-card>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="i === 0">
+      <div class="mt-2">
+      </div>
+    </ng-container>
+
+    <p-dialog [header]="item.CarrierName.toUpperCase()" [modal]="true" [(visible)]="visible[i]"
+      [style]="{ width: '90rem', height: '100%' }">
+      <app-flight-company service="flight" [carrierCode]="item.CarrierCode" [amount]="item.TotalAmount"
+        [searchToken]="searchToken" [day]="day" [month]="month" [year]="year"
+        [airportsName]="airportsName" (book)="visible[i]=false; openBooking($event.carrierCode, $event.rateKey)"></app-flight-company>
+    </p-dialog>
+  </ng-container>
+</div>
+
+<p-dialog [modal]="true" [(visible)]="bookingVisible" [style]="{ width: '90rem', height: '100%' }">
+  <ng-container *ngIf="bookingStep === 'details'">
+    <app-flight-details
+      [popupMode]="true"
+      [inputSearchToken]="searchToken"
+      [inputCarrierCode]="selectedCarrierCode"
+      [inputDay]="day"
+      [inputMonth]="month"
+      [inputYear]="year"
+      [inputRateKey]="selectedRateKey"
+      [inputDetails]="selectedDetails"
+      (checkout)="onCheckoutSelected($event)">
+    </app-flight-details>
+  </ng-container>
+
+  <ng-container *ngIf="bookingStep === 'checkout'">
+    <app-flights-booking-form
+      [popupMode]="true"
+      [inputSearchToken]="searchToken"
+      [inputCarrierCode]="selectedCarrierCode"
+      [inputDay]="day"
+      [inputMonth]="month"
+      [inputYear]="year"
+      [inputRateKey]="selectedRateKey"
+      [inputRateCategory]="selectedRateCategory">
+    </app-flights-booking-form>
+  </ng-container>
+</p-dialog>

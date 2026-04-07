@@ -1,0 +1,5 @@
+<ng-container>
+  <app-flight-rules [data]="details?.rateComment?.default"></app-flight-rules>
+  <app-button [class]="'main-bg text-white p-4 rounded-3 w-100 mt-3 main-border text-center'"
+    (action)="onSelectfare('default')" [isLoading]="isLoading()['default']" [title]="'book_now'"></app-button>
+</ng-container>

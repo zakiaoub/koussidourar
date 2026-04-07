@@ -1,0 +1,43 @@
+<div class="bg-dark bg-opacity-10 p-4">
+    <ng-container *ngIf="isLoading()">
+        <app-skeleton-company [service]="service"></app-skeleton-company>
+    </ng-container>
+
+    <ng-container *ngIf="error()">
+        <app-error-request caption="error_flight_others"></app-error-request>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoading() && !error()">
+        <div class="d-flex flex-column gap-3">
+            <ng-container *ngFor="let item of data(); let i = index">
+                <div role="button" class="item-card bg-white rounded-4 w-100"
+                    (mouseenter)="overlay[item.RateKey] = true" (mouseleave)="overlay[item.RateKey] = false">
+                    <div class="row justify-content-between align-items-center">
+                        <span class="col-xl-9">
+                            <div *ngFor="let Itinerary of item.Itinerary; let j = index; let last = last">
+                                <app-flight-company-timing [Itinerary]="Itinerary" [stops]="Itinerary.stops"
+                                    [airportsName]="airportsName">
+                                </app-flight-company-timing>
+                                <div class="px-3">
+                                    <hr class="border-secondary my-0" *ngIf="!last" />
+                                </div>
+                            </div>
+                        </span>
+                        <span class="col-xl-3">
+                            <div class="h-100 py-2">
+                                <app-flight-card [amount]="item.TotalAmount" [luggages]="item.Luggages"
+                                    [availStatus]="item.Itinerary[0].Segments[0].AvailStatus"
+                                    [itineraries]="item.Itinerary.length">
+                                    <app-button
+                                        [class]="'fs-90 p-3 main-bg main-border text-white rounded-3 w-100 text-center shadow w-100'"
+                                        [title]="'book'" [isLoading]="isSubmiting()[item.RateKey]"
+                                        (action)="getCheckRate(item, item.RateKey)"></app-button>
+                                </app-flight-card>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </ng-container>
+</div>

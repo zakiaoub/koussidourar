@@ -1,0 +1,21 @@
+<ng-container>
+    <div class="fs-1 fw-medium">{{"welcome_to" | translate}} {{appName}}</div>
+    <p class="fs-110 opacity-75">{{"welcome_to_caption" | translate}}</p>
+    <div class="mt-4 d-flex flex-column text-center">
+        <div class="size-60 bg-success bg-opacity-10 fs-4 green-text rounded-circle align-self-center">
+            <app-icon icon="person-fill-check"></app-icon>
+        </div>
+        <div class="fs-4 mt-3 fw-medium">{{"activation_successful" | translate}}  🎊</div>
+        <p class="text-enter text-secondary mt-1">{{"activation_success_text" | translate}}</p>
+        <div class="mt-4 w-100 fs-90">
+            <div class="row justify-content-center row-gap-4">
+                <span class="col-md-6 col-xl-5">
+                    <a href="/" class="d-inline-block main-border main-text bg-white p-4 w-100 rounded-3 w-100">{{"explore" | translate}}</a>
+                </span>
+                <span class="col-md-6 col-xl-5">
+                    <a href="/login" class="d-inline-block main-bg-gradient p-4 w-100 rounded-3 text-white w-100">{{"login" | translate}}</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</ng-container>

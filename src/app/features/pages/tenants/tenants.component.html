@@ -1,0 +1,24 @@
+<ng-container>
+    <app-top-banner [target]="'tenants' | translate"></app-top-banner>
+    <section class="pt-5">
+        <div class="container-xl">
+            <app-services-background service="tenants" [title]="'rent_title'" caption="rent_caption"
+                signup="rent-pricing" demo="rent-demo" [data]="data" [image]="image" class="col-lg-5">
+                <ng-template #image>
+                    <div>
+                        <img src="assets/images/tenants-bg.webp" width="100%" height="100%" />
+                    </div>
+                </ng-template>
+            </app-services-background>
+            <div class="mt-4">
+                <app-tenants-pricing></app-tenants-pricing>
+            </div>
+        </div>
+
+        <app-coming-soon></app-coming-soon>
+
+        <div class="mt-5">
+            <app-faq-display [service]="'tenant'"></app-faq-display>
+        </div>
+    </section>
+</ng-container>

@@ -1,0 +1,27 @@
+.p-accordion-header-link{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border:none;
+}
+
+.p-accordion-toggle-icon{
+    order: 2;
+    color: var(--main);
+}
+
+.p-accordion-header-text{
+    color: var(--dark);
+    display:none;
+}
+
+.p-accordion-header-link{
+    background-color:transparent;
+}
+
+.p-accordion-content{
+    border:none;
+    background-color:transparent;
+    margin-top: 0;
+    padding-top: 0;
+}

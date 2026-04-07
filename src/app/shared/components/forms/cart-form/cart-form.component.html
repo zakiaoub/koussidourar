@@ -1,0 +1,11 @@
+<ng-container>
+    <app-button [type]="'button'" [isLoading]="isSubmiting()" (click)="loadPayment()" [title]="'proceed_to_payment'"
+        [class]="'p-3 rounded main-bg text-white w-100 mt-4'" [disabled]="data()?.count === 0"></app-button>
+
+    <form #paymentForm *ngIf="paymentDataForm?.paymentData" [attr.action]="paymentDataForm?.paymentData?.endpoint"
+        [attr.method]="paymentDataForm?.paymentData?.method">
+        <ng-container *ngFor="let item of paymentDataForm?.paymentData?.data">
+            <input type="hidden" [attr.name]="item.name" [attr.value]="item.value" />
+        </ng-container>
+    </form>
+</ng-container>

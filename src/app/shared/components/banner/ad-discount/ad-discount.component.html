@@ -1,0 +1,68 @@
+<ng-container *ngIf="!isAuth">
+    <div [ngSwitch]="layout">
+        <ng-container *ngSwitchDefault>
+            <div class="bg-white">
+                <div class="container-xl py-3">
+                    <div class="row align-items-end">
+                        <span class="col-md-9">
+                            <div>
+                                <span class="fs-3 fw-600">{{"up_to" | translate}} <span
+                                        class="main-text-gradient">15%{{"discount" | translate}}</span> </span>
+                                <span class="fs-110 fw-400 ms-2"> {{"special_offer_caption" | translate}}</span>
+                            </div>
+                        </span>
+                        <span class="col-md-3">
+                            <div class="d-flex justify-content-end fs-90">
+                                <a href="/login"
+                                    class="d-flex align-items-center gap-2 text-center main-bg-gradient rounded-3 px-3 py-2 text-white">
+                                    <span>{{"login" | translate}}</span>
+                                    <span>
+                                        <app-icon icon="arrow-right-circle-fill"></app-icon>
+                                    </span>
+                                </a>
+                            </div>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="'horizontal'">
+            <div class="item px-4 py-5 rounded-3">
+                <div class="row row-gap-4 justify-content-between align-items-center">
+                    <span class="col-md-7">
+                        <div class="d-flex flex-column">
+                            <div
+                                class="align-self-start d-flex align-items-center gap-1 bg-white main-text py-1 px-2 fs-80 rounded">
+                                <span>
+                                    <app-icon icon="gift"></app-icon>
+                                </span>
+                                <span class="text-uppercase fw-medium">
+                                    {{"special_offer" | translate}}
+                                </span>
+                            </div>
+                            <div class="mt-4 fs-2 text-white">{{"up_to" | translate}} <span class="orange-text">15%
+                                    {{"discount" | translate}}</span>
+                            </div>
+                            <div class="text-white fs-120">{{"special_offer_caption" | translate}}</div>
+                        </div>
+                    </span>
+                    <span class="col-md-5">
+                        <div class="d-flex gap-3 w-100">
+                            <span class="w-50">
+                                <a href="/register"
+                                    class="orange-bg p-3 fs-90 rounded-3 d-block text-center lower-text">{{"register" |
+                                    translate}}</a>
+                            </span>
+                            <span class="w-50">
+                                <a href="/login"
+                                    class="bg-white p-3 fs-90 rounded-3 d-block text-center lower-text">{{"login" |
+                                    translate}}</a>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</ng-container>

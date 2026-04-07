@@ -1,0 +1,252 @@
+<ng-container *ngIf="!error()">
+    <div class="bg-white shadow-sm border rounded-4 p-4 mt-3 d-flex align-items-center justify-content-center"
+        style="min-height:415px;" *ngIf="isLoading()">
+        {{"weather_loading_text" | translate}}
+    </div>
+    <div class="bg-white shadow-sm border rounded-4 p-4 mt-3" style="min-height:415px;" *ngIf="!isLoading()">
+        <ng-container>
+            <div class="d-flex justify-content-between align-items-start">
+                <span>
+                    <div class="fw-medium dark-text">
+                        {{date | date:"EEEE"}}
+                    </div>
+                    <div class="opacity-75 mt-1 fs-90">{{date | date:"HH:MM a"}}</div>
+                </span>
+                <span role="button" class="text-decoration-underline main-text" (click)="showDialog()">
+                    {{"more_details" | translate}}
+                </span>
+            </div>
+
+            <div class="row justify-content-between mt-4">
+                <span class="col-lg-6">
+                    <ng-container>
+                        <div class="fs-450 fw-medium lh-1 lower-text-gradient">{{data()[0]?.maxTemperature?.degrees
+                            | number:'1.0-0'}}°C
+                        </div>
+                        <div class="mt-2 d-flex gap-2">
+                            <span class="opacity-75">{{"real_feel" | translate}}</span>
+                            <span class="fw-medium">{{data()[0]?.feelsLikeMaxTemperature?.degrees |
+                                number:'1.0-0'}}°C</span>
+                        </div>
+                    </ng-container>
+                </span>
+                <span class="col-lg-4">
+                    <div>
+                        <img [src]="data()[0]?.daytimeForecast?.weatherCondition?.iconBaseUri+'.png'" alt="Icone météo"
+                            width="100%" height="100%">
+                    </div>
+                </span>
+            </div>
+
+            <div class="text-center my-4 fs-5">{{ data()[0]?.daytimeForecast?.weatherCondition?.description?.text }}
+            </div>
+
+            <div class="row g-3">
+                <span class="col-xl-4">
+                    <div class="third-bg d-flex flex-column p-3 rounded-4">
+                        <div class="fs-120 main-text">
+                            <app-icon icon="wind"></app-icon>
+                        </div>
+                        <div class="fw-medium fs-90 mt-1">{{"wind" | translate}}</div>
+                        <div class="fs-80 opacity-75">{{ data()[0]?.daytimeForecast?.wind?.speed?.value }} km/h
+                        </div>
+                    </div>
+                </span>
+                <span class="col-xl-4">
+                    <div class="third-bg d-flex flex-column p-3 rounded-4">
+                        <div class="fs-120 main-text">
+                            <app-icon icon="droplet"></app-icon>
+                        </div>
+                        <div class="fw-medium fs-90 mt-1">{{"humidity" | translate}}</div>
+                        <div class="fs-80 opacity-75">{{ data()[0]?.daytimeForecast?.relativeHumidity }} %</div>
+                    </div>
+                </span>
+                <span class="col-xl-4">
+                    <div class="third-bg d-flex flex-column p-3 rounded-4">
+                        <div class="fs-120 main-text">
+                            <app-icon icon="cloud-drizzle"></app-icon>
+                        </div>
+                        <div class="fw-medium fs-90 mt-1">{{"rain" | translate}}</div>
+                        <div class="fs-80 opacity-75"> {{ data()[0]?.daytimeForecast?.precipitation?.qpf?.quantity |
+                            fixed:1
+                            }}
+                            mm</div>
+                    </div>
+                </span>
+            </div>
+        </ng-container>
+
+    </div>
+
+    <p-dialog [header]="'weekly_weather_forecast' | translate" [modal]="true" [(visible)]="visible"
+        [style]="{ width: '75%', height:'100%' }">
+        <div class="row">
+            <span class="col-lg-4 col-xl-3">
+                <ng-container>
+                    <div>
+                        <img [src]="data()[selectedIndex]?.daytimeForecast?.weatherCondition?.iconBaseUri+'.png'"
+                            alt="Icone météo" width="60%" height="60%">
+                    </div>
+
+                    <div class="fs-500 fw-medium lh-1 lower-text-gradient">
+                        {{data()[selectedIndex]?.maxTemperature?.degrees
+                        | number:'1.0-0'}}°C
+                    </div>
+
+                    <div class="d-flex align-items-center fs-120 gap-1 mt-3">
+                        <span class="fw-medium ">{{data()[selectedIndex]?.interval?.startTime |
+                            date:"EEEE"}},</span>
+                        <span class="opacity-75">
+                            {{data()[selectedIndex]?.interval?.startTime | date:"MMM dd"}}</span>
+                    </div>
+                    <hr class="border-secondary my-4 w-75" />
+
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex gap-3">
+                            <span class="fs-2 main-text">
+                                <app-icon icon="wind"></app-icon>
+                            </span>
+                            <span>
+                                <div class="fw-medium fs-90 mt-1">{{"wind" | translate}}</div>
+                                <div class="opacity-75">{{
+                                    data()[selectedIndex]?.daytimeForecast?.wind?.speed?.value
+                                    }}
+                                    km/h</div>
+                            </span>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <span class="fs-2 main-text">
+                                <app-icon icon="droplet"></app-icon>
+                            </span>
+                            <span>
+                                <div class="fw-medium fs-90 mt-1">{{"humidity" | translate}}</div>
+                                <div class="opacity-75">{{
+                                    data()[selectedIndex]?.daytimeForecast?.relativeHumidity}}%
+                                </div>
+                            </span>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <span class="fs-2 main-text">
+                                <app-icon icon="cloud-drizzle"></app-icon>
+                            </span>
+                            <span>
+                                <div class="fw-medium fs-90 mt-1">{{"rain" | translate}}</div>
+                                <div class="opacity-75">{{
+                                    data()[selectedIndex]?.daytimeForecast?.precipitation?.qpf?.quantity }}
+                                    mm</div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="rounded-4 overflow-hidden position-relative mt-4">
+                        <app-city-image [city]="city" [height]="'160px'"></app-city-image>
+                        <div
+                            class="bg-secondary bg-opacity-50 position-absolute top-0 start-0 d-flex align-items-center w-100 h-100 fs-4 fw-medium text-white p-4">
+                            {{city}}
+                        </div>
+                    </div>
+                </ng-container>
+            </span>
+
+            <span class="col-lg-8 col-xl-9">
+                <ng-container>
+                    <div class="d-flex flex-column justify-content-between h-100">
+                        <div class="row row-gap-4">
+                            <span *ngFor="let day of data(); let i = index" class="col-lg-3 col-xl-2">
+                                <div role="button"
+                                    class="rounded-4 p-3 d-flex flex-column align-items-center text-center"
+                                    (click)="selectIndex(i)"
+                                    [ngClass]="{'border':i !== selectedIndex, 'main-border':i === selectedIndex}">
+                                    <div class="fw-medium">{{day.interval.startTime | date:"EEE"}}</div>
+                                    <div class="mt-2">
+                                        <img [src]="day.daytimeForecast.weatherCondition.iconBaseUri+'.png'"
+                                            alt="Icone météo" width="60" height="60">
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 mt-3">
+                                        <span class="fw-medium">{{day.maxTemperature.degrees
+                                            | number:'1.0-0'}}°</span>
+
+                                        <span class="opacity-50">{{day.minTemperature.degrees
+                                            | number:'1.0-0'}}°</span>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="mt-5">
+                            <div class="fs-5 fw-medium dark-text">
+                                {{data()[selectedIndex]?.interval?.startTime | date:"EEEE"}}
+                                {{"highlights" | translate}}
+                            </div>
+
+                            <div class="mt-4">
+                                <div class="row row-gap-4">
+                                    <span class="col-xl-4">
+                                        <div
+                                            class="bg-secondary bg-opacity-10 shadow-sm rounded-4 d-flex flex-column p-3">
+                                            <div class="align-self-end fs-3 main-text">
+                                                <app-icon icon="sun"></app-icon>
+                                            </div>
+                                            <div class="fw-medium text-secondary">UV-Index</div>
+                                            <div class="fs-350 fw-medium dark-text">
+                                                {{data()[selectedIndex]?.daytimeForecast?.uvIndex}}/11</div>
+                                            <p class="mt-3 opacity-75 fs-90">{{"uv_index_caption" | translate}}</p>
+                                        </div>
+                                    </span>
+
+                                    <span class="col-xl-4">
+                                        <div
+                                            class="bg-secondary bg-opacity-10 shadow-sm rounded-4 d-flex flex-column p-3 h-100">
+                                            <div class="align-self-end fs-3 main-text">
+                                                <app-icon icon="alarm"></app-icon>
+                                            </div>
+                                            <div class="fw-medium text-secondary">{{"sunrise_sunset" | translate}}</div>
+                                            <div class="d-flex align-items-center gap-3 mt-4">
+                                                <span
+                                                    class="main-border third-bg main-text size-50 rounded-circle fs-4">
+                                                    <app-icon icon="arrow-up-short"></app-icon>
+                                                </span>
+                                                <span>
+                                                    <div class="fw-medium dark-text">
+                                                        {{data()[selectedIndex]?.sunEvents?.sunriseTime
+                                                        | date:"HH:MM a"}}</div>
+                                                    <div class="opacity-75 fs-90 mt-1">{{"sunrise_caption" | translate}}
+                                                    </div>
+                                                </span>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-3 mt-4">
+                                                <span
+                                                    class="main-border third-bg main-text size-50 rounded-circle fs-4">
+                                                    <app-icon icon="arrow-down-short"></app-icon>
+                                                </span>
+                                                <span>
+                                                    <div class="fw-medium dark-text">
+                                                        {{data()[selectedIndex]?.sunEvents?.sunsetTime
+                                                        | date:"HH:MM a"}}</div>
+                                                    <div class="opacity-75 fs-90 mt-1">{{"sunset_caption" | translate}}
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </span>
+
+                                    <span class="col-xl-4">
+                                        <div
+                                            class="bg-secondary bg-opacity-10 shadow-sm rounded-4 d-flex flex-column p-3 h-100">
+                                            <div class="align-self-end fs-3 main-text">
+                                                <app-icon icon="cloud"></app-icon>
+                                            </div>
+                                            <div class="fw-medium text-secondary">{{"cloud_cover" | translate}}</div>
+                                            <div class="fs-350 fw-medium dark-text">
+                                                {{data()[selectedIndex]?.daytimeForecast?.cloudCover}}%</div>
+                                            <p class="mt-3 opacity-75">{{"cloud_cover_caption" | translate}}</p>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </span>
+        </div>
+    </p-dialog>
+</ng-container>

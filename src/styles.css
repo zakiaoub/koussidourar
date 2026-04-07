@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "primeicons/primeicons.css";
+@import "./styles/border.css";
+@import "./styles/background.css";
+@import "./styles/textes.css";
+@import "./styles/border.css";
+@import "./styles/global.css";
+@import "./styles/forms.css";
+@import "./styles/size.scss";
+@import "./styles/heights.scss";
+@import "./styles/widths.scss";
+@import "./styles/animations.css";
+@import "./styles/primeng.css";
+@import "./styles/booking-widget.css";
+
+:root {
+  --main: #f7732c;
+  --lower: #405c92;
+  --third: #faeadf;
+  --fourth: #b1c6f0;
+  --fifth: #ffa245;
+  --sixth: #4dabfd;
+  --blue: #166cf5;
+  --green: #4CCE4C;
+  --red: #f44336;
+  --orange: #FFB400;
+  --purple: #7635FA;
+  --dark: #192024;
+  --grey: #f2f4f6;
+  --light: #f6f6f671;
+  --dark-blue: #051036;
+  --font-family: "Montserrat", sans-serif;
+}
+
+/* carousel.component.css */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* Adjust height as needed, or make it responsive with aspect-ratio */
+}
+
+.carousel-slides {
+  display: flex;
+  height: 100px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%; /* Each slide takes full width */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(226, 196, 196);
+  border: none;
+
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.prev-button {
+  left: -5px;
+}
+
+.next-button {
+  right: -5px;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.indicators span {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicators span.active {
+  background-color: white;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  padding-right: 10px;
+  text-wrap: nowrap;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.btn-primary {
+  background-color: #fc6512 !important;
+  border-color: #fc6512 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.float-right {
+  float: right;
+}
+
+.dark-glass {
+  background: rgba(36, 36, 36, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.white-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.account-gradient {
+    background: linear-gradient(to bottom, var(--third), white);
+  }

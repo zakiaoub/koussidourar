@@ -1,0 +1,80 @@
+<ng-container>
+    <div class="bg-white p-3 rounded-4 shadow-sm">
+        <div class="map-container position-relative overflow-hidden rounded-4">
+            <google-map [center]="center" [zoom]="10" [options]="disableMapOptions" width="100%" height="240px">
+            </google-map>
+            <div
+                class="overlay w-100 h-100 d-flex flex-column justify-content-end bg-white bg-opacity-75 position-absolute top-0 start-0 rounded-4 overflow-hidden p-4">
+                <div class="fs-5 fw-medium text-center  p-1">{{"your_search_area" | translate}}</div>
+                <app-button [title]="'show_on_map'"
+                    [class]="'lower-bg-gradient bg-opacity-75 text-white p-3 rounded w-100 fs-90 mt-4'"
+                    (action)="showDialog()" [isLoading]="isLoading" [isWhite]="true"></app-button>
+            </div>
+        </div>
+    </div>
+
+    <!-- -->
+    <p-dialog [header]="'paris'" [(visible)]="visible" [modal]="true" [style]="{ width: '95%', height: '90vh' }">
+        <ng-template #header>
+            <div class="d-flex align-items-center gap-2 fs-110 mt-4 lh-1">
+                <p-checkbox [(ngModel)]="darkMode" [binary]="true" name="dark_mode_map"
+                    [ngModelOptions]="{ standalone: true }" inputId="dark_mode_map"
+                    (ngModelChange)="onDarkModeChange()"></p-checkbox>
+                <label for="dark_mode_map" class="ml-2" [innerHTML]="'dark_mode' | translate"></label>
+            </div>
+        </ng-template>
+        <ng-template #content>
+            <div class="d-flex grey-bg gap-3 w-100 h-100 overflow-hidden">
+
+                <div class="hotels-list d-flex flex-column overflow-hidden" style="width: 20%; height: 100%;">
+                    <div class="hotels-list-content p-3" #hotelListContainer>
+                        <div *ngFor="let hotel of data" class="hotel-card bg-white mb-3"
+                            [class.selected]="selectedHotel?.id === hotel.id"
+                            [class.hovered]="hoveredHotelId === hotel.id" (click)="selectHotelFromList(hotel)">
+                            <app-map-card-hotel [data]="hotel"></app-map-card-hotel>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="position-relative overflow-hidden" style="width: 80%; height: 100%;">
+                    <google-map [center]="center" [zoom]="zoom" [options]="mapOptions" width="100%" height="100%">
+                        <map-marker *ngFor="let marker of markers" [position]="marker.position" [title]="marker.title"
+                            [options]="marker.options" (mapClick)="openInfoWindow(markerElem, marker)"
+                            #markerElem="mapMarker">
+                        </map-marker>
+                        <map-info-window>
+                            <ng-container *ngIf="selectedHotel">
+                                <div class="p-2">
+                                    <div class="text-capitalize fs-5 fw-medium text-dark">
+                                        {{ selectedHotel?.name }}
+                                    </div>
+                                    <p class="mt-2 fs-110">
+                                        <span class="main-text">
+                                            <app-icon icon="geo-alt"></app-icon>
+                                        </span>
+                                        {{ selectedHotel?.address }}
+                                    </p>
+                                    <hr class="border-secondary" />
+                                    <div class="d-flex justify-content-between align-items-center gap-5">
+                                        <span class="opacity-75">
+                                            {{"total_amount" | translate}} :
+                                        </span>
+                                        <span class="fs-5 text-dark fw-medium">
+                                            <app-amount [value]="selectedHotel?.amount"></app-amount>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <app-button
+                                            [class]="'fs-90 p-3 main-bg main-border text-white rounded-3 w-100 text-center mt-3'"
+                                            [title]="'view_details'" [isLoading]="isSubmiting()[selectedHotel.id]"
+                                            (action)="getRooms(selectedHotel)"></app-button>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </map-info-window>
+                    </google-map>
+                </div>
+            </div>
+        </ng-template>
+    </p-dialog>
+</ng-container>

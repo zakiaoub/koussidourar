@@ -1,0 +1,58 @@
+
+.overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.map-container:hover .overlay {
+  opacity: 1;
+}
+
+// ============================================
+// LISTE DES HÔTELS (20%)
+// ============================================
+
+.hotels-list {
+  .hotels-list-content {
+    flex: 1;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    // Style de la scrollbar
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f0f0f0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #c0c0c0;
+      border-radius: 4px;
+
+      &:hover {
+        background: #a0a0a0;
+      }
+    }
+  }
+}
+
+.hotel-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+
+  &:hover, &.hovered {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &.selected {
+    border-color: var(--main);
+    box-shadow: 0 4px 16px rgba(233, 134, 68, 0.3);
+  }
+}

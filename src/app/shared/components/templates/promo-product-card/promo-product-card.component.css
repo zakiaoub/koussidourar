@@ -1,0 +1,9 @@
+.gradient{
+    background: linear-gradient(
+  to bottom,
+  transparent 0%,
+  transparent 50%,
+  var(--dark) 100%
+);
+
+}

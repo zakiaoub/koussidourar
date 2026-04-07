@@ -1,0 +1,128 @@
+{
+    "USD": [
+        {
+            "symbol": "$",
+            "country": "united_states_dollar",
+            "flag": "assets/images/flags/us.png"
+        }
+    ],
+    "EUR": [
+        {
+            "symbol": "€",
+            "country": "euro",
+            "flag": "assets/images/flags/euro.png"
+        }
+    ],
+    "GBP": [
+        {
+            "symbol": "£",
+            "country": "pound_sterling",
+            "flag": "assets/images/flags/gb.png"
+        }
+    ],
+    "JPY": [
+        {
+            "symbol": "¥",
+            "country": "japanese_yen",
+            "flag": "assets/images/flags/jp.png"
+        }
+    ],
+    "CNY": [
+        {
+            "symbol": "¥",
+            "country": "chinese_yuan",
+            "flag": "assets/images/flags/cn.png"
+        }
+    ],
+    "AUD": [
+        {
+            "symbol": "$",
+            "country": "australian_dollar",
+            "flag": "assets/images/flags/au.png"
+        }
+    ],
+    "CAD": [
+        {
+            "symbol": "$",
+            "country": "canadian_dollar",
+            "flag": "assets/images/flags/ca.png"
+        }
+    ],
+    "CHF": [
+        {
+            "symbol": "CHF",
+            "country": "swiss_franc",
+            "flag": "assets/images/flags/ch.png"
+        }
+    ],
+    "INR": [
+        {
+            "symbol": "₹",
+            "country": "indian_rupee",
+            "flag": "assets/images/flags/in.png"
+        }
+    ],
+    "MXN": [
+        {
+            "symbol": "$",
+            "country": "mexican_peso",
+            "flag": "assets/images/flags/mx.png"
+        }
+    ],
+    "BRL": [
+        {
+            "symbol": "R$",
+            "country": "brazilian_real",
+            "flag": "assets/images/flags/br.png"
+        }
+    ],
+    "AED": [
+        {
+            "symbol": "د.إ",
+            "country": "uae_dirham",
+            "flag": "assets/images/flags/ae.png"
+        }
+    ],
+    "TRY": [
+        {
+            "symbol": "₺",
+            "country": "turkish_lira",
+            "flag": "assets/images/flags/tr.png"
+        }
+    ],
+    "ZAR": [
+        {
+            "symbol": "R",
+            "country": "south_african_rand",
+            "flag": "assets/images/flags/za.png"
+        }
+    ],
+    "THB": [
+        {
+            "symbol": "฿",
+            "country": "thai_baht",
+            "flag": "assets/images/flags/th.png"
+        }
+    ],
+    "KRW": [
+        {
+            "symbol": "₩",
+            "country": "south_korean_won",
+            "flag": "assets/images/flags/kr.png"
+        }
+    ],
+    "DZD": [
+        {
+            "symbol": "DZD",
+            "country": "algerian_dinar",
+            "flag": "assets/images/flags/dz.png"
+        }
+    ],
+    "TND": [
+        {
+            "symbol": "TND",
+            "country": "tunisian_dinar",
+            "flag": "assets/images/flags/tn.png"
+        }
+    ]
+}

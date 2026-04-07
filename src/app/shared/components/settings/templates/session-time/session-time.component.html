@@ -1,0 +1,17 @@
+<ng-container [ngSwitch]="type">
+    <div *ngSwitchCase="'results'" class="dark-bg p-2 d-flex justify-content-center align-items-center gap-2 fs-120 text-white lh-1">
+        <span class="fs-5 main-text fw-medium">{{count}}</span>
+        <span>{{"remaining_time_text" | translate}}</span>
+        <span class="main-bg text-center py-2 width-60 rounded fs-6">{{remainingTime}}</span>
+    </div>
+
+    <div *ngSwitchCase="'details'" class="dark-bg p-2 d-flex justify-content-center align-items-center gap-2 fs-120 text-white lh-1">
+        <span>{{"details_session_caption" | translate}}</span>
+        <span class="main-bg text-center py-2 width-60 rounded fs-6">{{remainingTime}}</span>
+    </div>
+
+    <div *ngSwitchCase="'cart'" class="dark-bg p-2 d-flex justify-content-center align-items-center gap-2 fs-120 text-white lh-1">
+        <span>{{"details_session_caption" | translate}}</span>
+        <span class="main-bg text-center py-2 width-60 rounded fs-6">{{remainingTime}}</span>
+    </div>
+</ng-container>

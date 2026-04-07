@@ -1,0 +1,8 @@
+<ng-container>
+    <div class="position-relative w-100">
+        <div class="grey-bg position-absolute top-0 left-0 w-100 rounded" [style.height.px]="size"></div>
+        <div class="main-bg position-absolute top-0 left-0 rounded" [style.height.px]="size"
+            [style.width.%]="value | percent:top">
+        </div>
+    </div>
+</ng-container>

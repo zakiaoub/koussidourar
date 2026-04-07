@@ -1,0 +1,156 @@
+<div class="bg-white bg-white overflow-hidden rounded-3 border shadow-sm">
+    <div *ngFor="let itinerary of data?.itineraries; let i = index">
+        <div class="lower-bg p-3">
+            <span class="d-flex align-items-center flex-wrap gap-3">
+                <span class="main-bg text-white py-2 px-3 rounded-3">
+                    <ng-container *ngIf="data.itineraries.length <= 2">
+                        {{(itinerary.Ref === 1 ? "outbound" : "return") |
+                        translate}}
+                    </ng-container>
+                    <ng-container *ngIf="data.itineraries.length > 2">
+                        {{"flight" | translate}} 0{{itinerary.Ref}}
+                    </ng-container>
+                </span>
+
+                <span class="d-flex align-items-center gap-4 mt-1 fw-medium  text-white">
+                    <span>{{airportsName[itinerary.Origin]}} {{"airport" | translate}} ({{itinerary.Origin}})</span>
+                    <span>
+                        <img src="assets/icons/plane.png" [width]="20" [height]="20" />
+                    </span>
+                    <span>{{airportsName[itinerary.Destination]}} {{"airport" | translate}}
+                        ({{itinerary.Destination}})</span>
+                </span>
+            </span>
+        </div>
+
+        <ng-container *ngFor="let segment of itinerary.Segments; let last = last; let s = index">
+            <div class="p-4">
+                <div class="row align-items-end">
+                    <span class="col-xl-8">
+                        <div class="d-flex gap-4">
+                            <span class="d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="fs-110">{{segment.DepartureDateTime.replace(' ', 'T') | date:
+                                        'HH:mm' }}</div>
+                                    <div class="fs-90 text-secondary">{{segment.DepartureDateTime | date:'MMM dd'}}
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="fs-90 text-secondary">{{"duration" | translate}}</div>
+                                    <div class="fs-110">{{segment.Duration}}</div>
+                                </div>
+                                <div>
+                                    <div class="fs-110">{{ segment.ArrivalDateTime.replace(' ', 'T') | date:
+                                        'HH:mm' }}</div>
+                                    <div class="fs-90 text-secondary">{{segment.ArrivalDateTime | date:'MMM dd'}}</div>
+                                </div>
+                            </span>
+                            <span class="main-text">
+                                <div class="d-flex flex-column justify-content-between align-items-center gap-2">
+                                    <div class="fs-1">
+                                        <app-icon icon="dot"></app-icon>
+                                    </div>
+                                    <div class="width-2 height-30 bg-secondary bg-opacity-25">
+
+                                    </div>
+                                    <img [src]="airlines | filter:segment.Operator:'logo'" [width]="30" [height]="30" />
+                                    <div class="width-2 height-30 bg-secondary bg-opacity-25">
+
+                                    </div>
+                                    <div class="fs-1">
+                                        <app-icon icon="dot"></app-icon>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="d-flex flex-column justify-content-between">
+                                <div>
+                                    <div class="fs-110">
+                                        {{airportsName[segment.DepartureAirportCode]}} {{"airport" |translate}}
+                                        ({{segment.DepartureAirportCode}})
+                                    </div>
+                                    <div class="fs-90 text-secondary">
+                                        {{"terminal" | translate}} : {{segment.DepartureAirportTerminal}}
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="fs-90 text-secondary">{{"operated_by" |
+                                        translate}}</div>
+                                    <div class="fs-110">{{airlines | filter:segment.Operator:'name'}}</div>
+                                </div>
+
+                                <div>
+                                    <div class="fs-110">
+                                        {{airportsName[segment.ArrivalAirportCode]}} {{"airport" | translate}}
+                                        ({{segment.ArrivalAirportCode}})</div>
+                                    <div class="fs-90 text-secondary">
+                                        {{"terminal" | translate}} : {{segment.ArrivalAirportTerminal}}
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </span>
+                    <span class="col-xl-4">
+                        <div class="row justify-content-between row-gap-3">
+                            <span class="col-xl-12" *ngIf="segment.MarketingCarrier !== segment.Operator">
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="text-secondary">
+                                        <img [src]="airlines | filter:segment.MarketingCarrier:'logo'" [width]="30"
+                                            [height]="30" />
+                                    </span>
+                                    <span class="text-dark">{{airlines |
+                                        filter:segment.MarketingCarrier:'name'}}</span>
+                                </div>
+                            </span>
+
+                            <span class="col-xl-12">
+                                <div class="d-flex gap-2">
+                                    <span class="text-secondary">{{"flight_number" | translate}} :</span>
+                                    <span class="text-dark">{{segment.FlightNumber}}</span>
+                                </div>
+                            </span>
+
+                            <span class="col-xl-12">
+                                <div class="d-flex gap-2">
+                                    <span class="text-secondary">{{"aircraft_type" | translate}} :</span>
+                                    <span>{{segment.AirCraft}}</span>
+                                </div>
+                            </span>
+
+                            <span class="col-xl-12">
+                                <div class="d-flex gap-2">
+                                    <span class="text-secondary">{{"cabin_class" | translate}} :</span>
+                                    <span>{{segment.BookingClass}}</span>
+                                </div>
+                            </span>
+
+                            <span class="col-xl-12"
+                                *ngIf="data.rateCategory.length==1 && data.rateCategory[0]=='default'">
+                                <div class="d-flex gap-2">
+                                    <span class="text-secondary">{{"baggage" | translate}} :</span>
+                                    <span>
+                                        {{data?.baggages.default[segment.FlightNumber].Pax[0]['Quantity'] }}
+
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div *ngIf="!last"
+                class="grey-bg rounded p-3 d-flex justify-content-center align-items-center gap-2 text-secondary mx-3">
+                <span class="main-text">
+                    <app-icon icon="clock"></app-icon>
+                </span>
+                <span class="fs-110 fw-medium dark-text">{{ (itinerary.Segments | stopover:'stopovers':s)?.duration
+                    }}</span>
+                <span>{{"stopover_at" | translate}} : </span>
+                <span class="fs-110 fw-medium dark-text">{{airportsName[(itinerary.Segments |
+                    stopover:'stopovers':s)?.code ]}}
+                    {{"airport" | translate}} ({{ (itinerary.Segments | stopover:'stopovers':s)?.code }})</span>
+            </div>
+        </ng-container>
+    </div>
+</div>

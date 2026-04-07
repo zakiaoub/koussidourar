@@ -1,0 +1,20 @@
+import { Pipe, PipeTransform } from '@angular/core';
+import { TranslationService } from '@app/core/services/translation.service';
+
+@Pipe({
+  name: 'translate',
+  standalone: true,
+  pure: false
+})
+
+export class TranslationPipe implements PipeTransform {
+  constructor(private translationService: TranslationService) { }
+
+  transform(value: string): string {
+    return this.translationService.getTranslation(value);
+  }
+}
+
+
+
+

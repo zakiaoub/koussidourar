@@ -1,0 +1,22 @@
+<div class="third-bg dark-text p-5">
+    <div class="row justify-content-center align-items-center">
+        <span class="col-lg-8">
+            <div class='fs-1 fw-bold' [innerHTML]="'not_member_yet' | translate"></div>
+            <p class="fs-110 text-secondary">{{caption | translate}}</p>
+        </span>
+
+        <span class="col-lg-4">
+            <div class="row">
+                <span class='col-lg-6 my-3'>
+                    <a [href]="login" class='d-block text-center main-border main-text bg-white p-3 w-100'>{{"login" |
+                        translate}}</a>
+                </span>
+                <span class='col-lg-6 my-3'>
+                    <a [href]="register"
+                        class='d-block text-center main-border main-bg text-white p-3 w-100'>{{"register" |
+                        translate}}</a>
+                </span>
+            </div>
+        </span>
+    </div>
+</div>

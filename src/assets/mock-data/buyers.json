@@ -1,0 +1,56 @@
+{
+    "buyers": [
+        {
+            "id": 1,
+            "question": {
+                "en": "How can I make a reservation?",
+                "fr": "Comment puis-je faire une réservation ?",
+                "es": "¿Cómo puedo hacer una reserva?"
+            },
+            "answer": {
+                "en": "You can book directly on our platform by selecting your destination, dates, and desired services.",
+                "fr": "Vous pouvez réserver directement sur notre plateforme en sélectionnant votre destination, vos dates et les services souhaités.",
+                "es": "Puedes reservar directamente en nuestra plataforma seleccionando tu destino, fechas y servicios deseados."
+            }
+        },
+        {
+            "id": 3,
+            "question": {
+                "en": "Can I cancel or modify my booking?",
+                "fr": "Puis-je annuler ou modifier ma réservation ?",
+                "es": "¿Puedo cancelar o modificar mi reserva?"
+            },
+            "answer": {
+                "en": "Yes, depending on the provider's policy. You can manage your booking from your account.",
+                "fr": "Oui, selon la politique du prestataire. Vous pouvez gérer votre réservation depuis votre compte.",
+                "es": "Sí, según la política del proveedor. Puedes gestionar tu reserva desde tu cuenta."
+            }
+        },
+        {
+            "id": 4,
+            "question": {
+                "en": "Will I receive a confirmation after booking?",
+                "fr": "Vais-je recevoir une confirmation après la réservation ?",
+                "es": "¿Recibiré una confirmación después de reservar?"
+            },
+            "answer": {
+                "en": "Yes, a confirmation email with all the booking details will be sent to you immediately.",
+                "fr": "Oui, un email de confirmation contenant tous les détails de la réservation vous sera envoyé immédiatement.",
+                "es": "Sí, recibirás un correo electrónico de confirmación con todos los detalles de la reserva."
+            }
+        },
+        {
+            "id": 5,
+            "question": {
+                "en": "Is customer support available in case of issues?",
+                "fr": "Le service client est-il disponible en cas de problème ?",
+                "es": "¿Está disponible el servicio de atención al cliente en caso de problemas?"
+            },
+            "answer": {
+                "en": "Yes, our customer support is available 24/7 via chat, email, or phone.",
+                "fr": "Oui, notre service client est disponible 24h/24 et 7j/7 par chat, email ou téléphone.",
+                "es": "Sí, nuestro servicio de atención al cliente está disponible 24/7 por chat, correo electrónico o teléfono."
+            }
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+<div class="main-border bg-white p-4 rounded-3">
+    <div class="fs-5 fw-500">
+        {{"order_summary" | translate}}
+    </div>
+    <div class="my-3">
+        <div class="d-flex justify-content-between align-items-center my-2">
+            <span>{{"subtotal" | translate}}</span>
+            <span class="text-secondary">
+                <app-amount [value]="price"></app-amount>
+            </span>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center my-2">
+            <span>{{"taxes_and_fees" | translate}}</span>
+            <span class="text-secondary">
+                <app-amount [value]="0"></app-amount>
+            </span>
+        </div>
+
+        <div class="third-bg py-2 px-3 mt-3 mb-4">
+            <div class="d-flex justify-content-between align-items-center my-2">
+                <span class="text-secondary">{{"total_amount" | translate}}</span>
+                <span class="text-uppercase fw-medium main-text fs-120">
+                    <app-amount [value]="price"></app-amount>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <ng-content></ng-content>
+</div>

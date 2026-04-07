@@ -1,0 +1,23 @@
+<ng-container>
+    <form [formGroup]="referralLinkForm" (ngSubmit)="sendLink()">
+        <div class="row row-gap-3">
+            <span class="col-sm-9">
+                <ng-container *ngFor="let field of fields.slice(0,4)">
+                    <span [class]="field.col">
+                        <app-input-field [id]="field.id" [labelKey]="field.label"
+                            [controlName]="field.formControlName" [icon]="field.icon" [type]="field.type"
+                            [placeholder]="field.placeholder" [minlength]="field.minlength"
+                            [maxlength]="field.maxlength" [readonly]="field.readonly" [keyFilter]="field.keyFilter"
+                            [showMessage]="field.showMessage" [formGroup]="referralLinkForm">
+                        </app-input-field>
+                    </span>
+                </ng-container>
+            </span>
+            <span class="col-sm-3">
+                <app-button [type]="'submit'" [title]="'send'"
+                    [class]="'main-bg-gradient text-white p-3 rounded border-0 w-100 fs-80 height-60'"
+                    [isLoading]="isLoading()"></app-button>
+            </span>
+        </div>
+    </form>
+</ng-container>

@@ -1,0 +1,50 @@
+<ng-container>
+    <app-top-banner target="details"></app-top-banner>
+    <section class="container-xl py-5">
+
+        <ng-container *ngIf="isLoading()">
+            <app-skeleton-booking-details></app-skeleton-booking-details>
+        </ng-container>
+
+        <ng-container *ngIf="error()">
+            <app-error-request></app-error-request>
+        </ng-container>
+
+        <ng-container *ngIf="!isLoading() && !error()">
+            <app-booking-status [data]="data()"></app-booking-status>
+
+            <div class="mt-4 rounded-3 shadow-sm" [ngSwitch]="data()?.bookingType">
+                <ng-container *ngSwitchCase="'activity'">
+                    <app-booking-content-attraction [data]="data()?.activity?.data"></app-booking-content-attraction>
+                </ng-container>
+                <ng-container *ngSwitchCase="'hotel'">
+                    <app-booking-content-hotel [data]="data()?.hotel?.hotel"
+                        [rooms]="data()?.hotel?.rooms?.length"></app-booking-content-hotel>
+                </ng-container>
+                <ng-container *ngSwitchCase="'flight'">
+                    <app-booking-content-flight [data]="data()?.flight"></app-booking-content-flight>
+                </ng-container>
+                <ng-container *ngSwitchCase="'transfer'">
+                    <app-booking-content-transfer [data]="data()?.transfer"></app-booking-content-transfer>
+                </ng-container>
+            </div>
+
+            <div class="mt-4">
+                <app-booking-information [data]="data()"></app-booking-information>
+            </div>
+
+            <div class="mt-4">
+                <app-booking-passengers [passengers]="data()?.passengers"></app-booking-passengers>
+            </div>
+
+            <div class="mt-4">
+                <app-product-cancellation-policy
+                    [data]="data()?.cancellationPolicies"></app-product-cancellation-policy>
+            </div>
+
+            <div class="mt-4">
+                <app-booking-payment [amountTotal]="data()?.amountTotal"></app-booking-payment>
+            </div>
+        </ng-container>
+    </section>
+</ng-container>

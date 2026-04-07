@@ -1,0 +1,37 @@
+<div class="d-flex flex-column justify-content-end gap-3 w-100 h-100 p-3">
+  <div class="fs-5 fw-bold lh-1 text-center">
+    <app-amount [value]="amount"></app-amount>
+  </div>
+
+  <div class="d-flex justify-content-center align-items-center gap-3" *ngIf="itineraries > 1">
+    <div class="d-flex justify-content-center gap-1 py-1 px-2 bg-dark dark-text bg-opacity-10 dark-border rounded w-50"
+      [pTooltip]="luggages" tooltipPosition="bottom">
+      <span>
+        <img src="https://cdn-icons-png.flaticon.com/128/7928/7928308.png" [width]="15" [height]="15" />
+      </span>
+      <span>
+        <ng-container *ngIf="luggages == 'without luggage'">
+          <img src="assets/icons/status/failure.png" width="15" height="15" />
+        </ng-container>
+
+        <ng-container *ngIf="luggages != 'without luggage'">
+          <img src="assets/icons/status/success.png" width="15" height="15" />
+        </ng-container>
+
+      </span>
+    </div>
+
+    <div
+      class="d-flex justify-content-center align-items-center gap-1 py-1 px-2 bg-dark dark-text bg-opacity-10 dark-border rounded w-50"
+      [pTooltip]="'available_seats' | translate" tooltipPosition="bottom">
+      <span>
+        <img src="https://cdn-icons-png.flaticon.com/128/9243/9243322.png" [width]="15" [height]="15" />
+      </span>
+      <span>
+        x {{availStatus}}
+      </span>
+    </div>
+  </div>
+
+  <ng-content></ng-content>
+</div>

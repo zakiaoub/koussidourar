@@ -1,0 +1,60 @@
+<aside class="py-4 d-flex flex-column justify-content-between h-100">
+    <div>
+        <app-logo [isWhite]="false"></app-logo>
+        <hr class="border-secondary my-5" />
+        <ng-container>
+            <div class="fw-medium opacity-75 text-uppercase fs-80">{{"services" | translate}}</div>
+            <div *ngFor="let link of data.slice(0,5); let i = index" class="my-4">
+                <div role="button" class="d-flex justify-content-between align-items-center p-menuitem-link"
+                    (click)="navigate(link.routerLink)">
+                    <span class="d-flex align-items-center gap-2">
+                        <span class="fs-110">
+                            <i [class]="icons[i]"></i>
+                        </span>
+                        <span class="fs-90 fw-medium">{{link.label | translate}}</span>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+        <hr class="border-secondary my-5" />
+        <ng-container *ngIf="isAuth">
+            <div class="fw-medium opacity-75 text-uppercase fs-80">{{"account" | translate}}</div>
+            <div class="my-4" *ngFor="let item of account">
+                <div role="button" class="d-flex justify-content-between align-items-center p-menuitem-link"
+                    (click)="navigate(item.href)" *ngIf="item.href">
+                    <span class="d-flex align-items-center gap-2">
+                        <span class="fs-110" [ngClass]="{'red-text':item.label === 'logout'}">
+                            <i [class]="item.icon"></i>
+                        </span>
+                        <span class="fs-90 fw-medium">{{item.label | translate}}</span>
+                    </span>
+                </div>
+
+                <div role="button" class="d-flex justify-content-between align-items-center p-menuitem-link"
+                    (click)="logOut()" *ngIf="!item.href">
+                    <span class="d-flex align-items-center gap-2">
+                        <span class="fs-110 red-text">
+                            <i [class]="item.icon"></i>
+                        </span>
+                        <span class="fs-90 fw-medium">{{item.label | translate}}</span>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="!isAuth">
+            <a class="main-bg py-3 rounded text-white d-block text-center" href="login">{{"login" | translate}}</a>
+        </ng-container>
+    </div>
+
+    <div class="lower-bg text-white rounded-3 p-2" *ngIf="isAuth && profileData">
+        <div class="d-flex align-items-end gap-2">
+            <span class="size-40 main-bg text-white fw-medium text-uppercase rounded-circle">
+                {{profileData.full_name.slice(0,1)}}
+            </span>
+            <span class="lh-1">
+                <div class="fw-medium text-capitalize fs-90">{{profileData.full_name}}</div>
+                <div class="opacity-75 fs-80 mt-2">{{profileData.email}}</div>
+            </span>
+        </div>
+    </div>
+</aside>

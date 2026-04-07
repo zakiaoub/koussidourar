@@ -1,0 +1,8 @@
+@for $i from 5 through 800 {
+  @if $i % 5 == 0 {
+    .height-#{$i} {
+      --height: #{$i}px;
+      height: var(--height);
+    }
+  }
+}

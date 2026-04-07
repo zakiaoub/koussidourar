@@ -1,0 +1,6002 @@
+[
+  {
+    "airport": "Kimberley Downs Airport",
+    "region_name": "Kimberley Downs",
+    "country_code": "AU",
+    "iata": "KBD"
+  },
+  {
+    "airport": "Boalang Airport",
+    "region_name": "Boalang-Celebes Island",
+    "country_code": "ID",
+    "iata": "BJG"
+  },
+  {
+    "airport": "Bisha Airport",
+    "region_name": null,
+    "country_code": "SA",
+    "iata": "BHH"
+  },
+  {
+    "airport": "Chicago Executive Airport",
+    "region_name": "Chicago/Prospect Heights/Wheeling",
+    "country_code": "US",
+    "iata": "PWK"
+  },
+  {
+    "airport": "Alta Airport",
+    "region_name": "Alta",
+    "country_code": "NO",
+    "iata": "ALF"
+  },
+  {
+    "airport": "Paso Robles Municipal Airport",
+    "region_name": "Paso Robles",
+    "country_code": "US",
+    "iata": "PRB"
+  },
+  {
+    "airport": "San Matías Airport",
+    "region_name": "San Matías",
+    "country_code": "BO",
+    "iata": "MQK"
+  },
+  {
+    "airport": "Palonegro Airport",
+    "region_name": "Bucaramanga",
+    "country_code": "CO",
+    "iata": "BGA"
+  },
+  {
+    "airport": "Shaikh Zaid Airport",
+    "region_name": "Rahim Yar Khan",
+    "country_code": "PK",
+    "iata": "RYK"
+  },
+  {
+    "airport": "Des Moines International Airport",
+    "region_name": "Des Moines",
+    "country_code": "US",
+    "iata": "DSM"
+  },
+  {
+    "airport": "Mc Entire Joint National Guard Base",
+    "region_name": "Eastover",
+    "country_code": "US",
+    "iata": "MMT"
+  },
+  {
+    "airport": "Suwon Airport",
+    "region_name": null,
+    "country_code": "KR",
+    "iata": "SWU"
+  },
+  {
+    "airport": "Show Low Regional Airport",
+    "region_name": "Show Low",
+    "country_code": "US",
+    "iata": "SOW"
+  },
+  {
+    "airport": "Puerto Nare Airport",
+    "region_name": "Armenia",
+    "country_code": "CO",
+    "iata": "NAR"
+  },
+  {
+    "airport": "Holbrook Municipal Airport",
+    "region_name": "Holbrook",
+    "country_code": "US",
+    "iata": "HBK"
+  },
+  {
+    "airport": "Argyle Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "GYL"
+  },
+  {
+    "airport": "Monbetsu Airport",
+    "region_name": "Monbetsu",
+    "country_code": "JP",
+    "iata": "MBE"
+  },
+  {
+    "airport": "Guillermo León Valencia Airport",
+    "region_name": "Popayán",
+    "country_code": "CO",
+    "iata": "PPN"
+  },
+  {
+    "airport": "Namrole Airport",
+    "region_name": "Namrole-Buru Island",
+    "country_code": "ID",
+    "iata": "NRE"
+  },
+  {
+    "airport": "Tambacounda Airport",
+    "region_name": "Tambacounda",
+    "country_code": "SN",
+    "iata": "TUD"
+  },
+  {
+    "airport": "Grand Junction Regional Airport",
+    "region_name": "Grand Junction",
+    "country_code": "US",
+    "iata": "GJT"
+  },
+  {
+    "airport": "Itaqui Airport",
+    "region_name": "Itaqui",
+    "country_code": "BR",
+    "iata": "ITQ"
+  },
+  {
+    "airport": "Land's End Airport",
+    "region_name": "Land's End",
+    "country_code": "GB",
+    "iata": "LEQ"
+  },
+  {
+    "airport": "Bella Union Airport",
+    "region_name": "Bella Union",
+    "country_code": "UY",
+    "iata": "BUV"
+  },
+  {
+    "airport": "Alexandria International Airport",
+    "region_name": "Alexandria",
+    "country_code": "US",
+    "iata": "AEX"
+  },
+  {
+    "airport": "Dnipropetrovsk International Airport",
+    "region_name": "Dnipropetrovsk",
+    "country_code": "UA",
+    "iata": "DNK"
+  },
+  {
+    "airport": "Ileg Airport",
+    "region_name": "Ileg",
+    "country_code": "PG",
+    "iata": "ILX"
+  },
+  {
+    "airport": "Mainoru Airstrip",
+    "region_name": "Mainoru",
+    "country_code": "AU",
+    "iata": "MIZ"
+  },
+  {
+    "airport": "Nyingchi Airport",
+    "region_name": "Nyingchi",
+    "country_code": "CN",
+    "iata": "LZY"
+  },
+  {
+    "airport": "Minami-Daito Airport",
+    "region_name": "Minamidaitō",
+    "country_code": "JP",
+    "iata": "MMD"
+  },
+  {
+    "airport": "Alverca Air Base",
+    "region_name": "Vila Franca de Xira",
+    "country_code": "PT",
+    "iata": "AVR"
+  },
+  {
+    "airport": "Obano Airport",
+    "region_name": "Obano-Papua Island",
+    "country_code": "ID",
+    "iata": "OBD"
+  },
+  {
+    "airport": "Chitina Airport",
+    "region_name": "Chitina",
+    "country_code": "US",
+    "iata": "CXC"
+  },
+  {
+    "airport": "Siargao Airport",
+    "region_name": "Del Carmen",
+    "country_code": "PH",
+    "iata": "IAO"
+  },
+  {
+    "airport": "Fazenda Tucunaré Airport",
+    "region_name": "Sapezal",
+    "country_code": "BR",
+    "iata": "AZL"
+  },
+  {
+    "airport": "Sary Su Airport",
+    "region_name": "Zhayrem",
+    "country_code": "KZ",
+    "iata": "HRC"
+  },
+  {
+    "airport": "Nyurba Airport",
+    "region_name": "Nyurba",
+    "country_code": "RU",
+    "iata": "NYR"
+  },
+  {
+    "airport": "Silangit Airport",
+    "region_name": "Siborong-Borong",
+    "country_code": "ID",
+    "iata": "DTB"
+  },
+  {
+    "airport": "Abeid Amani Karume International Airport",
+    "region_name": "Zanzibar",
+    "country_code": "TZ",
+    "iata": "ZNZ"
+  },
+  {
+    "airport": "Battambang Airport",
+    "region_name": "Battambang",
+    "country_code": "KH",
+    "iata": "BBM"
+  },
+  {
+    "airport": "Playón Chico Airport",
+    "region_name": "Playón Chico",
+    "country_code": "PA",
+    "iata": "PYC"
+  },
+  {
+    "airport": "Pocatello Regional Airport",
+    "region_name": "Pocatello",
+    "country_code": "US",
+    "iata": "PIH"
+  },
+  {
+    "airport": "Elazığ Airport",
+    "region_name": "Elazığ",
+    "country_code": "TR",
+    "iata": "EZS"
+  },
+  {
+    "airport": "Rourkela Airport",
+    "region_name": null,
+    "country_code": "IN",
+    "iata": "RRK"
+  },
+  {
+    "airport": "Castlereagh Lake Seaplane Base",
+    "region_name": "Hatton",
+    "country_code": "LK",
+    "iata": "NUF"
+  },
+  {
+    "airport": "Kavanayen Airport",
+    "region_name": null,
+    "country_code": "VE",
+    "iata": "KAV"
+  },
+  {
+    "airport": "Beale Air Force Base",
+    "region_name": "Marysville",
+    "country_code": "US",
+    "iata": "BAB"
+  },
+  {
+    "airport": "Porto Seguro Airport",
+    "region_name": "Porto Seguro",
+    "country_code": "BR",
+    "iata": "BPS"
+  },
+  {
+    "airport": "Gautam Buddha Airport",
+    "region_name": "Bhairawa",
+    "country_code": "NP",
+    "iata": "BWA"
+  },
+  {
+    "airport": "Innsbruck Airport",
+    "region_name": "Innsbruck",
+    "country_code": "AT",
+    "iata": "INN"
+  },
+  {
+    "airport": "Puerto Princesa Airport",
+    "region_name": "Puerto Princesa City",
+    "country_code": "PH",
+    "iata": "PPS"
+  },
+  {
+    "airport": "Bedourie Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "BEU"
+  },
+  {
+    "airport": "Tenente Lund Pressoto Airport",
+    "region_name": "Franca",
+    "country_code": "BR",
+    "iata": "FRC"
+  },
+  {
+    "airport": "Forlì Airport",
+    "region_name": "Forlì (FC)",
+    "country_code": "IT",
+    "iata": "FRL"
+  },
+  {
+    "airport": "Valladolid Airport",
+    "region_name": "Valladolid",
+    "country_code": "ES",
+    "iata": "VLL"
+  },
+  {
+    "airport": "Volta Grande Airport",
+    "region_name": "Conceição Das Alagoas",
+    "country_code": "BR",
+    "iata": "0"
+  },
+  {
+    "airport": "Elorza Airport",
+    "region_name": null,
+    "country_code": "VE",
+    "iata": "EOZ"
+  },
+  {
+    "airport": "Obock Airport",
+    "region_name": "Obock",
+    "country_code": "DJ",
+    "iata": "OBC"
+  },
+  {
+    "airport": "Barnstable Municipal Boardman Polando Field",
+    "region_name": "Hyannis",
+    "country_code": "US",
+    "iata": "HYA"
+  },
+  {
+    "airport": "Kalemie Airport",
+    "region_name": null,
+    "country_code": "CD",
+    "iata": "FMI"
+  },
+  {
+    "airport": "Rodríguez Ballón International Airport",
+    "region_name": "Arequipa",
+    "country_code": "PE",
+    "iata": "AQP"
+  },
+  {
+    "airport": "Hector International Airport",
+    "region_name": "Fargo",
+    "country_code": "US",
+    "iata": "FAR"
+  },
+  {
+    "airport": "Mahshahr Airport",
+    "region_name": null,
+    "country_code": "IR",
+    "iata": "MRX"
+  },
+  {
+    "airport": "Entrance Island Seaplane Base",
+    "region_name": "Entrance Island",
+    "country_code": "US",
+    "iata": "HBH"
+  },
+  {
+    "airport": "Tuticorin Airport",
+    "region_name": "Thoothukudi",
+    "country_code": "IN",
+    "iata": "TCR"
+  },
+  {
+    "airport": "Bijie Feixiong Airport",
+    "region_name": "Bijie",
+    "country_code": "CN",
+    "iata": "BFJ"
+  },
+  {
+    "airport": "Osvaldo Vieira International Airport",
+    "region_name": "Bissau",
+    "country_code": "GW",
+    "iata": "OXB"
+  },
+  {
+    "airport": "Pacific City State Airport",
+    "region_name": "Pacific City",
+    "country_code": "US",
+    "iata": "PFC"
+  },
+  {
+    "airport": "Hyvinkää Airfield",
+    "region_name": "Hyvinkää",
+    "country_code": "FI",
+    "iata": "HYV"
+  },
+  {
+    "airport": "Qamdo Bangda Airport",
+    "region_name": "Bangda",
+    "country_code": "CN",
+    "iata": "BPX"
+  },
+  {
+    "airport": "Dillon's Bay Airport",
+    "region_name": "Dillon's Bay",
+    "country_code": "VU",
+    "iata": "DLY"
+  },
+  {
+    "airport": "Winisk Airport",
+    "region_name": "Winisk",
+    "country_code": "CA",
+    "iata": "YWN"
+  },
+  {
+    "airport": "Canarana Airport",
+    "region_name": "Canarana",
+    "country_code": "BR",
+    "iata": "CQA"
+  },
+  {
+    "airport": "Dr.Juan C. Angara Airport",
+    "region_name": "Baler",
+    "country_code": "PH",
+    "iata": "BQA"
+  },
+  {
+    "airport": "Bowen Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "ZBO"
+  },
+  {
+    "airport": "Pulau Panjang Airport",
+    "region_name": "Jakarta",
+    "country_code": "ID",
+    "iata": "PPJ"
+  },
+  {
+    "airport": "Hale County Airport",
+    "region_name": "Plainview",
+    "country_code": "US",
+    "iata": "PVW"
+  },
+  {
+    "airport": "Minden-Tahoe Airport",
+    "region_name": "Minden",
+    "country_code": "US",
+    "iata": "MEV"
+  },
+  {
+    "airport": "Ipiranga Airport",
+    "region_name": "Santo Antônio Do Içá",
+    "country_code": "BR",
+    "iata": "IPG"
+  },
+  {
+    "airport": "Coral Harbour Airport",
+    "region_name": "Coral Harbour",
+    "country_code": "CA",
+    "iata": "YZS"
+  },
+  {
+    "airport": "Toledo Airport",
+    "region_name": "Toledo",
+    "country_code": "BR",
+    "iata": "TOW"
+  },
+  {
+    "airport": "Velásquez Airport",
+    "region_name": "Puerto Boyacá",
+    "country_code": "CO",
+    "iata": "PYA"
+  },
+  {
+    "airport": "Agostinho Neto Airport",
+    "region_name": "Ponta do Sol",
+    "country_code": "CV",
+    "iata": "NTO"
+  },
+  {
+    "airport": "Hudsons Hope Airport",
+    "region_name": "Hudson's Hope",
+    "country_code": "CA",
+    "iata": "YNH"
+  },
+  {
+    "airport": "Thorne Bay Seaplane Base",
+    "region_name": "Thorne Bay",
+    "country_code": "US",
+    "iata": "KTB"
+  },
+  {
+    "airport": "Gobernador Horacio Guzman International Airport",
+    "region_name": "San Salvador de Jujuy",
+    "country_code": "AR",
+    "iata": "JUJ"
+  },
+  {
+    "airport": "Fresno Chandler Executive Airport",
+    "region_name": "Fresno",
+    "country_code": "US",
+    "iata": "FCH"
+  },
+  {
+    "airport": "Santa Bárbara Airport",
+    "region_name": "Iscuandé",
+    "country_code": "CO",
+    "iata": "ISD"
+  },
+  {
+    "airport": "Kosipe Airport",
+    "region_name": "Kosipe Mission",
+    "country_code": "PG",
+    "iata": "KSP"
+  },
+  {
+    "airport": "Gladstone Airport",
+    "region_name": "Gladstone",
+    "country_code": "AU",
+    "iata": "GLT"
+  },
+  {
+    "airport": "Sihanoukville International Airport",
+    "region_name": "Sihanukville",
+    "country_code": "KH",
+    "iata": "KOS"
+  },
+  {
+    "airport": "Telupid Airport",
+    "region_name": "Telupid",
+    "country_code": "MY",
+    "iata": "TEL"
+  },
+  {
+    "airport": "Linz Hörsching Airport",
+    "region_name": "Linz",
+    "country_code": "AT",
+    "iata": "LNZ"
+  },
+  {
+    "airport": "Hannover Airport",
+    "region_name": "Hannover",
+    "country_code": "DE",
+    "iata": "HAJ"
+  },
+  {
+    "airport": "Kwethluk Airport",
+    "region_name": "Kwethluk",
+    "country_code": "US",
+    "iata": "KWT"
+  },
+  {
+    "airport": "Paderborn Lippstadt Airport",
+    "region_name": "Paderborn",
+    "country_code": "DE",
+    "iata": "PAD"
+  },
+  {
+    "airport": "Wuhan Tianhe International Airport",
+    "region_name": "Wuhan",
+    "country_code": "CN",
+    "iata": "WUH"
+  },
+  {
+    "airport": "Lyons-Rice County Municipal Airport",
+    "region_name": "Lyons",
+    "country_code": "US",
+    "iata": "LYO"
+  },
+  {
+    "airport": "Maré Airport",
+    "region_name": "Maré",
+    "country_code": "NC",
+    "iata": "MEE"
+  },
+  {
+    "airport": "Çiğli Airport",
+    "region_name": null,
+    "country_code": "TR",
+    "iata": "IGL"
+  },
+  {
+    "airport": "Tyler Pounds Regional Airport",
+    "region_name": "Tyler",
+    "country_code": "US",
+    "iata": "TYR"
+  },
+  {
+    "airport": "Maxson Airfield",
+    "region_name": "Alexandria Bay",
+    "country_code": "US",
+    "iata": "AXB"
+  },
+  {
+    "airport": "Inhambane Airport",
+    "region_name": "Inhambabe",
+    "country_code": "MZ",
+    "iata": "INH"
+  },
+  {
+    "airport": "Comox Airport",
+    "region_name": "Comox",
+    "country_code": "CA",
+    "iata": "YQQ"
+  },
+  {
+    "airport": "Formiga Airport",
+    "region_name": "Formiga",
+    "country_code": "BR",
+    "iata": "0"
+  },
+  {
+    "airport": "Belgaum Airport",
+    "region_name": "Belgaum",
+    "country_code": "IN",
+    "iata": "IXG"
+  },
+  {
+    "airport": "Paratebueno Airport",
+    "region_name": "Paratebueno",
+    "country_code": "CO",
+    "iata": "EUO"
+  },
+  {
+    "airport": "Lahr Airport",
+    "region_name": null,
+    "country_code": "DE",
+    "iata": "LHA"
+  },
+  {
+    "airport": "Jeju International Airport",
+    "region_name": "Jeju City",
+    "country_code": "KR",
+    "iata": "CJU"
+  },
+  {
+    "airport": "Heringsdorf Airport",
+    "region_name": "Heringsdorf",
+    "country_code": "DE",
+    "iata": "HDF"
+  },
+  {
+    "airport": "Bundi Airport",
+    "region_name": "Bundi",
+    "country_code": "PG",
+    "iata": "BNT"
+  },
+  {
+    "airport": "Bloodvein River Airport",
+    "region_name": "Bloodvein River",
+    "country_code": "CA",
+    "iata": "YDV"
+  },
+  {
+    "airport": "Usino Airport",
+    "region_name": "Usino",
+    "country_code": "PG",
+    "iata": "USO"
+  },
+  {
+    "airport": "Bykovo Airport",
+    "region_name": "Moscow",
+    "country_code": "RU",
+    "iata": "BKA"
+  },
+  {
+    "airport": "Baker City Municipal Airport",
+    "region_name": "Baker City",
+    "country_code": "US",
+    "iata": "BKE"
+  },
+  {
+    "airport": "Dubai Creek SPB",
+    "region_name": "Dubai",
+    "country_code": "AE",
+    "iata": "DCG"
+  },
+  {
+    "airport": "Óbidos Airport",
+    "region_name": "Óbidos",
+    "country_code": "BR",
+    "iata": "OBI"
+  },
+  {
+    "airport": "São Filipe Airport",
+    "region_name": "São Filipe",
+    "country_code": "CV",
+    "iata": "SFL"
+  },
+  {
+    "airport": "False Pass Airport",
+    "region_name": "False Pass",
+    "country_code": "US",
+    "iata": "KFP"
+  },
+  {
+    "airport": "Warukin Airport",
+    "region_name": "Tanta-Tabalong-Borneo Island",
+    "country_code": "ID",
+    "iata": "TJG"
+  },
+  {
+    "airport": "Bykovo Airport",
+    "region_name": "Moscow",
+    "country_code": "RU",
+    "iata": "BKA"
+  },
+  {
+    "airport": "Hammerfest Airport",
+    "region_name": "Hammerfest",
+    "country_code": "NO",
+    "iata": "HFT"
+  },
+  {
+    "airport": "Hydaburg Seaplane Base",
+    "region_name": "Hydaburg",
+    "country_code": "US",
+    "iata": "HYG"
+  },
+  {
+    "airport": "Lunyuk Airport",
+    "region_name": "Lunyuk-Simbawa Island",
+    "country_code": "ID",
+    "iata": "LYK"
+  },
+  {
+    "airport": "Anthony Lagoon Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "AYL"
+  },
+  {
+    "airport": "Ati Airport",
+    "region_name": "Ati",
+    "country_code": "TD",
+    "iata": "ATV"
+  },
+  {
+    "airport": "Ouango Fitini Airport",
+    "region_name": "Ouango Fitini",
+    "country_code": "CI",
+    "iata": "OFI"
+  },
+  {
+    "airport": "Connemara Regional Airport",
+    "region_name": "Inverin",
+    "country_code": "IE",
+    "iata": "NNR"
+  },
+  {
+    "airport": "Shiraz Shahid Dastghaib International Airport",
+    "region_name": "Shiraz",
+    "country_code": "IR",
+    "iata": "SYZ"
+  },
+  {
+    "airport": "Katowice International Airport",
+    "region_name": "Katowice",
+    "country_code": "PL",
+    "iata": "KTW"
+  },
+  {
+    "airport": "Brewster Field",
+    "region_name": "Holdrege",
+    "country_code": "US",
+    "iata": "HDE"
+  },
+  {
+    "airport": "Fazenda Vassoural Airport",
+    "region_name": "Pontal",
+    "country_code": "BR",
+    "iata": "0"
+  },
+  {
+    "airport": "Jack Northrop Field Hawthorne Municipal Airport",
+    "region_name": "Hawthorne",
+    "country_code": "US",
+    "iata": "HHR"
+  },
+  {
+    "airport": "Myrtle Beach International Airport",
+    "region_name": "Myrtle Beach",
+    "country_code": "US",
+    "iata": "MYR"
+  },
+  {
+    "airport": "Barinas Airport",
+    "region_name": "Barinas",
+    "country_code": "VE",
+    "iata": "BNS"
+  },
+  {
+    "airport": "Phu Cat Airport",
+    "region_name": "Quy Nohn",
+    "country_code": "VN",
+    "iata": "UIH"
+  },
+  {
+    "airport": "Lampang Airport",
+    "region_name": null,
+    "country_code": "TH",
+    "iata": "LPT"
+  },
+  {
+    "airport": "Biaugunu Airport",
+    "region_name": "Saqani, Cakaudrove",
+    "country_code": "FJ",
+    "iata": "AQS"
+  },
+  {
+    "airport": "Luena Airport",
+    "region_name": "Luena",
+    "country_code": "AO",
+    "iata": "LUO"
+  },
+  {
+    "airport": "Caen-Carpiquet Airport",
+    "region_name": "Caen/Carpiquet",
+    "country_code": "FR",
+    "iata": "CFR"
+  },
+  {
+    "airport": "Bartow Municipal Airport",
+    "region_name": "Bartow",
+    "country_code": "US",
+    "iata": "BOW"
+  },
+  {
+    "airport": "Oscoda Wurtsmith Airport",
+    "region_name": "Oscoda",
+    "country_code": "US",
+    "iata": "OSC"
+  },
+  {
+    "airport": "Homer Airport",
+    "region_name": "Homer",
+    "country_code": "US",
+    "iata": "HOM"
+  },
+  {
+    "airport": "Bartlesville Municipal Airport",
+    "region_name": "Bartlesville",
+    "country_code": "US",
+    "iata": "BVO"
+  },
+  {
+    "airport": "Kneeland Airport",
+    "region_name": "Eureka",
+    "country_code": "US",
+    "iata": "NLN"
+  },
+  {
+    "airport": "Nutwood Downs Airport",
+    "region_name": "Nutwood Downs",
+    "country_code": "AU",
+    "iata": "UTD"
+  },
+  {
+    "airport": "Mount Hagen Kagamuga Airport",
+    "region_name": "Mount Hagen",
+    "country_code": "PG",
+    "iata": "HGU"
+  },
+  {
+    "airport": "Tezpur Airport",
+    "region_name": null,
+    "country_code": "IN",
+    "iata": "TEZ"
+  },
+  {
+    "airport": "Greenway Sound Seaplane Base",
+    "region_name": "Broughton Island",
+    "country_code": "CA",
+    "iata": "YGN"
+  },
+  {
+    "airport": "Kratie Airport",
+    "region_name": "Kratie",
+    "country_code": "KH",
+    "iata": "KTI"
+  },
+  {
+    "airport": "Tunoshna Airport",
+    "region_name": null,
+    "country_code": "RU",
+    "iata": "IAR"
+  },
+  {
+    "airport": "Francis S Gabreski Airport",
+    "region_name": "Westhampton Beach",
+    "country_code": "US",
+    "iata": "FOK"
+  },
+  {
+    "airport": "Po Airport",
+    "region_name": "Po",
+    "country_code": "BF",
+    "iata": "PUP"
+  },
+  {
+    "airport": "Marromeu Airport",
+    "region_name": "Marromeu",
+    "country_code": "MZ",
+    "iata": "RRM"
+  },
+  {
+    "airport": "Mosquera Airport",
+    "region_name": "Mosquera",
+    "country_code": "CO",
+    "iata": "MQR"
+  },
+  {
+    "airport": "Eveleth Virginia Municipal Airport",
+    "region_name": "Eveleth",
+    "country_code": "US",
+    "iata": "EVM"
+  },
+  {
+    "airport": "Jixi Xingkaihu Airport",
+    "region_name": "Jixi",
+    "country_code": "CN",
+    "iata": "JXA"
+  },
+  {
+    "airport": "Kasungu Airport",
+    "region_name": "Kasungu",
+    "country_code": "MW",
+    "iata": "KBQ"
+  },
+  {
+    "airport": "Charles de Gaulle International Airport",
+    "region_name": "Paris",
+    "country_code": "FR",
+    "iata": "CDG"
+  },
+  {
+    "airport": "Oamaru Airport",
+    "region_name": null,
+    "country_code": "NZ",
+    "iata": "OAM"
+  },
+  {
+    "airport": "Rurenabaque Airport",
+    "region_name": "Rurenabaque",
+    "country_code": "BO",
+    "iata": "RBQ"
+  },
+  {
+    "airport": "Zabré Airport",
+    "region_name": "Zabré",
+    "country_code": "BF",
+    "iata": "XZA"
+  },
+  {
+    "airport": "L'Aquila–Preturo Airport",
+    "region_name": "L'Aquila",
+    "country_code": "IT",
+    "iata": "QAQ"
+  },
+  {
+    "airport": "Jam Airport",
+    "region_name": "Kangan",
+    "country_code": "IR",
+    "iata": "KNR"
+  },
+  {
+    "airport": "Aviano Air Base",
+    "region_name": "Aviano (PN)",
+    "country_code": "IT",
+    "iata": "AVB"
+  },
+  {
+    "airport": "Stawell Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "SWC"
+  },
+  {
+    "airport": "Kao Airport",
+    "region_name": "Kao-Celebes Island",
+    "country_code": "ID",
+    "iata": "KAZ"
+  },
+  {
+    "airport": "Cable Airport",
+    "region_name": "Upland",
+    "country_code": "US",
+    "iata": "CCB"
+  },
+  {
+    "airport": "Margaret River Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "MQZ"
+  },
+  {
+    "airport": "Wonderboom Airport",
+    "region_name": "Pretoria",
+    "country_code": "ZA",
+    "iata": "PRY"
+  },
+  {
+    "airport": "Praia International Airport",
+    "region_name": "Praia",
+    "country_code": "CV",
+    "iata": "RAI"
+  },
+  {
+    "airport": "Union Island International Airport",
+    "region_name": "Union Island",
+    "country_code": "VC",
+    "iata": "UNI"
+  },
+  {
+    "airport": "Jerusalem Airport",
+    "region_name": "Jerusalem",
+    "country_code": "PS",
+    "iata": "JRS"
+  },
+  {
+    "airport": "Queenstown Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "UEE"
+  },
+  {
+    "airport": "Newcastle Airport",
+    "region_name": "Williamtown",
+    "country_code": "AU",
+    "iata": "NTL"
+  },
+  {
+    "airport": "Sept-Îles Airport",
+    "region_name": "Sept-Îles",
+    "country_code": "CA",
+    "iata": "YZV"
+  },
+  {
+    "airport": "Chena Hot Springs Airport",
+    "region_name": "Chena Hot Springs",
+    "country_code": "US",
+    "iata": "CEX"
+  },
+  {
+    "airport": "Nain Airport",
+    "region_name": "Nain",
+    "country_code": "CA",
+    "iata": "YDP"
+  },
+  {
+    "airport": "Redcliffe Airport",
+    "region_name": "Redcliffe",
+    "country_code": "VU",
+    "iata": "RCL"
+  },
+  {
+    "airport": "Phu Quoc International Airport",
+    "region_name": "Phu Quoc Island",
+    "country_code": "VN",
+    "iata": "PQC"
+  },
+  {
+    "airport": "Walcha Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "WLC"
+  },
+  {
+    "airport": "Gardo Airport",
+    "region_name": "Gardo",
+    "country_code": "SO",
+    "iata": "GSR"
+  },
+  {
+    "airport": "Bandeirantes Airport",
+    "region_name": "Bandeirantes",
+    "country_code": "BR",
+    "iata": "0"
+  },
+  {
+    "airport": "Alpine Airstrip",
+    "region_name": "Deadhorse",
+    "country_code": "US",
+    "iata": "DQH"
+  },
+  {
+    "airport": "Idre Airport",
+    "region_name": "Idre",
+    "country_code": "SE",
+    "iata": "IDB"
+  },
+  {
+    "airport": "Timbedra Airport",
+    "region_name": "Timbedra",
+    "country_code": "MR",
+    "iata": "TMD"
+  },
+  {
+    "airport": "Minaçu Airport",
+    "region_name": "Minaçu",
+    "country_code": "BR",
+    "iata": "MQH"
+  },
+  {
+    "airport": "Honiara International Airport",
+    "region_name": "Honiara",
+    "country_code": "SB",
+    "iata": "HIR"
+  },
+  {
+    "airport": "Senai International Airport",
+    "region_name": "Johor Bahru",
+    "country_code": "MY",
+    "iata": "JHB"
+  },
+  {
+    "airport": "Pathankot Airport",
+    "region_name": "Pathankot",
+    "country_code": "IN",
+    "iata": "IXP"
+  },
+  {
+    "airport": "Nzérékoré Airport",
+    "region_name": "Nzérékoré",
+    "country_code": "GN",
+    "iata": "NZE"
+  },
+  {
+    "airport": "San Andros Airport",
+    "region_name": "Andros Island",
+    "country_code": "BS",
+    "iata": "SAQ"
+  },
+  {
+    "airport": "Port Hedland International Airport",
+    "region_name": "Port Hedland",
+    "country_code": "AU",
+    "iata": "PHE"
+  },
+  {
+    "airport": "Fort McMurray / Mildred Lake Airport",
+    "region_name": "Fort McMurray",
+    "country_code": "CA",
+    "iata": "NML"
+  },
+  {
+    "airport": "Matsuyama Airport",
+    "region_name": "Matsuyama",
+    "country_code": "JP",
+    "iata": "MYJ"
+  },
+  {
+    "airport": "Queen Beatrix International Airport",
+    "region_name": "Oranjestad",
+    "country_code": "AW",
+    "iata": "AUA"
+  },
+  {
+    "airport": "Milingimbi Airport",
+    "region_name": "Milingimbi Island",
+    "country_code": "AU",
+    "iata": "MGT"
+  },
+  {
+    "airport": "Inverell Airport",
+    "region_name": "Inverell",
+    "country_code": "AU",
+    "iata": "IVR"
+  },
+  {
+    "airport": "Area De Material Airport",
+    "region_name": "Rio Cuarto",
+    "country_code": "AR",
+    "iata": "RCU"
+  },
+  {
+    "airport": "Modesto City Co-Harry Sham Field",
+    "region_name": "Modesto",
+    "country_code": "US",
+    "iata": "MOD"
+  },
+  {
+    "airport": "Kaneohe Bay MCAS (Marion E. Carl Field) Airport",
+    "region_name": "Kaneohe",
+    "country_code": "US",
+    "iata": "NGF"
+  },
+  {
+    "airport": "Wasum Airport",
+    "region_name": "Wasum",
+    "country_code": "PG",
+    "iata": "WUM"
+  },
+  {
+    "airport": "Ileg Airport",
+    "region_name": "Ileg",
+    "country_code": "PG",
+    "iata": "ILX"
+  },
+  {
+    "airport": "Mutiara Airport",
+    "region_name": "Palu-Celebes Island",
+    "country_code": "ID",
+    "iata": "PLW"
+  },
+  {
+    "airport": "Inuvik Mike Zubko Airport",
+    "region_name": "Inuvik",
+    "country_code": "CA",
+    "iata": "YEV"
+  },
+  {
+    "airport": "São Félix do Araguaia Airport",
+    "region_name": "São Félix Do Araguaia",
+    "country_code": "BR",
+    "iata": "SXO"
+  },
+  {
+    "airport": "Gore Bay Manitoulin Airport",
+    "region_name": "Gore Bay",
+    "country_code": "CA",
+    "iata": "YZE"
+  },
+  {
+    "airport": "Devils Lake Regional Airport",
+    "region_name": "Devils Lake",
+    "country_code": "US",
+    "iata": "DVL"
+  },
+  {
+    "airport": "Tangalooma Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "TAN"
+  },
+  {
+    "airport": "Soewondo Air Force Base",
+    "region_name": "Medan-Sumatra Island",
+    "country_code": "ID",
+    "iata": "MES"
+  },
+  {
+    "airport": "Gansner Field",
+    "region_name": "Quincy",
+    "country_code": "US",
+    "iata": "GNF"
+  },
+  {
+    "airport": "Eilat Airport",
+    "region_name": "Eilat",
+    "country_code": "IL",
+    "iata": "ETH"
+  },
+  {
+    "airport": "Bezmer Air Base",
+    "region_name": "Yambol",
+    "country_code": "BG",
+    "iata": "JAM"
+  },
+  {
+    "airport": "Franco Bianco Airport",
+    "region_name": "Cerro Sombrero",
+    "country_code": "CL",
+    "iata": "SMB"
+  },
+  {
+    "airport": "Dumatumbun Airport",
+    "region_name": "Langgur-Seram Island",
+    "country_code": "ID",
+    "iata": "LUV"
+  },
+  {
+    "airport": "Opinaca Aerodrome",
+    "region_name": "Éléonore Mine",
+    "country_code": "CA",
+    "iata": "YOI"
+  },
+  {
+    "airport": "Bournemouth Airport",
+    "region_name": "Bournemouth",
+    "country_code": "GB",
+    "iata": "BOH"
+  },
+  {
+    "airport": "Monbetsu Airport",
+    "region_name": "Monbetsu",
+    "country_code": "JP",
+    "iata": "MBE"
+  },
+  {
+    "airport": "James M Cox Dayton International Airport",
+    "region_name": "Dayton",
+    "country_code": "US",
+    "iata": "DAY"
+  },
+  {
+    "airport": "Fuerteventura Airport",
+    "region_name": "Fuerteventura Island",
+    "country_code": "ES",
+    "iata": "FUE"
+  },
+  {
+    "airport": "Arica Airport",
+    "region_name": "Arica",
+    "country_code": "CO",
+    "iata": "ACM"
+  },
+  {
+    "airport": "General WM J Fox Airfield",
+    "region_name": "Lancaster",
+    "country_code": "US",
+    "iata": "WJF"
+  },
+  {
+    "airport": "Gurupi Airport",
+    "region_name": "Gurupi",
+    "country_code": "BR",
+    "iata": "GRP"
+  },
+  {
+    "airport": "Anshan Air Base",
+    "region_name": "Anshan",
+    "country_code": "CN",
+    "iata": "AOG"
+  },
+  {
+    "airport": "Matamata Glider Airport",
+    "region_name": null,
+    "country_code": "NZ",
+    "iata": "MTA"
+  },
+  {
+    "airport": "Berz-Macomb Airport",
+    "region_name": null,
+    "country_code": "US",
+    "iata": "UIZ"
+  },
+  {
+    "airport": "A Coruña Airport",
+    "region_name": "Culleredo",
+    "country_code": "ES",
+    "iata": "LCG"
+  },
+  {
+    "airport": "Ajaccio-Napoléon Bonaparte Airport",
+    "region_name": "Ajaccio/Napoléon Bonaparte",
+    "country_code": "FR",
+    "iata": "AJA"
+  },
+  {
+    "airport": "Chaparral Airport",
+    "region_name": "Chaparral",
+    "country_code": "CO",
+    "iata": "CPL"
+  },
+  {
+    "airport": "Burgas Airport",
+    "region_name": "Burgas",
+    "country_code": "BG",
+    "iata": "BOJ"
+  },
+  {
+    "airport": "Deputatskiy Airport",
+    "region_name": "Deputatskiy",
+    "country_code": "RU",
+    "iata": "DPT"
+  },
+  {
+    "airport": "Guthrie-Edmond Regional Airport",
+    "region_name": "Guthrie",
+    "country_code": "US",
+    "iata": "GOK"
+  },
+  {
+    "airport": "Point Baker Seaplane Base",
+    "region_name": "Point Baker",
+    "country_code": "US",
+    "iata": "KPB"
+  },
+  {
+    "airport": "Nondalton Airport",
+    "region_name": "Nondalton",
+    "country_code": "US",
+    "iata": "NNL"
+  },
+  {
+    "airport": "Tok Junction Airport",
+    "region_name": "Tok",
+    "country_code": "US",
+    "iata": "TKJ"
+  },
+  {
+    "airport": "Minangkabau International Airport",
+    "region_name": "Ketaping/Padang - Sumatra Island",
+    "country_code": "ID",
+    "iata": "PDG"
+  },
+  {
+    "airport": "Nyurba Airport",
+    "region_name": "Nyurba",
+    "country_code": "RU",
+    "iata": "NYR"
+  },
+  {
+    "airport": "Cabo 1° Juan Román Airport",
+    "region_name": "Puerto Aysen",
+    "country_code": "CL",
+    "iata": "WPA"
+  },
+  {
+    "airport": "Riga International Airport",
+    "region_name": "Riga",
+    "country_code": "LV",
+    "iata": "RIX"
+  },
+  {
+    "airport": "Pukarua Airport",
+    "region_name": "Pukarua",
+    "country_code": "PF",
+    "iata": "PUK"
+  },
+  {
+    "airport": "Luxor International Airport",
+    "region_name": "Luxor",
+    "country_code": "EG",
+    "iata": "LXR"
+  },
+  {
+    "airport": "Chautauqua County-Dunkirk Airport",
+    "region_name": "Dunkirk",
+    "country_code": "US",
+    "iata": "DKK"
+  },
+  {
+    "airport": "Huron Regional Airport",
+    "region_name": "Huron",
+    "country_code": "US",
+    "iata": "HON"
+  },
+  {
+    "airport": "Fort Albany Airport",
+    "region_name": "Fort Albany",
+    "country_code": "CA",
+    "iata": "YFA"
+  },
+  {
+    "airport": "Kitsissuarsuit Heliport",
+    "region_name": "Kitsissuarsuit",
+    "country_code": "GL",
+    "iata": "QJE"
+  },
+  {
+    "airport": "Fazenda Palmital Airport",
+    "region_name": "Morro Agudo",
+    "country_code": "BR",
+    "iata": "0"
+  },
+  {
+    "airport": "Kenmore Air Harbor Inc Seaplane Base",
+    "region_name": "Kenmore",
+    "country_code": "US",
+    "iata": "KEH"
+  },
+  {
+    "airport": "Avenger Field",
+    "region_name": "Sweetwater",
+    "country_code": "US",
+    "iata": "SWW"
+  },
+  {
+    "airport": "Flotta Isle Airport",
+    "region_name": "Flotta Isle",
+    "country_code": "GB",
+    "iata": "FLH"
+  },
+  {
+    "airport": "Pensacola Regional Airport",
+    "region_name": "Pensacola",
+    "country_code": "US",
+    "iata": "PNS"
+  },
+  {
+    "airport": "Longana Airport",
+    "region_name": "Longana",
+    "country_code": "VU",
+    "iata": "LOD"
+  },
+  {
+    "airport": "Capitan Fuentes Martinez Airport Airport",
+    "region_name": "Porvenir",
+    "country_code": "CL",
+    "iata": "WPR"
+  },
+  {
+    "airport": "Huizhou Airport",
+    "region_name": "Huizhou",
+    "country_code": "CN",
+    "iata": "HUZ"
+  },
+  {
+    "airport": "Quince Air Base",
+    "region_name": "Quince Mil",
+    "country_code": "PE",
+    "iata": "UMI"
+  },
+  {
+    "airport": "Capitan Corbeta CA Curbelo International Airport",
+    "region_name": "Punta del Este",
+    "country_code": "UY",
+    "iata": "PDP"
+  },
+  {
+    "airport": "Zona da Mata Regional Airport",
+    "region_name": "Juiz De Fora",
+    "country_code": "BR",
+    "iata": "IZA"
+  },
+  {
+    "airport": "Alton Downs Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "AWN"
+  },
+  {
+    "airport": "Bartlett Cove Seaplane Base",
+    "region_name": "Gustavus",
+    "country_code": "US",
+    "iata": "BQV"
+  },
+  {
+    "airport": "Middle Georgia Regional Airport",
+    "region_name": "Macon",
+    "country_code": "US",
+    "iata": "MCN"
+  },
+  {
+    "airport": "Lokichoggio Airport",
+    "region_name": "Lokichoggio",
+    "country_code": "KE",
+    "iata": "LKG"
+  },
+  {
+    "airport": "Yam Island Airport",
+    "region_name": "Yam Island",
+    "country_code": "AU",
+    "iata": "XMY"
+  },
+  {
+    "airport": "Emmonak Airport",
+    "region_name": "Emmonak",
+    "country_code": "US",
+    "iata": "EMK"
+  },
+  {
+    "airport": "Gwadar International Airport",
+    "region_name": "Gwadar",
+    "country_code": "PK",
+    "iata": "GWD"
+  },
+  {
+    "airport": "St-François Airport",
+    "region_name": "St-François",
+    "country_code": "GP",
+    "iata": "SFC"
+  },
+  {
+    "airport": "Luang Phabang International Airport",
+    "region_name": "Luang Phabang",
+    "country_code": "LA",
+    "iata": "LPQ"
+  },
+  {
+    "airport": "Zaraza Airport",
+    "region_name": "Zaraza",
+    "country_code": "VE",
+    "iata": "ZRZ"
+  },
+  {
+    "airport": "Mattala Rajapaksa International Airport",
+    "region_name": null,
+    "country_code": "LK",
+    "iata": "HRI"
+  },
+  {
+    "airport": "Tezu Airport",
+    "region_name": "Tezu",
+    "country_code": "IN",
+    "iata": "TEI"
+  },
+  {
+    "airport": "Djougou Airport",
+    "region_name": "Djougou",
+    "country_code": "BJ",
+    "iata": "DJA"
+  },
+  {
+    "airport": "Gerald R. Ford International Airport",
+    "region_name": "Grand Rapids",
+    "country_code": "US",
+    "iata": "GRR"
+  },
+  {
+    "airport": "Qeshm International Airport",
+    "region_name": "Qeshm",
+    "country_code": "IR",
+    "iata": "GSM"
+  },
+  {
+    "airport": "German Olano Airport",
+    "region_name": "Puerto Carreño",
+    "country_code": "CO",
+    "iata": "PCR"
+  },
+  {
+    "airport": "Inhaminga Airport",
+    "region_name": "Inhaminga",
+    "country_code": "MZ",
+    "iata": "IMG"
+  },
+  {
+    "airport": "Gewayentana Airport",
+    "region_name": "Larantuka-Flores Island",
+    "country_code": "ID",
+    "iata": "LKA"
+  },
+  {
+    "airport": "Hewanorra International Airport",
+    "region_name": "Vieux Fort",
+    "country_code": "LC",
+    "iata": "UVF"
+  },
+  {
+    "airport": "Redenção Airport",
+    "region_name": "Redenção",
+    "country_code": "BR",
+    "iata": "RDC"
+  },
+  {
+    "airport": "Marina Municipal Airport",
+    "region_name": "Marina",
+    "country_code": "US",
+    "iata": "OAR"
+  },
+  {
+    "airport": "Oranjemund Airport",
+    "region_name": "Oranjemund",
+    "country_code": "NA",
+    "iata": "OMD"
+  },
+  {
+    "airport": "Melbourne Essendon Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "MEB"
+  },
+  {
+    "airport": "Pentagon Army Heliport",
+    "region_name": "Washington",
+    "country_code": "US",
+    "iata": "JPN"
+  },
+  {
+    "airport": "San Nicolas De Bari Airport",
+    "region_name": "San Nicolás",
+    "country_code": "CU",
+    "iata": "QSN"
+  },
+  {
+    "airport": "Palmdale Regional/USAF Plant 42 Airport",
+    "region_name": "Palmdale",
+    "country_code": "US",
+    "iata": "PMD"
+  },
+  {
+    "airport": "Chernofski Harbor Seaplane Base",
+    "region_name": "Chernofski Harbor",
+    "country_code": "US",
+    "iata": "KCN"
+  },
+  {
+    "airport": "Westerland Sylt Airport",
+    "region_name": "Westerland",
+    "country_code": "DE",
+    "iata": "GWT"
+  },
+  {
+    "airport": "Hagfors Airport",
+    "region_name": null,
+    "country_code": "SE",
+    "iata": "HFS"
+  },
+  {
+    "airport": "Bahia - Jorge Amado Airport",
+    "region_name": "Ilhéus",
+    "country_code": "BR",
+    "iata": "IOS"
+  },
+  {
+    "airport": "Whitesburg Municipal Airport",
+    "region_name": "Whitesburg",
+    "country_code": "US",
+    "iata": "BRG"
+  },
+  {
+    "airport": "Cambridge Dorchester Airport",
+    "region_name": "Cambridge",
+    "country_code": "US",
+    "iata": "CGE"
+  },
+  {
+    "airport": "Tetebedi Airport",
+    "region_name": "Tetebedi",
+    "country_code": "PG",
+    "iata": "TDB"
+  },
+  {
+    "airport": "Amedee Army Air Field",
+    "region_name": "Herlong",
+    "country_code": "US",
+    "iata": "AHC"
+  },
+  {
+    "airport": "Muko Muko Airport",
+    "region_name": "Muko Muko-Sumatra Island",
+    "country_code": "ID",
+    "iata": "MPC"
+  },
+  {
+    "airport": "Lifuka Island Airport",
+    "region_name": "Lifuka",
+    "country_code": "TO",
+    "iata": "HPA"
+  },
+  {
+    "airport": "Fergana International Airport",
+    "region_name": "Fergana",
+    "country_code": "UZ",
+    "iata": "FEG"
+  },
+  {
+    "airport": "Hervey Bay Airport",
+    "region_name": "Hervey Bay",
+    "country_code": "AU",
+    "iata": "HVB"
+  },
+  {
+    "airport": "Vipingo Estate Airport",
+    "region_name": "Vipingo Estate",
+    "country_code": "KE",
+    "iata": "VPG"
+  },
+  {
+    "airport": "Bali Airport",
+    "region_name": "Bali",
+    "country_code": "CM",
+    "iata": "BLC"
+  },
+  {
+    "airport": "Al Maktoum International Airport",
+    "region_name": "Jebel Ali",
+    "country_code": "AE",
+    "iata": "DWC"
+  },
+  {
+    "airport": "El Avellano Airport",
+    "region_name": "Frutillar",
+    "country_code": "CL",
+    "iata": "FRT"
+  },
+  {
+    "airport": "Assab International Airport",
+    "region_name": "Asab",
+    "country_code": "ER",
+    "iata": "ASA"
+  },
+  {
+    "airport": "Staroselye Airport",
+    "region_name": "Rybinsk",
+    "country_code": "RU",
+    "iata": "RYB"
+  },
+  {
+    "airport": "Aqaba King Hussein International Airport",
+    "region_name": "Aqaba",
+    "country_code": "JO",
+    "iata": "AQJ"
+  },
+  {
+    "airport": "Port Keats Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "PKT"
+  },
+  {
+    "airport": "Tongliao Airport",
+    "region_name": "Tongliao",
+    "country_code": "CN",
+    "iata": "TGO"
+  },
+  {
+    "airport": "Lorient South Brittany (Bretagne Sud) Airport",
+    "region_name": "Lorient/Lann/Bihoué",
+    "country_code": "FR",
+    "iata": "LRT"
+  },
+  {
+    "airport": "Mangole Airport, Falabisahaya",
+    "region_name": "Mangole Island",
+    "country_code": "ID",
+    "iata": "MAL"
+  },
+  {
+    "airport": "Maputo Airport",
+    "region_name": "Maputo",
+    "country_code": "MZ",
+    "iata": "MPM"
+  },
+  {
+    "airport": "Mostaganem Airport",
+    "region_name": null,
+    "country_code": "DZ",
+    "iata": "MQV"
+  },
+  {
+    "airport": "Nueva Hesperides International Airport",
+    "region_name": "Salto",
+    "country_code": "UY",
+    "iata": "STY"
+  },
+  {
+    "airport": "Ndjili International Airport",
+    "region_name": "Kinshasa",
+    "country_code": "CD",
+    "iata": "FIH"
+  },
+  {
+    "airport": "Tafaraoui Airport",
+    "region_name": null,
+    "country_code": "DZ",
+    "iata": "TAF"
+  },
+  {
+    "airport": "Campo Fontenelle Airport",
+    "region_name": "Pirassununga",
+    "country_code": "BR",
+    "iata": "QPS"
+  },
+  {
+    "airport": "Mardin Airport",
+    "region_name": "Mardin",
+    "country_code": "TR",
+    "iata": "MQM"
+  },
+  {
+    "airport": "Minaçu Airport",
+    "region_name": "Minaçu",
+    "country_code": "BR",
+    "iata": "MQH"
+  },
+  {
+    "airport": "Sky Harbor Airport",
+    "region_name": "Northbrook",
+    "country_code": "US",
+    "iata": "OBK"
+  },
+  {
+    "airport": "Deering Airport",
+    "region_name": "Deering",
+    "country_code": "US",
+    "iata": "DRG"
+  },
+  {
+    "airport": "Mtwara Airport",
+    "region_name": "Mtwara",
+    "country_code": "TZ",
+    "iata": "MYW"
+  },
+  {
+    "airport": "Malpensa International Airport",
+    "region_name": "Milan",
+    "country_code": "IT",
+    "iata": "MXP"
+  },
+  {
+    "airport": "Yakataga Airport",
+    "region_name": "Yakataga",
+    "country_code": "US",
+    "iata": "CYT"
+  },
+  {
+    "airport": "Diego Garcia Naval Support Facility",
+    "region_name": "Diego Garcia",
+    "country_code": "IO",
+    "iata": "NKW"
+  },
+  {
+    "airport": "Gardez Airport",
+    "region_name": "Gardez",
+    "country_code": "AF",
+    "iata": "GRG"
+  },
+  {
+    "airport": "Chicken Airport",
+    "region_name": "Chicken",
+    "country_code": "US",
+    "iata": "CKX"
+  },
+  {
+    "airport": "Cheadle Airport",
+    "region_name": "Cheadle",
+    "country_code": "CA",
+    "iata": "TIL"
+  },
+  {
+    "airport": "Eureka Airport",
+    "region_name": "Eureka",
+    "country_code": "US",
+    "iata": "EUE"
+  },
+  {
+    "airport": "Engati Airstrip",
+    "region_name": "Engati",
+    "country_code": "PG",
+    "iata": "EGA"
+  },
+  {
+    "airport": "Anfa Airport",
+    "region_name": "Casablanca",
+    "country_code": "MA",
+    "iata": "CAS"
+  },
+  {
+    "airport": "Cabo Rojo Airport",
+    "region_name": "Cabo Rojo",
+    "country_code": "DO",
+    "iata": "CBJ"
+  },
+  {
+    "airport": "Sei Bati Airport",
+    "region_name": "Tanjung Balai-Karinmunbesar Island",
+    "country_code": "ID",
+    "iata": "TJB"
+  },
+  {
+    "airport": "Lumi Airport",
+    "region_name": "Lumi",
+    "country_code": "PG",
+    "iata": "LMI"
+  },
+  {
+    "airport": "Masindi Airport",
+    "region_name": "Masindi",
+    "country_code": "UG",
+    "iata": "KCU"
+  },
+  {
+    "airport": "Marshall Don Hunter Sr Airport",
+    "region_name": "Marshall",
+    "country_code": "US",
+    "iata": "MLL"
+  },
+  {
+    "airport": "Dansville Municipal Airport",
+    "region_name": "Dansville",
+    "country_code": "US",
+    "iata": "DSV"
+  },
+  {
+    "airport": "Creston Municipal Airport",
+    "region_name": "Creston",
+    "country_code": "US",
+    "iata": "CSQ"
+  },
+  {
+    "airport": "West Bend Municipal Airport",
+    "region_name": "West Bend",
+    "country_code": "US",
+    "iata": "ETB"
+  },
+  {
+    "airport": "Gaya Airport",
+    "region_name": null,
+    "country_code": "IN",
+    "iata": "GAY"
+  },
+  {
+    "airport": "Orūzgān Airport",
+    "region_name": "Orūzgān",
+    "country_code": "AF",
+    "iata": "URZ"
+  },
+  {
+    "airport": "Biniguni Airport",
+    "region_name": "Biniguni",
+    "country_code": "PG",
+    "iata": "XBN"
+  },
+  {
+    "airport": "Morondava Airport",
+    "region_name": null,
+    "country_code": "MG",
+    "iata": "MOQ"
+  },
+  {
+    "airport": "Norman Wells Airport",
+    "region_name": "Norman Wells",
+    "country_code": "CA",
+    "iata": "YVQ"
+  },
+  {
+    "airport": "Boigu Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "GIC"
+  },
+  {
+    "airport": "Macagua Airport",
+    "region_name": "Ciudad Guayana",
+    "country_code": "VE",
+    "iata": "SFX"
+  },
+  {
+    "airport": "Bilogai-Sugapa Airport",
+    "region_name": "Sugapa-Papua Island",
+    "country_code": "ID",
+    "iata": "UGU"
+  },
+  {
+    "airport": "Macaé Airport",
+    "region_name": "Macaé",
+    "country_code": "BR",
+    "iata": "MEA"
+  },
+  {
+    "airport": "Maiana Airport",
+    "region_name": "Maiana",
+    "country_code": "KI",
+    "iata": "MNK"
+  },
+  {
+    "airport": "Bojnord Airport",
+    "region_name": "Bojnord",
+    "country_code": "IR",
+    "iata": "BJB"
+  },
+  {
+    "airport": "Lastourville Airport",
+    "region_name": "Lastourville",
+    "country_code": "GA",
+    "iata": "LTL"
+  },
+  {
+    "airport": "Kaieteur International Airport",
+    "region_name": "Kaieteur Falls",
+    "country_code": "GY",
+    "iata": "KAI"
+  },
+  {
+    "airport": "Bernay – St Martin Airport",
+    "region_name": "Creil",
+    "country_code": "FR",
+    "iata": "XBX"
+  },
+  {
+    "airport": "Forbes Airport",
+    "region_name": "Forbes",
+    "country_code": "AU",
+    "iata": "FRB"
+  },
+  {
+    "airport": "Dillon's Bay Airport",
+    "region_name": "Dillon's Bay",
+    "country_code": "VU",
+    "iata": "DLY"
+  },
+  {
+    "airport": "St Paul Island Airport",
+    "region_name": "St Paul Island",
+    "country_code": "US",
+    "iata": "SNP"
+  },
+  {
+    "airport": "St. Theresa Point Airport",
+    "region_name": "St. Theresa Point",
+    "country_code": "CA",
+    "iata": "YST"
+  },
+  {
+    "airport": "Shangjie Airport",
+    "region_name": "Zhengzhou",
+    "country_code": "CN",
+    "iata": "HSJ"
+  },
+  {
+    "airport": "Fort Bragg Airport",
+    "region_name": "Fort Bragg",
+    "country_code": "US",
+    "iata": "FOB"
+  },
+  {
+    "airport": "Assiut International Airport",
+    "region_name": "Assiut",
+    "country_code": "EG",
+    "iata": "ATZ"
+  },
+  {
+    "airport": "Siassi Airport",
+    "region_name": "Siassi",
+    "country_code": "PG",
+    "iata": "SSS"
+  },
+  {
+    "airport": "Tajima Airport",
+    "region_name": "Tajima",
+    "country_code": "JP",
+    "iata": "TJH"
+  },
+  {
+    "airport": "Lady Franklin Point Airport",
+    "region_name": null,
+    "country_code": "CA",
+    "iata": "YUJ"
+  },
+  {
+    "airport": "Athen Helenikon Airport",
+    "region_name": "Athens",
+    "country_code": "GR",
+    "iata": "HEW"
+  },
+  {
+    "airport": "Tatitlek Airport",
+    "region_name": "Tatitlek",
+    "country_code": "US",
+    "iata": "TEK"
+  },
+  {
+    "airport": "Ituberá Airport",
+    "region_name": "Ituberá",
+    "country_code": "BR",
+    "iata": "ITE"
+  },
+  {
+    "airport": "Donetsk International Airport",
+    "region_name": "Donetsk",
+    "country_code": "UA",
+    "iata": "DOK"
+  },
+  {
+    "airport": "Lekana Airport",
+    "region_name": "Lekana",
+    "country_code": "CG",
+    "iata": "LKC"
+  },
+  {
+    "airport": "Eneabba Airport",
+    "region_name": "Eneabba",
+    "country_code": "AU",
+    "iata": "ENB"
+  },
+  {
+    "airport": "Twentynine Palms Airport",
+    "region_name": "Twentynine Palms",
+    "country_code": "US",
+    "iata": "TNP"
+  },
+  {
+    "airport": "Grozny North Airport",
+    "region_name": "Grozny",
+    "country_code": "RU",
+    "iata": "GRV"
+  },
+  {
+    "airport": "Luang Namtha Airport",
+    "region_name": "Luang Namtha",
+    "country_code": "LA",
+    "iata": "LXG"
+  },
+  {
+    "airport": "Arar Domestic Airport",
+    "region_name": "Arar",
+    "country_code": "SA",
+    "iata": "RAE"
+  },
+  {
+    "airport": "Rivière-du-Loup Airport",
+    "region_name": "Rivière-du-Loup",
+    "country_code": "CA",
+    "iata": "YRI"
+  },
+  {
+    "airport": "Utti Air Base",
+    "region_name": "Utti / Valkeala",
+    "country_code": "FI",
+    "iata": "UTI"
+  },
+  {
+    "airport": "Cozumel International Airport",
+    "region_name": "Cozumel",
+    "country_code": "MX",
+    "iata": "CZM"
+  },
+  {
+    "airport": "Oscoda Wurtsmith Airport",
+    "region_name": "Oscoda",
+    "country_code": "US",
+    "iata": "OSC"
+  },
+  {
+    "airport": "Alto Palena Airport",
+    "region_name": "Alto Palena",
+    "country_code": "CL",
+    "iata": "WAP"
+  },
+  {
+    "airport": "Jackson-Medgar Wiley Evers International Airport",
+    "region_name": "Jackson",
+    "country_code": "US",
+    "iata": "JAN"
+  },
+  {
+    "airport": "Soyo Airport",
+    "region_name": "Soyo",
+    "country_code": "AO",
+    "iata": "SZA"
+  },
+  {
+    "airport": "Wagga Wagga City Airport",
+    "region_name": "Wagga Wagga",
+    "country_code": "AU",
+    "iata": "WGA"
+  },
+  {
+    "airport": "Tamale Airport",
+    "region_name": "Tamale",
+    "country_code": "GH",
+    "iata": "TML"
+  },
+  {
+    "airport": "Beluga Airport",
+    "region_name": "Beluga",
+    "country_code": "US",
+    "iata": "BVU"
+  },
+  {
+    "airport": "Gordon Municipal Airport",
+    "region_name": "Gordon",
+    "country_code": "US",
+    "iata": "GRN"
+  },
+  {
+    "airport": "Sungai Tiang Airport",
+    "region_name": "Taman Negara",
+    "country_code": "MY",
+    "iata": "SXT"
+  },
+  {
+    "airport": "Kandahar Airport",
+    "region_name": null,
+    "country_code": "AF",
+    "iata": "KDH"
+  },
+  {
+    "airport": "Bilbao Airport",
+    "region_name": "Bilbao",
+    "country_code": "ES",
+    "iata": "BIO"
+  },
+  {
+    "airport": "Holt Airport",
+    "region_name": "Flateyri",
+    "country_code": "IS",
+    "iata": "FLI"
+  },
+  {
+    "airport": "Yecheon Airbase",
+    "region_name": "Yecheon-ri",
+    "country_code": "KR",
+    "iata": "YEC"
+  },
+  {
+    "airport": "Wonsan Kalma International Airport",
+    "region_name": "Wonsan",
+    "country_code": "KP",
+    "iata": "WOS"
+  },
+  {
+    "airport": "Sumbawanga Airport",
+    "region_name": "Sumbawanga",
+    "country_code": "TZ",
+    "iata": "SUT"
+  },
+  {
+    "airport": "George Bush Intercontinental Houston Airport",
+    "region_name": "Houston",
+    "country_code": "US",
+    "iata": "IAH"
+  },
+  {
+    "airport": "Naukati Bay Seaplane Base",
+    "region_name": "Tuxekan Island",
+    "country_code": "US",
+    "iata": "NKI"
+  },
+  {
+    "airport": "Terrance B. Lettsome International Airport",
+    "region_name": "Road Town",
+    "country_code": "VG",
+    "iata": "EIS"
+  },
+  {
+    "airport": "Martindale Army Heliport",
+    "region_name": "San Antonio",
+    "country_code": "US",
+    "iata": "MDA"
+  },
+  {
+    "airport": "Glenormiston Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "GLM"
+  },
+  {
+    "airport": "Salekhard Airport",
+    "region_name": "Salekhard",
+    "country_code": "RU",
+    "iata": "SLY"
+  },
+  {
+    "airport": "Gdańsk Lech Wałęsa Airport",
+    "region_name": "Gdańsk",
+    "country_code": "PL",
+    "iata": "GDN"
+  },
+  {
+    "airport": "Parry Sound Area Municipal Airport",
+    "region_name": "Parry Sound",
+    "country_code": "CA",
+    "iata": "YPD"
+  },
+  {
+    "airport": "Ambler Airport",
+    "region_name": "Ambler",
+    "country_code": "US",
+    "iata": "ABL"
+  },
+  {
+    "airport": "Beica Airport",
+    "region_name": "Beica",
+    "country_code": "ET",
+    "iata": "BEI"
+  },
+  {
+    "airport": "Zaria Airport",
+    "region_name": "Zaria",
+    "country_code": "NG",
+    "iata": "ZAR"
+  },
+  {
+    "airport": "Unguia Airport",
+    "region_name": "Arquia",
+    "country_code": "CO",
+    "iata": "UNC"
+  },
+  {
+    "airport": "Kivalina Airport",
+    "region_name": "Kivalina",
+    "country_code": "US",
+    "iata": "KVL"
+  },
+  {
+    "airport": "Blimbingsari Airport",
+    "region_name": "Banyuwangi",
+    "country_code": "ID",
+    "iata": "BWX"
+  },
+  {
+    "airport": "Latina Air Base",
+    "region_name": "Latina",
+    "country_code": "IT",
+    "iata": "QLT"
+  },
+  {
+    "airport": "Sultan Ismail Petra Airport",
+    "region_name": "Kota Baharu",
+    "country_code": "MY",
+    "iata": "KBR"
+  },
+  {
+    "airport": "Astrakhan Airport",
+    "region_name": "Astrakhan",
+    "country_code": "RU",
+    "iata": "ASF"
+  },
+  {
+    "airport": "Wilmington Airpark",
+    "region_name": "Wilmington",
+    "country_code": "US",
+    "iata": "ILN"
+  },
+  {
+    "airport": "Esperance Airport",
+    "region_name": "Esperance",
+    "country_code": "AU",
+    "iata": "EPR"
+  },
+  {
+    "airport": "Edmonton International Airport",
+    "region_name": "Edmonton",
+    "country_code": "CA",
+    "iata": "YEG"
+  },
+  {
+    "airport": "Copenhagen Roskilde Airport",
+    "region_name": "Copenhagen",
+    "country_code": "DK",
+    "iata": "RKE"
+  },
+  {
+    "airport": "Dambulu Oya Tank Seaplane Base",
+    "region_name": "Dambulla",
+    "country_code": "LK",
+    "iata": "DBU"
+  },
+  {
+    "airport": "Neil Armstrong Airport",
+    "region_name": "Wapakoneta",
+    "country_code": "US",
+    "iata": "AXV"
+  },
+  {
+    "airport": "Awassa Airport",
+    "region_name": "Awassa",
+    "country_code": "ET",
+    "iata": "AWA"
+  },
+  {
+    "airport": "Sematan Airport",
+    "region_name": "Sematan",
+    "country_code": "MY",
+    "iata": "BSE"
+  },
+  {
+    "airport": "Belfast International Airport",
+    "region_name": "Belfast",
+    "country_code": "GB",
+    "iata": "BFS"
+  },
+  {
+    "airport": "Mo i Rana Airport, Røssvoll",
+    "region_name": "Mo i Rana",
+    "country_code": "NO",
+    "iata": "MQN"
+  },
+  {
+    "airport": "Peterborough Airport",
+    "region_name": "Peterborough",
+    "country_code": "CA",
+    "iata": "YPQ"
+  },
+  {
+    "airport": "Yanji Chaoyangchuan Airport",
+    "region_name": "Yanji",
+    "country_code": "CN",
+    "iata": "YNJ"
+  },
+  {
+    "airport": "Lake County Airport",
+    "region_name": "Leadville",
+    "country_code": "US",
+    "iata": "LXV"
+  },
+  {
+    "airport": "Sydney Bankstown Airport",
+    "region_name": "Sydney",
+    "country_code": "AU",
+    "iata": "BWU"
+  },
+  {
+    "airport": "Liège Airport",
+    "region_name": "Liège",
+    "country_code": "BE",
+    "iata": "LGG"
+  },
+  {
+    "airport": "Grootfontein Airport",
+    "region_name": "Grootfontein",
+    "country_code": "NA",
+    "iata": "GFY"
+  },
+  {
+    "airport": "Kursk East Airport",
+    "region_name": "Kursk",
+    "country_code": "RU",
+    "iata": "URS"
+  },
+  {
+    "airport": "Söderhamn Airport",
+    "region_name": "Söderhamn",
+    "country_code": "SE",
+    "iata": "SOO"
+  },
+  {
+    "airport": "Bria Airport",
+    "region_name": "Bria",
+    "country_code": "CF",
+    "iata": "BIV"
+  },
+  {
+    "airport": "Mansehra Airport",
+    "region_name": "Mansehra",
+    "country_code": "PK",
+    "iata": "HRA"
+  },
+  {
+    "airport": "Lauriston Airport",
+    "region_name": "Carriacou Island",
+    "country_code": "GD",
+    "iata": "CRU"
+  },
+  {
+    "airport": "Monkey Mountain Airport",
+    "region_name": "Monkey Mountain",
+    "country_code": "GY",
+    "iata": "MYM"
+  },
+  {
+    "airport": "Prineville Airport",
+    "region_name": "Prineville",
+    "country_code": "US",
+    "iata": "PRZ"
+  },
+  {
+    "airport": "Suntar Airport",
+    "region_name": "Suntar",
+    "country_code": "RU",
+    "iata": "SUY"
+  },
+  {
+    "airport": "Mekele Airport",
+    "region_name": null,
+    "country_code": "ET",
+    "iata": "MQX"
+  },
+  {
+    "airport": "Papa Stour Airport",
+    "region_name": "Papa Stour Island",
+    "country_code": "GB",
+    "iata": "PSV"
+  },
+  {
+    "airport": "Normans Cay Airport",
+    "region_name": null,
+    "country_code": "BS",
+    "iata": "NMC"
+  },
+  {
+    "airport": "Jasper County Airport-Bell Field",
+    "region_name": "Jasper",
+    "country_code": "US",
+    "iata": "JAS"
+  },
+  {
+    "airport": "Bisbee Municipal Airport",
+    "region_name": "Bisbee",
+    "country_code": "US",
+    "iata": "BSQ"
+  },
+  {
+    "airport": "Southwest Oregon Regional Airport",
+    "region_name": "North Bend",
+    "country_code": "US",
+    "iata": "OTH"
+  },
+  {
+    "airport": "Beni Mellal Airport",
+    "region_name": "Beni Mellal",
+    "country_code": "MA",
+    "iata": "BEM"
+  },
+  {
+    "airport": "Ekati Airport",
+    "region_name": "Ekati",
+    "country_code": "CA",
+    "iata": "YOA"
+  },
+  {
+    "airport": "Manitowoc County Airport",
+    "region_name": "Manitowoc",
+    "country_code": "US",
+    "iata": "MTW"
+  },
+  {
+    "airport": "Beijing Daxing International Airport",
+    "region_name": "Beijing",
+    "country_code": "CN",
+    "iata": "PKX"
+  },
+  {
+    "airport": "Cheikh Larbi Tébessi Airport",
+    "region_name": "Tébessi",
+    "country_code": "DZ",
+    "iata": "TEE"
+  },
+  {
+    "airport": "Xi'an Xiguan Airport",
+    "region_name": "Xi'an",
+    "country_code": "CN",
+    "iata": "SIA"
+  },
+  {
+    "airport": "Arboletes Airport",
+    "region_name": "Arboletes",
+    "country_code": "CO",
+    "iata": "ARO"
+  },
+  {
+    "airport": "Invercargill Airport",
+    "region_name": "Invercargill",
+    "country_code": "NZ",
+    "iata": "IVC"
+  },
+  {
+    "airport": "Reao Airport",
+    "region_name": null,
+    "country_code": "PF",
+    "iata": "REA"
+  },
+  {
+    "airport": "Žilina Airport",
+    "region_name": "Žilina",
+    "country_code": "SK",
+    "iata": "ILZ"
+  },
+  {
+    "airport": "Eindhoven Airport",
+    "region_name": "Eindhoven",
+    "country_code": "NL",
+    "iata": "EIN"
+  },
+  {
+    "airport": "Orinduik Airport",
+    "region_name": "Orinduik",
+    "country_code": "GY",
+    "iata": "ORJ"
+  },
+  {
+    "airport": "Luozi Airport",
+    "region_name": "Luozi",
+    "country_code": "CD",
+    "iata": "LZI"
+  },
+  {
+    "airport": "Camooweal Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "CML"
+  },
+  {
+    "airport": "Sitka Rocky Gutierrez Airport",
+    "region_name": "Sitka",
+    "country_code": "US",
+    "iata": "SIT"
+  },
+  {
+    "airport": "Illesheim Air Base",
+    "region_name": "Storck Barracks",
+    "country_code": "DE",
+    "iata": "ILH"
+  },
+  {
+    "airport": "Kumamoto Airport",
+    "region_name": "Kumamoto",
+    "country_code": "JP",
+    "iata": "KMJ"
+  },
+  {
+    "airport": "Yangambi Airport",
+    "region_name": "Yangambi",
+    "country_code": "CD",
+    "iata": "YAN"
+  },
+  {
+    "airport": "Astana International Airport",
+    "region_name": "Astana",
+    "country_code": "KZ",
+    "iata": "TSE"
+  },
+  {
+    "airport": "Boscobel Aerodrome",
+    "region_name": "Ocho Rios",
+    "country_code": "JM",
+    "iata": "OCJ"
+  },
+  {
+    "airport": "Humboldt Municipal Airport",
+    "region_name": "Humboldt",
+    "country_code": "US",
+    "iata": "HUD"
+  },
+  {
+    "airport": "Capitán Av. Salvador Ogaya G. airport",
+    "region_name": "Puerto Suárez",
+    "country_code": "BO",
+    "iata": "PSZ"
+  },
+  {
+    "airport": "Batajnica Air Base",
+    "region_name": "Batajnica",
+    "country_code": "RS",
+    "iata": "BJY"
+  },
+  {
+    "airport": "Pikangikum Airport",
+    "region_name": "Pikangikum",
+    "country_code": "CA",
+    "iata": "YPM"
+  },
+  {
+    "airport": "El Encanto Airport",
+    "region_name": "El Encanto",
+    "country_code": "CO",
+    "iata": "ECO"
+  },
+  {
+    "airport": "Matão Airport",
+    "region_name": "Matão",
+    "country_code": "BR",
+    "iata": "0"
+  },
+  {
+    "airport": "Alexandria Homestead Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "AXL"
+  },
+  {
+    "airport": "Arica Airport",
+    "region_name": "Arica",
+    "country_code": "CO",
+    "iata": "ACM"
+  },
+  {
+    "airport": "Southwest Wyoming Regional Airport",
+    "region_name": "Rock Springs",
+    "country_code": "US",
+    "iata": "RKS"
+  },
+  {
+    "airport": "Treviso-Sant'Angelo Airport",
+    "region_name": "Treviso",
+    "country_code": "IT",
+    "iata": "TSF"
+  },
+  {
+    "airport": "Antlers Municipal Airport",
+    "region_name": "Antlers",
+    "country_code": "US",
+    "iata": "ATE"
+  },
+  {
+    "airport": "Fort Resolution Airport",
+    "region_name": "Fort Resolution",
+    "country_code": "CA",
+    "iata": "YFR"
+  },
+  {
+    "airport": "Negele Airport",
+    "region_name": "Negele Borana",
+    "country_code": "ET",
+    "iata": "EGL"
+  },
+  {
+    "airport": "Kannur International Airport",
+    "region_name": "Kannur",
+    "country_code": "IN",
+    "iata": "CNN"
+  },
+  {
+    "airport": "Monkira Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "ONR"
+  },
+  {
+    "airport": "Governor's Harbour Airport",
+    "region_name": "Governor's Harbour",
+    "country_code": "BS",
+    "iata": "GHB"
+  },
+  {
+    "airport": "Newark Liberty International Airport",
+    "region_name": "Newark",
+    "country_code": "US",
+    "iata": "EWR"
+  },
+  {
+    "airport": "Cambridge Dorchester Airport",
+    "region_name": "Cambridge",
+    "country_code": "US",
+    "iata": "CGE"
+  },
+  {
+    "airport": "Tsletsi Airport",
+    "region_name": "Djelfa",
+    "country_code": "DZ",
+    "iata": "QDJ"
+  },
+  {
+    "airport": "Cambridge Airport",
+    "region_name": "Cambridge",
+    "country_code": "GB",
+    "iata": "CBG"
+  },
+  {
+    "airport": "Ittoqqortoormiit Heliport",
+    "region_name": "Ittoqqortoormiit",
+    "country_code": "GL",
+    "iata": "OBY"
+  },
+  {
+    "airport": "Mc Entire Joint National Guard Base",
+    "region_name": "Eastover",
+    "country_code": "US",
+    "iata": "MMT"
+  },
+  {
+    "airport": "Lupin Airport",
+    "region_name": "Lupin Mine",
+    "country_code": "CA",
+    "iata": "YWO"
+  },
+  {
+    "airport": "Dr.Juan C. Angara Airport",
+    "region_name": "Baler",
+    "country_code": "PH",
+    "iata": "BQA"
+  },
+  {
+    "airport": "Tortolì Airport",
+    "region_name": "Arbatax",
+    "country_code": "IT",
+    "iata": "TTB"
+  },
+  {
+    "airport": "Concórdia Airport",
+    "region_name": "Concórdia",
+    "country_code": "BR",
+    "iata": "CCI"
+  },
+  {
+    "airport": "Ukhta Airport",
+    "region_name": "Ukhta",
+    "country_code": "RU",
+    "iata": "UCT"
+  },
+  {
+    "airport": "Maio Airport",
+    "region_name": "Vila do Maio",
+    "country_code": "CV",
+    "iata": "MMO"
+  },
+  {
+    "airport": "London Luton Airport",
+    "region_name": "London",
+    "country_code": "GB",
+    "iata": "LTN"
+  },
+  {
+    "airport": "Hooker Creek Airport",
+    "region_name": "Lajamanu",
+    "country_code": "AU",
+    "iata": "HOK"
+  },
+  {
+    "airport": "Punta Chivato Airport",
+    "region_name": "Punta Chivato",
+    "country_code": "MX",
+    "iata": "PCV"
+  },
+  {
+    "airport": "Dahl Creek Airport",
+    "region_name": "Dahl Creek",
+    "country_code": "US",
+    "iata": "DCK"
+  },
+  {
+    "airport": "Venice Marco Polo Airport",
+    "region_name": "Venice",
+    "country_code": "IT",
+    "iata": "VCE"
+  },
+  {
+    "airport": "Lianshulu Airport",
+    "region_name": "Lianshulu Lodge",
+    "country_code": "NA",
+    "iata": "LHU"
+  },
+  {
+    "airport": "Port Protection Seaplane Base",
+    "region_name": "Port Protection",
+    "country_code": "US",
+    "iata": "PPV"
+  },
+  {
+    "airport": "Sungai Tiang Airport",
+    "region_name": "Taman Negara",
+    "country_code": "MY",
+    "iata": "SXT"
+  },
+  {
+    "airport": "Adana Airport",
+    "region_name": "Adana",
+    "country_code": "TR",
+    "iata": "ADA"
+  },
+  {
+    "airport": "Thohoyandou Airport",
+    "region_name": "Thohoyandou",
+    "country_code": "ZA",
+    "iata": "THY"
+  },
+  {
+    "airport": "Tauta Airport",
+    "region_name": "Tauta",
+    "country_code": "PG",
+    "iata": "TUT"
+  },
+  {
+    "airport": "Obando Airport",
+    "region_name": "Puerto Inírida",
+    "country_code": "CO",
+    "iata": "PDA"
+  },
+  {
+    "airport": "Karimui Airport",
+    "region_name": "Karimui",
+    "country_code": "PG",
+    "iata": "KMR"
+  },
+  {
+    "airport": "Melbourne International Airport",
+    "region_name": "Melbourne",
+    "country_code": "US",
+    "iata": "MLB"
+  },
+  {
+    "airport": "Allegheny County Airport",
+    "region_name": "Pittsburgh",
+    "country_code": "US",
+    "iata": "AGC"
+  },
+  {
+    "airport": "Mac Dill Air Force Base",
+    "region_name": "Tampa",
+    "country_code": "US",
+    "iata": "MCF"
+  },
+  {
+    "airport": "Tekirdağ Çorlu Airport",
+    "region_name": "Çorlu",
+    "country_code": "TR",
+    "iata": "TEQ"
+  },
+  {
+    "airport": "Mobile Downtown Airport",
+    "region_name": "Mobile",
+    "country_code": "US",
+    "iata": "BFM"
+  },
+  {
+    "airport": "Immokalee Regional Airport",
+    "region_name": "Immokalee",
+    "country_code": "US",
+    "iata": "IMM"
+  },
+  {
+    "airport": "Dezful Airport",
+    "region_name": null,
+    "country_code": "IR",
+    "iata": "DEF"
+  },
+  {
+    "airport": "Prefeito Octávio de Almeida Neves Airport",
+    "region_name": "São João Del Rei",
+    "country_code": "BR",
+    "iata": "JDR"
+  },
+  {
+    "airport": "Harry Clever Field",
+    "region_name": "New Philadelphia",
+    "country_code": "US",
+    "iata": "PHD"
+  },
+  {
+    "airport": "Kyauktu Airport",
+    "region_name": "Kyauktu",
+    "country_code": "MM",
+    "iata": "KYT"
+  },
+  {
+    "airport": "Coronel Enrique Soto Cano Air Base",
+    "region_name": "Comayagua",
+    "country_code": "HN",
+    "iata": "XPL"
+  },
+  {
+    "airport": "Bahrain International Airport",
+    "region_name": "Manama",
+    "country_code": "BH",
+    "iata": "BAH"
+  },
+  {
+    "airport": "Jeh Airport",
+    "region_name": "Ailinglapalap Atoll",
+    "country_code": "MH",
+    "iata": "JEJ"
+  },
+  {
+    "airport": "Buckeye Municipal Airport",
+    "region_name": "Buckeye",
+    "country_code": "US",
+    "iata": "BXK"
+  },
+  {
+    "airport": "Sultan Thaha Airport",
+    "region_name": "Jambi-Sumatra Island",
+    "country_code": "ID",
+    "iata": "DJB"
+  },
+  {
+    "airport": "Enfidha - Hammamet International Airport",
+    "region_name": "Enfidha",
+    "country_code": "TN",
+    "iata": "NBE"
+  },
+  {
+    "airport": "Baltimore/Washington International Thurgood Marshall Airport",
+    "region_name": "Baltimore",
+    "country_code": "US",
+    "iata": "BWI"
+  },
+  {
+    "airport": "Gaoua Airport",
+    "region_name": "Gaoua",
+    "country_code": "BF",
+    "iata": "XGA"
+  },
+  {
+    "airport": "Long Island Airport",
+    "region_name": "Long Island",
+    "country_code": "PG",
+    "iata": "LSJ"
+  },
+  {
+    "airport": "Miley Memorial Field",
+    "region_name": "Big Piney",
+    "country_code": "US",
+    "iata": "BPI"
+  },
+  {
+    "airport": "Whiting Field Naval Air Station - North",
+    "region_name": "Milton",
+    "country_code": "US",
+    "iata": "NSE"
+  },
+  {
+    "airport": "Mount Swan Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "MSF"
+  },
+  {
+    "airport": "Thakhek Airport",
+    "region_name": "Thakhek",
+    "country_code": "LA",
+    "iata": "THK"
+  },
+  {
+    "airport": "Kalymnos Airport",
+    "region_name": "Kalymnos Island",
+    "country_code": "GR",
+    "iata": "JKL"
+  },
+  {
+    "airport": "Billund Airport",
+    "region_name": "Billund",
+    "country_code": "DK",
+    "iata": "BLL"
+  },
+  {
+    "airport": "Truth Or Consequences Municipal Airport",
+    "region_name": "Truth Or Consequences",
+    "country_code": "US",
+    "iata": "TCS"
+  },
+  {
+    "airport": "Nîmes-Arles-Camargue Airport",
+    "region_name": "Nîmes/Garons",
+    "country_code": "FR",
+    "iata": "FNI"
+  },
+  {
+    "airport": "Currais Novos Airport",
+    "region_name": "Currais Novos",
+    "country_code": "BR",
+    "iata": "QCP"
+  },
+  {
+    "airport": "Thimarafushi Airport",
+    "region_name": "Thimarafushi",
+    "country_code": "MV",
+    "iata": "TMF"
+  },
+  {
+    "airport": "Qacha's Nek Airport",
+    "region_name": "Qacha's Nek",
+    "country_code": "LS",
+    "iata": "UNE"
+  },
+  {
+    "airport": "Robert L. Bradshaw International Airport",
+    "region_name": "Basseterre",
+    "country_code": "KN",
+    "iata": "SKB"
+  },
+  {
+    "airport": "Tselserleg Airport",
+    "region_name": "Tselserleg",
+    "country_code": "MN",
+    "iata": "TSZ"
+  },
+  {
+    "airport": "Captain Auguste George Airport",
+    "region_name": "Anegada",
+    "country_code": "VG",
+    "iata": "NGD"
+  },
+  {
+    "airport": "Cluj-Napoca International Airport",
+    "region_name": "Cluj-Napoca",
+    "country_code": "RO",
+    "iata": "CLJ"
+  },
+  {
+    "airport": "Pembroke Airport",
+    "region_name": "Pembroke",
+    "country_code": "CA",
+    "iata": "YTA"
+  },
+  {
+    "airport": "Duncan Town Airport",
+    "region_name": null,
+    "country_code": "BS",
+    "iata": "DCT"
+  },
+  {
+    "airport": "Gemena Airport",
+    "region_name": "Gemena",
+    "country_code": "CD",
+    "iata": "GMA"
+  },
+  {
+    "airport": "Thimarafushi Airport",
+    "region_name": "Thimarafushi",
+    "country_code": "MV",
+    "iata": "TMF"
+  },
+  {
+    "airport": "North Lakhimpur Airport",
+    "region_name": "Lilabari",
+    "country_code": "IN",
+    "iata": "IXI"
+  },
+  {
+    "airport": "Verkhnevilyuisk Airport",
+    "region_name": "Verkhnevilyuisk",
+    "country_code": "RU",
+    "iata": "VHV"
+  },
+  {
+    "airport": "Karshi Khanabad Airport",
+    "region_name": "Khanabad",
+    "country_code": "UZ",
+    "iata": "KSQ"
+  },
+  {
+    "airport": "Ajaccio-Napoléon Bonaparte Airport",
+    "region_name": "Ajaccio/Napoléon Bonaparte",
+    "country_code": "FR",
+    "iata": "AJA"
+  },
+  {
+    "airport": "Tumolbil Airport",
+    "region_name": "Tumolbil",
+    "country_code": "PG",
+    "iata": "TLP"
+  },
+  {
+    "airport": "Hingurakgoda Air Force Base",
+    "region_name": "Polonnaruwa Town",
+    "country_code": "LK",
+    "iata": "HIM"
+  },
+  {
+    "airport": "Northeastern Regional Airport",
+    "region_name": "Edenton",
+    "country_code": "US",
+    "iata": "EDE"
+  },
+  {
+    "airport": "Cluff Lake Airport",
+    "region_name": "Cluff Lake",
+    "country_code": "CA",
+    "iata": "XCL"
+  },
+  {
+    "airport": "Motswari Airport",
+    "region_name": "Motswari Private Game Reserve",
+    "country_code": "ZA",
+    "iata": "MWR"
+  },
+  {
+    "airport": "Coatepeque Airport",
+    "region_name": "Coatepeque",
+    "country_code": "GT",
+    "iata": "CTF"
+  },
+  {
+    "airport": "Rotterdam The Hague Airport",
+    "region_name": "Rotterdam",
+    "country_code": "NL",
+    "iata": "RTM"
+  },
+  {
+    "airport": "Bandon State Airport",
+    "region_name": "Bandon",
+    "country_code": "US",
+    "iata": "BDY"
+  },
+  {
+    "airport": "Kaniama Airport",
+    "region_name": "Kaniama",
+    "country_code": "CD",
+    "iata": "KNM"
+  },
+  {
+    "airport": "Makung Airport",
+    "region_name": "Makung City",
+    "country_code": "TW",
+    "iata": "MZG"
+  },
+  {
+    "airport": "Anggi Airport",
+    "region_name": "Anggi-Papua Island",
+    "country_code": "ID",
+    "iata": "AGD"
+  },
+  {
+    "airport": "Bocas Del Toro International Airport",
+    "region_name": "Isla Colón",
+    "country_code": "PA",
+    "iata": "BOC"
+  },
+  {
+    "airport": "Dimbokro Airport",
+    "region_name": "Dimbokro",
+    "country_code": "CI",
+    "iata": "DIM"
+  },
+  {
+    "airport": "Førde Airport",
+    "region_name": "Førde",
+    "country_code": "NO",
+    "iata": "FDE"
+  },
+  {
+    "airport": "Kristiansund Airport (Kvernberget)",
+    "region_name": "Kvernberget",
+    "country_code": "NO",
+    "iata": "KSU"
+  },
+  {
+    "airport": "Huntingburg Airport",
+    "region_name": "Huntingburg",
+    "country_code": "US",
+    "iata": "HNB"
+  },
+  {
+    "airport": "Alxa Right Banner Badanjilin Airport",
+    "region_name": "Badanjilin",
+    "country_code": "CN",
+    "iata": "RHT"
+  },
+  {
+    "airport": "General Leite de Castro Airport",
+    "region_name": "Rio Verde",
+    "country_code": "BR",
+    "iata": "RVD"
+  },
+  {
+    "airport": "Keluang Airport",
+    "region_name": "Keluang-Sumatra Island",
+    "country_code": "ID",
+    "iata": "KLQ"
+  },
+  {
+    "airport": "Tambacounda Airport",
+    "region_name": "Tambacounda",
+    "country_code": "SN",
+    "iata": "TUD"
+  },
+  {
+    "airport": "Transilvania Târgu Mureş International Airport",
+    "region_name": "Târgu Mureş",
+    "country_code": "RO",
+    "iata": "TGM"
+  },
+  {
+    "airport": "Gaua Island Airport",
+    "region_name": "Gaua Island",
+    "country_code": "VU",
+    "iata": "ZGU"
+  },
+  {
+    "airport": "Makin Island Airport",
+    "region_name": "Makin Island",
+    "country_code": "KI",
+    "iata": "MTK"
+  },
+  {
+    "airport": "Mawlamyine Airport",
+    "region_name": "Mawlamyine",
+    "country_code": "MM",
+    "iata": "MNU"
+  },
+  {
+    "airport": "Vincent Fayks Airport",
+    "region_name": "Paloemeu",
+    "country_code": "SR",
+    "iata": "OEM"
+  },
+  {
+    "airport": "New Century Aircenter Airport",
+    "region_name": "Olathe",
+    "country_code": "US",
+    "iata": "JCI"
+  },
+  {
+    "airport": "Shaikh Zaid Airport",
+    "region_name": "Rahim Yar Khan",
+    "country_code": "PK",
+    "iata": "RYK"
+  },
+  {
+    "airport": "Port Allen Airport",
+    "region_name": "Hanapepe",
+    "country_code": "US",
+    "iata": "PAK"
+  },
+  {
+    "airport": "Pangnirtung Airport",
+    "region_name": "Pangnirtung",
+    "country_code": "CA",
+    "iata": "YXP"
+  },
+  {
+    "airport": "Mansa Airport",
+    "region_name": "Mansa",
+    "country_code": "ZM",
+    "iata": "MNS"
+  },
+  {
+    "airport": "Karlsruhe Baden-Baden Airport",
+    "region_name": "Baden-Baden",
+    "country_code": "DE",
+    "iata": "FKB"
+  },
+  {
+    "airport": "Capitán FAP Guillermo Concha Iberico International Airport",
+    "region_name": "Piura",
+    "country_code": "PE",
+    "iata": "PIU"
+  },
+  {
+    "airport": "Bell Island Hot Springs Seaplane Base",
+    "region_name": "Bell Island",
+    "country_code": "US",
+    "iata": "KBE"
+  },
+  {
+    "airport": "Soekarno-Hatta International Airport",
+    "region_name": "Jakarta",
+    "country_code": "ID",
+    "iata": "CGK"
+  },
+  {
+    "airport": "Warroad International Memorial Airport",
+    "region_name": "Warroad",
+    "country_code": "US",
+    "iata": "RRT"
+  },
+  {
+    "airport": "Alfonso López Pumarejo Airport",
+    "region_name": "Valledupar",
+    "country_code": "CO",
+    "iata": "VUP"
+  },
+  {
+    "airport": "Pedro Bay Airport",
+    "region_name": "Pedro Bay",
+    "country_code": "US",
+    "iata": "PDB"
+  },
+  {
+    "airport": "Aratika Nord Airport",
+    "region_name": null,
+    "country_code": "PF",
+    "iata": "RKA"
+  },
+  {
+    "airport": "Mount Cavenagh Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "MKV"
+  },
+  {
+    "airport": "Kingscote Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "KGC"
+  },
+  {
+    "airport": "Lourdes de Blanc Sablon Airport",
+    "region_name": "Lourdes-De-Blanc-Sablon",
+    "country_code": "CA",
+    "iata": "YBX"
+  },
+  {
+    "airport": "Guanacaste Airport",
+    "region_name": "Nicoya/Guanacate",
+    "country_code": "CR",
+    "iata": "NCT"
+  },
+  {
+    "airport": "Wuhu Air Base",
+    "region_name": "Wuhu",
+    "country_code": "CN",
+    "iata": "WHU"
+  },
+  {
+    "airport": "Cangyuan Washan Airport",
+    "region_name": "Cangyuan Va Autonomous County",
+    "country_code": "CN",
+    "iata": "CWJ"
+  },
+  {
+    "airport": "Gamarmalamo Airport",
+    "region_name": "Galela-Celebes Island",
+    "country_code": "ID",
+    "iata": "GLX"
+  },
+  {
+    "airport": "Vanrook Station Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "VNR"
+  },
+  {
+    "airport": "Thangool Airport",
+    "region_name": "Biloela",
+    "country_code": "AU",
+    "iata": "THG"
+  },
+  {
+    "airport": "Rochefort-Saint-Agnant (BA 721) Airport",
+    "region_name": "Rochefort/Saint-Agnant",
+    "country_code": "FR",
+    "iata": "RCO"
+  },
+  {
+    "airport": "Motueka Airport",
+    "region_name": null,
+    "country_code": "NZ",
+    "iata": "MZP"
+  },
+  {
+    "airport": "Kalay Airport",
+    "region_name": "Kalemyo",
+    "country_code": "MM",
+    "iata": "KMV"
+  },
+  {
+    "airport": "Bay City Municipal Airport",
+    "region_name": "Bay City",
+    "country_code": "US",
+    "iata": "BBC"
+  },
+  {
+    "airport": "Sigiriya Air Force Base",
+    "region_name": "Sigiriya",
+    "country_code": "LK",
+    "iata": "GIU"
+  },
+  {
+    "airport": "Ruston Regional Airport",
+    "region_name": "Ruston",
+    "country_code": "US",
+    "iata": "RSN"
+  },
+  {
+    "airport": "Stephenville Clark Regional Airport",
+    "region_name": "Stephenville",
+    "country_code": "US",
+    "iata": "SEP"
+  },
+  {
+    "airport": "Woodie Woodie Airport",
+    "region_name": "Woodie Woodie",
+    "country_code": "AU",
+    "iata": "WWI"
+  },
+  {
+    "airport": "Karamay Airport",
+    "region_name": "Karamay",
+    "country_code": "CN",
+    "iata": "KRY"
+  },
+  {
+    "airport": "Tenakee Seaplane Base",
+    "region_name": "Tenakee Springs",
+    "country_code": "US",
+    "iata": "TKE"
+  },
+  {
+    "airport": "Kumamoto Airport",
+    "region_name": "Kumamoto",
+    "country_code": "JP",
+    "iata": "KMJ"
+  },
+  {
+    "airport": "Gamal Abdel Nasser Airport",
+    "region_name": "Tobruk",
+    "country_code": "LY",
+    "iata": "TOB"
+  },
+  {
+    "airport": "Salt Cay Airport",
+    "region_name": "Salt Cay",
+    "country_code": "TC",
+    "iata": "SLX"
+  },
+  {
+    "airport": "McGhee Tyson Airport",
+    "region_name": "Knoxville",
+    "country_code": "US",
+    "iata": "TYS"
+  },
+  {
+    "airport": "Kalskag Airport",
+    "region_name": "Kalskag",
+    "country_code": "US",
+    "iata": "KLG"
+  },
+  {
+    "airport": "Tarapoa Airport",
+    "region_name": "Tarapoa",
+    "country_code": "EC",
+    "iata": "TPC"
+  },
+  {
+    "airport": "Syukuran Aminuddin Amir Airport",
+    "region_name": "Luwok - Celebes Island",
+    "country_code": "ID",
+    "iata": "LUW"
+  },
+  {
+    "airport": "Stavanger Airport Sola",
+    "region_name": "Stavanger",
+    "country_code": "NO",
+    "iata": "SVG"
+  },
+  {
+    "airport": "San Pedro Airport",
+    "region_name": "San Pedro de Urabá",
+    "country_code": "CO",
+    "iata": "NPU"
+  },
+  {
+    "airport": "Bremen Airport",
+    "region_name": "Bremen",
+    "country_code": "DE",
+    "iata": "BRE"
+  },
+  {
+    "airport": "Clinton County Airport",
+    "region_name": "Plattsburgh",
+    "country_code": "US",
+    "iata": "PLB"
+  },
+  {
+    "airport": "Foshan Shadi Airport",
+    "region_name": "Foshan",
+    "country_code": "CN",
+    "iata": "FUO"
+  },
+  {
+    "airport": "Wollongong Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "WOL"
+  },
+  {
+    "airport": "Brown Field Municipal Airport",
+    "region_name": "San Diego",
+    "country_code": "US",
+    "iata": "SDM"
+  },
+  {
+    "airport": "Mulatupo Airport",
+    "region_name": "Mulatupo",
+    "country_code": "PA",
+    "iata": "MPP"
+  },
+  {
+    "airport": "Dunhuang Airport",
+    "region_name": "Dunhuang",
+    "country_code": "CN",
+    "iata": "DNH"
+  },
+  {
+    "airport": "Codazzi Airport",
+    "region_name": "Hacienda Borrero",
+    "country_code": "CO",
+    "iata": "DZI"
+  },
+  {
+    "airport": "Araguaiana Airport",
+    "region_name": "Araguaiana",
+    "country_code": "BR",
+    "iata": "0"
+  },
+  {
+    "airport": "Liuzhou Bailian Airport",
+    "region_name": "Liuzhou",
+    "country_code": "CN",
+    "iata": "LZH"
+  },
+  {
+    "airport": "Rutland - Southern Vermont Regional Airport",
+    "region_name": "Rutland",
+    "country_code": "US",
+    "iata": "RUT"
+  },
+  {
+    "airport": "Wakkanai Airport",
+    "region_name": "Wakkanai",
+    "country_code": "JP",
+    "iata": "WKJ"
+  },
+  {
+    "airport": "Mende-Brenoux Airfield",
+    "region_name": "Mende/Brénoux",
+    "country_code": "FR",
+    "iata": "MEN"
+  },
+  {
+    "airport": "Sahand Airport",
+    "region_name": "Maragheh",
+    "country_code": "IR",
+    "iata": "ACP"
+  },
+  {
+    "airport": "Parsabade Moghan Airport",
+    "region_name": "Parsabad",
+    "country_code": "IR",
+    "iata": "PFQ"
+  },
+  {
+    "airport": "Ibn Batouta Airport",
+    "region_name": "Tangier",
+    "country_code": "MA",
+    "iata": "TNG"
+  },
+  {
+    "airport": "Jacksonville Executive at Craig Airport",
+    "region_name": "Jacksonville",
+    "country_code": "US",
+    "iata": "CRG"
+  },
+  {
+    "airport": "Loyengalani Airport",
+    "region_name": "Loyengalani",
+    "country_code": "KE",
+    "iata": "LOY"
+  },
+  {
+    "airport": "Yamagata Airport",
+    "region_name": "Yamagata",
+    "country_code": "JP",
+    "iata": "GAJ"
+  },
+  {
+    "airport": "Port Simpson Seaplane Base",
+    "region_name": "Lax Kw'alaams",
+    "country_code": "CA",
+    "iata": "YPI"
+  },
+  {
+    "airport": "Vidalia Regional Airport",
+    "region_name": "Vidalia",
+    "country_code": "US",
+    "iata": "VDI"
+  },
+  {
+    "airport": "Port Clarence Coast Guard Station",
+    "region_name": "Port Clarence",
+    "country_code": "US",
+    "iata": "KPC"
+  },
+  {
+    "airport": "Raja Bhoj International Airport",
+    "region_name": "Bhopal",
+    "country_code": "IN",
+    "iata": "BHO"
+  },
+  {
+    "airport": "Guyuan Liupanshan Airport",
+    "region_name": "Guyuan",
+    "country_code": "CN",
+    "iata": "GYU"
+  },
+  {
+    "airport": "Cassilândia Airport",
+    "region_name": "Cassilândia",
+    "country_code": "BR",
+    "iata": "CSS"
+  },
+  {
+    "airport": "Babanakira Airport",
+    "region_name": "Mbambanakira",
+    "country_code": "SB",
+    "iata": "MBU"
+  },
+  {
+    "airport": "Bowman Field",
+    "region_name": "Louisville",
+    "country_code": "US",
+    "iata": "LOU"
+  },
+  {
+    "airport": "Teniente FAP Jaime A De Montreuil Morales Airport",
+    "region_name": "Chimbote",
+    "country_code": "PE",
+    "iata": "CHM"
+  },
+  {
+    "airport": "Evelio Javier Airport",
+    "region_name": "San Jose",
+    "country_code": "PH",
+    "iata": "EUQ"
+  },
+  {
+    "airport": "Ronneby Airport",
+    "region_name": null,
+    "country_code": "SE",
+    "iata": "RNB"
+  },
+  {
+    "airport": "Blumenau Airport",
+    "region_name": "Blumenau",
+    "country_code": "BR",
+    "iata": "BNU"
+  },
+  {
+    "airport": "Ottawa / Rockcliffe Seaplane Base",
+    "region_name": "Ottawa",
+    "country_code": "CA",
+    "iata": "TR7"
+  },
+  {
+    "airport": "Jebel Ali Seaplane Base",
+    "region_name": "Jebel Ali",
+    "country_code": "AE",
+    "iata": "DJH"
+  },
+  {
+    "airport": "Ventspils International Airport",
+    "region_name": "Ventspils",
+    "country_code": "LV",
+    "iata": "VNT"
+  },
+  {
+    "airport": "Northern Aroostook Regional Airport",
+    "region_name": "Frenchville",
+    "country_code": "US",
+    "iata": "WFK"
+  },
+  {
+    "airport": "Capital City Airport",
+    "region_name": "Lansing",
+    "country_code": "US",
+    "iata": "LAN"
+  },
+  {
+    "airport": "Mueo Airport",
+    "region_name": "Mueo",
+    "country_code": "NC",
+    "iata": "PDC"
+  },
+  {
+    "airport": "Doongan Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "DNG"
+  },
+  {
+    "airport": "Méndez Airport",
+    "region_name": "Santiago de Méndez",
+    "country_code": "EC",
+    "iata": "MZD"
+  },
+  {
+    "airport": "Crookston Municipal Kirkwood Field",
+    "region_name": "Crookston",
+    "country_code": "US",
+    "iata": "CKN"
+  },
+  {
+    "airport": "Lizard Island Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "LZR"
+  },
+  {
+    "airport": "Osaka International Airport",
+    "region_name": "Osaka",
+    "country_code": "JP",
+    "iata": "ITM"
+  },
+  {
+    "airport": "Forrest Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "FOS"
+  },
+  {
+    "airport": "Lightning Ridge Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "LHG"
+  },
+  {
+    "airport": "Batajnica Air Base",
+    "region_name": "Batajnica",
+    "country_code": "RS",
+    "iata": "BJY"
+  },
+  {
+    "airport": "Taichung Airport",
+    "region_name": "Taichung City",
+    "country_code": "TW",
+    "iata": "TXG"
+  },
+  {
+    "airport": "Centennial Airport",
+    "region_name": "Denver",
+    "country_code": "US",
+    "iata": "APA"
+  },
+  {
+    "airport": "Quepos Managua Airport",
+    "region_name": "Quepos",
+    "country_code": "CR",
+    "iata": "XQP"
+  },
+  {
+    "airport": "Whidbey Island Naval Air Station (Ault Field)",
+    "region_name": "Oak Harbor",
+    "country_code": "US",
+    "iata": "NUW"
+  },
+  {
+    "airport": "Port Meadville Airport",
+    "region_name": "Meadville",
+    "country_code": "US",
+    "iata": "MEJ"
+  },
+  {
+    "airport": "London Airport",
+    "region_name": "London",
+    "country_code": "CA",
+    "iata": "YXU"
+  },
+  {
+    "airport": "Drayton Valley Industrial Airport",
+    "region_name": "Drayton Valley",
+    "country_code": "CA",
+    "iata": "YDC"
+  },
+  {
+    "airport": "Fukuoka Airport",
+    "region_name": "Fukuoka",
+    "country_code": "JP",
+    "iata": "FUK"
+  },
+  {
+    "airport": "Dnipropetrovsk International Airport",
+    "region_name": "Dnipropetrovsk",
+    "country_code": "UA",
+    "iata": "DNK"
+  },
+  {
+    "airport": "La Isabela International Airport",
+    "region_name": "La Isabela",
+    "country_code": "DO",
+    "iata": "JBQ"
+  },
+  {
+    "airport": "Mossel Bay Airport",
+    "region_name": "Mossel Bay",
+    "country_code": "ZA",
+    "iata": "MZY"
+  },
+  {
+    "airport": "Miyakejima Airport",
+    "region_name": "Miyakejima",
+    "country_code": "JP",
+    "iata": "MYE"
+  },
+  {
+    "airport": "Zamora Airport",
+    "region_name": null,
+    "country_code": "MX",
+    "iata": "ZMM"
+  },
+  {
+    "airport": "Rewa Airport, Chorhata, REWA",
+    "region_name": "Rewa",
+    "country_code": "IN",
+    "iata": "REW"
+  },
+  {
+    "airport": "Uriman Airport",
+    "region_name": null,
+    "country_code": "VE",
+    "iata": "URM"
+  },
+  {
+    "airport": "Semipalatinsk Airport",
+    "region_name": "Semey",
+    "country_code": "KZ",
+    "iata": "PLX"
+  },
+  {
+    "airport": "General Rodolfo Sánchez Taboada International Airport",
+    "region_name": "Mexicali",
+    "country_code": "MX",
+    "iata": "MXL"
+  },
+  {
+    "airport": "Courchevel Airport",
+    "region_name": "Courcheval",
+    "country_code": "FR",
+    "iata": "CVF"
+  },
+  {
+    "airport": "Capital City Airport",
+    "region_name": "Harrisburg",
+    "country_code": "US",
+    "iata": "HAR"
+  },
+  {
+    "airport": "Quesnel Airport",
+    "region_name": "Quesnel",
+    "country_code": "CA",
+    "iata": "YQZ"
+  },
+  {
+    "airport": "Skien Airport",
+    "region_name": "Geiteryggen",
+    "country_code": "NO",
+    "iata": "SKE"
+  },
+  {
+    "airport": "Limbang Airport",
+    "region_name": "Limbang",
+    "country_code": "MY",
+    "iata": "LMN"
+  },
+  {
+    "airport": "Hunter Army Air Field",
+    "region_name": "Savannah",
+    "country_code": "US",
+    "iata": "SVN"
+  },
+  {
+    "airport": "Monte Real Air Base",
+    "region_name": null,
+    "country_code": "PT",
+    "iata": "QLR"
+  },
+  {
+    "airport": "Cleve Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "CVC"
+  },
+  {
+    "airport": "Torrejón Airport",
+    "region_name": "Madrid",
+    "country_code": "ES",
+    "iata": "TOJ"
+  },
+  {
+    "airport": "Muş Airport",
+    "region_name": "Muş",
+    "country_code": "TR",
+    "iata": "MSR"
+  },
+  {
+    "airport": "Ciudad del Carmen International Airport",
+    "region_name": "Ciudad del Carmen",
+    "country_code": "MX",
+    "iata": "CME"
+  },
+  {
+    "airport": "Mannheim-City Airport",
+    "region_name": "Mannheim",
+    "country_code": "DE",
+    "iata": "MHG"
+  },
+  {
+    "airport": "Woomera Airfield",
+    "region_name": "Woomera",
+    "country_code": "AU",
+    "iata": "UMR"
+  },
+  {
+    "airport": "Dauphin Barker Airport",
+    "region_name": "Dauphin",
+    "country_code": "CA",
+    "iata": "YDN"
+  },
+  {
+    "airport": "Yevlakh Airport",
+    "region_name": "Yevlakh",
+    "country_code": "AZ",
+    "iata": "YLV"
+  },
+  {
+    "airport": "Jorge Chávez International Airport",
+    "region_name": "Lima",
+    "country_code": "PE",
+    "iata": "LIM"
+  },
+  {
+    "airport": "Rupsi India Airport",
+    "region_name": null,
+    "country_code": "IN",
+    "iata": "RUP"
+  },
+  {
+    "airport": "Gilgal Airport",
+    "region_name": "Villa Claret",
+    "country_code": "CO",
+    "iata": "GGL"
+  },
+  {
+    "airport": "Kendall-Tamiami Executive Airport",
+    "region_name": "Miami",
+    "country_code": "US",
+    "iata": "TMB"
+  },
+  {
+    "airport": "Ikamiut Heliport",
+    "region_name": "Ikamiut",
+    "country_code": "GL",
+    "iata": "QJI"
+  },
+  {
+    "airport": "Niue International Airport",
+    "region_name": "Alofi",
+    "country_code": "NU",
+    "iata": "IUE"
+  },
+  {
+    "airport": "Parry Sound/Frying Pan Island-Sans Souci Seaplane Base",
+    "region_name": "Frying Pan Island",
+    "country_code": "CA",
+    "iata": "YSI"
+  },
+  {
+    "airport": "Dali Airport",
+    "region_name": "Xiaguan",
+    "country_code": "CN",
+    "iata": "DLU"
+  },
+  {
+    "airport": "Idiofa Airport",
+    "region_name": "Idiofa",
+    "country_code": "CD",
+    "iata": "IDF"
+  },
+  {
+    "airport": "Singleton Airport",
+    "region_name": "Singleton",
+    "country_code": "AU",
+    "iata": "SIX"
+  },
+  {
+    "airport": "Juana Azurduy De Padilla Airport",
+    "region_name": "Sucre",
+    "country_code": "BO",
+    "iata": "SRE"
+  },
+  {
+    "airport": "Boende Airport",
+    "region_name": "Boende",
+    "country_code": "CD",
+    "iata": "BNB"
+  },
+  {
+    "airport": "Plínio Alarcom Airport",
+    "region_name": "Três Lagoas",
+    "country_code": "BR",
+    "iata": "TJL"
+  },
+  {
+    "airport": "Lamap Airport",
+    "region_name": "Lamap",
+    "country_code": "VU",
+    "iata": "LPM"
+  },
+  {
+    "airport": "Cam Ranh Airport",
+    "region_name": "Nha Trang",
+    "country_code": "VN",
+    "iata": "CXR"
+  },
+  {
+    "airport": "Brescia Airport",
+    "region_name": "Montichiari (BS)",
+    "country_code": "IT",
+    "iata": "VBS"
+  },
+  {
+    "airport": "Bradley International Airport",
+    "region_name": "Hartford",
+    "country_code": "US",
+    "iata": "BDL"
+  },
+  {
+    "airport": "Mackall Army Air Field",
+    "region_name": "Camp Mackall",
+    "country_code": "US",
+    "iata": "HFF"
+  },
+  {
+    "airport": "Pukatawagan Airport",
+    "region_name": "Pukatawagan",
+    "country_code": "CA",
+    "iata": "XPK"
+  },
+  {
+    "airport": "Kasaan Seaplane Base",
+    "region_name": "Kasaan",
+    "country_code": "US",
+    "iata": "KXA"
+  },
+  {
+    "airport": "Mount Gunson Airport",
+    "region_name": "Mount Gunson",
+    "country_code": "AU",
+    "iata": "GSN"
+  },
+  {
+    "airport": "Terrace Bay Airport",
+    "region_name": "Terrace Bay, ON",
+    "country_code": "CA",
+    "iata": "YTJ"
+  },
+  {
+    "airport": "Lelystad Airport",
+    "region_name": "Lelystad",
+    "country_code": "NL",
+    "iata": "LEY"
+  },
+  {
+    "airport": "Imperial County Airport",
+    "region_name": "Imperial",
+    "country_code": "US",
+    "iata": "IPL"
+  },
+  {
+    "airport": "Richards Bay Airport",
+    "region_name": "Richards Bay",
+    "country_code": "ZA",
+    "iata": "RCB"
+  },
+  {
+    "airport": "Gran Canaria Airport",
+    "region_name": "Gran Canaria Island",
+    "country_code": "ES",
+    "iata": "LPA"
+  },
+  {
+    "airport": "Tôlanaro Airport",
+    "region_name": "Tôlanaro",
+    "country_code": "MG",
+    "iata": "FTU"
+  },
+  {
+    "airport": "Rivne International Airport",
+    "region_name": "Rivne",
+    "country_code": "UA",
+    "iata": "RWN"
+  },
+  {
+    "airport": "Kingscote Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "KGC"
+  },
+  {
+    "airport": "Zhob Airport",
+    "region_name": "Fort Sandeman",
+    "country_code": "PK",
+    "iata": "PZH"
+  },
+  {
+    "airport": "Mc Guire Air Force Base",
+    "region_name": "Wrightstown",
+    "country_code": "US",
+    "iata": "WRI"
+  },
+  {
+    "airport": "Naukati Bay Seaplane Base",
+    "region_name": "Tuxekan Island",
+    "country_code": "US",
+    "iata": "NKI"
+  },
+  {
+    "airport": "Taipei Songshan Airport",
+    "region_name": "Taipei City",
+    "country_code": "TW",
+    "iata": "TSA"
+  },
+  {
+    "airport": "Vanimo Airport",
+    "region_name": "Vanimo",
+    "country_code": "PG",
+    "iata": "VAI"
+  },
+  {
+    "airport": "Novo Campo Airport",
+    "region_name": "Boca do Acre",
+    "country_code": "BR",
+    "iata": "BCR"
+  },
+  {
+    "airport": "El Tari Airport",
+    "region_name": "Kupang-Timor Island",
+    "country_code": "ID",
+    "iata": "KOE"
+  },
+  {
+    "airport": "Mount Isa Airport",
+    "region_name": "Mount Isa",
+    "country_code": "AU",
+    "iata": "ISA"
+  },
+  {
+    "airport": "Schenectady County Airport",
+    "region_name": "Schenectady",
+    "country_code": "US",
+    "iata": "SCH"
+  },
+  {
+    "airport": "Pokhara Airport",
+    "region_name": "Pokhara",
+    "country_code": "NP",
+    "iata": "PKR"
+  },
+  {
+    "airport": "Hutchinson Municipal Airport",
+    "region_name": "Hutchinson",
+    "country_code": "US",
+    "iata": "HUT"
+  },
+  {
+    "airport": "Ivanof Bay Seaplane Base",
+    "region_name": "Ivanof Bay",
+    "country_code": "US",
+    "iata": "KIB"
+  },
+  {
+    "airport": "McKinley National Park Airport",
+    "region_name": "McKinley Park",
+    "country_code": "US",
+    "iata": "MCL"
+  },
+  {
+    "airport": "Hickory Regional Airport",
+    "region_name": "Hickory",
+    "country_code": "US",
+    "iata": "HKY"
+  },
+  {
+    "airport": "Takoradi Airport",
+    "region_name": "Sekondi-Takoradi",
+    "country_code": "GH",
+    "iata": "TKD"
+  },
+  {
+    "airport": "Stornoway Airport",
+    "region_name": "Stornoway",
+    "country_code": "GB",
+    "iata": "SYY"
+  },
+  {
+    "airport": "Baca Grande Airfield",
+    "region_name": "Crestone",
+    "country_code": "US",
+    "iata": "BCJ"
+  },
+  {
+    "airport": "Municipal José Figueiredo Airport",
+    "region_name": "Passos",
+    "country_code": "BR",
+    "iata": "PSW"
+  },
+  {
+    "airport": "Yaoqiang Airport",
+    "region_name": "Jinan",
+    "country_code": "CN",
+    "iata": "TNA"
+  },
+  {
+    "airport": "Tugdan Airport",
+    "region_name": "Tablas Island",
+    "country_code": "PH",
+    "iata": "TBH"
+  },
+  {
+    "airport": "Lalibella Airport",
+    "region_name": "Lalibela",
+    "country_code": "ET",
+    "iata": "LLI"
+  },
+  {
+    "airport": "Mackay Airport",
+    "region_name": "Mackay",
+    "country_code": "AU",
+    "iata": "MKY"
+  },
+  {
+    "airport": "Copper Center 2 Airport",
+    "region_name": "Copper Center",
+    "country_code": "US",
+    "iata": "CZC"
+  },
+  {
+    "airport": "Ghazni Airport",
+    "region_name": "Ghazni",
+    "country_code": "AF",
+    "iata": "GZI"
+  },
+  {
+    "airport": "Newcastle Airport",
+    "region_name": "Williamtown",
+    "country_code": "AU",
+    "iata": "NTL"
+  },
+  {
+    "airport": "Aguas Claras Airport",
+    "region_name": "Ocaña",
+    "country_code": "CO",
+    "iata": "OCV"
+  },
+  {
+    "airport": "Wagethe Airport",
+    "region_name": "Wagethe-Papua Island",
+    "country_code": "ID",
+    "iata": "WET"
+  },
+  {
+    "airport": "Crested Butte Airpark",
+    "region_name": "Crested Butte",
+    "country_code": "US",
+    "iata": "CSE"
+  },
+  {
+    "airport": "Duncan Town Airport",
+    "region_name": null,
+    "country_code": "BS",
+    "iata": "DCT"
+  },
+  {
+    "airport": "Andravida Air Base",
+    "region_name": "Andravida",
+    "country_code": "GR",
+    "iata": "PYR"
+  },
+  {
+    "airport": "Qinhuangdao Beidaihe Airport",
+    "region_name": "Qinhuangdao",
+    "country_code": "CN",
+    "iata": "BPE"
+  },
+  {
+    "airport": "Watsonville Municipal Airport",
+    "region_name": "Watsonville",
+    "country_code": "US",
+    "iata": "WVI"
+  },
+  {
+    "airport": "Newcastle Airport",
+    "region_name": "Newcastle",
+    "country_code": "ZA",
+    "iata": "NCS"
+  },
+  {
+    "airport": "Port of Poulsbo Marina Moorage Seaplane Base",
+    "region_name": "Poulsbo",
+    "country_code": "US",
+    "iata": "PUL"
+  },
+  {
+    "airport": "Cognac-Châteaubernard (BA 709) Air Base",
+    "region_name": "Cognac/Châteaubernard",
+    "country_code": "FR",
+    "iata": "CNG"
+  },
+  {
+    "airport": "Kaitaia Airport",
+    "region_name": "Kaitaia",
+    "country_code": "NZ",
+    "iata": "KAT"
+  },
+  {
+    "airport": "Charlottesville Albemarle Airport",
+    "region_name": "Charlottesville",
+    "country_code": "US",
+    "iata": "CHO"
+  },
+  {
+    "airport": "Medfra Airport",
+    "region_name": "Medfra",
+    "country_code": "US",
+    "iata": "MDR"
+  },
+  {
+    "airport": "Tarauacá Airport",
+    "region_name": "Tarauacá",
+    "country_code": "BR",
+    "iata": "TRQ"
+  },
+  {
+    "airport": "Garissa Airport",
+    "region_name": "Garissa",
+    "country_code": "KE",
+    "iata": "GAS"
+  },
+  {
+    "airport": "Alxa Right Banner Badanjilin Airport",
+    "region_name": "Badanjilin",
+    "country_code": "CN",
+    "iata": "RHT"
+  },
+  {
+    "airport": "Ólafsfjörður Airport",
+    "region_name": "Ólafsfjörður",
+    "country_code": "IS",
+    "iata": "OFJ"
+  },
+  {
+    "airport": "Matagami Airport",
+    "region_name": "Matagami",
+    "country_code": "CA",
+    "iata": "YNM"
+  },
+  {
+    "airport": "Clifton Hills Airport",
+    "region_name": "Clifton Hills",
+    "country_code": "AU",
+    "iata": "CFH"
+  },
+  {
+    "airport": "Norden-Norddeich Airport",
+    "region_name": "Norddeich",
+    "country_code": "DE",
+    "iata": "NOD"
+  },
+  {
+    "airport": "Brookings Regional Airport",
+    "region_name": "Brookings",
+    "country_code": "US",
+    "iata": "BKX"
+  },
+  {
+    "airport": "Penong Airport",
+    "region_name": "Penong",
+    "country_code": "AU",
+    "iata": "PEY"
+  },
+  {
+    "airport": "Sedalia Memorial Airport",
+    "region_name": "Sedalia",
+    "country_code": "US",
+    "iata": "DMO"
+  },
+  {
+    "airport": "Akure Airport",
+    "region_name": "Akure",
+    "country_code": "NG",
+    "iata": "AKR"
+  },
+  {
+    "airport": "Puerto Berrio Airport",
+    "region_name": "Puerto Berrio",
+    "country_code": "CO",
+    "iata": "PBE"
+  },
+  {
+    "airport": "Panguitch Municipal Airport",
+    "region_name": "Panguitch",
+    "country_code": "US",
+    "iata": "PNU"
+  },
+  {
+    "airport": "Fabio Alberto Leon Bentley Airport",
+    "region_name": "Mitú",
+    "country_code": "CO",
+    "iata": "MVP"
+  },
+  {
+    "airport": "Khoram Abad Airport",
+    "region_name": null,
+    "country_code": "IR",
+    "iata": "KHD"
+  },
+  {
+    "airport": "Goma International Airport",
+    "region_name": "Goma",
+    "country_code": "CD",
+    "iata": "GOM"
+  },
+  {
+    "airport": "Mulia Airport",
+    "region_name": "Mulia-Papua Island",
+    "country_code": "ID",
+    "iata": "LII"
+  },
+  {
+    "airport": "Phnom Penh International Airport",
+    "region_name": "Phnom Penh",
+    "country_code": "KH",
+    "iata": "PNH"
+  },
+  {
+    "airport": "Sumter Airport",
+    "region_name": "Sumter",
+    "country_code": "US",
+    "iata": "SUM"
+  },
+  {
+    "airport": "Tarbes-Lourdes-Pyrénées Airport",
+    "region_name": "Tarbes/Lourdes/Pyrénées",
+    "country_code": "FR",
+    "iata": "LDE"
+  },
+  {
+    "airport": "Nioro du Sahel Airport",
+    "region_name": "Nioro du Sahel",
+    "country_code": "ML",
+    "iata": "NIX"
+  },
+  {
+    "airport": "Albertus Airport",
+    "region_name": "Freeport",
+    "country_code": "US",
+    "iata": "FEP"
+  },
+  {
+    "airport": "Ormara Airport",
+    "region_name": "Ormara Raik",
+    "country_code": "PK",
+    "iata": "ORW"
+  },
+  {
+    "airport": "Ust-Tsylma Airport",
+    "region_name": "Ust-Tsylma",
+    "country_code": "RU",
+    "iata": "UTS"
+  },
+  {
+    "airport": "Nan Airport",
+    "region_name": null,
+    "country_code": "TH",
+    "iata": "NNT"
+  },
+  {
+    "airport": "Mayo Airport",
+    "region_name": "Mayo",
+    "country_code": "CA",
+    "iata": "YMA"
+  },
+  {
+    "airport": "Victoria Harbour Seaplane Base",
+    "region_name": "Victoria",
+    "country_code": "CA",
+    "iata": "YWH"
+  },
+  {
+    "airport": "Dumatumbun Airport",
+    "region_name": "Langgur-Seram Island",
+    "country_code": "ID",
+    "iata": "LUV"
+  },
+  {
+    "airport": "Van Ferit Melen Airport",
+    "region_name": "Van",
+    "country_code": "TR",
+    "iata": "VAN"
+  },
+  {
+    "airport": "Coffeyville Municipal Airport",
+    "region_name": "Coffeyville",
+    "country_code": "US",
+    "iata": "CFV"
+  },
+  {
+    "airport": "Carrasco International /General C L Berisso Airport",
+    "region_name": "Montevideo",
+    "country_code": "UY",
+    "iata": "MVD"
+  },
+  {
+    "airport": "Nukutavake Airport",
+    "region_name": "Nukutavake",
+    "country_code": "PF",
+    "iata": "NUK"
+  },
+  {
+    "airport": "Greene County Airport",
+    "region_name": "Waynesburg",
+    "country_code": "US",
+    "iata": "WAY"
+  },
+  {
+    "airport": "King Abdulaziz Air Base",
+    "region_name": null,
+    "country_code": "SA",
+    "iata": "DHA"
+  },
+  {
+    "airport": "Utti Air Base",
+    "region_name": "Utti / Valkeala",
+    "country_code": "FI",
+    "iata": "UTI"
+  },
+  {
+    "airport": "Berdyansk Airport",
+    "region_name": "Berdyansk",
+    "country_code": "UA",
+    "iata": "ERD"
+  },
+  {
+    "airport": "Andrau Airpark",
+    "region_name": "Houston",
+    "country_code": "US",
+    "iata": "AAP"
+  },
+  {
+    "airport": "Suabi Airport",
+    "region_name": null,
+    "country_code": "PG",
+    "iata": "SBE"
+  },
+  {
+    "airport": "Mariquita Airport",
+    "region_name": "Mariquita",
+    "country_code": "CO",
+    "iata": "MQU"
+  },
+  {
+    "airport": "Mabaruma Airport",
+    "region_name": "Mabaruma",
+    "country_code": "GY",
+    "iata": "USI"
+  },
+  {
+    "airport": "Bauru Airport",
+    "region_name": "Bauru",
+    "country_code": "BR",
+    "iata": "BAU"
+  },
+  {
+    "airport": "Raglan Airfield",
+    "region_name": null,
+    "country_code": "NZ",
+    "iata": "RAG"
+  },
+  {
+    "airport": "João Correa da Rocha Airport",
+    "region_name": "Marabá",
+    "country_code": "BR",
+    "iata": "MAB"
+  },
+  {
+    "airport": "Mouyondzi Airport",
+    "region_name": "Mouyondzi",
+    "country_code": "CG",
+    "iata": "MUY"
+  },
+  {
+    "airport": "Mechanics Bay Heliport",
+    "region_name": "Auckland City",
+    "country_code": "NZ",
+    "iata": "MHB"
+  },
+  {
+    "airport": "Port Walter Seaplane Base",
+    "region_name": "Port Walter",
+    "country_code": "US",
+    "iata": "PWR"
+  },
+  {
+    "airport": "Sepik Plains Airport",
+    "region_name": "Sepik Plains",
+    "country_code": "PG",
+    "iata": "SPV"
+  },
+  {
+    "airport": "Itaperuna Airport",
+    "region_name": "Itaperuna",
+    "country_code": "BR",
+    "iata": "ITP"
+  },
+  {
+    "airport": "Tte. Julio Gallardo Airport",
+    "region_name": "Puerto Natales",
+    "country_code": "CL",
+    "iata": "PNT"
+  },
+  {
+    "airport": "Bimini North Seaplane Base",
+    "region_name": "Bimini",
+    "country_code": "BS",
+    "iata": "NSB"
+  },
+  {
+    "airport": "Stella Maris Airport",
+    "region_name": "Stella Maris",
+    "country_code": "BS",
+    "iata": "SML"
+  },
+  {
+    "airport": "Jumla Airport",
+    "region_name": "Jumla",
+    "country_code": "NP",
+    "iata": "JUM"
+  },
+  {
+    "airport": "Wanaka Airport",
+    "region_name": null,
+    "country_code": "NZ",
+    "iata": "WKA"
+  },
+  {
+    "airport": "Taskul Airport",
+    "region_name": "Taskul",
+    "country_code": "PG",
+    "iata": "TSK"
+  },
+  {
+    "airport": "Abdul Rachman Saleh Airport",
+    "region_name": "Malang-Java Island",
+    "country_code": "ID",
+    "iata": "MLG"
+  },
+  {
+    "airport": "Zhob Airport",
+    "region_name": "Fort Sandeman",
+    "country_code": "PK",
+    "iata": "PZH"
+  },
+  {
+    "airport": "Bereina Airport",
+    "region_name": "Bereina Mission",
+    "country_code": "PG",
+    "iata": "BEA"
+  },
+  {
+    "airport": "Barrow Walney Island Airport",
+    "region_name": "Barrow-in-Furness",
+    "country_code": "GB",
+    "iata": "BWF"
+  },
+  {
+    "airport": "Parma Airport",
+    "region_name": "Parma",
+    "country_code": "IT",
+    "iata": "PMF"
+  },
+  {
+    "airport": "Omboue Hopital Airport",
+    "region_name": "Omboue",
+    "country_code": "GA",
+    "iata": "OMB"
+  },
+  {
+    "airport": "Torwood Airport",
+    "region_name": "Torwood",
+    "country_code": "AU",
+    "iata": "TWP"
+  },
+  {
+    "airport": "Longnan Chengzhou Airport",
+    "region_name": "Longnan",
+    "country_code": "CN",
+    "iata": "LNL"
+  },
+  {
+    "airport": "Poplar River Airport",
+    "region_name": "Poplar River",
+    "country_code": "CA",
+    "iata": "XPP"
+  },
+  {
+    "airport": "Jacareacanga Airport",
+    "region_name": "Jacareacanga",
+    "country_code": "BR",
+    "iata": "JCR"
+  },
+  {
+    "airport": "Tunxi International Airport",
+    "region_name": "Huangshan",
+    "country_code": "CN",
+    "iata": "TXN"
+  },
+  {
+    "airport": "Barrow Island Airport",
+    "region_name": null,
+    "country_code": "AU",
+    "iata": "BWB"
+  },
+  {
+    "airport": "Ponta Pelada Airport",
+    "region_name": "Manaus",
+    "country_code": "BR",
+    "iata": "PLL"
+  },
+  {
+    "airport": "Aqaba King Hussein International Airport",
+    "region_name": "Aqaba",
+    "country_code": "JO",
+    "iata": "AQJ"
+  },
+  {
+    "airport": "Booue Airport",
+    "region_name": "Booue",
+    "country_code": "GA",
+    "iata": "BGB"
+  },
+  {
+    "airport": "Freeman Municipal Airport",
+    "region_name": "Seymour",
+    "country_code": "US",
+    "iata": "SER"
+  },
+  {
+    "airport": "Point Baker Seaplane Base",
+    "region_name": "Point Baker",
+    "country_code": "US",
+    "iata": "KPB"
+  },
+  {
+    "airport": "Sukhothai Airport",
+    "region_name": null,
+    "country_code": "TH",
+    "iata": "THS"
+  },
+  {
+    "airport": "Broken Bow Municipal Airport",
+    "region_name": "Broken Bow",
+    "country_code": "US",
+    "iata": "BBW"
+  },
+  {
+    "airport": "Tok Junction Airport",
+    "region_name": "Tok",
+    "country_code": "US",
+    "iata": "TKJ"
+  },
+  {
+    "airport": "Iliamna Airport",
+    "region_name": "Iliamna",
+    "country_code": "US",
+    "iata": "ILI"
+  },
+  {
+    "airport": "Tata Airport",
+    "region_name": "Labé",
+    "country_code": "GN",
+    "iata": "LEK"
+  },
+  {
+    "airport": "Sevilla Airport",
+    "region_name": "Sevilla",
+    "country_code": "ES",
+    "iata": "SVQ"
+  },
+  {
+    "airport": "Aktobe Airport",
+    "region_name": "Aktyubinsk",
+    "country_code": "KZ",
+    "iata": "AKX"
+  },
+  {
+    "airport": "Arly Airport",
+    "region_name": "Arly",
+    "country_code": "BF",
+    "iata": "ARL"
+  },
+  {
+    "airport": "Taszár Air Base",
+    "region_name": "Taszár",
+    "country_code": "HU",
+    "iata": "TZR"
+  },
+  {
+    "airport": "San Ramón Airport",
+    "region_name": "San Ramón / Mamoré",
+    "country_code": "BO",
+    "iata": "SRD"
+  },
+  {
+    "airport": "Whyalla Airport",
+    "region_name": "Whyalla",
+    "country_code": "AU",
+    "iata": "WYA"
+  },
+  {
+    "airport": "Teller Airport",
+    "region_name": "Teller",
+    "country_code": "US",
+    "iata": "TLA"
+  },
+  {
+    "airport": "Liuzhou Bailian Airport",
+    "region_name": "Liuzhou",
+    "country_code": "CN",
+    "iata": "LZH"
+  },
+  {
+    "airport": "In Aménas Airport",
+    "region_name": "Aménas",
+    "country_code": "DZ",
+    "iata": "IAM"
+  },
+  {
+    "airport": "Krókstaðarmelar Airport",
+    "region_name": "Hvammstangi",
+    "country_code": "IS",
+    "iata": "HVM"
+  },
+  {
+    "airport": "Langeoog Airport",
+    "region_name": "Langeoog",
+    "country_code": "DE",
+    "iata": "LGO"
+  },
+  {
+    "airport": "Villanova D'Albenga International Airport",
+    "region_name": "Albenga (SV)",
+    "country_code": "IT",
+    "iata": "ALL"
+  },
+  {
+    "airport": "Antônio Guerreiro Airport",
+    "region_name": "Guimarães",
+    "country_code": "BR",
+    "iata": "GMS"
+  },
+  {
+    "airport": "Orchid Beach Airport",
+    "region_name": "Orchid Beach",
+    "country_code": "AU",
+    "iata": "OKB"
+  },
+  {
+    "airport": "Marion County Rankin Fite Airport",
+    "region_name": "Hamilton",
+    "country_code": "US",
+    "iata": "HAB"
+  },
+  {
+    "airport": "Châteauroux-Déols \"Marcel Dassault\" Airport",
+    "region_name": "Châteauroux/Déols",
+    "country_code": "FR",
+    "iata": "CHR"
+  },
+  {
+    "airport": "Biggs Army Air Field (Fort Bliss)",
+    "region_name": "Fort Bliss/El Paso",
+    "country_code": "US",
+    "iata": "BIF"
+  },
+  {
+    "airport": "Amsterdam Airport Schiphol",
+    "region_name": "Amsterdam",
+    "country_code": "NL",
+    "iata": "AMS"
+  },
+  {
+    "airport": "Rebun Airport",
+    "region_name": "Rebun",
+    "country_code": "JP",
+    "iata": "RBJ"
+  },
+  {
+    "airport": "La Pedrera Airport",
+    "region_name": "La Pedrera",
+    "country_code": "CO",
+    "iata": "LPD"
+  },
+  {
+    "airport": "Tabuk Airport",
+    "region_name": "Tabuk",
+    "country_code": "SA",
+    "iata": "TUU"
+  },
+  {
+    "airport": "Fairmont Municipal Airport",
+    "region_name": "Fairmont",
+    "country_code": "US",
+    "iata": "FRM"
+  },
+  {
+    "airport": "Kangirsuk Airport",
+    "region_name": "Kangirsuk",
+    "country_code": "CA",
+    "iata": "YKG"
+  },
+  {
+    "airport": "Kungim Airport",
+    "region_name": "Kungim",
+    "country_code": "PG",
+    "iata": "KGM"
+  },
+  {
+    "airport": "Inhaminga Airport",
+    "region_name": "Inhaminga",
+    "country_code": "MZ",
+    "iata": "IMG"
+  },
+  {
+    "airport": "Ji-Paraná Airport",
+    "region_name": "Ji-Paraná",
+    "country_code": "BR",
+    "iata": "JPR"
+  },
+  {
+    "airport": "Salina Gunnison Airport",
+    "region_name": "Salina",
+    "country_code": "US",
+    "iata": "SBO"
+  },
+  {
+    "airport": "Boundiali Airport",
+    "region_name": "Boundiali",
+    "country_code": "CI",
+    "iata": "BXI"
+  },
+  {
+    "airport": "Les Cayes Airport",
+    "region_name": "Les Cayes",
+    "country_code": "HT",
+    "iata": "CYA"
+  },
+  {
+    "airport": "Bastia-Poretta Airport",
+    "region_name": "Bastia/Poretta",
+    "country_code": "FR",
+    "iata": "BIA"
+  },
+  {
+    "airport": "Valcheta Airport",
+    "region_name": "Valcheta",
+    "country_code": "AR",
+    "iata": "VCF"
+  },
+  {
+    "airport": "Currillo Airport",
+    "region_name": "Currillo",
+    "country_code": "CO",
+    "iata": "CUI"
+  },
+  {
+    "airport": "Rickenbacker International Airport",
+    "region_name": "Columbus",
+    "country_code": "US",
+    "iata": "LCK"
+  },
+  {
+    "airport": "Lac Brochet Airport",
+    "region_name": "Lac Brochet",
+    "country_code": "CA",
+    "iata": "XLB"
+  },
+  {
+    "airport": "Ketchikan Harbor Seaplane Base",
+    "region_name": "Ketchikan",
+    "country_code": "US",
+    "iata": "WFB"
+  },
+  {
+    "airport": "Aguaclara Airport",
+    "region_name": "Aguaclara",
+    "country_code": "CO",
+    "iata": "ACL"
+  },
+  {
+    "airport": "Keshod Airport",
+    "region_name": null,
+    "country_code": "IN",
+    "iata": "IXK"
+  },
+  {
+    "airport": "Portland International Jetport Airport",
+    "region_name": "Portland",
+    "country_code": "US",
+    "iata": "PWM"
+  },
+  {
+    "airport": "El Nouzha Airport",
+    "region_name": "Alexandria",
+    "country_code": "EG",
+    "iata": "ALY"
+  },
+  {
+    "airport": "Presidente Prudente Airport",
+    "region_name": "Presidente Prudente",
+    "country_code": "BR",
+    "iata": "PPB"
+  },
+  {
+    "airport": "Coen Airport",
+    "region_name": "Coen",
+    "country_code": "AU",
+    "iata": "CUQ"
+  },
+  {
+    "airport": "Zoersel (Oostmalle) Airfield",
+    "region_name": "Zoersel",
+    "country_code": "BE",
+    "iata": "OBL"
+  },
+  {
+    "airport": "Mocímboa da Praia Airport",
+    "region_name": "Mocímboa da Praia",
+    "country_code": "MZ",
+    "iata": "MZB"
+  },
+  {
+    "airport": "Pardoo Airport",
+    "region_name": "Pardoo",
+    "country_code": "AU",
+    "iata": "PRD"
+  },
+  {
+    "airport": "Yasuru Airport",
+    "region_name": "Yasuru",
+    "country_code": "PG",
+    "iata": "KSX"
+  },
+  {
+    "airport": "Port Sudan New International Airport",
+    "region_name": "Port Sudan",
+    "country_code": "SD",
+    "iata": "PZU"
+  },
+  {
+    "airport": "Habi Airport",
+    "region_name": "Habi",
+    "country_code": "PG",
+    "iata": "HBD"
+  },
+  {
+    "airport": "Osan Air Base",
+    "region_name": null,
+    "country_code": "KR",
+    "iata": "OSN"
+  },
+  {
+    "airport": "São Joaquim Airport",
+    "region_name": "São Joaquim",
+    "country_code": "BR",
+    "iata": "0"
+  },
+  {
+    "airport": "Roseau Municipal Rudy Billberg Field",
+    "region_name": "Roseau",
+    "country_code": "US",
+    "iata": "ROX"
+  },
+  {
+    "airport": "Cascade Airport",
+    "region_name": "Cascade",
+    "country_code": "US",
+    "iata": "ICS"
+  },
+  {
+    "airport": "Zadar Airport",
+    "region_name": "Zemunik (Zadar)",
+    "country_code": "HR",
+    "iata": "ZAD"
+  },
+  {
+    "airport": "RAF Lyneham",
+    "region_name": "Lyneham",
+    "country_code": "GB",
+    "iata": "LYE"
+  },
+  {
+    "airport": "Jutigalpa airport",
+    "region_name": "Jutigalpa",
+    "country_code": "HN",
+    "iata": "JUT"
+  },
+  {
+    "airport": "Vir Savarkar International Airport",
+    "region_name": "Port Blair",
+    "country_code": "IN",
+    "iata": "IXZ"
+  },
+  {
+    "airport": "North Eleuthera Airport",
+    "region_name": "North Eleuthera",
+    "country_code": "BS",
+    "iata": "ELH"
+  },
+  {
+    "airport": "Quakertown Airport",
+    "region_name": "Quakertown",
+    "country_code": "US",
+    "iata": "UKT"
+  },
+  {
+    "airport": "Magas Airport",
+    "region_name": "Magas",
+    "country_code": "RU",
+    "iata": "IGT"
+  },
+  {
+    "airport": "Albina Airport",
+    "region_name": "Albina",
+    "country_code": "SR",
+    "iata": "ABN"
+  },
+  {
+    "airport": "Candala Airport",
+    "region_name": "Candala",
+    "country_code": "SO",
+    "iata": "CXN"
+  },
+  {
+    "airport": "Cape May County Airport",
+    "region_name": "Wildwood",
+    "country_code": "US",
+    "iata": "WWD"
+  },
+  {
+    "airport": "Sabu-Tardanu Airport",
+    "region_name": "Sabu-Sawu Island",
+    "country_code": "ID",
+    "iata": "SAU"
+  },
+  {
+    "airport": "Tatakoto Airport",
+    "region_name": "Tatakoto",
+    "country_code": "PF",
+    "iata": "TKV"
+  },
+  {
+    "airport": "Richards Bay Airport",
+    "region_name": "Richards Bay",
+    "country_code": "ZA",
+    "iata": "RCB"
+  },
+  {
+    "airport": "Virginia Highlands Airport",
+    "region_name": "Abingdon",
+    "country_code": "US",
+    "iata": "VJI"
+  },
+  {
+    "airport": "Palm Beach International Airport",
+    "region_name": "West Palm Beach",
+    "country_code": "US",
+    "iata": "PBI"
+  },
+  {
+    "airport": "Nakina Airport",
+    "region_name": "Nakina",
+    "country_code": "CA",
+    "iata": "YQN"
+  },
+  {
+    "airport": "Las Vegas Airport",
+    "region_name": "Rio Dulce",
+    "country_code": "GT",
+    "iata": "LCF"
+  },
+  {
+    "airport": "Ohkay Owingeh Airport",
+    "region_name": "Espanola",
+    "country_code": "US",
+    "iata": "ESO"
+  },
+  {
+    "airport": "Tehachapi Municipal Airport",
+    "region_name": "Tehachapi",
+    "country_code": "US",
+    "iata": "TSP"
+  },
+  {
+    "airport": "Mukeiras Airport",
+    "region_name": "Mukayras",
+    "country_code": "YE",
+    "iata": "UKR"
+  },
+  {
+    "airport": "Renton Municipal Airport",
+    "region_name": "Renton",
+    "country_code": "US",
+    "iata": "RNT"
+  },
+  {
+    "airport": "Napaskiak Airport",
+    "region_name": "Napaskiak",
+    "country_code": "US",
+    "iata": "PKA"
+  },
+  {
+    "airport": "Elizabeth Field",
+    "region_name": "Fishers Island",
+    "country_code": "US",
+    "iata": "FID"
+  },
+  {
+    "airport": "Tolmachevo Airport",
+    "region_name": "Novosibirsk",
+    "country_code": "RU",
+    "iata": "OVB"
+  },
+  {
+    "airport": "Ardmore Municipal Airport",
+    "region_name": "Ardmore",
+    "country_code": "US",
+    "iata": "ADM"
+  },
+  {
+    "airport": "Jamba Airport",
+    "region_name": "Jamba",
+    "country_code": "AO",
+    "iata": "JMB"
+  },
+  {
+    "airport": "Tres Arroyos Airport",
+    "region_name": "Tres Arroyos",
+    "country_code": "AR",
+    "iata": "OYO"
+  },
+  {
+    "airport": "Rochefort-Saint-Agnant (BA 721) Airport",
+    "region_name": "Rochefort/Saint-Agnant",
+    "country_code": "FR",
+    "iata": "RCO"
+  },
+  {
+    "airport": "Kaya Airport",
+    "region_name": "Kaya",
+    "country_code": "BF",
+    "iata": "XKY"
+  },
+  {
+    "airport": "Mingan Airport",
+    "region_name": "Mingan",
+    "country_code": "CA",
+    "iata": "YLP"
+  },
+  {
+    "airport": "Torrejón Airport",
+    "region_name": "Madrid",
+    "country_code": "ES",
+    "iata": "TOJ"
+  },
+  {
+    "airport": "Kake Seaplane Base",
+    "region_name": "Kake",
+    "country_code": "US",
+    "iata": "KAE"
+  },
+  {
+    "airport": "Región de Murcia International Airport",
+    "region_name": "Corvera",
+    "country_code": "ES",
+    "iata": "RMU"
+  },
+  {
+    "airport": "Trujillo Airport",
+    "region_name": "Trujillo",
+    "country_code": "HN",
+    "iata": "TJI"
+  },
+  {
+    "airport": "Greenville Airport",
+    "region_name": "Greenville",
+    "country_code": "US",
+    "iata": "GRE"
+  },
+  {
+    "airport": "Louisville International Standiford Field",
+    "region_name": "Louisville",
+    "country_code": "US",
+    "iata": "SDF"
+  },
+  {
+    "airport": "Woomera Airfield",
+    "region_name": "Woomera",
+    "country_code": "AU",
+    "iata": "UMR"
+  },
+  {
+    "airport": "Sanfebagar Airport",
+    "region_name": "Sanfebagar",
+    "country_code": "NP",
+    "iata": "FEB"
+  },
+  {
+    "airport": "Tenerife Norte Airport",
+    "region_name": "Tenerife Island",
+    "country_code": "ES",
+    "iata": "TFN"
+  },
+  {
+    "airport": "Vigo Airport",
+    "region_name": "Vigo",
+    "country_code": "ES",
+    "iata": "VGO"
+  },
+  {
+    "airport": "Xangongo Airport",
+    "region_name": "Xangongo",
+    "country_code": "AO",
+    "iata": "XGN"
+  },
+  {
+    "airport": "Bulgan Airport",
+    "region_name": "Bulgan",
+    "country_code": "MN",
+    "iata": "UGA"
+  },
+  {
+    "airport": "Malanje Airport",
+    "region_name": "Malanje",
+    "country_code": "AO",
+    "iata": "MEG"
+  },
+  {
+    "airport": "Lago Argentino Airport",
+    "region_name": "El Calafate",
+    "country_code": "AR",
+    "iata": "ING"
+  },
+  {
+    "airport": "Afton Municipal Airport",
+    "region_name": "Afton",
+    "country_code": "US",
+    "iata": "AFO"
+  },
+  {
+    "airport": "Alerta Airport",
+    "region_name": "Fortaleza",
+    "country_code": "PE",
+    "iata": "ALD"
+  },
+  {
+    "airport": "Merritt Airport",
+    "region_name": "Merritt",
+    "country_code": "CA",
+    "iata": "YMB"
+  },
+  {
+    "airport": "Bawean Airport",
+    "region_name": "Bawean",
+    "country_code": "ID",
+    "iata": "BXW"
+  },
+  {
+    "airport": "Kerteh Airport",
+    "region_name": "Kerteh",
+    "country_code": "MY",
+    "iata": "KTE"
+  },
+  {
+    "airport": "Mid Ohio Valley Regional Airport",
+    "region_name": "Parkersburg",
+    "country_code": "US",
+    "iata": "PKB"
+  },
+  {
+    "airport": "Estadual Arthur Siqueira Airport",
+    "region_name": "Bragança Paulista",
+    "country_code": "BR",
+    "iata": "BJP"
+  },
+  {
+    "airport": "Yamagata Airport",
+    "region_name": "Yamagata",
+    "country_code": "JP",
+    "iata": "GAJ"
+  },
+  {
+    "airport": "Pedernales Airport",
+    "region_name": null,
+    "country_code": "VE",
+    "iata": "PDZ"
+  },
+  {
+    "airport": "Brussels Airport",
+    "region_name": "Brussels",
+    "country_code": "BE",
+    "iata": "BRU"
+  },
+  {
+    "airport": "Kopitnari Airport",
+    "region_name": "Kutaisi",
+    "country_code": "GE",
+    "iata": "KUT"
+  },
+  {
+    "airport": "Wiscasset Airport",
+    "region_name": "Wiscasset",
+    "country_code": "US",
+    "iata": "ISS"
+  },
+  {
+    "airport": "Melfi Airport",
+    "region_name": "Melfi",
+    "country_code": "TD",
+    "iata": "MEF"
+  },
+  {
+    "airport": "Ama Airport",
+    "region_name": null,
+    "country_code": "PG",
+    "iata": "AMF"
+  },
+  {
+    "airport": "Sila Airport",
+    "region_name": "Sila Mission",
+    "country_code": "PG",
+    "iata": "SIL"
+  },
+  {
+    "airport": "Raduzhny Airport",
+    "region_name": "Raduzhnyi",
+    "country_code": "RU",
+    "iata": "RAT"
+  },
+  {
+    "airport": "Tshikapa Airport",
+    "region_name": "Tshikapa",
+    "country_code": "CD",
+    "iata": "TSH"
+  },
+  {
+    "airport": "Saibai Island Airport",
+    "region_name": "Saibai Island",
+    "country_code": "AU",
+    "iata": "SBR"
+  },
+  {
+    "airport": "San Luis De Palenque Airport",
+    "region_name": "San Luis De Palenque",
+    "country_code": "CO",
+    "iata": "SQE"
+  },
+  {
+    "airport": "Bawean Airport",
+    "region_name": "Bawean",
+    "country_code": "ID",
+    "iata": "BXW"
+  },
+  {
+    "airport": "Wright-Patterson Air Force Base",
+    "region_name": "Dayton",
+    "country_code": "US",
+    "iata": "FFO"
+  },
+  {
+    "airport": "Grand Lake Regional Airport",
+    "region_name": "Afton",
+    "country_code": "US",
+    "iata": "NRI"
+  },
+  {
+    "airport": "Bundaberg Airport",
+    "region_name": "Bundaberg",
+    "country_code": "AU",
+    "iata": "BDB"
+  },
+  {
+    "airport": "Ndalatandos Airport",
+    "region_name": "Ndalatandos",
+    "country_code": "AO",
+    "iata": "NDF"
+  },
+  {
+    "airport": "Lista Airport",
+    "region_name": "Farsund",
+    "country_code": "NO",
+    "iata": "FAN"
+  },
+  {
+    "airport": "Aberdeen Regional Airport",
+    "region_name": "Aberdeen",
+    "country_code": "US",
+    "iata": "ABR"
+  },
+  {
+    "airport": "Damascus International Airport",
+    "region_name": "Damascus",
+    "country_code": "SY",
+    "iata": "DAM"
+  },
+  {
+    "airport": "Mayor PNP Nancy Flores Paucar Airport",
+    "region_name": "Mazamari",
+    "country_code": "PE",
+    "iata": "MZA"
+  },
+  {
+    "airport": "Cakung Airport",
+    "region_name": "Baucau",
+    "country_code": "TL",
+    "iata": "BCH"
+  },
+  {
+    "airport": "Bawan Airport",
+    "region_name": null,
+    "country_code": "PG",
+    "iata": "BWJ"
+  },
+  {
+    "airport": "Moyobamba Airport",
+    "region_name": "Moyobamba",
+    "country_code": "PE",
+    "iata": "MBP"
+  },
+  {
+    "airport": "Lake Manyara Airport",
+    "region_name": "Lake Manyara National Park",
+    "country_code": "TZ",
+    "iata": "LKY"
+  },
+  {
+    "airport": "28 de Noviembre Airport",
+    "region_name": "Rio Turbio",
+    "country_code": "AR",
+    "iata": "RYO"
+  },
+  {
+    "airport": "Isla Mujeres Airport",
+    "region_name": null,
+    "country_code": "MX",
+    "iata": "ISJ"
+  },
+  {
+    "airport": "Shageluk Airport",
+    "region_name": "Shageluk",
+    "country_code": "US",
+    "iata": "SHX"
+  },
+  {
+    "airport": "Hobart Regional Airport",
+    "region_name": "Hobart",
+    "country_code": "US",
+    "iata": "HBR"
+  },
+  {
+    "airport": "Fort Chipewyan Airport",
+    "region_name": "Fort Chipewyan",
+    "country_code": "CA",
+    "iata": "YPY"
+  },
+  {
+    "airport": "Municipal de Linares Airport",
+    "region_name": "Linares",
+    "country_code": "CL",
+    "iata": "ZLR"
+  },
+  {
+    "airport": "Pimaga Airport",
+    "region_name": "Pimaga",
+    "country_code": "PG",
+    "iata": "PMP"
+  },
+  {
+    "airport": "Sekakes Airport",
+    "region_name": "Sekakes",
+    "country_code": "LS",
+    "iata": "SKQ"
+  },
+  {
+    "airport": "Moshi Airport",
+    "region_name": "Moshi",
+    "country_code": "TZ",
+    "iata": "QSI"
+  },
+  {
+    "airport": "Ouango Fitini Airport",
+    "region_name": "Ouango Fitini",
+    "country_code": "CI",
+    "iata": "OFI"
+  },
+  {
+    "airport": "Komatsu Airport",
+    "region_name": "Kanazawa",
+    "country_code": "JP",
+    "iata": "KMQ"
+  },
+  {
+    "airport": "Arvaikheer Airport",
+    "region_name": "Arvaikheer",
+    "country_code": "MN",
+    "iata": "AVK"
+  },
+  {
+    "airport": "Adnan Menderes International Airport",
+    "region_name": "İzmir",
+    "country_code": "TR",
+    "iata": "ADB"
+  },
+  {
+    "airport": "Lethbridge County Airport",
+    "region_name": "Lethbridge",
+    "country_code": "CA",
+    "iata": "YQL"
+  },
+  {
+    "airport": "New York Skyports Inc Seaplane Base",
+    "region_name": "New York",
+    "country_code": "US",
+    "iata": "QNY"
+  },
+  {
+    "airport": "Bella Coola Airport",
+    "region_name": "Bella Coola",
+    "country_code": "CA",
+    "iata": "QBC"
+  },
+  {
+    "airport": "Zumbi dos Palmares Airport",
+    "region_name": "Maceió",
+    "country_code": "BR",
+    "iata": "MCZ"
+  },
+  {
+    "airport": "Mae Sot Airport",
+    "region_name": null,
+    "country_code": "TH",
+    "iata": "MAQ"
+  },
+  {
+    "airport": "Bonito Airport",
+    "region_name": "Bonito",
+    "country_code": "BR",
+    "iata": "BYO"
+  },
+  {
+    "airport": "Malam Airport",
+    "region_name": "Malam",
+    "country_code": "PG",
+    "iata": "MQO"
+  },
+  {
+    "airport": "Southern Seaplane Airport",
+    "region_name": "Belle Chasse",
+    "country_code": "US",
+    "iata": "BCS"
+  },
+  {
+    "airport": "Sierra Maestra Airport",
+    "region_name": "Manzanillo",
+    "country_code": "CU",
+    "iata": "MZO"
+  },
+  {
+    "airport": "Boundary Bay Airport",
+    "region_name": "Vancouver",
+    "country_code": "CA",
+    "iata": "YDT"
+  },
+  {
+    "airport": "Bitam Airport",
+    "region_name": "Bitam",
+    "country_code": "GA",
+    "iata": "BMM"
+  },
+  {
+    "airport": "Slayton Municipal Airport",
+    "region_name": "Slayton",
+    "country_code": "US",
+    "iata": "NSL"
+  },
+  {
+    "airport": "Siegerland Airport",
+    "region_name": null,
+    "country_code": "DE",
+    "iata": "SGE"
+  },
+  {
+    "airport": "Copernicus Wrocław Airport",
+    "region_name": "Wrocław",
+    "country_code": "PL",
+    "iata": "WRO"
+  },
+  {
+    "airport": "Seunagan Airport",
+    "region_name": "Peureumeue-Sumatra Island",
+    "country_code": "ID",
+    "iata": "MEQ"
+  },
+  {
+    "airport": "Battambang Airport",
+    "region_name": "Battambang",
+    "country_code": "KH",
+    "iata": "BBM"
+  },
+  {
+    "airport": "Eelde Airport",
+    "region_name": "Groningen",
+    "country_code": "NL",
+    "iata": "GRQ"
+  },
+  {
+    "airport": "Chaoyang Airport",
+    "region_name": "Chaoyang",
+    "country_code": "CN",
+    "iata": "CHG"
+  },
+  {
+    "airport": "Iringa Airport",
+    "region_name": "Nduli",
+    "country_code": "TZ",
+    "iata": "IRI"
+  },
+  {
+    "airport": "Oslo Gardermoen Airport",
+    "region_name": "Oslo",
+    "country_code": "NO",
+    "iata": "OSL"
+  },
+  {
+    "airport": "Sanhe Airport",
+    "region_name": "Yueyang",
+    "country_code": "CN",
+    "iata": "YYA"
+  },
+  {
+    "airport": "Kuantan Airport",
+    "region_name": "Kuantan",
+    "country_code": "MY",
+    "iata": "KUA"
+  },
+  {
+    "airport": "Singleton Airport",
+    "region_name": "Singleton",
+    "country_code": "AU",
+    "iata": "SIX"
+  },
+  {
+    "airport": "Jaluit Airport",
+    "region_name": "Jabor Jaluit Atoll",
+    "country_code": "MH",
+    "iata": "UIT"
+  },
+  {
+    "airport": "Weam Airport",
+    "region_name": "Weam",
+    "country_code": "PG",
+    "iata": "WEP"
+  },
+  {
+    "airport": "Muccan Station Airport",
+    "region_name": "Muccan Station",
+    "country_code": "AU",
+    "iata": "MUQ"
+  },
+  {
+    "airport": "Redwood Falls Municipal Airport",
+    "region_name": "Redwood Falls",
+    "country_code": "US",
+    "iata": "RWF"
+  },
+  {
+    "airport": "Harris County Airport",
+    "region_name": "Pine Mountain",
+    "country_code": "US",
+    "iata": "PIM"
+  },
+  {
+    "airport": "Moucha Airport",
+    "region_name": "Moucha Island",
+    "country_code": "DJ",
+    "iata": "MHI"
+  },
+  {
+    "airport": "Langebaanweg Airport",
+    "region_name": "Langebaanweg",
+    "country_code": "ZA",
+    "iata": "SDB"
+  },
+  {
+    "airport": "Yucca Airstrip",
+    "region_name": "Mercury",
+    "country_code": "US",
+    "iata": "UCC"
+  },
+  {
+    "airport": "San Luis Valley Regional Bergman Field",
+    "region_name": "Alamosa",
+    "country_code": "US",
+    "iata": "ALS"
+  },
+  {
+    "airport": "Bar Yehuda Airfield",
+    "region_name": "Masada",
+    "country_code": "IL",
+    "iata": "MTZ"
+  },
+  {
+    "airport": "Tibú Airport",
+    "region_name": "Tibú",
+    "country_code": "CO",
+    "iata": "TIB"
+  },
+  {
+    "airport": "Apolo Airport",
+    "region_name": "Apolo",
+    "country_code": "BO",
+    "iata": "APB"
+  },
+  {
+    "airport": "Newport State Airport",
+    "region_name": "Newport",
+    "country_code": "US",
+    "iata": "NPT"
+  },
+  {
+    "airport": "Pongtiku Airport",
+    "region_name": "Makale",
+    "country_code": "ID",
+    "iata": "TTR"
+  },
+  {
+    "airport": "Townsville Airport",
+    "region_name": "Townsville",
+    "country_code": "AU",
+    "iata": "TSV"
+  },
+  {
+    "airport": "Kaieteur International Airport",
+    "region_name": "Kaieteur Falls",
+    "country_code": "GY",
+    "iata": "KAI"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "col": "col-12",
+    "id": "email-referral",
+    "label": "",
+    "formControlName": "email",
+    "icon": "envelope",
+    "type": "email",
+    "placeholder": "his_email_address",
+    "readonly": false,
+    "minlength": null,
+    "maxlength": null,
+    "keyFilter": null,
+    "showMessage": false
+  }
+]

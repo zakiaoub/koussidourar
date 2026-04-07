@@ -1,0 +1,26 @@
+<ng-container>
+    <app-top-banner target="account"></app-top-banner>
+    <section class="py-5">
+        <div class="container">
+            <app-account-preferences></app-account-preferences>
+            <hr class="border-secondary my-5" />
+            <app-account-profil></app-account-profil>
+            <hr class="border-secondary my-5" />
+
+            <div class="d-flex justify-content-between align-items-center">
+                <span>
+                    <div class="fs-5">{{"lang_and_currency" | translate}}</div>
+                    <div class="fw-300 text-secondary">{{"lang_and_currency_caption" | translate}}
+                    </div>
+                </span>
+                <span class="lower-bg p-2">
+                    <app-settings></app-settings>
+                </span>
+            </div>
+            <hr class="border-secondary my-5" />
+            <app-account-password></app-account-password>
+            <hr class="border-secondary my-5" />
+            <app-account-delete></app-account-delete>
+        </div>
+    </section>
+</ng-container>

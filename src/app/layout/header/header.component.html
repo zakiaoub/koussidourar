@@ -1,0 +1,29 @@
+<ng-container>
+    <header class="site-header top-0 start-0 w-100" style="z-index: 99;"
+        [ngClass]="{'lower-bg':scrolled || !isRouteIncluded(), 'position-fixed':isRouteIncluded()}">
+        <div class="container-xl py-3">
+            <div class="row align-items-center">
+                <span class="col-3 col-md-1 d-xl-none">
+                    <div role="button" class="size-45 bg-white lower-text rounded-circle fs-4" (click)="sidebar = true"
+                        aria-label="Display aside menu">
+                        <app-icon icon="list"></app-icon>
+                    </div>
+                </span>
+                <span class="col-3 col-md-6 col-xl-3 bg-sucess">
+                    <app-logo [isWhite]="true"></app-logo>
+                </span>
+                <span class="col-xl-6 d-none d-xl-block">
+                    <app-nav></app-nav>
+                </span>
+                <span class="col-6 col-sm-5 col-xl-3">
+                    <app-panel [fullName]="profileData?.full_name"></app-panel>
+                </span>
+
+            </div>
+        </div>
+    </header>
+
+    <p-sidebar [(visible)]="sidebar">
+        <app-aside [profileData]="profileData"></app-aside>
+    </p-sidebar>
+</ng-container>

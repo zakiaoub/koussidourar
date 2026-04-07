@@ -1,0 +1,85 @@
+<div class="row justify-content-end">
+    <span class="col-lg-3" *ngFor="let item of data[0].levels">
+        <div class="d-flex flex-column align-items-center">
+            <div class="d-flex">
+                <span>
+                    <img [src]="'assets/icons/'+item.name+'-badge.png'" [width]="90" [height]="90" />
+                </span>
+                <span class="mx-2">
+                    <div class="fs-110 fw-400 main-text">{{item.name | translate}}</div>
+                    <div class="fs-90 text-secondary">
+                        {{"starting_from" | translate}}
+                        {{item.revenue}}$
+                        {{"in_revenue" |
+                        translate}}
+                    </div>
+                    <p class="my-2">{{item.caption | translate}}</p>
+                </span>
+            </div>
+        </div>
+    </span>
+</div>
+
+<div *ngFor="let item of data" class="pt-4">
+    <div class="row p-4 border-bottom" *ngFor="let feature of item.features ; let i = index">
+        <span class="col-lg-3">
+            <div class="fw-500">{{feature.title | translate}}
+                <span *ngIf="feature.info" class="blue-text mx-1" role="button" [pTooltip]="tooltipContent">
+                    <app-icon icon="info-circle"></app-icon>
+                </span>
+
+                <ng-template #tooltipContent>
+                    {{feature.info | translate}}
+                </ng-template>
+            </div>
+        </span>
+        <span class="col-lg-3">
+            <div class="d-flex justify-content-center">
+                <div *ngIf="isBoolean(feature.bronze)">
+                    <div class="green-text" *ngIf="feature.bronze">
+                        <img [src]="'assets/icons/status/success.png'" [width]="17" [height]="17" />
+                    </div>
+                    <div class="red-text" *ngIf="!feature.bronze">
+                        <img [src]="'assets/icons/status/failure.png'" [width]="15" [height]="15" />
+                    </div>
+                </div>
+
+                <div *ngIf="!isBoolean(feature.bronze)" class="fs-110">
+                    {{ feature.bronze?.toString() | translate }}
+                </div>
+            </div>
+        </span>
+        <span class="col-lg-3">
+            <div class="d-flex justify-content-center">
+                <div *ngIf="isBoolean(feature.silver)">
+                    <div class="green-text" *ngIf="feature.silver">
+                        <img [src]="'assets/icons/status/success.png'" [width]="17" [height]="17" />
+                    </div>
+                    <div class="red-text" *ngIf="!feature.silver">
+                        <img [src]="'assets/icons/status/failure.png'" [width]="15" [height]="15" />
+                    </div>
+                </div>
+
+                <div *ngIf="!isBoolean(feature.silver)" class="fs-110">
+                    {{ feature.silver?.toString() | translate }}
+                </div>
+            </div>
+        </span>
+        <span class="col-lg-3">
+            <div class="d-flex justify-content-center">
+                <div *ngIf="isBoolean(feature.gold)">
+                    <div class="green-text" *ngIf="feature.gold">
+                        <img [src]="'assets/icons/status/success.png'" [width]="17" [height]="17" />
+                    </div>
+                    <div class="red-text" *ngIf="!feature.gold">
+                        <img [src]="'assets/icons/status/failure.png'" [width]="15" [height]="15" />
+                    </div>
+                </div>
+
+                <div *ngIf="!isBoolean(feature.gold)" class="fs-110">
+                    {{ feature.gold?.toString() | translate }}
+                </div>
+            </div>
+        </span>
+    </div>
+</div>

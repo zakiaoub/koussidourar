@@ -1,0 +1,45 @@
+<ng-container>
+    <div class="fs-3">{{"refer_your_friends" | translate}}</div>
+
+    <div class="mt-4">
+        <div class="d-flex align-items-start my-4">
+            <span class="bg-white border shadow-sm p-2 rounded-3">
+                <img src="assets/icons/interface/deal.png" [width]="35" [height]="35" />
+            </span>
+            <span class="mx-2">
+                <div class="fw-medium">{{"you_get" | translate}}</div>
+                <div class="opacity-75">{{"up_to" | translate}} 3% {{"you_get_caption" | translate}}</div>
+            </span>
+        </div>
+        <div class="d-flex align-items-start my-4">
+            <span class="bg-white border shadow-sm p-2 rounded-3">
+                <img src="assets/icons/interface/gift-box.png" [width]="35" [height]="35" />
+            </span>
+            <span class="mx-2">
+                <div class="fw-medium">{{"they_get" | translate}}</div>
+                <div class="opacity-75">{{"they_get_caption" | translate}}</div>
+            </span>
+        </div>
+    </div>
+    <div class="mt-5">
+        <div class="fw-medium">{{"referral_link" | translate}}</div>
+        <div class="main-border rounded p-1 mt-2">
+            <div class="row g-1">
+                <span class="col-md-9 col-lg-12 col-xl-9">
+                    <div class="p-3 bg-white border rounded w-100 opacity-60 opacity-75">
+                        {{referralLink+referralCode}}
+                    </div>
+                </span>
+                <span class="col-md-3 col-lg-12 col-xl-3">
+                    <app-button [title]="'send'" [class]="'height-60 w-100 py-3 px-5 text-white rounded main-bg-gradient'"
+                        (action)="showDialog()"></app-button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <p-dialog [header]="'refer_your_friends' | translate" [modal]="true" [(visible)]="visible"
+        [style]="{ width: '45rem' }">
+        <app-referral-link-form></app-referral-link-form>
+    </p-dialog>
+</ng-container>

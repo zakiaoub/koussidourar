@@ -1,0 +1,281 @@
+/* Input */
+
+.p-inputtext {
+  border: none !important;
+  height: 100% !important;
+  width: 100% !important;
+  box-shadow: none !important;
+}
+
+.p-inputtext:focus {
+  box-shadow: none !important;
+}
+
+.p-inputwrapper {
+  height: 100% !important;
+  width: 100% !important;
+  box-shadow: none !important;
+}
+
+.p-iftalabel,
+.p-iconfield {
+  height: 100% !important;
+}
+
+.p-iftalabel label {
+  color: var(--dark) !important;
+}
+
+:root {
+  /* checkbox */
+
+  --p-checkbox-width: 18px !important;
+  --p-checkbox-height: 18px !important;
+  --p-checkbox-checked-background: var(--main) !important;
+  --p-checkbox-checked-hover-background: var(--main) !important;
+  --p-checkbox-hover-border-color: var(--main) !important;
+  --p-checkbox-checked-border-color: var(--main) !important;
+  --p-checkbox-checked-hover-border-color: var(--main) !important;
+  --p-checkbox-sm-width: 20px !important;
+  --p-checkbox-sm-height: 20px !important;
+  --p-checkbox-lg-width: 20px !important;
+  --p-checkbox-lg-height: 20px !important;
+  --p-checkbox-icon-size: 80% !important;
+  --p-checkbox-icon-sm-size: 80% !important;
+  --p-checkbox-icon-lg-size: 80% !important;
+  --p-toggleswitch-width: 35px !important;
+  --p-toggleswitch-height: 20px !important;
+  --p-toggleswitch-handle-size: 15px !important;
+  --p-toggleswitch-checked-background: var(--main) !important;
+  --p-toggleswitch-checked-hover-background: var(--main) !important;
+  --p-toggleswitch-handle-checked-color: var(--main) !important;
+  --p-toggleswitch-handle-checked-hover-color: var(--main) !important;
+  --p-multiselect-width: 100% !important;
+  --p-multiselect-option-selected-color: var(--main) !important;
+  --p-multiselect-option-selected-background: var(--third) !important;
+  --p-multiselect-option-selected-focus-color: var(--main) !important;
+  --p-multiselect-option-selected-focus-background: var(--third) !important;
+
+  --p-stepper-separator-active-background: var(--main) !important;
+}
+
+/* Select */
+
+.p-select,
+.p-multiselect {
+  border: none !important;
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.p-select:not(.p-disabled).p-focus,
+.p-multiselect:not(.p-disabled).p-focus {
+  box-shadow: none !important;
+}
+
+.p-select-option.p-select-option-selected {
+  background-color: var(--third) !important;
+  color: var(--main) !important;
+}
+
+.p-multiselect-filter {
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* textarea */
+
+.p-textarea:hover {
+  box-shadow: none !important;
+  border: 1px solid var(--main) !important;
+}
+
+.p-textarea:focus {
+  box-shadow: none !important;
+  border: 1px solid var(--main) !important;
+}
+
+/* Datepicker */
+
+.p-datepicker {
+  z-index: 1 !important;
+}
+
+.p-datepicker-prev-button,
+.p-datepicker-next-button {
+  color: var(--main) !important;
+}
+
+.p-datepicker-prev-button:hover,
+.p-datepicker-next-button:hover {
+  background: var(--third) !important;
+}
+
+.p-datepicker-title {
+  font-size: 90% !important;
+  font-weight: 400 !important;
+}
+
+.p-datepicker-header {
+  padding: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.p-datepicker-weekday {
+  font-size: 80% !important;
+  font-weight: 500 !important;
+}
+
+.p-datepicker-day-cell {
+  padding: 3px !important;
+}
+.p-datepicker-day {
+  font-size: 90% !important;
+}
+
+.p-datepicker-day-selected {
+  background-color: var(--main) !important;
+}
+
+.p-datepicker-day-selected-range {
+  background: var(--third) !important;
+  color: var(--main) !important;
+}
+
+.p-datepicker-today > .p-datepicker-day {
+  background-color: white !important;
+  color: var(--main) !important;
+  border: 1px solid var(--main);
+  box-shadow: none !important;
+}
+
+.p-datepicker-increment-button {
+  color: var(--main) !important;
+}
+
+.p-datepicker-increment-button:hover {
+  background-color: var(--third) !important;
+}
+
+/* Slider range */
+
+.p-slider-range {
+  background-color: var(--main) !important;
+}
+
+.p-slider-handle {
+  background-color: var(--main) !important;
+}
+
+.p-slider-handle::before {
+  background-color: white !important;
+}
+
+/* Pagination */
+
+.p-paginator {
+  background-color: transparent !important;
+}
+
+.p-paginator-page.p-paginator-page-selected {
+  background-color: var(--main) !important;
+  color: white !important;
+  border: 1px solid var(--main) !important;
+}
+
+.p-paginator-page,
+.p-paginator-prev,
+.p-paginator-next,
+.p-paginator-first,
+.p-paginator-last {
+  border: 1px solid var(--main) !important;
+  color: var(--main) !important;
+  margin: 0 5px 0 5px !important;
+  background-color: white !important;
+}
+
+.p-paginator-page:hover,
+.p-paginator-prev:hover,
+.p-paginator-next:hover,
+.p-paginator-first:hover,
+.p-paginator-last:hover {
+  background-color: var(--main) !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+/* Carousel */
+
+.p-carousel-indicator-active .p-carousel-indicator-button {
+  background: var(--main) !important;
+}
+
+.p-carousel-indicator-button {
+  border-radius: 0.5rem !important;
+  width: 30px !important;
+  height: 10px !important;
+}
+
+/* Autocomplete */
+
+.p-autocomplete .p-autocomplete-loader {
+  display: none !important;
+}
+
+.p-autocomplete-option:hover {
+  background-color: var(--third) !important;
+}
+
+.p-autocomplete-input {
+  border: none !important;
+  height: 100% !important;
+  width: 100% !important;
+  box-shadow: none !important;
+}
+
+.p-autocomplete-input:focus {
+  box-shadow: none !important;
+}
+
+/* Accordion */
+
+.p-accordionheader {
+  background-color: white !important;
+}
+
+
+
+/* Skeleton */
+
+.p-skeleton {
+  background-color: #f0f0f0 !important;
+}
+
+/* Dialog */
+
+.p-dialog-close-button {
+  background-color: white !important;
+}
+
+/*  Radio */
+
+.p-radiobutton-checked .p-radiobutton-box {
+  border-color: var(--main) !important;
+  background: var(--main) !important;
+}
+
+/* progress */
+
+.p-progressbar-value {
+  background-color: var(--blue) !important;
+}
+
+.p-step-active .p-step-title,
+.p-step-active .p-step-number {
+  color: var(--main) !important;
+}
+
+.p-password-mask-icon{
+  cursor:pointer !important;
+}

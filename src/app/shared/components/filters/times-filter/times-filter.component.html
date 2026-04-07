@@ -1,0 +1,31 @@
+<ng-container *ngIf="filterList">
+    <div class="fw-400 lower-text">{{ title | translate }}</div>
+
+    <ng-container *ngIf="filterList?.line[0].name !== '-' && filterList.line.length > 1">
+        <app-line-switch [(activeLine)]="activeLine"></app-line-switch>
+    </ng-container>
+
+    <div class="my-2" *ngFor="let line of filterList.line; let i = index">
+        <ng-container *ngIf="filterList?.line[0].name === '-' || !activeLine || line.id === activeLine">
+            <div class="main-text fs-90 text-decoration-underline" *ngIf="line.name === '-'">
+                {{"flight" | translate}} 0{{ i + 1 }}
+            </div>
+            <div class="row g-2 mt-2">
+                <span *ngFor="let item of line.list | times" class="col-4">
+                    <div role="button" class="rounded-3 p-2" (click)="toggleSelection('times-'+line.name+'-'+item.id)"
+                        [ngClass]="{
+                   'main-border': selectedItems.includes('times-'+line.name+'-'+item.id),
+                   'border': !selectedItems.includes('times-'+line.name+'-'+item.id)
+                 }">
+                        <div class="d-flex align-items-center gap-1">
+                            <span [style.color]="getTimeIcon(item.id).color">
+                                <app-icon [icon]="getTimeIcon(item.id).icon"></app-icon>
+                            </span>
+                            <span class="fs-90">{{ item.id }}</span>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </ng-container>
+    </div>
+</ng-container>

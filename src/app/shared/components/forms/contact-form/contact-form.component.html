@@ -1,0 +1,65 @@
+<ng-container>
+    <div id="contact-form">
+        <div class="row row-gap-4 mt-5">
+            <span class="col-sm-6 col-lg-3" *ngFor="let option of data">
+                <div class="p-4 rounded-4 h-100"
+                    [ngClass]="{'main-border third-bg':service() === option.label, 'border':service() !== option.label}">
+                    <div class="fs-4 fw-medium">{{option.label | translate}}</div>
+                    <div class="mt-1" [ngClass]="option.color" style="width:15%; height: 5px;"></div>
+                    <p class="opacity-75 mt-3">{{option.caption | translate}}</p>
+
+                    <button aria-label="Choose the service" type="button"
+                        [ngClass]="{'main-bg text-white':service() === option.label, 'main-border main-text bg-white':service() !== option.label}"
+                        class=" p-3 rounded-3 w-100 mt-4 fw-medium height-60" (click)="setOption(option.label)">
+                        <ng-container *ngIf="service() !== option.label">
+                            {{option.trigger | translate}}
+                        </ng-container>
+                        <ng-container *ngIf="service() === option.label">
+                            <div class="fs-4">
+                                <app-icon icon="check2"></app-icon>
+                            </div>
+                        </ng-container>
+                    </button>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <form [formGroup]="contactForm" (ngSubmit)="sendmessage()">
+            <div class="row row-gap-4">
+                <ng-container *ngFor="let field of fields">
+                    <span [class]="field.col">
+                        <ng-container *ngIf="field.id !== 'phone-contact' && field.id !== 'message-contact'">
+                            <app-input-field [id]="field.id" [labelKey]="field.label"
+                                [controlName]="field.formControlName" [icon]="field.icon" [type]="field.type"
+                                [placeholder]="field.placeholder" [readonly]="field.readonly"
+                                [minlength]="field.minlength" [maxlength]="field.maxlength"
+                                [keyFilter]="field.keyFilter" [showMessage]="field.showMessage"
+                                [formGroup]="contactForm">
+                            </app-input-field>
+                        </ng-container>
+                        <ng-container *ngIf="field.id === 'phone-contact'">
+                            <app-phone-field [id]="field.id" [labelKey]="field.label"
+                                [controlName]="field.formControlName" [placeholder]="field.placeholder"
+                                [readonly]="field.readonly" [showMessage]="field.showMessage" [formGroup]="contactForm">
+                            </app-phone-field>
+                        </ng-container>
+
+                        <ng-container *ngIf="field.id === 'message-contact'">
+                            <app-textarea-field [id]="field.id" [labelKey]="field.label"
+                                [controlName]="field.formControlName" [placeholder]="field.placeholder"
+                                [readonly]="field.readonly" [minlength]="field.minlength" [maxlength]="field.maxlength"
+                                [rows]="field.rows" [showMessage]="field.showMessage" [formGroup]="contactForm">
+                            </app-textarea-field>
+                        </ng-container>
+                    </span>
+                </ng-container>
+            </div>
+            <div class="mt-4">
+                <app-button [type]="'submit'" [title]="'send'"
+                    [class]="'main-bg-gradient text-white p-4 rounded-3 w-100'" [isLoading]="isLoading()"></app-button>
+            </div>
+        </form>
+    </div>
+</ng-container>

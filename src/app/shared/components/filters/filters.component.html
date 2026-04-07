@@ -1,0 +1,67 @@
+<ng-container>
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="fw-medium">{{"filters" | translate}}</span>
+        <span role="button" class="fs-90 main-text" (click)="reset()">{{"reset" | translate}}</span>
+    </div>
+
+    <hr class="border-secondary my-4" />
+
+    <app-flight-class-filter *ngIf="service === 'flight'"></app-flight-class-filter>
+    <ng-container *ngFor="let item of data.filterItems">
+        <ng-container [ngSwitch]="item.action">
+            <ng-container *ngSwitchCase="'times'">
+                <app-times-filter [title]="item.title" [filterList]="data['filter'][item.id]"
+                    [selectedItems]="selectedItems" [count]="" groupName="times"
+                    (selectedItemsChange)="selectedItems = $event"></app-times-filter>
+                <hr class="border-secondary my-4" />
+            </ng-container>
+            <ng-container *ngSwitchCase="'duration'">
+                <div class="fw-400 lower-text">{{ "duration" | translate }}</div>
+                <ng-container *ngFor="let line of data['filter'][item.id]['line']; let i = index">
+                    <app-duration-filter [title]="line.name" [filterList]="line.list" [selectedItems]="selectedItems"
+                        (selectedItemsChange)="selectedItems = $event" [i]="i+1">
+                    </app-duration-filter>
+                </ng-container>
+                <hr class="border-secondary my-4" />
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'groupsegment'">
+                <app-check-group-segment [title]="item.title" [filterList]="data['filter'][item.id]"
+                    [selectedItems]="selectedItems" [count]="data['filter_list'][item.id]" [groupName]="item.id"
+                    (selectedItemsChange)="selectedItems = $event"></app-check-group-segment>
+                <hr class="border-secondary my-4" />
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'2D'">
+                <app-two-dimension-filter [items]="data['filter'][item.id]" [groupName]="item.id"
+                    [count]="data['filter_list'][item.id]" [selectedItems]="selectedItems"
+                    (selectedItemsChange)="selectedItems = $event" />
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'prince_range'">
+                <app-price-filter [rangeValues]="priceValues" [min]="min" [max]="max"
+                    (rangeValuesChange)="onPriceRangeChange($event)"></app-price-filter>
+                <hr class="border-secondary my-4" />
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'Category'">
+                <app-category-filter [title]="'property_class'" [filterList]="category" [selectedItems]="selectedItems"
+                    [count]="data['filter_list'][item.id]" groupName="item.id"
+                    (selectedItemsChange)="selectedItems = $event"></app-category-filter>
+                <hr class="border-secondary my-4" />
+            </ng-container>
+            <ng-container *ngSwitchCase="'trip_advisor'">
+                <app-check-group [title]="'review_score'" [filterList]="reviews" [selectedItems]="selectedItems"
+                    [count]="data.filter_list.trip_advisor" groupName="trip_advisor"
+                    (selectedItemsChange)="selectedItems = $event"></app-check-group>
+                <hr class="border-secondary my-4" />
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+                <app-check-group [title]="item.title" [filterList]="data['filter'][item.id]"
+                    [selectedItems]="selectedItems" [count]="data['filter_list'][item.id]" [groupName]="item.id"
+                    (selectedItemsChange)="selectedItems = $event"></app-check-group>
+                <hr class="border-secondary my-4" />
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</ng-container>

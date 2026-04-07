@@ -1,0 +1,30 @@
+[
+  {
+    "col": "col-md-6 col-lg-5",
+    "id": "departure_trip_number",
+    "label": "departure_trip_number",
+    "formControlName": "departureTripNumber",
+    "icon": "calendar2-check",
+    "type": "text",
+    "placeholder": "",
+    "readonly": false,
+    "minlength": 3,
+    "maxlength": 6,
+    "keyFilter": "alphanum",
+    "showMessage": false
+  },
+  {
+    "col": "col-md-6 col-lg-5",
+    "id": "arrival_trip_number",
+    "label": "arrival_trip_number",
+    "formControlName": "arrivalTripNumber",
+    "icon": "calendar2-x",
+    "type": "text",
+    "placeholder": "",
+    "readonly": false,
+    "minlength": 3,
+    "maxlength": 6,
+    "keyFilter": "alphanum",
+    "showMessage": false
+  }
+]

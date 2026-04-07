@@ -1,0 +1,91 @@
+[
+    {
+        "label": "flights",
+        "routerLink": "flights",
+        "status": true
+    },
+    {
+        "label": "hotels",
+        "routerLink": "hotels",
+        "status": true
+    },
+    {
+        "label": "attractions",
+        "routerLink": "attractions",
+        "status": true
+    },
+    {
+        "label": "transfers",
+        "routerLink": "transfers",
+        "status": true
+    },
+    {
+        "label": "flights_hotels",
+        "routerLink": "packages",
+        "status": false
+    },
+    {
+        "label": "lodgings",
+        "routerLink": "lodgings",
+        "status": false
+    },
+    {
+        "label": "car_rentals",
+        "routerLink": "cars",
+        "status": false
+    },
+    {
+        "label": "packages",
+        "routerLink": "packages",
+        "status": false
+    },
+    {
+        "label": "cruises",
+        "routerLink": "cruises",
+        "status": false
+    },
+    {
+        "label": "trains",
+        "routerLink": "trains",
+        "status": false
+    },
+    {
+        "label": "buses",
+        "routerLink": "buses",
+        "status": false
+    },
+    {
+        "label": "taxis",
+        "routerLink": "taxis",
+        "status": false
+    },
+    {
+        "label": "ferries",
+        "routerLink": "ferries",
+        "status": false
+    },
+    {
+        "label": "restaurants",
+        "routerLink": "restaurants",
+        "status": false
+    },
+    {
+        "label": "events",
+        "routerLink": "events",
+        "status": false
+    },
+    {
+        "label": "last_minutes",
+        "routerLink": "lastminutes"
+    },
+    {
+        "label": "luxury_travel",
+        "routerLink": "luxurytravel",
+        "status": false
+    },
+    {
+        "label": "el_umrah",
+        "routerLink": "elumrah",
+        "status": false
+    }
+]

@@ -1,0 +1,27 @@
+<div [formGroup]="formGroup">
+    <label *ngIf="labelKey" class="form-label fs-90">{{ labelKey | translate }} <span class="red-text">*</span></label>
+    <div class="bg-white rounded height-60 d-flex"
+        [ngClass]="{'red-border':control?.touched && control?.invalid, 'green-border':control?.touched && control?.valid, 'border':!control?.touched}">
+        <span class="w-100">
+            <p-select [formControl]="control" [options]="options" [placeholder]="placeholder | translate"
+                [checkmark]="true" [editable]="editable" [filter]="filter">
+                <ng-template #selectedItem let-selectedOption>
+                    <div class="flex items-center gap-2" *ngIf="selectedOption">
+                        <div>{{ selectedOption | translate }}</div>
+                    </div>
+                </ng-template>
+                <ng-template let-option #item>
+                    <div>{{ option | translate }}</div>
+                </ng-template>
+            </p-select>
+        </span>
+        <span class="align-self-center pe-3 main-text">
+            <ng-container *ngIf="control?.touched && control?.invalid">
+                <img src="assets/icons/status/failure.png" [width]="15" [height]="15" />
+            </ng-container>
+            <ng-container *ngIf="control?.touched && control?.valid">
+                <img src="assets/icons/status/success.png" [width]="15" [height]="15" />
+            </ng-container>
+        </span>
+    </div>
+</div>

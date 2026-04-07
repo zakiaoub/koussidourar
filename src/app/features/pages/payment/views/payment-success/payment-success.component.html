@@ -1,0 +1,23 @@
+<ng-container>
+    <app-stepper [currentStep]="4"></app-stepper>
+    <div class="grey-bg">
+        <ng-container *ngIf="isLoading()">
+            <div class="container-xl py-5">
+                <app-skeleton-voucher></app-skeleton-voucher>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="error()">
+            <app-error-request caption="error_voucher_message"></app-error-request>
+        </ng-container>
+
+        <ng-container *ngIf="!isLoading() && !error()">
+            <section class="container-xl py-5">
+                <app-succes-overview></app-succes-overview>
+                <div class="mt-5">
+                    <app-voucher-overview [data]="data()"></app-voucher-overview>
+                </div>
+            </section>
+        </ng-container>
+    </div>
+</ng-container>

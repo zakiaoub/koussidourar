@@ -1,0 +1,43 @@
+<ng-container>
+    <div class="d-flex justify-content-between align-items-center">
+        <span>
+            <div class="fs-5">{{ "notifications" | translate }}</div>
+            <div class="fw-300 text-secondary">
+                {{ "notifications_caption" | translate }}
+            </div>
+        </span>
+
+        <p-toggleSwitch inputId="account-notifications" [(ngModel)]="profile.is_send_notification"
+            (onChange)="onNotificationToggle($event.checked)">
+        </p-toggleSwitch>
+    </div>
+
+    <hr class="border-secondary my-5" />
+
+    <div class="d-flex justify-content-between align-items-center">
+        <span>
+            <div class="fs-5">{{ "special_events" | translate }}</div>
+            <div class="fw-300 text-secondary">
+                {{ "special_events_caption" | translate }}
+            </div>
+        </span>
+
+        <p-toggleSwitch inputId="account-events" [(ngModel)]="profile.is_send_event"
+            (onChange)="onEventToggle($event.checked)">
+        </p-toggleSwitch>
+    </div>
+
+    <hr class="border-secondary my-5" />
+
+    <div class="d-flex justify-content-between align-items-center">
+        <span>
+            <div class="fs-5">{{ "cookies" | translate }}</div>
+            <div class="fw-300 text-secondary">
+                {{ "cookies_caption" | translate }}
+            </div>
+        </span>
+
+        <p-toggleSwitch inputId="cookies" [(ngModel)]="cookiesData" (onChange)="onCookiesToggles($event.checked)">
+        </p-toggleSwitch>
+    </div>
+</ng-container>

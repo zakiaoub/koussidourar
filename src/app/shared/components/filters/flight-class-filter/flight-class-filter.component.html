@@ -1,0 +1,16 @@
+<ng-container>
+    <div class="fw-400 lower-text">{{ "cabin_class" | translate }}</div>
+    <div class="mt-2 fs-90">
+        <div class="d-flex align-items-center gap-2 my-1" *ngFor="let item of data; let i = index">
+            <p-radiobutton name="class" [value]="item.value" [(ngModel)]="class" [inputId]="item.title+i"
+                (ngModelChange)="flight()" />
+            <label [for]="item.title+i" class="lh-1">{{item.title | translate}}</label>
+        </div>
+        <ng-container *ngIf="isLoading()">
+            <div class="mt-4">
+                <p-progressbar mode="indeterminate" [style]="{'height': '6px'}" />
+            </div>
+        </ng-container>
+    </div>
+    <hr class="border-secondary my-4" />
+</ng-container>

@@ -1,0 +1,35 @@
+<ng-container>
+    <app-top-banner [target]="'affiliates'"></app-top-banner>
+    <section class="container-xl pt-5">
+        <app-services-background service="affiliates" [title]="'for_partners_title'" caption="for_partners_caption"
+            signup="partners-signup" demo="partners-demo" [data]="data" [image]="image"
+            class="col-md-4 col-lg-6 col-xl-6">
+            <ng-template #image>
+                <div class="row row-gap-3 justify-content-around align-items-end">
+                    <span class="col-6 col-md-8 col-lg-6 col-xl-6">
+                        <div>
+                            <img src="assets/images/referral-img-1.webp" width="100%" height="100%" />
+                        </div>
+                    </span>
+                    <span class="col-6 col-md-8 col-lg-6 col-xl-6">
+                        <div>
+                            <img class="rounded-4" src="assets/images/referral-img-2.webp" width="100%" height="100%" />
+                        </div>
+                    </span>
+                </div>
+            </ng-template>
+        </app-services-background>
+        <div class="mt-5">
+            <app-affiliates-ranking></app-affiliates-ranking>
+        </div>
+        <div class="mt-5 d-none d-lg-block">
+            <app-affiliates-levels></app-affiliates-levels>
+        </div>
+        <div class="mt-5">
+            <app-coming-soon></app-coming-soon>
+        </div>
+        <!-- <div id="partners-signup" class="mt-4">
+                <app-login-banner login="/login" register="/signup" caption="partners_sign_caption"></app-login-banner>
+            </div> -->
+    </section>
+</ng-container>

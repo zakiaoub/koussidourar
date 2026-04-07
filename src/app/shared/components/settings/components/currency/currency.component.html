@@ -1,0 +1,13 @@
+<div class="row">
+  <span class="col-sm-6 col-lg-4 col-xl-3 my-3" *ngFor="let currency of availableCurrencies">
+    <div role="button" class="d-flex" (click)="onCurrencyChange(currency)">
+      <span>
+        <img [src]="data[currency][0].flag" [width]="16" [height]="16" />
+      </span>
+      <span class="mx-2">
+        <div class="fw-400">{{data[currency][0].country | translate}}</div>
+        <div class="text-secondary fw-light">{{ currency }}</div>
+      </span>
+    </div>
+  </span>
+</div>

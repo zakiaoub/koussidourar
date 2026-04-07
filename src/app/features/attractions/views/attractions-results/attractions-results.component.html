@@ -1,0 +1,20 @@
+<div>
+  <ng-container *ngIf="isLoading()">
+    <app-skeleton-results [service]="service"></app-skeleton-results>
+  </ng-container>
+
+  <ng-container *ngIf="error()">
+    <app-error-request></app-error-request>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading() && !error()">
+    <ng-container *ngIf="data()?.Error">
+      <app-expired-request [target]="service"></app-expired-request>
+    </ng-container>
+
+    <ng-container *ngIf="!data()?.Error">
+      <app-app-product-avails [loadedData]="data()" [service]="service" [searchToken]="searchToken"
+        [serviceApi]="serviceApi"></app-app-product-avails>
+    </ng-container>
+  </ng-container>
+</div>

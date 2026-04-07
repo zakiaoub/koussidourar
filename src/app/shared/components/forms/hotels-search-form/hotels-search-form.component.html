@@ -1,0 +1,80 @@
+<div class="bw-booking">
+    <form (ngSubmit)="onSubmit()">
+        <div class="bw-form-row bw-form-row--wrap">
+            <div class="bw-input-group bw-input-group--grow" [class.bw-input-group--error]="showErrors.destination">
+                <label class="bw-label" for="hotels-search-destination">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    {{ 'where_are_you_going' | translate }}
+                </label>
+                <div class="bw-field">
+                    <p-autocomplete #auto [(ngModel)]="destination" name="cities" [suggestions]="cities"
+                        (completeMethod)="fetchCities($event.query)" field="destination"
+                        (onSelect)="onDestinationChange($event)" (onFocus)="onFocus(auto)"
+                        [placeholder]="'where_are_you_going' | translate" inputId="hotels-search-destination">
+                        <ng-template let-item pTemplate="cities">
+                            <div class="w-100">
+                                <app-autocomplete-suggetions [item]="item"
+                                    [type]="'hotel'"></app-autocomplete-suggetions>
+                            </div>
+                        </ng-template>
+                    </p-autocomplete>
+                </div>
+                <small class="bw-field-msg" *ngIf="showErrors.destination">{{'select_a_destination' | translate}}</small>
+            </div>
+
+            <div class="bw-input-group" [class.bw-input-group--error]="showErrors.dates">
+                <label class="bw-label" for="hotels-search-dates">
+                    <i class="fa-regular fa-calendar-alt" aria-hidden="true"></i>
+                    {{ 'checkin_checkout' | translate }}
+                </label>
+                <div class="bw-field">
+                    <p-datepicker #datePicker inputId="hotels-search-dates" [(ngModel)]="dates" name="dates"
+                        (ngModelChange)="onDatesChange($event)" selectionMode="range"
+                        [numberOfMonths]="isXsOrSm ? 1 : 2" [placeholder]="'checkin_checkout' | translate"
+                        [minDate]="minDate" [readonlyInput]="true" />
+                </div>
+                <small class="bw-field-msg" *ngIf="showErrors.dates">{{'select_your_dates' | translate}}</small>
+            </div>
+
+            <div class="bw-input-group">
+                <label class="bw-label">
+                    <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+                    {{ 'rooms' | translate }} / {{ 'travelers' | translate }}
+                </label>
+                <div class="bw-field">
+                    <app-rooms-field [(nationality)]="nationality" [rooms]="rooms" (roomsChange)="rooms = $event"
+                        [visible]="guests"></app-rooms-field>
+                </div>
+            </div>
+
+            <div class="bw-input-group bw-input-group--grow">
+                <label class="bw-label">
+                    <i class="fa-solid fa-award" aria-hidden="true"></i>
+                    {{ 'property_class' | translate }}
+                </label>
+                <div class="bw-field">
+                    <app-rank [(selected)]="category" [placeholder]="'property_class'"
+                        [disabled]="destination?.type === 'hotel'"></app-rank>
+                </div>
+            </div>
+
+            <div class="bw-input-group bw-input-group--grow">
+                <label class="bw-label">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    {{ 'review_score' | translate }}
+                </label>
+                <div class="bw-field">
+                    <app-rank [(selected)]="rating" [placeholder]="'review_score'"
+                        [disabled]="destination?.type === 'hotel'"></app-rank>
+                </div>
+            </div>
+
+            <div class="bw-submit-wrap">
+                <app-submit [isLoading]="isLoading()"></app-submit>
+            </div>
+        </div>
+    </form>
+
+    <app-loader-city [visible]="isLoading()" [city]="destination?.city_name" [country]="destination?.country_name"
+        [height]="'400px'"></app-loader-city>
+</div>

@@ -1,0 +1,42 @@
+<div class="d-flex align-items-center w-100 gap-3 my-2" *ngIf="Itinerary">
+    <span class="line w-100" *ngIf="(Itinerary?.Segments | stopover:'count') > 0"></span>
+    <span class="d-flex flex-column align-items-center" *ngIf="(Itinerary?.Segments | stopover:'count') > 0">
+        <div class="d-flex align-items-center">
+            <span *ngFor="let stop of Itinerary?.Segments | stopover:'stopovers'; let i = index"
+                class="w-100 d-flex justify-content-between align-items-center">
+                <span class="main-text fs-1 lh-1" [pTooltip]="tooltipContent">
+                    <app-icon icon="dot"></app-icon>
+                    <ng-template #tooltipContent>
+                        <div class="fs-90">
+                            <div class="fw-medium bg-white dark-text p-1 rounded-1">{{"stopover_details" | translate}} : </div>
+                            <div class="d-flex justify-content-between flex-wrap mt-2">
+                                <span class="me-1">{{"airport" | translate}} : </span>
+                                <span> {{airportsName[stop.code]}}</span>
+                            </div>
+                            <hr class="border-white my-2"/>
+                            <div class="d-flex justify-content-between gap-1">
+                                <span>{{"duration" | translate}} : </span>
+                                <span class="green-text fw-medium"> {{stop.duration}}</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </span>
+                <span class="line width-20 mx-3" *ngIf="i === 0 && (Itinerary?.Segments | stopover:'count') > 1"></span>
+            </span>
+        </div>
+    </span>
+    <span class="line w-100"></span>
+    <img src="assets/icons/plane.png" [width]="20" [height]="20" />
+</div>
+
+<div class="d-flex justify-content-center gap-2">
+    <span class="text-center fs-90">{{Itinerary?.Duration}}</span>
+    <span>-</span>
+    <span class="text-center fs-90">
+        {{
+        (Itinerary?.Segments | stopover:'count') > 0
+        ? ('0' + (Itinerary?.Segments | stopover:'count') + ' ' + ('stops' | translate))
+        : ('direct' | translate)
+        }}
+    </span>
+</div>

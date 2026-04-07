@@ -1,0 +1,36 @@
+<div class="main-input rounded height-60 d-flex align-items-center">
+  <span class="align-self-center ps-3 main-text fs-110" [ngSwitch]="placeholder">
+    <ng-container *ngSwitchCase="'airlines_to_include'">
+      <app-icon icon="send-check"></app-icon>
+    </ng-container>
+    <ng-container *ngSwitchCase="'airlines_to_exclude'">
+      <app-icon icon="send-x"></app-icon>
+    </ng-container>
+  </span>
+  <span class="w-100">
+    <p-multiSelect [options]="filteredAirlines" [(ngModel)]="selectedAirlines"
+      (ngModelChange)="updateSelectedAirlines($event)" optionLabel="name" optionValue="id" [filter]="true"
+      (onFilter)="handleFilter($event)" [placeholder]="placeholder | translate" [maxSelectedLabels]="2"
+      [disabled]="disabled">
+      <ng-template let-airline #item>
+        <div class="d-flex align-items-center gap-2">
+          <img [src]="airline.logo" [width]="30" [height]="30" />
+          <div>{{ airline.name }}</div>
+        </div>
+      </ng-template>
+
+      <ng-template #filtericon>
+        <div class="main-text">
+          <app-icon icon="search"></app-icon>
+        </div>
+      </ng-template>
+
+      <ng-template #footer>
+        <div class="p-3 flex justify-between">
+          <p-button label="Remove All" severity="danger" text size="small" icon="pi pi-times"
+            (onClick)="updateSelectedAirlines([])" />
+        </div>
+      </ng-template>
+    </p-multiSelect>
+  </span>
+</div>

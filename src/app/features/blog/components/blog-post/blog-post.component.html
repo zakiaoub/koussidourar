@@ -1,0 +1,17 @@
+<ng-container>
+    <a [href]="`blog/${_id}`" target="_blank" class="dark-text position-relative">
+        <div class="item-img-scale rounded">
+            <app-img [src]="image" [size]="750" [minHeight]="280" [maxHeight]="280"></app-img>
+        </div>
+        <div class="fw-medium fs-110 mt-2">{{title}}</div>
+        <div class="mt-1 opacity-75">{{created_at | date:'MMMM dd, YYYY'}}</div>
+        <div class="position-absolute end-0 top-0 p-2">
+            <div class="bg-dark bg-opacity-50 text-white d-flex gap-1 py-1 px-2 fs-80 rounded-5">
+                <span [ngClass]="getTag(category).color">
+                    <app-icon [icon]="getTag(category).icon"></app-icon>
+                </span>
+                <span>{{category | translate}}</span>
+            </div>
+        </div>
+    </a>
+</ng-container>

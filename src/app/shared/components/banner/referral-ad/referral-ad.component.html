@@ -1,0 +1,51 @@
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '40rem' }">
+    <ng-template #headless>
+        <div class="p-4">
+            <div class="row">
+                <span class="col-sm-10">
+                    <div class="fw-medium fs-5 lower-text">{{"refer_your_friends" | translate}}</div>
+                    <p class="opacity-75 fs-90">{{"top_banner_caption" | translate}}</p>
+                </span>
+                <span class="col-3 col-sm-2">
+                    <div>
+                        <img src="https://cdn-icons-png.flaticon.com/128/2704/2704312.png" width="100%" height="100%" />
+                    </div>
+                </span>
+            </div>
+            <div class="p-4" *ngIf="!dailyLimit">
+                <p-progressbar mode="indeterminate" [style]="{'height': '6px'}" />
+            </div>
+            <div class="mt-4">
+                <div class="d-flex align-items-start gap-2 my-3">
+                    <span class="border rounded-3 p-2">
+                        <img src="assets/icons/interface/deal.png" [width]="35" [height]="35" />
+                    </span>
+                    <span>
+                        <div class="fw-medium text-dark">{{"you_get" | translate}}</div>
+                        <div>{{"up_to" | translate}} 1% {{"you_get_caption" | translate}}.</div>
+                    </span>
+                </div>
+                <div class="d-flex align-items-start gap-2 my-3">
+                    <span class="border rounded-3 p-2">
+                        <img src="assets/icons/interface/gift-box.png" [width]="35" [height]="35" />
+                    </span>
+                    <span>
+                        <div class="fw-medium text-dark">{{"they_get" | translate}}</div>
+                        <div>{{"discount_up_to" | translate}} 2%.</div>
+                    </span>
+                </div>
+            </div>
+            <div class="row justify-content-end mt-5 fs-90" *ngIf="dailyLimit">
+                <span class="col-6 col-xl-4">
+                    <button class="w-100 p-3 rounded bg-white main-border main-text" (click)="visible = false">{{"close"
+                        | translate}}</button>
+                </span>
+                <span class="col-6 col-xl-4">
+                    <a href="/affiliates" target="_blank"
+                        class="w-100 p-3 rounded main-bg text-white d-block text-center">{{"learn_more" |
+                        translate}}</a>
+                </span>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>

@@ -1,0 +1,30 @@
+{
+    "tenants": [
+        {
+            "id": 1,
+            "question": {
+                "en": "Can I change my plan ?",
+                "fr": " Puis-je changer de forfait ?",
+                "es": "¿Puedo cambiar mi plan ?"
+            },
+            "answer": {
+                "en": "Yes, anytime at no cost",
+                "fr": "Oui, à tout moment sans frais",
+                "es": "Sí, en cualquier momento y sin coste alguno."
+            }
+        },
+        {
+            "id": 2,
+            "question": {
+                "en": "What commission on bookings ?",
+                "fr": "Quelle commission sur les réservations ?",
+                "es": "¿Qué comisión sobre las reservas ?"
+            },
+            "answer": {
+                "en": "Only 8% (compared to 15-20% elsewhere)",
+                "fr": "Seulement 8% (contre 15-20% ailleurs)",
+                "es": "Sólo el 8% (en comparación con el 15-20% en otros lugares)"
+            }
+        }
+    ]
+}

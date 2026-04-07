@@ -1,0 +1,18 @@
+<ng-container>
+    <div class="fs-110 fw-500">{{ title | translate }}</div>
+    <div class="row row-gap-3 mt-3">
+        <span *ngFor="let item of (showAll ? data : data.slice(0, 7))" class="col-sm-6 col-md-4">
+            <div class="d-flex align-items-start gap-2">
+                <span class="main-text">
+                    <i class="bi bi-tag-fill"></i>
+                </span>
+                <span class="text-capitalize">{{ item }}</span>
+            </div>
+        </span>
+    </div>
+    <div class="mt-3" *ngIf="data.length > 7">
+        <button role="button" (click)="toggleShowAll()" class="p-0 p-0 bg-white blue-text text-decoration-underline">
+            {{ showAll ? ('show_less' | translate) : ('show_more' | translate) }}
+        </button>
+    </div>
+</ng-container>

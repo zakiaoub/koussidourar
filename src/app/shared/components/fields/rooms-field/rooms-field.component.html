@@ -1,0 +1,234 @@
+<div
+  role="button"
+  class="main-input rounded height-60 d-flex lign-items-center w-100"
+  (click)="showDialog()"
+>
+  <span class="align-self-center ps-3 main-text fs-110">
+    <app-icon icon="people"></app-icon>
+  </span>
+  <span class="w-100">
+    <input
+      pInputText
+      [value]="
+        '0' +
+        totalRooms +
+        ' ' +
+        (totalRooms === 1 ? ('room' | translate) : ('rooms' | translate)) +
+        ' - 0' +
+        totalGuests +
+        ' ' +
+        (totalGuests === 1
+          ? ('traveler' | translate)
+          : ('travelers' | translate)) +
+        ' - ' +
+        nationality
+      "
+      [readOnly]="true"
+    />
+  </span>
+</div>
+<div class="guests">
+  <p-dialog
+    [header]="'travelers' | translate"
+    [(visible)]="visible"
+    [modal]="true"
+    [style]="{ width: '45rem' }"
+    [draggable]="false"
+    [resizable]="false"
+  >
+    <ng-container>
+      <div class="mb-4">
+        <div class="main-input rounded height-60">
+          <p-select
+            [options]="countries"
+            [(ngModel)]="nationality"
+            optionValue="code"
+            [filterBy]="'name_' + currentLang"
+            [filter]="true"
+            (ngModelChange)="onNationalityChange($event)"
+          >
+            <ng-template let-country pTemplate="item">
+              <div class="d-flex justify-content-between gap-5 w-100 py-1">
+                <span class="d-flex gap-2">
+                  <span>
+                    <img
+                      [src]="`assets/images/countries/${country.code}.png`"
+                      [width]="15"
+                      [height]="11"
+                    />
+                  </span>
+                  <span>{{ country["name_" + currentLang] }}</span>
+                </span>
+                <span class="fs-90 opacity-75">
+                  {{ country.code }}
+                </span>
+              </div>
+            </ng-template>
+
+            <ng-template let-item pTemplate="selectedItem">
+              <div class="d-flex align-items-center gap-2">
+                <span>
+                  <img
+                    [src]="`assets/images/countries/${item.code}.png`"
+                    [width]="15"
+                    [height]="11"
+                  />
+                </span>
+                <span>
+                  {{ item["name_" + currentLang] }}
+                </span>
+              </div>
+            </ng-template>
+          </p-select>
+        </div>
+      </div>
+      <div *ngFor="let room of rooms; let i = index" class="mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <h5>{{ "room" | translate }} {{ i + 1 }}</h5>
+        </div>
+
+        <div class="mb-4 row justify-content-between align-items-center">
+          <span class="col-sm-4">
+            <div class="d-flex">
+              <span>
+                <img
+                  [src]="'assets/icons/adults.jpg'"
+                  [width]="20"
+                  [height]="20"
+                />
+              </span>
+              <span class="ms-2">
+                <div class="text-dark">{{ "adults" | translate }}</div>
+                <div class="fw-300 fs-90 mt-1">
+                  {{ "ages_12_and_up" | translate }}
+                </div>
+              </span>
+            </div>
+          </span>
+          <span class="col-sm-6 col-xl-5">
+            <div class="d-flex justify-content-between align-items-center">
+              <button
+                type="button"
+                class="main-text me-3 bg-white border-0 fs-2"
+                (click)="decrementAdults(room)"
+                [disabled]="room.adult <= 1"
+              >
+                <app-icon icon="dash-circle"></app-icon>
+              </button>
+              <input
+                [readOnly]="true"
+                [(ngModel)]="room.adult"
+                class="border-0 text-center w-100 fs-110 fw-300"
+              />
+              <button
+                type="button"
+                class="main-text ms-3 bg-white border-0 fs-2"
+                (click)="incrementAdults(room)"
+                [disabled]="room.adult >= 6"
+              >
+                <app-icon icon="plus-circle"></app-icon>
+              </button>
+            </div>
+          </span>
+        </div>
+
+        <div class="mb-4 row justify-content-between align-items-center">
+          <span class="col-sm-4">
+            <div class="d-flex">
+              <span>
+                <img
+                  [src]="'assets/icons/childrens.jpg'"
+                  [width]="20"
+                  [height]="20"
+                />
+              </span>
+              <span class="ms-2">
+                <div class="text-dark">{{ "childrens" | translate }}</div>
+                <div class="fw-300 fs-90 mt-1">
+                  {{ "under_12_years_old" | translate }}
+                </div>
+              </span>
+            </div>
+          </span>
+          <span class="col-sm-6 col-xl-5">
+            <div class="d-flex justify-content-between align-items-center">
+              <button
+                type="button"
+                class="main-text me-3 bg-white border-0 fs-2"
+                (click)="decrementChilds(room)"
+                [disabled]="room.child <= 0"
+              >
+                <app-icon icon="dash-circle"></app-icon>
+              </button>
+              <input
+                [readOnly]="true"
+                [(ngModel)]="room.child"
+                class="border-0 text-center w-100 fs-110 fw-300"
+              />
+              <button
+                type="button"
+                class="main-text ms-3 bg-white border-0 fs-2"
+                (click)="incrementChilds(room)"
+                [disabled]="room.child >= 4"
+              >
+                <app-icon icon="plus-circle"></app-icon>
+              </button>
+            </div>
+          </span>
+        </div>
+
+        <div class="row">
+          <span
+            *ngFor="let age of room.childAge; let j = index"
+            class="col-xl-3"
+          >
+            <div class="main-input rounded height-50">
+              <p-iftalabel>
+                <input
+                  type="number"
+                  pInputText
+                  [(ngModel)]="room.childAge[j]"
+                  [min]="1"
+                  [max]="11"
+                />
+                <label class="fs-70"
+                  >{{ "child_age" | translate }} {{ j + 1 }}</label
+                >
+              </p-iftalabel>
+            </div>
+          </span>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button
+            type="button"
+            (click)="removeRoom(i)"
+            *ngIf="rooms.length > 1"
+            class="red-border bg-white red-text py-2 px-4 rounded"
+          >
+            <app-icon icon="trash"></app-icon>
+            {{ "delete" | translate }}
+          </button>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button
+          *ngIf="totalRooms <= 2"
+          type="button"
+          (click)="addRoom()"
+          class="py-3 px-5 fw-300 bg-white main-border main-text rounded-5"
+        >
+          {{ "add_room" | translate }}
+        </button>
+        <button
+          type="button"
+          class="py-3 px-5 fw-300 main-bg text-white rounded-5 ms-3"
+          (click)="closeDialog()"
+        >
+          {{ "confirm" | translate }}
+        </button>
+      </div>
+    </ng-container>
+  </p-dialog>
+</div>

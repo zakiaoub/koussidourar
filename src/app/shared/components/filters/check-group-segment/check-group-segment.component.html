@@ -1,0 +1,37 @@
+<ng-container *ngIf="filterList">
+  <div class="fw-400 lower-text">{{ title | translate }}</div>
+  <ng-container *ngIf="filterList?.line[0].name !== '-' && filterList.line.length > 1">
+    <app-line-switch [(activeLine)]="activeLine"></app-line-switch>
+  </ng-container>
+
+  <div class="my-2" *ngFor="let line of filterList.line; let i = index">
+    <ng-container *ngIf="filterList?.line[0].name === '-' || !activeLine || line.id === activeLine">
+
+      <!-- Affichage du titre pour les lignes nommées '-' -->
+      <div class="main-text fs-90 text-decoration-underline" *ngIf="line.name === '-'">
+        {{"flight" | translate}} 0{{ i + 1 }}
+      </div>
+
+      <!-- Liste des items -->
+      <div class="mt-2">
+        <div class="check d-flex justify-content-between align-items-center my-1" *ngFor="let item of line.list">
+          <span class="d-flex align-items-center fs-90">
+            <p-checkbox [inputId]="item.name + line.name + item.id"
+              [value]="groupName + '-' + line.name + '-' + item.id" name="{{ groupName }}" [(ngModel)]="selectedItems"
+              (ngModelChange)="selectedItemsChange.emit(selectedItems)">
+            </p-checkbox>
+
+            <label [for]="item.name + line.name + item.id" class="ms-2 text-capitalize lh-1">{{ item.name | translate
+              }}</label>
+          </span>
+   <ng-container *ngIf="title != 'stops' ">
+          <span class="text-secondary fs-80" *ngIf="count[line.name][item.id] as groupName">
+            {{ (groupName | keyvalue).length }} 
+          </span>
+          </ng-container>
+        </div>
+      </div>
+
+    </ng-container>
+  </div>
+</ng-container>

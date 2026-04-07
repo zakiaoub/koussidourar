@@ -1,0 +1,18 @@
+<div class="row">
+    <span *ngFor="let field of infos" class="col-6 col-md-3 my-3">
+        <div class="d-flex align-items-center">
+            <span class="border rounded-3 p-3">
+                <img [src]="field.icon" [width]="20" [height]="20" />
+            </span>
+            <span class="mx-3">
+                <div class="text-secondary fs-80">{{ field.title | translate }}</div>
+                <div class="mt-1 fs-90" *ngIf="field.key !== 'dateFrom'">
+                    {{ data[field.key] ? data[field.key] : data.activity[field.key]}}
+                </div>
+                <div  class="mt-1 fs-90" *ngIf="field.key == 'dateFrom'">
+                    {{ (data[field.key] ? data[field.key] : data.activity[field.key]) | date:'dd MMM' }}
+                </div>
+            </span>
+        </div>
+    </span>
+</div>

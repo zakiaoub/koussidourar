@@ -1,0 +1,60 @@
+<ng-container>
+    <app-session-time [type]="'details'"></app-session-time>
+    <app-session-expired [target]="'hotel'"></app-session-expired>
+    <app-stepper [currentStep]="2"></app-stepper>
+
+    <ng-container *ngIf="isLoading()">
+        <app-skeleton-details [service]="'attraction'"></app-skeleton-details>
+    </ng-container>
+
+    <ng-container *ngIf="error()">
+        <app-error-request caption="error_hotel_message"></app-error-request>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoading() && !error()">
+        <section class="container-xl py-4">
+            <app-rating [rating]="data()?.category"></app-rating>
+            <h2 class="text-capitalize">{{data().name}}</h2>
+            <div *ngIf="data()?.images?.length > 3" class="mt-4">
+                <app-images-carousel [data]="data()?.images"></app-images-carousel>
+            </div>
+            <div class="row flex-xl-row flex-sm-column-reverse">
+                <span class="col-xl-8 my-3">
+                    <div class="pe-xl-4">
+                        <app-hotel-infos [data]="data()"></app-hotel-infos>
+                        <hr class="border-secondary my-4" />
+                        <app-product-description [title]="'overview'"
+                            [text]="data()?.descriptions['GENRERAL']"></app-product-description>
+                        <hr class="border-secondary my-4" />
+                        <app-product-amenties [data]="data()?.amenities" [title]="'facilities'"></app-product-amenties>
+
+
+                        <!-- AUX ALENTOURS -->
+                        <!--    
+                                          <hr class="border-secondary my-4" />                     
+                        <app-hotel-nearby [lat]="data()?.latitude" [lon]="data()?.longitude"
+                            [radius]="1500"></app-hotel-nearby> -->
+                    </div>
+                </span>
+                <span class="col-xl-4 my-3">
+                    <div class="row gap-4">
+                        <span class="col-12">
+                            <app-hotel-recap [data]="data()"></app-hotel-recap>
+                        </span>
+
+                        <!-- WEATHER APP -->
+
+                        <!-- <span class="col-xl-12 d-none d-xl-block">
+                            <app-weather [lat]="data()?.latitude" [lon]="data()?.longitude"
+                                [city]="data()?.city"></app-weather>
+                        </span> -->
+                    </div>
+                </span>
+            </div>
+            <hr class="border-secondary my-4" />
+            <div id="rooms-availability">
+                <app-hotels-rooms [id]="data()?.id" [searchToken]="searchToken"></app-hotels-rooms>
+            </div>
+        </section>
+    </ng-container>
+</ng-container>

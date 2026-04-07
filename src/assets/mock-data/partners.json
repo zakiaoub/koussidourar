@@ -1,0 +1,56 @@
+{
+    "partners": [
+        {
+            "id": 1,
+            "question": {
+                "en": "How can I earn travel credits?",
+                "fr": "Comment puis-je gagner des crédits de voyage ?",
+                "es": "¿Cómo puedo ganar créditos de viaje?"
+            },
+            "answer": {
+                "en": "Members can earn travel credits when their referred friends make eligible bookings.",
+                "fr": "Les membres peuvent gagner des crédits de voyage lorsque leurs amis référés effectuent des réservations éligibles.",
+                "es": "Los miembros pueden ganar créditos de viaje cuando sus amigos referidos realicen reservas elegibles."
+            }
+        },
+        {
+            "id": 2,
+            "question": {
+                "en": "How do I use my travel credits?",
+                "fr": "Comment utiliser mes crédits de voyage ?",
+                "es": "¿Cómo uso mis créditos de viaje?"
+            },
+            "answer": {
+                "en": "Travel Credits, valid only on our platform and not transferable or exchangeable for cash, They cannot be obtained by creating multiple accounts.",
+                "fr": "Les crédits de voyage, valables uniquement sur notre plateforme et non transférables ni échangeables contre de l'argent, ne peuvent pas être obtenus en créant plusieurs comptes.",
+                "es": "Los créditos de viaje, válidos solo en nuestra plataforma y no transferibles ni canjeables por dinero en efectivo, no pueden obtenerse creando varias cuentas."
+            }
+        },
+        {
+            "id": 3,
+            "question": {
+                "en": "How are commissions paid?",
+                "fr": "Comment sont versées les commissions ?",
+                "es": "¿Cómo se pagan las comisiones?"
+            },
+            "answer": {
+                "en": "Monthly bank transfer or instant travel credit",
+                "fr": "Virement bancaire mensuel ou crédit voyage instantané",
+                "es": "Transferencia bancaria mensual o crédito de viaje instantáneo"
+            }
+        },
+        {
+            "id": 4,
+            "question": {
+                "en": "Can I follow my referrals ?",
+                "fr": "Puis-je suivre mes filleuls ?",
+                "es": "¿Y luego seguiré a mis hijas ?"
+            },
+            "answer": {
+                "en": "Oui, via votre tableau de bord analytique en temps réel",
+                "fr": "Oui, via votre dashboard analysis in real time",
+                "es": "Sí, a través de su panel de control analítico en tiempo real"
+            }
+        }
+    ]
+}

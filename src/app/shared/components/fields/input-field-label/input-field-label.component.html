@@ -1,0 +1,12 @@
+ <div class="d-flex align-items-center rounded-3 main-input bg-white" style="height:1.5cm;">
+<span class="main-text ps-3 pe-2">
+<i [class]="icon"></i>
+</span>
+<span style="flex-grow: 1;" class="fw-300 fs-90 text-secondary">
+<div class="input-group">
+<input [type]="type"  class="border-0 w-100 py-3 fw-300" [id]="field"    required/>
+<label [for]="field"class="bg-white px-2">{{labelKey | translate}}</label>
+</div>
+</span> 
+ </div>
+

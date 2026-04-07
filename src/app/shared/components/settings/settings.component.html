@@ -1,0 +1,43 @@
+<ng-container>
+    <span role="button" class="px-3 text-white h-100 d-flex align-items-center gap-2 lh-1" (click)="settings = true"
+        aria-label="Change language">
+        <span>
+            <img [src]="'assets/images/flags/'+defaultLang+'.png'" [alt]="'lang :'+defaultLang" [width]="16"
+                [height]="16" />
+        </span>
+        <span>|</span>
+        <span class="fs-80 fw-medium">
+            {{defaultCurrency}}
+        </span>
+    </span>
+
+    <p-dialog [header]="'choose_your_language' | translate" [(visible)]="settings" [modal]="true" [style]="{ width: '60vw' }"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [draggable]="false">
+        <app-lang></app-lang>
+        <!-- <div class="d-flex">
+            <span class="mx-3">
+                <button [ngClass]="{'border-bottom border-2 border-warning' : activeSettings === 'lang'}"
+                    (click)="setActiveSettings('lang')" class="p-3 px-4 bg-white border-0">
+                    {{ 'lang_and_region' | translate }}
+                </button>
+            </span>
+
+            <span class="mx-3">
+                <button [ngClass]="{'border-bottom border-2 border-warning' : activeSettings === 'currency'}"
+                    (click)="setActiveSettings('currency')" class="p-3 px-4 bg-white border-0">
+                    {{ 'currency' | translate }}
+                </button>
+            </span>
+        </div>
+
+        <div class="py-1">
+            <ng-container *ngIf="activeSettings === 'lang'">
+                <app-lang></app-lang>
+            </ng-container>
+
+            <ng-container *ngIf="activeSettings === 'currency'">
+                <app-currency></app-currency>
+            </ng-container>
+        </div> -->
+    </p-dialog>
+</ng-container>

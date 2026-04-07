@@ -1,0 +1,49 @@
+<div [formGroup]="formGroup">
+  <label [for]="id" class="form-label fs-90">{{ labelKey | translate }} <span class="red-text">*</span></label>
+  <div class="bg-white rounded height-60 d-flex"
+    [ngClass]="{'red-border':control?.touched && control?.invalid, 'green-border':control?.touched && control?.valid, 'border':!control?.touched}">
+    <span class="align-self-center ps-3 main-text fs-110">
+      <app-icon [icon]="icon"></app-icon>
+    </span>
+    <span class="w-100">
+      <p-select [inputId]="id" [options]="countries" [formControl]="control" optionValue="code"
+        [filterBy]="'name_'+currentLang" [filter]="true">
+        <ng-template let-country pTemplate="item">
+          <div class="d-flex justify-content-between gap-5 w-100 py-1">
+            <span class="d-flex gap-2">
+              <span>
+                <img [src]="`assets/images/countries/${country.code}.png`" [width]="15" [height]="11" />
+              </span>
+              <span>{{ country["name_" + currentLang] }}</span>
+            </span>
+            <span class="fs-90 opacity-75">
+              {{ country.code }}
+            </span>
+          </div>
+        </ng-template>
+
+        <ng-template let-item pTemplate="selectedItem">
+          <div class="d-flex align-items-center gap-2">
+            <span>
+              <img [src]="`assets/images/countries/${item.code}.png`" [width]="15" [height]="11" />
+            </span>
+            <span>
+              {{ item['name_'+currentLang] }}
+            </span>
+          </div>
+        </ng-template>
+      </p-select>
+    </span>
+    <span class="align-self-center pe-3 main-text">
+      <ng-container *ngIf="control?.touched && control?.invalid">
+        <img src="assets/icons/status/failure.png" [width]="15" [height]="15" />
+      </ng-container>
+      <ng-container *ngIf="control?.touched && control?.valid">
+        <img src="assets/icons/status/success.png" [width]="15" [height]="15" />
+      </ng-container>
+    </span>
+  </div>
+  <ng-container *ngIf="control?.touched && control?.errors?.['required'] && showMessage">
+    <app-error-fields status="required"></app-error-fields>
+  </ng-container>
+</div>

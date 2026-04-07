@@ -1,0 +1,21 @@
+<ng-container>
+    <div [ngSwitch]="cart.cartData()?.count >= 1">
+        <ng-container *ngSwitchCase="true">
+            <div class="d-flex flex-column gap-3">
+                <div *ngFor="let item of cart.cartData()?.list">
+                    <app-cart-item [item]="item"></app-cart-item>
+                </div>
+            </div>
+            <hr class="my-4 " />
+            <div class="d-flex flex-column gap-2">
+                <app-ad-service-add service="flight"></app-ad-service-add>
+                <app-ad-service-add service="hotel"></app-ad-service-add>
+                <app-ad-service-add service="attraction"></app-ad-service-add>
+                <app-ad-service-add service="transfer"></app-ad-service-add>
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+            <app-cart-empty></app-cart-empty>
+        </ng-container>
+    </div>
+</ng-container>

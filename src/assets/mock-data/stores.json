@@ -1,0 +1,661 @@
+{
+  "stores": [
+    {
+      "id": 2,
+      "title": "Airbnb, Inc",
+      "type": "Platform",
+      "location": {
+        "city": "San francisco",
+        "country": "United states",
+        "address": "Headquarters at 888 Brannan Street"
+      },
+      "informations": {
+        "registration": "25-11-2025",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+        "website": "https://www.airbnb.fr/",
+        "email": "support@airbnb.com",
+        "phone": "+09 345 346 46"
+      },
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/512px-Airbnb_Logo_B%C3%A9lo.svg.png",
+      "products": [
+        1,
+        4,
+        8,
+        6
+      ],
+      "rating": {
+        "average": 5.0,
+        "score": [
+          {
+            "label": "products",
+            "value": 5.0
+          },
+          {
+            "label": "reliability",
+            "value": 5.0
+          },
+          {
+            "label": "service",
+            "value": 5.0
+          },
+          {
+            "label": "availability",
+            "value": 5.0
+          },
+          {
+            "label": "value_for_money",
+            "value": 5.0
+          },
+          {
+            "label": "experience",
+            "value": 5.0
+          },
+          {
+            "label": "support",
+            "value": 5.0
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Alice Smith",
+            "rating": 5,
+            "img": "https://graph.facebook.com/v2.9/1062932547186903/picture?type=square&height=64&width=64",
+            "comment": "For breakfast, they only give you bananas, apples, bagels, and instant oats. No eggs, sausage, or bacon. Also, they do NOT have an elevator, washer, or dryer.",
+            "date": "2024-07-20"
+          },
+          {
+            "author": "Bob Johnson",
+            "rating": 4.5,
+            "img": "https://graph.facebook.com/v2.9/10154927787737845/picture?type=square&height=64&width=64",
+            "comment": "Great stay, but the pool was a bit too crowded during the day.",
+            "date": "2024-07-25"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "BlaBlaCar",
+      "type": "Platform",
+      "location": {
+        "city": "Paris",
+        "country": "United states",
+        "address": "84 AVENUE DE LA REPUBLIQUE 75011 PARIS"
+      },
+      "informations": {
+        "registration": "25-11-2025",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+        "website": "https://www.blablacar.com/",
+        "email": "support@blablacar.com",
+        "phone": "+33 414 746 21"
+      },
+      "image": "https://cdn.blablacar.com/language-selector/assets/images/blablacar-3b8f769805e8d64c.svg",
+      "products": [
+        1,
+        4,
+        8,
+        6
+      ],
+      "rating": {
+        "average": 3.7,
+        "score": [
+          {
+            "label": "products",
+            "value": 4.5
+          },
+          {
+            "label": "reliability",
+            "value": 3.5
+          },
+          {
+            "label": "service",
+            "value": 3.0
+          },
+          {
+            "label": "availability",
+            "value": 3.5
+          },
+          {
+            "label": "value_for_money",
+            "value": 4.0
+          },
+          {
+            "label": "experience",
+            "value": 2.5
+          },
+          {
+            "label": "support",
+            "value": 4.5
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Alice Smith",
+            "rating": 5,
+            "img": "https://graph.facebook.com/v2.9/1062932547186903/picture?type=square&height=64&width=64",
+            "comment": "For breakfast, they only give you bananas, apples, bagels, and instant oats. No eggs, sausage, or bacon. Also, they do NOT have an elevator, washer, or dryer.",
+            "date": "2024-07-20"
+          },
+          {
+            "author": "Bob Johnson",
+            "rating": 4.5,
+            "img": "https://graph.facebook.com/v2.9/10154927787737845/picture?type=square&height=64&width=64",
+            "comment": "Great stay, but the pool was a bit too crowded during the day.",
+            "date": "2024-07-25"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Trainline",
+      "type": "Company",
+      "location": {
+        "city": "London",
+        "country": "United kingdome",
+        "address": "120 Holborn, London EC1N 2TD, Royaume-Uni"
+      },
+      "informations": {
+        "registration": "25-11-2025",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+        "website": "https://www.trainline.com/",
+        "email": "support@trainline.com",
+        "phone": "+33 414 746 21"
+      },
+      "image": "https://static.trainlinecontent.com/content/vul/logos/trainline-mint.svg",
+      "products": [
+        1,
+        4,
+        8,
+        6
+      ],
+      "rating": {
+        "average": 3.7,
+        "score": [
+          {
+            "label": "products",
+            "value": 4.5
+          },
+          {
+            "label": "reliability",
+            "value": 3.5
+          },
+          {
+            "label": "service",
+            "value": 3.0
+          },
+          {
+            "label": "availability",
+            "value": 3.5
+          },
+          {
+            "label": "value_for_money",
+            "value": 4.0
+          },
+          {
+            "label": "experience",
+            "value": 2.5
+          },
+          {
+            "label": "support",
+            "value": 4.5
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Alice Smith",
+            "rating": 5,
+            "img": "https://graph.facebook.com/v2.9/1062932547186903/picture?type=square&height=64&width=64",
+            "comment": "For breakfast, they only give you bananas, apples, bagels, and instant oats. No eggs, sausage, or bacon. Also, they do NOT have an elevator, washer, or dryer.",
+            "date": "2024-07-20"
+          },
+          {
+            "author": "Bob Johnson",
+            "rating": 4.5,
+            "img": "https://graph.facebook.com/v2.9/10154927787737845/picture?type=square&height=64&width=64",
+            "comment": "Great stay, but the pool was a bit too crowded during the day.",
+            "date": "2024-07-25"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "title": "Sheraton",
+      "type": "Platform",
+      "location": {
+        "city": "Massachusetts",
+        "country": "United states",
+        "address": "1457 Main Street, Boston, MA 02110, USA"
+      },
+      "informations": {
+        "registration": "25-11-2025",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+        "website": "https://www.booking.com/",
+        "email": "support@booking.com",
+        "phone": "203 299 8000"
+      },
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sheraton_%281%29.svg/125px-Sheraton_%281%29.svg.png",
+      "products": [
+        1,
+        4,
+        8,
+        6
+      ],
+      "rating": {
+        "average": 4.7,
+        "score": [
+          {
+            "label": "products",
+            "value": 4.5
+          },
+          {
+            "label": "reliability",
+            "value": 4.5
+          },
+          {
+            "label": "service",
+            "value": 5.0
+          },
+          {
+            "label": "availability",
+            "value": 4.5
+          },
+          {
+            "label": "value_for_money",
+            "value": 5.0
+          },
+          {
+            "label": "experience",
+            "value": 4.5
+          },
+          {
+            "label": "support",
+            "value": 4.5
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Alice Smith",
+            "rating": 5,
+            "img": "https://graph.facebook.com/v2.9/1062932547186903/picture?type=square&height=64&width=64",
+            "comment": "For breakfast, they only give you bananas, apples, bagels, and instant oats. No eggs, sausage, or bacon. Also, they do NOT have an elevator, washer, or dryer.",
+            "date": "2024-07-20"
+          },
+          {
+            "author": "Bob Johnson",
+            "rating": 4.5,
+            "img": "https://graph.facebook.com/v2.9/10154927787737845/picture?type=square&height=64&width=64",
+            "comment": "Great stay, but the pool was a bit too crowded during the day.",
+            "date": "2024-07-25"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "title": "OpenTable",
+      "type": "Platform",
+      "location": {
+        "city": "California",
+        "country": "United states",
+        "address": "27 Street california, United states"
+      },
+      "informations": {
+        "registration": "25-11-2025",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+        "website": "https://www.opentable.com/",
+        "email": "support@opentable.com",
+        "phone": "203 299 8000"
+      },
+      "image": "https://cdn.otstatic.com/cfe/14/images/opentable-logo-ZGYRVF2L.svg",
+      "products": [
+        1,
+        4,
+        8,
+        6
+      ],
+      "rating": {
+        "average": 4.7,
+        "score": [
+          {
+            "label": "products",
+            "value": 4.5
+          },
+          {
+            "label": "reliability",
+            "value": 4.5
+          },
+          {
+            "label": "service",
+            "value": 5.0
+          },
+          {
+            "label": "availability",
+            "value": 4.5
+          },
+          {
+            "label": "value_for_money",
+            "value": 5.0
+          },
+          {
+            "label": "experience",
+            "value": 4.5
+          },
+          {
+            "label": "support",
+            "value": 4.5
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Alice Smith",
+            "rating": 5,
+            "img": "https://graph.facebook.com/v2.9/1062932547186903/picture?type=square&height=64&width=64",
+            "comment": "For breakfast, they only give you bananas, apples, bagels, and instant oats. No eggs, sausage, or bacon. Also, they do NOT have an elevator, washer, or dryer.",
+            "date": "2024-07-20"
+          },
+          {
+            "author": "Bob Johnson",
+            "rating": 4.5,
+            "img": "https://graph.facebook.com/v2.9/10154927787737845/picture?type=square&height=64&width=64",
+            "comment": "Great stay, but the pool was a bit too crowded during the day.",
+            "date": "2024-07-25"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "title": "GetYourGuide",
+      "type": "Platform",
+      "location": {
+        "city": "Berlin",
+        "country": "Germany",
+        "address": "18 Street Berlin, Germany"
+      },
+      "informations": {
+        "registration": "25-11-2025",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+        "website": "https://www.getyourguide.com/",
+        "email": "support@getyourguide.com",
+        "phone": "+49 305 683 9445"
+      },
+      "image": "https://www.svgrepo.com/show/353775/getyourguide.svg",
+      "products": [
+        1,
+        4,
+        8,
+        6
+      ],
+      "rating": {
+        "average": 4.7,
+        "score": [
+          {
+            "label": "products",
+            "value": 4.5
+          },
+          {
+            "label": "reliability",
+            "value": 4.5
+          },
+          {
+            "label": "service",
+            "value": 5.0
+          },
+          {
+            "label": "availability",
+            "value": 4.5
+          },
+          {
+            "label": "value_for_money",
+            "value": 5.0
+          },
+          {
+            "label": "experience",
+            "value": 4.5
+          },
+          {
+            "label": "support",
+            "value": 4.5
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Alice Smith",
+            "rating": 5,
+            "img": "https://graph.facebook.com/v2.9/1062932547186903/picture?type=square&height=64&width=64",
+            "comment": "For breakfast, they only give you bananas, apples, bagels, and instant oats. No eggs, sausage, or bacon. Also, they do NOT have an elevator, washer, or dryer.",
+            "date": "2024-07-20"
+          },
+          {
+            "author": "Bob Johnson",
+            "rating": 4.5,
+            "img": "https://graph.facebook.com/v2.9/10154927787737845/picture?type=square&height=64&width=64",
+            "comment": "Great stay, but the pool was a bit too crowded during the day.",
+            "date": "2024-07-25"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "title": "Tripadvisor",
+      "type": "Platform",
+      "location": {
+        "city": "Massachusetts",
+        "country": "United states",
+        "address": "123 Street Massachusetts, USA"
+      },
+      "informations": {
+        "registration": "25-11-2025",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+        "website": "https://www.tripadvisor.com/",
+        "email": "support@tripadvisor.com",
+        "phone": "+1 242 567 4237"
+      },
+      "image": "https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg",
+      "products": [
+        1,
+        4,
+        8,
+        6
+      ],
+      "rating": {
+        "average": 4.7,
+        "score": [
+          {
+            "label": "products",
+            "value": 4.5
+          },
+          {
+            "label": "reliability",
+            "value": 4.5
+          },
+          {
+            "label": "service",
+            "value": 5.0
+          },
+          {
+            "label": "availability",
+            "value": 4.5
+          },
+          {
+            "label": "value_for_money",
+            "value": 5.0
+          },
+          {
+            "label": "experience",
+            "value": 4.5
+          },
+          {
+            "label": "support",
+            "value": 4.5
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Alice Smith",
+            "rating": 5,
+            "img": "https://graph.facebook.com/v2.9/1062932547186903/picture?type=square&height=64&width=64",
+            "comment": "For breakfast, they only give you bananas, apples, bagels, and instant oats. No eggs, sausage, or bacon. Also, they do NOT have an elevator, washer, or dryer.",
+            "date": "2024-07-20"
+          },
+          {
+            "author": "Bob Johnson",
+            "rating": 4.5,
+            "img": "https://graph.facebook.com/v2.9/10154927787737845/picture?type=square&height=64&width=64",
+            "comment": "Great stay, but the pool was a bit too crowded during the day.",
+            "date": "2024-07-25"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "title": "Expedia",
+      "type": "Platform",
+      "location": {
+        "city": "Seattle",
+        "country": "United states",
+        "address": "123 Street Seattle, USA"
+      },
+      "informations": {
+        "registration": "25-11-2025",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+        "website": "https://www.expedia.com/",
+        "email": "support@expedia.com",
+        "phone": "+1 147 810 2454"
+      },
+      "image": "https://euro.expedia.net/_dms/header/logo.svg?locale=en_IE&siteid=4400&2&6f9ec7db",
+      "products": [
+        1,
+        4,
+        8,
+        6
+      ],
+      "rating": {
+        "average": 4.7,
+        "score": [
+          {
+            "label": "products",
+            "value": 4.5
+          },
+          {
+            "label": "reliability",
+            "value": 4.5
+          },
+          {
+            "label": "service",
+            "value": 5.0
+          },
+          {
+            "label": "availability",
+            "value": 4.5
+          },
+          {
+            "label": "value_for_money",
+            "value": 5.0
+          },
+          {
+            "label": "experience",
+            "value": 4.5
+          },
+          {
+            "label": "support",
+            "value": 4.5
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Alice Smith",
+            "rating": 5,
+            "img": "https://graph.facebook.com/v2.9/1062932547186903/picture?type=square&height=64&width=64",
+            "comment": "For breakfast, they only give you bananas, apples, bagels, and instant oats. No eggs, sausage, or bacon. Also, they do NOT have an elevator, washer, or dryer.",
+            "date": "2024-07-20"
+          },
+          {
+            "author": "Bob Johnson",
+            "rating": 4.5,
+            "img": "https://graph.facebook.com/v2.9/10154927787737845/picture?type=square&height=64&width=64",
+            "comment": "Great stay, but the pool was a bit too crowded during the day.",
+            "date": "2024-07-25"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "title": "Agoda",
+      "type": "Platform",
+      "location": {
+        "city": "Singapore",
+        "country": "United states",
+        "address": "123 Street Seattle, USA"
+      },
+      "informations": {
+        "registration": "25-11-2025",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+        "website": "https://www.agoda.com/",
+        "email": "support@agoda.com",
+        "phone": "+1 147 810 2454"
+      },
+      "image": "https://cdn6.agoda.net/images/kite-js/logo/agoda/color-default.svg",
+      "products": [
+        1,
+        4,
+        8,
+        6
+      ],
+      "rating": {
+        "average": 4.7,
+        "score": [
+          {
+            "label": "products",
+            "value": 4.5
+          },
+          {
+            "label": "reliability",
+            "value": 4.5
+          },
+          {
+            "label": "service",
+            "value": 5.0
+          },
+          {
+            "label": "availability",
+            "value": 4.5
+          },
+          {
+            "label": "value_for_money",
+            "value": 5.0
+          },
+          {
+            "label": "experience",
+            "value": 4.5
+          },
+          {
+            "label": "support",
+            "value": 4.5
+          }
+        ],
+        "reviews": [
+          {
+            "author": "Alice Smith",
+            "rating": 5,
+            "img": "https://graph.facebook.com/v2.9/1062932547186903/picture?type=square&height=64&width=64",
+            "comment": "For breakfast, they only give you bananas, apples, bagels, and instant oats. No eggs, sausage, or bacon. Also, they do NOT have an elevator, washer, or dryer.",
+            "date": "2024-07-20"
+          },
+          {
+            "author": "Bob Johnson",
+            "rating": 4.5,
+            "img": "https://graph.facebook.com/v2.9/10154927787737845/picture?type=square&height=64&width=64",
+            "comment": "Great stay, but the pool was a bit too crowded during the day.",
+            "date": "2024-07-25"
+          }
+        ]
+      }
+    }
+  ]
+}

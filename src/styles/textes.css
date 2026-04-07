@@ -1,0 +1,182 @@
+.main-text {
+  color: var(--main);
+}
+
+.lower-text {
+  color: var(--lower);
+}
+
+.third-text {
+  color: var(--third);
+}
+
+.fourth-text {
+  color: var(--fourth);
+}
+
+.blue-text {
+  color: var(--blue);
+}
+
+.green-text {
+  color: var(--green);
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.orange-text {
+  color: var(--orange);
+}
+
+.purple-text {
+  color: var(--purple);
+}
+
+
+.dark-text {
+  color: var(--dark);
+}
+
+.grey-text {
+  color: var(--grey);
+}
+
+.fifth-text {
+  color: var(--fifth);
+}
+
+.sixth-text {
+  color: var(--sixth);
+}
+
+
+.fw-100 {
+  font-weight: 100 !important;
+}
+
+.fw-200 {
+  font-weight: 200 !important;
+}
+
+.fw-300 {
+  font-weight: 300 !important;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.fw-800 {
+  font-weight: 800 !important;
+}
+
+.fw-900 {
+  font-weight: 900 !important;
+}
+
+.fs-110 {
+  font-size: 110% !important;
+}
+
+.fs-120 {
+  font-size: 120% !important;
+}
+
+.fs-95 {
+  font-size: 95% !important;
+}
+
+.fs-90 {
+  font-size: 90% !important;
+}
+
+.fs-80 {
+  font-size: 80% !important;
+}
+
+.fs-70 {
+  font-size: 70% !important;
+}
+
+.fs-150 {
+  font-size: 150% !important;
+}
+
+.fs-200 {
+  font-size: 200% !important;
+}
+
+.fs-250 {
+  font-size: 250% !important;
+}
+
+.fs-300 {
+  font-size: 300% !important;
+}
+
+.fs-350 {
+  font-size: 350% !important;
+}
+
+.fs-400 {
+  font-size: 400% !important;
+}
+
+.fs-450 {
+  font-size: 450% !important;
+}
+
+.fs-500 {
+  font-size: 500% !important;
+}
+
+.fs-550 {
+  font-size: 550% !important;
+}
+
+.fs-600 {
+  font-size: 600% !important;
+}
+
+.fs-650 {
+  font-size: 650% !important;
+}
+
+/* Extra small (xs) */
+@media (max-width: 575.98px) {
+  /* Styles pour xs */
+}
+
+/* Small (sm) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Styles pour sm */
+}
+
+/* Medium (md) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Styles pour md */
+}
+
+/* Large (lg) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Styles pour lg */
+}
+
+/* Extra large (xl) */
+@media (min-width: 1200px) {
+  /* Styles pour xl */
+}

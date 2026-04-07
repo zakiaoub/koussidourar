@@ -1,0 +1,20 @@
+{
+    "Paris": [
+        "https://img.freepik.com/free-photo/cityscape-paris-sunlight-blue-sky-fra_181624-50289.jpg?ga=GA1.1.1633369953.1748522017&semt=ais_hybrid&w=740",
+        "https://img.freepik.com/photos-gratuite/vue-panoramique-arc-triomphe-paris-france_268835-816.jpg?t=st=1757513204~exp=1757516804~hmac=3b10f17c5a6a4adf3a5c3e2cdb35f5fb1ee250454d23c8e311ea06d141f9bd08&w=1480"
+    ],
+    "Dubai": [
+        "https://img.freepik.com/premium-photo/dubai-burj-khalifa-skyline-tallest-building-world-top-view-downtown_770123-12038.jpg?ga=GA1.1.1633369953.1748522017&semt=ais_hybrid&w=740",
+        "https://images.unsplash.com/photo-1634148551170-d37d021e0cc9?q=80&w=1184&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "Alger": [
+        "https://img.freepik.com/premium-photo/martyrs-memorial-heroes-killed-algerian-war-independence-algiers-north-africa_261932-15505.jpg?ga=GA1.1.1633369953.1748522017&semt=ais_hybrid&w=740"
+    ],
+    "Amsterdam": [
+        "https://img.freepik.com/free-photo/scenery-keizersgracht-canal-amsterdam-with-reflection-buildings-green-trees_181624-17434.jpg?ga=GA1.1.1633369953.1748522017&semt=ais_hybrid&w=740",
+        "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "Roma": [
+        "https://img.freepik.com/premium-photo/view-colosseo-romano-roman-coliseum-roma-lazio-italy_137125-2984.jpg?ga=GA1.1.1633369953.1748522017&semt=ais_hybrid&w=740"
+    ]
+}

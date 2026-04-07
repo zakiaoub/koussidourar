@@ -1,0 +1,32 @@
+<div class="d-none d-md-block bg-white shadow-sm rounded-4 p-4 blue-border" *ngIf="params && cities">
+    <div class="row justify-content-between align-items-center">
+        <span class="col-md-9 col-lg-8">
+            <div class="d-flex gap-3">
+                <span>
+                    <img src="https://cdn-icons-png.flaticon.com/128/6165/6165633.png" [width]="75" [height]="75" />
+                </span>
+                <span>
+                    <div class="d-flex align-items-center gap-1 bg-white blue-text fs-80">
+                        <span>
+                            <app-icon icon="gem"></app-icon>
+                        </span>
+                        <span class="text-uppercase fw-medium">
+                            {{"exclusive_deal" | translate}}
+                        </span>
+                    </div>
+                    <div class="fs-4">
+                        <span>{{"need_a_place_to_stay" | translate}}</span>
+                        <span
+                            class="main-text-gradient fw-medium ms-2">{{params?.Itineraries[0]?.ArrivalCityName}}?</span>
+                    </div>
+                    <div class="opacity-75">{{"need_a_place_to_stay_caption" | translate}}</div>
+                </span>
+            </div>
+        </span>
+        <span class="col-md-3">
+            <app-button [type]="'button'" [title]="'lets_go'"
+                [class]="'lower-bg-gradient text-white fs-90 py-3 rounded-3 w-100'" (action)="onSubmit()"
+                [isLoading]="isLoading" [isWhite]="true"></app-button>
+        </span>
+    </div>
+</div>

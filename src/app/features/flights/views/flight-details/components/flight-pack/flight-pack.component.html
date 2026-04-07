@@ -1,0 +1,152 @@
+<ng-container *ngIf="details">
+    <div class="bg-white rounded-3 border shadow-sm mt-4 scrolls">
+        <div class="p-4">
+            <div class="fs-3">
+                {{"select_fare" | translate}}
+            </div>
+            <p class="text-secondary">
+                {{"fare_text" | translate}}
+            </p>
+
+            <!-- Ecrans large -->
+
+            <div class="d-none d-lg-block">
+                <div class="row align-items-end">
+                    <span class="col-lg-4 pe-0">
+                        <div class="fs-110 fw-medium lower-text px-3 py-4 border-bottom">
+                            {{"package_details" | translate}}
+                        </div>
+                        <ng-container *ngFor="let fare of visibleFares; let f = index">
+                            <ng-container *ngIf="details?.fareFamilyDescription?.[fare.key]">
+                                <div class="d-flex align-items-center gap-2 p-3 height-60 border-bottom fs-90">
+                                    <span>
+                                        <img [src]="'assets/icons/template/'+fare.image+'.svg'" [width]="10"
+                                            [height]="10" />
+                                    </span>
+                                    <span class="fs-90 fw-medium fl-1">{{ fare.key | translate}}</span>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                    </span>
+                    <span class="col-lg-8 ps-0">
+                        <div class="row g-lg-2 g-xl-3">
+                            <span *ngFor="let pack of details?.rateCategory.slice(0,4); let p = index" class="col-lg-3">
+                                <div
+                                    class="border-bottom-0 d-flex flex-column justify-content-end align-items-center grey-bg border rounded-top-3">
+                                    <div class="p-3 text-center">
+                                        <div class="text-uppercase fs-90">
+                                            {{pack}}
+                                        </div>
+                                        <div class="fs-5 fw-600">
+                                            <app-amount [value]="details?.totalAmount?.[pack]"></app-amount>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-top-0 border-bottom-0 border">
+                                    <ng-container *ngFor="let fare of visibleFares; let r = index">
+                                        <ng-container *ngIf="details?.fareFamilyDescription?.[fare.key]">
+                                            <div class="d-flex align-items-center justify-content-center p-1 height-60"
+                                                [ngSwitch]="details?.fareFamilyDescription?.[fare.key]?.rates?.[pack]">
+                                                <ng-container *ngSwitchCase="'at Charge'">
+                                                    <div class="fs-90 text-center">
+                                                        {{ "additional_charges" | translate }}
+                                                    </div>
+                                                </ng-container>
+                                                <ng-container *ngSwitchCase="'included'">
+                                                    <img src="assets/icons/status/success.png" width="20" height="20" />
+                                                </ng-container>
+                                                <ng-container *ngSwitchDefault>
+                                                    <img src="assets/icons/status/failure.png" width="17" height="17" />
+                                                </ng-container>
+                                            </div>
+                                        </ng-container>
+                                    </ng-container>
+                                </div>
+                            </span>
+
+                            <span class="col-lg-3 d-none d-lg-block"
+                                *ngIf="details?.rateCategory.length <= 3 && visibleFares.length >= 3">
+                                <div class="h-100 position-relative">
+                                    <img src="assets/images/flight-classes-bg.webp" width="100%" height="100%"
+                                        style="object-fit: cover;" loading="lazy" />
+                                    <div
+                                        class="bg-dark bg-opacity-25 position-absolute top-0 start-0 d-flex align-items-end justify-content-center w-100 h-100">
+                                        <img src="assets/icon-light.png" [width]="120" [height]="120"
+                                            style="object-fit: cover;" loading="lazy" />
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+                <div class="row">
+                    <span class="col-lg-4 pe-0">
+
+                    </span>
+                    <span class="col-lg-8 ps-0">
+                        <div class="row g-lg-2 g-xl-3">
+                            <span *ngFor="let pack of details?.rateCategory.slice(0,4); let b = index" class="col-lg-3">
+                                <div class="border-top-0 p-3 rounded-bottom-3 border">
+                                    <app-button
+                                        [class]="'main-bg text-white p-3 rounded-3 w-100 main-border text-center fs-90'"
+                                        (action)="onSelectfare(pack)" [isLoading]="isLoading()[pack]" [title]="'book'">
+                                    </app-button>
+                                </div>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Ecrans small -->
+
+            <div class="d-lg-none">
+                <div class="row row-gap-3">
+                    <span *ngFor="let pack of details?.rateCategory.slice(0,4); let p = index" class="col-md-6">
+                        <div class="main-border rounded-4 p-4">
+                            <div class="text-uppercase lower-text">
+                                {{pack}}
+                            </div>
+                            <div class="fs-2 fw-800">
+                                <app-amount [value]="details?.totalAmount?.[pack]"></app-amount>
+                            </div>
+                            <hr class="border-secondary my-4" />
+                            <ng-container *ngFor="let fare of visibleFares.slice(0,6); let f = index">
+                                <ng-container *ngIf="details?.fareFamilyDescription?.[fare.key]">
+                                    <div class="d-flex align-items-center gap-2 p-3 height-60 border-bottom fs-90"
+                                        [ngClass]="{'grey-bg':f % 2 !== 0}">
+                                        <span>
+                                            <ng-container *ngIf="details?.fareFamilyDescription?.[fare.key]">
+                                                <div class="d-flex align-items-center justify-content-center p-1 height-60"
+                                                    [ngSwitch]="details?.fareFamilyDescription?.[fare.key]?.rates?.[pack]">
+                                                    <ng-container *ngSwitchCase="'at Charge'">
+                                                        <img [title]="'additional_charges' | translate "
+                                                            src="assets/icons/interface/earnings.png" width="20"
+                                                            height="20" />
+                                                    </ng-container>
+                                                    <ng-container *ngSwitchCase="'included'">
+                                                        <img src="assets/icons/status/success.png" width="20"
+                                                            height="20" />
+                                                    </ng-container>
+                                                    <ng-container *ngSwitchDefault>
+                                                        <img src="assets/icons/status/failure.png" width="17"
+                                                            height="17" />
+                                                    </ng-container>
+                                                </div>
+                                            </ng-container>
+                                        </span>
+                                        <span class="fs-90 fw-medium fl-1">{{ fare.key | translate}}</span>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                            <app-button
+                                [class]="'p-3 rounded-3 w-100 main-border text-center fs-90 mt-4 ' + (p === 2 ? 'main-bg text-white' : 'bg-white main-text')"
+                                (action)="onSelectfare(pack)" [isLoading]="isLoading()[pack]" [title]="'book'">
+                            </app-button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

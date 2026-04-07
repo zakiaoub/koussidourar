@@ -1,0 +1,113 @@
+<div role="button" class="main-input rounded height-60 d-flex lign-items-center w-100" (click)="showDialog()">
+    <span class="align-self-center ps-3 main-text fs-110">
+        <app-icon icon="people"></app-icon>
+    </span>
+    <span class="w-100">
+        <input *ngIf="nationality" pInputText [value]="
+        '0' +
+        getTotal() +
+        (getTotal() > 1 ? ' ' + 'travelers' : (' ' + 'traveler' | translate)) +
+        ' - ' +
+        nationality
+      " [readOnly]="true" />
+
+        <input *ngIf="!nationality" pInputText [value]="
+        '0' +
+        getTotal() +
+        (getTotal() > 1 ? ' ' + 'travelers' : (' ' + 'traveler' | translate))
+      " [readOnly]="true" />
+    </span>
+</div>
+
+<div class="guests">
+    <p-dialog [header]="'travelers' | translate" [(visible)]="visible" [modal]="true" [style]="{ width: '45rem' }"
+        [draggable]="false" [resizable]="false">
+        <ng-container>
+            <div class="mb-4" *ngIf="nationality">
+                <div class="main-input rounded height-60">
+                    <p-select [options]="countries" [(ngModel)]="nationality" optionValue="code"
+                        [filterBy]="'name_' + currentLang" [filter]="true"
+                        (ngModelChange)="onNationalityChange($event)">
+                        <ng-template let-country pTemplate="item">
+                            <div class="d-flex justify-content-between gap-5 w-100 py-1">
+                                <span class="d-flex gap-2">
+                                    <span>
+                                        <img [src]="`assets/images/countries/${country.code}.png`" [width]="15"
+                                            [height]="11" />
+                                    </span>
+                                    <span>{{ country["name_" + currentLang] }}</span>
+                                </span>
+                                <span class="fs-90 opacity-75">
+                                    {{ country.code }}
+                                </span>
+                            </div>
+                        </ng-template>
+
+                        <ng-template let-item pTemplate="selectedItem">
+                            <div class="d-flex align-items-center gap-2">
+                                <span>
+                                    <img [src]="`assets/images/countries/${item.code}.png`" [width]="15"
+                                        [height]="11" />
+                                </span>
+                                <span>
+                                    {{ item["name_" + currentLang] }}
+                                </span>
+                            </div>
+                        </ng-template>
+                    </p-select>
+                </div>
+            </div>
+
+            <div *ngFor="let item of data; let i = index" class="mb-4 row justify-content-between align-items-center">
+                <span class="col-sm-4">
+                    <div class="d-flex">
+                        <span>
+                            <img [src]="'assets/icons/' + item.name + '.jpg'" [width]="20" [height]="20" />
+                        </span>
+                        <span class="ms-2">
+                            <div class="text-dark">{{ item.name | translate }}</div>
+                            <div class="fw-300 fs-90 mt-1">
+                                {{ item.caption | translate }}
+                            </div>
+                        </span>
+                    </div>
+                </span>
+                <span class="col-sm-6 col-xl-5">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button type="button" [disabled]="item.value <= item.min"
+                            class="main-text me-3 bg-white border-0 fs-2" role="button" (click)="decrement(i)">
+                            <app-icon icon="dash-circle"></app-icon>
+                        </button>
+                        <input [readOnly]="true" [(ngModel)]="item.value"
+                            class="border-0 text-center w-100 fs-110 fw-300" />
+                        <button type="button" [disabled]="item.value >= item.max"
+                            class="main-text ms-3 bg-white border-0 fs-2" role="button" (click)="increment(i)">
+                            <app-icon icon="plus-circle"></app-icon>
+                        </button>
+                    </div>
+                </span>
+                <span class="col-12">
+                    <ng-container *ngIf="item.name === 'childs'">
+                        <div class="row row-gap-2 mt-3">
+                            <span class="col-3" *ngFor="let age of item.ages; let j = index">
+                                <div class="main-input rounded height-50">
+                                    <p-iftalabel>
+                                        <input type="number" pInputText [(ngModel)]="item.ages[j]" [min]="1"
+                                            [max]="17" />
+                                        <label class="fs-70">{{ "child_age" | translate }} {{ j + 1 }}</label>
+                                    </p-iftalabel>
+                                </div>
+                            </span>
+                        </div>
+                    </ng-container>
+                </span>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="button" class="py-3 px-5 fw-300 main-bg text-white rounded-5" (click)="closeDialog()">
+                    {{ "confirm" | translate }}
+                </button>
+            </div>
+        </ng-container>
+    </p-dialog>
+</div>
