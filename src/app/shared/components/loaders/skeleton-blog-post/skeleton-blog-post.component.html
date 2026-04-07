@@ -1,0 +1,23 @@
+<div class="row row-gap-3 justify-content-between">
+    <span class="col-sm-6 col-lg-4">
+        <p-skeleton width="100%" height="60px" styleClass="rounded"></p-skeleton>
+    </span>
+    <span class="col-sm-6 col-lg-4">
+        <p-skeleton width="100%" height="60px" styleClass="rounded"></p-skeleton>
+    </span>
+</div>
+
+<div class="row row-gap-4 mt-4">
+    <span class="col-sm-6 col-lg-3" *ngFor="let item of [].constructor(16); let i = index">
+        <div>
+            <p-skeleton width="100%" height="280px" styleClass="rounded"></p-skeleton>
+        </div>
+        <div class="mt-2">
+            <p-skeleton width="100%" height="20px"></p-skeleton>
+            <p-skeleton width="75%" height="20px"></p-skeleton>
+        </div>
+        <div class="mt-2">
+            <p-skeleton width="50%" height="15px" styleClass="rounded"></p-skeleton>
+        </div>
+    </span>
+</div>

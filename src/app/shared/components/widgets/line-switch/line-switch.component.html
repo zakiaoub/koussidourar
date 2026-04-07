@@ -1,0 +1,20 @@
+<div class="position-relative d-flex gap-2 border p-1 fs-80 my-2 w-100 rounded-2">
+    <div class="slider rounded-2" [class.right]="activeLine === 'RETURN'"></div>
+  
+    <button
+      class="switch-btn p-"
+      (click)="setLine('DEPARTURE')"
+      [ngClass]="{ 'active': activeLine === 'DEPARTURE' }"
+    >
+      {{ 'DEPARTURE' | translate }}
+    </button>
+  
+    <button
+      class="switch-btn p-1"
+      (click)="setLine('RETURN')"
+      [ngClass]="{ 'active': activeLine === 'RETURN' }"
+    >
+      {{ 'RETURN' | translate }}
+    </button>
+  </div>
+  

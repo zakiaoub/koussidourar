@@ -1,0 +1,61 @@
+<ng-container>
+    <div class="grey-bg p-3 fs-90 text-secondary rounded-1 d-none d-lg-block">
+        <div class="row">
+            <span class="col-lg-3">
+                <div>{{"name" | translate}}</div>
+            </span>
+            <span class="col-lg-2">
+                <div>{{"phone" | translate}}</div>
+            </span>
+            <span class="col-lg-2">
+                <div>{{"since" | translate}}</div>
+            </span>
+            <span class="col-lg-2">
+                <div>{{"status" | translate}}</div>
+            </span>
+            <span class="col-lg-1">
+                <div>{{"bookings" | translate}}</div>
+            </span>
+            <span class="col-lg-2">
+                <div>{{"amount" | translate}}</div>
+            </span>
+        </div>
+    </div>
+    <div class="mt-4 fs-90 fw-medium">
+        <ng-container *ngIf="data().length >= 1">
+            <div *ngFor="let item of data(); let i = index" class="border my-3 rounded p-3">
+                <div class="row row-gap-3 align-items-center">
+                    <span class="col-md-4 col-lg-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="size-35 main-bg-gradient text-white rounded-circle fs-90">
+                                {{item.name.slice(0,1)}}
+                            </span>
+                            <span> {{item.name}}</span>
+                        </div>
+                    </span>
+                    <span class="col-4 col-lg-2">
+                        <div>{{item.phone}}</div>
+                    </span>
+                    <span class="col-4 col-lg-2">
+                        <div>{{item.date | date:'MMM dd, Y'}}</div>
+                    </span>
+                    <span class="col-4 col-lg-2">
+                        <div>
+                            <p-tag [value]=" (item.status ? 'active' : 'inactive') | translate"
+                                [severity]="item.status ? 'success' : 'danger'" />
+                        </div>
+                    </span>
+                    <span class="col-6 col-md-4 col-lg-1">
+                        <div>{{item.bookings}}</div>
+                    </span>
+                    <span class="col-6 col-md-4 col-lg-2">
+                        <app-amount [value]="item.amount"></app-amount>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="data().length < 1">
+            <app-no-results-found [isImage]="false" [isCaption]="false"></app-no-results-found>
+        </ng-container>
+    </div>
+</ng-container>

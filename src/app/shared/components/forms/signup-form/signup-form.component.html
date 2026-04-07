@@ -1,0 +1,34 @@
+<ng-container>
+    <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+        <div class="row row-gap-4">
+            <ng-container *ngFor="let field of fields">
+                <span [class]="field.col">
+                    <ng-container
+                        *ngIf="field.id !== 'phone-signup' && field.id !== 'password-signup' && field.id !== 'confirmPassword-signup'">
+                        <app-input-field [id]="field.id" [labelKey]="field.label" [controlName]="field.formControlName"
+                            [icon]="field.icon" [type]="field.type" [placeholder]="field.placeholder"
+                            [readonly]="field.readonly" [minlength]="field.minlength" [maxlength]="field.maxlength"
+                            [keyFilter]="field.keyFilter" [showMessage]="field.showMessage" [formGroup]="signupForm">
+                        </app-input-field>
+                    </ng-container>
+                    <ng-container *ngIf="field.id === 'password-signup' || field.id === 'confirmPassword-signup'">
+                        <app-password-field [id]="field.id" [labelKey]="field.label"
+                            [controlName]="field.formControlName" [icon]="field.icon" [minlength]="field.minlength"
+                            [maxlength]="field.maxlength" [toggleMask]="field.toggleMask" [feedback]="field.feedback"
+                            [showMessage]="field.showMessage" [formGroup]="signupForm"></app-password-field>
+                    </ng-container>
+                    <ng-container *ngIf="field.id === 'phone-signup'">
+                        <app-phone-field [id]="field.id" [labelKey]="field.label" [controlName]="field.formControlName"
+                            [placeholder]="field.placeholder" [readonly]="field.readonly"
+                            [showMessage]="field.showMessage" [formGroup]="signupForm">
+                        </app-phone-field>
+                    </ng-container>
+                </span>
+            </ng-container>
+        </div>
+        <div class="w-100 mt-5">
+            <app-button [type]="'submit'" [title]="'get_started'"
+                [class]="'height-60 rounded-3 main-bg text-white w-100'" [isLoading]="isLoading()"></app-button>
+        </div>
+    </form>
+</ng-container>

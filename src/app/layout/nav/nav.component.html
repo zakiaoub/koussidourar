@@ -1,0 +1,35 @@
+<ng-container>
+  <nav>
+    <ul class="d-flex justify-content-around align-items-center list-unstyled m-0">
+      <li *ngFor="let link of data.slice(0,4)">
+        <a [href]="link.routerLink" routerLinkActive="active-link" class=""
+          [ngClass]="{'main-text text-decoration-underline': currentUrl === '/'+link.label, 'text-white': currentUrl !== '/'+link.label}"
+          [pTooltip]="('book_your' | translate) + ' ' + (link.label | translate)" tooltipPosition="bottom">
+          {{ link.label | translate }}
+        </a>
+      </li>
+
+      <li>
+        <button type="button" class="bg-transparent border-0 text-white" (click)="showDialog()"
+          aria-label="Display more links">
+          <app-icon icon="three-dots"></app-icon>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <p-dialog [header]="'other_products' | translate" [(visible)]="visible" [modal]="true" [style]="{ width: '70rem' }"
+    position="top" [draggable]="false">
+    <div class="row">
+      <span class="col-xl-3 px-2 my-2" *ngFor="let item of data.slice(4,data.length-0)">
+        <ng-container>
+          <div class="d-flex align-items-center gap-2 p-4 bg-secondary bg-opacity-25 disabled rounded h-100"
+            [pTooltip]="'coming_soon' | translate">
+            <img [src]="'assets/icons/'+item.label+'-ico.png'" [width]="25" [height]="25" />
+            <span>{{item.label | translate}}</span>
+          </div>
+        </ng-container>
+      </span>
+    </div>
+  </p-dialog>
+</ng-container>

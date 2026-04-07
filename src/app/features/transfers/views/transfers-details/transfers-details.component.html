@@ -1,0 +1,119 @@
+<ng-container>
+    <app-session-time [type]="'details'"></app-session-time>
+    <app-session-expired [target]="'transfer'"></app-session-expired>
+    <app-stepper [currentStep]="2"></app-stepper>
+    <ng-container *ngIf="isLoading()">
+        <app-skeleton-details [service]="'attraction'"></app-skeleton-details>
+    </ng-container>
+
+    <ng-container *ngIf="error()">
+        <app-error-request caption="error_flight_message"></app-error-request>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoading() && !error()">
+        <section class="container-xl py-4">
+            <ng-container>
+                <div class="row">
+                    <div class="col-md-6" *ngFor="let trip of data()?.transfer?.Trip">
+                        <div class="bg-white rounded-4 p-4">
+                            <p class="fw-bold main-text ps-3">{{trip.Type}}</p>
+                            <div class="rounded-5 grey-bg p-3">
+                                <div class="d-flex justify-content-between">
+                                    <p class="px-1 d-flex flex-column">
+                                        <span class="fs-5 fs-110 fw-500">
+                                            {{trip.VehicleCategory}} | {{trip.VehicleName}}
+                                        </span>
+                                        <span class="pt-1 fw-500 text-secondary">
+                                            <span class="fs-110 main-text">
+                                                <app-icon icon="people"></app-icon>
+                                            </span>
+                                            <span>
+                                                {{trip.VehicleCapacity}}
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <div>
+                                        <p class="green-bg text-white p-2 rounded-2 fs-90 h-auto d-inline-block">
+                                            {{trip.VehicleType}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <img class="rounded-3 image" [src]="trip.Image" width="70%" height="70%" />
+                            </div>
+                            <div class="pt-3">
+                                <div class="fs-5 fs-110 fw-500 d-flex align-items-center gap-2">
+                                    <span>
+                                        {{"pick_up" | translate}} :
+                                    </span>
+                                </div>
+                                <p>{{trip.From}} </p>
+                                <div class="mt-2 fs-90 text-secondary d-flex gap-3">
+                                    <span class="d-flex align-items-center gap-1">
+                                        <span class="main-text">
+                                            <app-icon icon="calendar2"></app-icon>
+                                        </span>
+                                        <span>
+                                            {{trip.Date | date:"MMMM dd, Y"}}
+                                        </span>
+                                    </span>
+                                    <span class="d-flex align-items-center gap-1">
+                                        <span class="main-text">
+                                            <app-icon icon="alarm"></app-icon>
+                                        </span>
+                                        <span>
+                                            {{trip.Time}}
+                                        </span>
+                                    </span>
+                                </div>
+
+                                <hr class="border-secondary my-4" />
+
+                                <div class="fs-5 fs-110 fw-500 d-flex align-items-center gap-2">
+                                    <span>
+                                        {{"drop_off" | translate}} :
+                                    </span>
+                                </div>
+
+                                <p>{{trip.To}} </p>
+
+                                <hr class="border-secondary my-4" />
+
+                                <div class="d-flex align-items-center gap-2 fs-5 fs-110 fw-500">
+                                    <span>{{"flight_number" | translate}} :</span>
+                                </div>
+
+                                <div class="tet-uppercase">{{trip.TravelCode.Code}}</div>
+                                <hr class="border-secondary my-4" />
+
+                                <div *ngFor="let transferremark of trip.TransferRemarks">
+                                    <app-product-description [text]="transferremark.Value"
+                                        title="description"></app-product-description>
+                                </div>
+
+                                <hr class="border-secondary my-4" />
+                                <div *ngIf="trip.CheckPickup?.Url">
+                                    <a class="border p-3 rounded d-block fs-90 main-text"
+                                        [href]="'https://' + trip.CheckPickup.Url" target="_blank">
+                                        {{ trip.CheckPickup.Url }}
+                                    </a>
+                                </div>
+                            </div>
+                            <hr class="border-secondary my-4" />
+
+                            <ul class="m-0 p-0">
+                                <li *ngFor="let info of trip.TransferInfo" class="d-flex align-items-center gap-2 mb-2">
+                                    <span>
+                                        <img [src]="'assets/icons/status/success.png'" [width]="15" [height]="15" />
+                                    </span>
+                                    <span class="fw-300 text-capitalize">{{ info.Value }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <hr class="border-secondary my-5" />
+            <app-transfer-recap [data]="data()" [searchToken]="searchToken" [RateKey]="rateKey"></app-transfer-recap>
+        </section>
+    </ng-container>
+</ng-container>

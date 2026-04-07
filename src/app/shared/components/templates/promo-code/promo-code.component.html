@@ -1,0 +1,11 @@
+<ng-container>
+    <div class="main-input rounded height-60 d-flex lign-items-center">
+        <span class="align-self-center ps-3 main-text">
+            <app-icon icon="gift"></app-icon>
+        </span>
+        <span class="w-100">
+            <input pInputText [(ngModel)]="codePromo" id="codePromo" [placeholder]="'code_promo' | translate" />
+        </span>
+    </div>
+    <app-button [type]="'button'" [class]="'p-3 main-border bg-white main-text mt-3 px-5 rounded-3'" [title]="'apply'"></app-button>
+</ng-container>

@@ -1,0 +1,102 @@
+<ng-container>
+    <div class="main-bg-gradient p-5 rounded-4">
+        <div class="row row-gap-3 align-items-center">
+            <span class="col-md-8">
+                <div class="text-white">
+                    <h2>{{"booking_details" | translate}}</h2>
+                    <div class="mt-2 bg-white bg-opacity-25 py-2 px-3 d-inline-block rounded-5">
+                        {{data()?.bookingNumber}}</div>
+                </div>
+            </span>
+            <span class="col-md-4">
+                <div class="d-flex justify-content-center align-items-center">
+                    <app-button [title]="'download'" icon="download"
+                        [class]="'bg-white py-3 px-5 main-text rounded-3 fs-90'" (action)="showDialog()"></app-button>
+                </div>
+            </span>
+        </div>
+    </div>
+    <div class="mt-4">
+        <div class="d-flex gap-4">
+            <span>
+                <ng-container [ngSwitch]="data()?.status">
+                    <ng-container *ngSwitchCase="'confirmed'">
+                        <p-tag severity="success">
+                            <div class="d-flex align-items-center gap-2 py-2 px-3 fs-120">
+                                <span>
+                                    <app-icon icon="calendar2-check"></app-icon>
+                                </span>
+                                <span>{{"confirmed" | translate}}</span>
+                            </div>
+                        </p-tag>
+                    </ng-container>
+
+                    <ng-container *ngSwitchDefault>
+                        <p-tag severity="danger">
+                            <div class="d-flex align-items-center gap-2 py-2 px-3 fs-120">
+                                <span>
+                                    <app-icon icon="calendar2-x"></app-icon>
+                                </span>
+                                <span>{{"cancelled" | translate}}</span>
+                            </div>
+                        </p-tag>
+                    </ng-container>
+                </ng-container>
+            </span>
+            <span>
+                <ng-container [ngSwitch]="data()?.paymentStatus">
+                    <ng-container *ngSwitchCase="'paid'">
+                        <p-tag severity="success">
+                            <div class="d-flex align-items-center gap-2 py-2 px-3 fs-120">
+                                <span>
+                                    <app-icon icon="check-circle-fill"></app-icon>
+                                </span>
+                                <span>{{"paid" | translate}}</span>
+                            </div>
+                        </p-tag>
+                    </ng-container>
+
+                    <ng-container *ngSwitchDefault>
+                        <p-tag severity="warn">
+                            <div class="d-flex align-items-center gap-2 py-2 px-3 fs-120">
+                                <span>
+                                    <app-icon icon="x-circle-fill"></app-icon>
+                                </span>
+                                <span>{{"unpaid" | translate}}</span>
+                            </div>
+                        </p-tag>
+                    </ng-container>
+                </ng-container>
+            </span>
+        </div>
+    </div>
+
+    <p-dialog [modal]="true" [(visible)]="visible" [style]="{ width: '90rem' }">
+        <div [id]="'pdf-content'" class="bg-white">
+            <ng-container [ngSwitch]="data()?.bookingType">
+                <ng-container *ngSwitchCase="'transfer'">
+                    <app-voucher-transfert [data]="data()"></app-voucher-transfert>
+                </ng-container>
+                <ng-container *ngSwitchCase="'flight'">
+                    <app-voucher-flight [data]="data()"></app-voucher-flight>
+                </ng-container>
+                <ng-container *ngSwitchCase="'hotel'">
+                    <app-voucher-hotel [data]="data()"></app-voucher-hotel>
+                </ng-container>
+                <ng-container *ngSwitchCase="'activity'">
+                    <app-voucher-attraction [data]="data()"></app-voucher-attraction>
+                </ng-container>
+
+            </ng-container>
+        </div>
+        <ng-template #footer>
+            <div class="d-flex justify-content-center py-3">
+                <button (click)="toPdf('pdf-content')"
+                    class="p-3 rounded px-5 main-bg text-white d-flex align-items-center lh-1 gap-2">
+                    <app-icon icon="cloud-arrow-down"></app-icon>
+                    <span>{{"download" | translate}}</span>
+                </button>
+            </div>
+        </ng-template>
+    </p-dialog>
+</ng-container>

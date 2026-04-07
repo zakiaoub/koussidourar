@@ -1,0 +1,14 @@
+<button [type]="type" [disabled]="disabled || isLoading" class="d-flex justify-content-center align-items-center"
+    [ngClass]="class" (click)="buttonFunction()">
+    <span *ngIf="icon" class="me-2">
+        <app-icon [icon]="icon"></app-icon>
+    </span>
+    <span>
+        <ng-container *ngIf="!isLoading">
+            {{title | translate}}
+        </ng-container>
+        <ng-container *ngIf="isLoading">
+            <app-spinner [isWhite]="isWhite"></app-spinner>
+        </ng-container>
+    </span>
+</button>

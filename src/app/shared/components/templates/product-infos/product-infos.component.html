@@ -1,0 +1,13 @@
+<div class="row">
+    <span class="col-6 col-md-3 my-3" *ngFor="let key of keys">
+        <div class="d-flex align-items-center">
+            <span class="border rounded-3 p-3">
+                <img [src]="'assets/icons/'+key+'.png'" [width]="25" [height]="25" />
+            </span>
+            <span class="mx-3">
+                <div class="text-secondary fs-90 fw-300">{{ key | translate }}</div>
+                <div class="fw-500 fs-110">{{ informations[key] }}</div>
+            </span>
+        </div>
+    </span>
+</div>

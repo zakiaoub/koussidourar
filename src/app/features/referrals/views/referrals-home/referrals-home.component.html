@@ -1,0 +1,36 @@
+<ng-container>
+    <app-top-banner target="referrals"></app-top-banner>
+    <section class="container-xl py-5">
+        <app-referrals-stats [data]="data"></app-referrals-stats>
+        <div class="mt-5">
+            <app-referrals-progress [data]="data"></app-referrals-progress>
+        </div>
+        <div class="third-bg rounded-4 mt-5 p-3 p-md-5">
+            <div class="row justify-content-between align-items-center">
+                <span class="col-lg-7">
+                    <app-referrals-link [referralLink]="referralLink"
+                        [referralCode]="profileData.referral_code"></app-referrals-link>
+                </span>
+                <span class="col-lg-4 d-none d-lg-block">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-white rounded-circle size-60 fs-5 main-text">
+                            <i class="bi bi-qr-code"></i>
+                        </div>
+                        <div class="bg-white p-4 rounded-4 d-flex justify-content-center">
+                            <div class="main-border-2 rounded">
+                                <qrcode [qrdata]="referralLink+profileData.referral_code" [width]="140"
+                                    [colorDark]="'#2d2d30'" [colorLight]="'#f2f4f6'">
+                                </qrcode>
+                            </div>
+                        </div>
+
+                        <p class="text-center mt-3">{{"referral_qr_code_caption" | translate}}</p>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="mt-5">
+            <app-referrals-list [data]="data?.friends"></app-referrals-list>
+        </div>
+    </section>
+</ng-container>

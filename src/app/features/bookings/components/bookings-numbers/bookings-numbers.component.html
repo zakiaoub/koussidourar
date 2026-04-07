@@ -1,0 +1,24 @@
+<ng-container *ngIf="!error()">
+    <div class="row row-gap-4">
+        <span *ngFor="let option of options" class="col-sm-6 col-lg-4 col-xl-3">
+            <div class="border shadow-sm rounded-4 p-4">
+                <div class="d-flex justify-content-between gap-3">
+                    <span class="opacity-75">
+                        {{option.label | translate}}
+                    </span>
+                    <span class="fs-4 lh-1" [ngClass]="option.color">
+                        <app-icon [icon]="option.icon"></app-icon>
+                    </span>
+                </div>
+                <div class="mt-2 fs-300 fw-600">
+                    <ng-container *ngIf="isLoading()">
+                        <app-spinner [isWhite]="false" [size]="25" [stroke]="3"></app-spinner>
+                    </ng-container>
+                    <ng-container *ngIf="!isLoading()">
+                        {{option.value}}
+                    </ng-container>
+                </div>
+            </div>
+        </span>
+    </div>
+</ng-container>

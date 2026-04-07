@@ -1,0 +1,28 @@
+<ng-container>
+  <div class="fw-400 lower-text">{{ "prince_range" | translate }}</div>
+
+  <div class="mt-2">
+    <div class="equalizer-container">
+      <div *ngFor="let bar of bars" class="equalizer-bar rounded-3"
+        [ngStyle]="{ height: bar.height + '%', background: bar.active ? 'linear-gradient(180deg, var(--third), var(--main))' : '#e0e0e0' }">
+      </div>
+    </div>
+
+    <div class="my-4">
+      <div class="d-flex justify-content-between align-items-center text-center">
+        <span class="border rounded-3 p-2 w-50 fs-90">
+          <app-amount [value]="rangeValues[0]"></app-amount>
+        </span>
+
+        <span class="mx-2">-</span>
+
+        <span class="border rounded-3 p-2 w-50 fs-90">
+
+          <app-amount [value]="rangeValues[1]"></app-amount>
+        </span>
+      </div>
+    </div>
+    <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="min" [max]="max" (ngModelChange)="onRangeChange()"
+      (onSlideEnd)="onSlideEnd()" />
+  </div>
+</ng-container>

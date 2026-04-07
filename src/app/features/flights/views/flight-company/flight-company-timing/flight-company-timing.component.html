@@ -1,0 +1,43 @@
+<div class="p-3">
+    <div class="row row-gap-3 align-items-center">
+
+        <span class="col-sm-12">
+            <div class="row row-gap-2 align-items-start">
+                <span class="col-sm-4">
+                    <div class="text-start">
+                        <div class="fs-110 fw-medium">
+                            {{firstSegment.DepartureDateTime.replace(' ', 'T') | date: 'HH:mm' }}<br>
+                            <small>{{firstSegment.DepartureDateTime.replace(' ', 'T') | date: 'EEEE, MMMM d' }}</small>
+
+                        </div>
+                        <div class="fs-90 text-secondary">
+                            {{airportsName[firstSegment.DepartureAirportCode]}}</div>
+                        <div class="fs-90 text-secondary">({{firstSegment.DepartureAirportCode}})</div>
+
+                        <b class="fs-90 text-secondary">{{firstSegment.BookingClass}}</b>
+
+                    </div>
+                </span>
+                <span class="col-sm-4 align-self-center p-0">
+                    <div class="w-100">
+                        <app-flight-stopovers [Itinerary]="Itinerary"
+                            [airportsName]="airportsName"></app-flight-stopovers>
+                    </div>
+                </span>
+                <span class="col-sm-4 text-end">
+                    <div class="text-end">
+                        <div class="fs-110 fw-medium">
+                            {{firstSegment.ArrivalDateTime.replace(' ', 'T') | date: 'HH:mm' }}<br>
+                            <small>{{firstSegment.ArrivalDateTime.replace(' ', 'T') | date: 'EEEE, MMMM d' }}</small>
+
+
+                        </div>
+                        <div class="fs-90 text-secondary">
+                            {{airportsName[lastSegment.ArrivalAirportCode]}}</div>
+                        <div class="fs-90 text-secondary">({{lastSegment.ArrivalAirportCode}})</div>
+                    </div>
+                </span>
+            </div>
+        </span>
+    </div>
+</div>

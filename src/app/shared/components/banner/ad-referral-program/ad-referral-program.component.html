@@ -1,0 +1,135 @@
+<div>
+    <div [ngSwitch]="layout">
+        <ng-container *ngSwitchDefault>
+            <div class="border-gradient p-3 p-sm-5 text-start">
+                <div class="row row-gap-4 justify-content-between align-items-end">
+                    <span class="col-lg-9 col-xl-8">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="main-bg-gradient size-45 rounded-circle text-white">
+                                <app-icon icon="gift"></app-icon>
+                            </span>
+                            <span class="third-bg dark-text py-1 px-2 rounded-5 fs-80">
+                                {{"referral_program" | translate}}
+                            </span>
+                        </div>
+
+                        <h1 class="fs-250 mt-4 fw-600 lower-text-gradient">{{"ad_referral_title" | translate}}
+                        </h1>
+                        <p class="fw-medium opacity-75 mt-3" [innerHTML]="'ad_refrral_caption' | translate">
+                        </p>
+
+                        <div class="row row-gap-3 mt-4">
+                            <span class="col-sm-6 col-md-4" *ngFor="let item of data; let i = index">
+                                <div class="d-flex gap-2">
+                                    <span class="border light-bg size-40 rounded-3 fs-110"
+                                        [ngClass]="{'main-text':i === 0, 'blue-text':i === 1, 'green-text':i === 2}">
+                                        <app-icon [icon]="item.icon"></app-icon>
+                                    </span>
+                                    <span>
+                                        <div class="fw-medium">{{item.label | translate}}</div>
+                                        <div class="opacity-75 fs-90">{{item.caption | translate}}</div>
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="row row-gap-3 mt-5">
+                            <span class="col-sm-6 col-lg-5 col-xl-4">
+                                <a href="/affiliates"
+                                    class="d-flex justify-content-center gap-2 align-items-center lh-1 main-bg-gradient py-4 px-3 rounded-3 w-100 text-white fs-90">
+                                    <span>{{"start_to_refer" | translate}}</span>
+                                    <span class="fs-120">
+                                        <app-icon icon="arrow-right-circle-fill"></app-icon>
+                                    </span>
+                                </a>
+                            </span>
+                            <span class="col-sm-6 col-lg-5 col-xl-4">
+                                <a href="/affiliates"
+                                    class="d-flex justify-content-center gap-2 align-items-center lh-1 main-border py-4 px-3 rounded-3 w-100 main-text fs-90">
+                                    <span>{{"how_it_works" | translate}} ?</span>
+                                </a>
+                            </span>
+                        </div>
+                    </span>
+                    <span class="col-lg-3">
+
+                        <div>
+                            <img src="assets/illustrations/referral.svg" width="100%" height="100%"
+                                [alt]="'alt_referral_banner' | translate" loading="lazy" />
+                        </div>
+                        <div class="shadow p-3 rounded-4 mt-4">
+                            <ng-container *ngIf="isAuth  && referral_code">
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <span class="fs-90 opacity-75">{{"your_reference" | translate}}</span>
+                                    <span>
+                                        <p-tag severity="success" [value]="'active' | translate" />
+                                    </span>
+                                </div>
+                                <div
+                                    class="grey-bg p-3 rounded-3 mt-3 d-flex justify-content-between align-items-end gap-3">
+                                    <span>
+                                        <div class="fs-80">{{"referral_code" | translate}}</div>
+                                        <div id="referral_code" class="mt-2 blue-text fw-bold fs-120">{{referral_code}}
+                                        </div>
+                                    </span>
+                                    <button appCopyText="referral_code" class="bg-transparent fs-120"
+                                        aria-label="Copy referral code" [pTooltip]="'copy' | translate">
+                                        <app-icon icon="copy"></app-icon>
+                                    </button>
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="!isAuth || !referral_code">
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <span class="fs-90 opacity-75">{{"your_reference" | translate}}</span>
+                                    <span>
+                                        <p-tag severity="danger" [value]="'inactif' | translate" />
+                                    </span>
+                                </div>
+                                <div class="grey-bg p-3 rounded-3 mt-3">
+                                    <div class="fs-80">{{"referral_code" | translate}}</div>
+                                    <div class="mt-2 blue-text fw-bold fs-120">*******</div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="'vertical'">
+            <div class="main-bg-gradient p-4 rounded-4 text-white">
+                <div>
+                    <img src="assets/icon-light.png" alt="Website logo" class="logo-image" [width]="60" [height]="60" />
+                </div>
+                <div class="mt-5">
+                    <h1 class="fs-3 mt-4 fw-700">{{"join_our_referral_program" | translate}}
+                    </h1>
+                </div>
+                <div class="my-5">
+                    <img src="assets/illustrations/referral.svg" width="100%" height="100%"
+                        [alt]="'alt_referral_banner' | translate" loading="lazy" />
+                </div>
+                <p class="fs-4 mt-5 pt-4">{{"and_earn_without_limits" | translate}}</p>
+
+                <a href="/affiliates" target="_blank"
+                    class="d-inline-block bg-white main-text p-3 rounded-3 w-100 text-center mt-1">{{"learn_more" |
+                    translate}}</a>
+            </div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'square'">
+            <div class="lower-bg-gradient p-4 rounded-4 text-white">
+                <h1 class="fs-4 fw-600 text-uppercase">{{"earn_money" | translate}}
+                </h1>
+                <h2 class="fs-4 fw-400 text-capitalize">{{"earn_money_caption" | translate}}</h2>
+                <div class="my-4">
+                    <img src="assets/illustrations/referral.svg" width="100%" height="100%"
+                        [alt]="'alt_referral_banner' | translate" loading="lazy" />
+                </div>
+                <a href="/affiliates" target="_blank"
+                    class="d-inline-block bg-white blue-text p-3 rounded-3 w-100 text-center mt-1 text-uppercase fw-medium">{{"join_the_program"
+                    |
+                    translate}}</a>
+            </div>
+        </ng-container>
+    </div>
+</div>

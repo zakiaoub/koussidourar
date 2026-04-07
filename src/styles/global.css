@@ -1,0 +1,165 @@
+/*
+ * Scroll document : une seule couche défilante (html) pour que la molette fonctionne partout
+ * (évite html + body en overflow-y: auto, qui casse souvent le scroll à la souris sur Chrome/Edge).
+ */
+html {
+  -webkit-text-size-adjust: 100%;
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100dvh;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  font-style: normal;
+  font-family: var(--font-family) !important;
+  font-weight: 300;
+  font-display: swap;
+}
+
+app-root {
+  display: block;
+  min-height: 0;
+}
+
+/* Page d'accueil : tout le site défile (hero + sections) — desktop & mobile */
+.home-page-shell {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+}
+
+/* Ancres : laisser de l’air sous le header fixe au scroll */
+#home-explore,
+#home-reviews,
+#home-more,
+.home-section {
+  scroll-margin-top: 5.5rem;
+}
+
+@media (min-width: 992px) {
+  #home-explore,
+  #home-reviews,
+  #home-more,
+  .home-section {
+    scroll-margin-top: 5rem;
+  }
+}
+
+img {
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:active {
+  opacity: 0.8;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 1;
+}
+
+button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.p-component {
+  font-family: var(--font-family) !important;
+}
+
+small{
+  color: var(--red) !important;
+  font-weight: 300 !important;
+  font-size: 90% !important;
+  padding-top: 3px;
+}
+
+label{
+  cursor: pointer;
+}
+
+.item-card:hover{
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.item-card img.image {
+  transition: transform 0.5s ease; /* durée et effet d'animation */
+}
+
+.item-card:hover img.image {
+  transform: scale(1.1);
+}
+
+.mh200{
+  max-height: 200px;
+  overflow: auto;
+}
+
+.h130{
+  height: 130px;
+  overflow: auto;
+}
+.mh300right{
+  height: 300px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.results-display .p-dialog {
+background-color: transparent !important;
+border: none !important;
+box-shadow: none !important;
+padding: 0 !important;
+}
+
+.results-display .guests .p-dialog {
+  background-color: white !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.results-display .loader-city .p-dialog-mask {
+display: none !important;
+}
+
+
+/* S'applique aux champs autofill */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset; /* couleur de fond du champ */
+    transition: background-color 5000s ease-in-out; /* empêche le clignotement */
+}
+
+  .border-gradient{
+    border-radius: 12px;
+    border: 4px solid transparent;
+    background:
+      linear-gradient(white, white) padding-box,
+      linear-gradient(45deg, var(--main),var(--blue)) border-box;
+  }
+  

@@ -1,0 +1,193 @@
+<section>
+    <app-top-banner [target]="'about' | translate"></app-top-banner>
+    <div class="container-xl pt-5">
+        <div class="row justify-content-center">
+            <span class="col-xl-7">
+                <div class="text-center">
+                    <div class="fs-90">{{"who_we_are" | translate}}</div>
+                    <div class="fs-1 fw-600" [innerHTML]="'who_we_are_title' | translate"></div>
+                    <div class="opacity-75 fs-110 mt-2">{{"who_we_are_caption" | translate}}
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <div class="mt-4">
+            <div class="row row-gap-4">
+                <span class="col-lg-4">
+                    <div class="d-flex flex-column justify-content-between gap-4 h-100">
+                        <div>
+                            <img class="rounded-4"
+                                src="https://img.freepik.com/photos-gratuite/homme-affaires-aide-tablette-aeroport_1098-17274.jpg?t=st=1774701118~exp=1774704718~hmac=abf9ff807eff15834c15de89436550649d4450c1b98d840397f2947ae34b7c11&w=740"
+                                width="100%" height="220" loading="lazy" />
+                        </div>
+                        <div class="d-none d-xl-block">
+                            <img class="rounded-4"
+                                src="https://img.freepik.com/photos-gratuite/journee-au-bureau-agence-voyage_23-2150769998.jpg?t=st=1774701604~exp=1774705204~hmac=fc1201bfa010075ab4f93b4273ea3d09de431ae20de4d07b149ed5712548da2f&w=1480"
+                                width="100%" height="220" loading="lazy" />
+                        </div>
+                    </div>
+                </span>
+
+                <span class="col-lg-4">
+                    <div class="main-bg-gradient p-4 rounded-4 d-flex flex-column align-items-center text-white h-100">
+                        <div class="fs-2">
+                            <app-icon icon="rocket-takeoff-fill"></app-icon>
+                        </div>
+                        <div class="fs-3 fw-medium">{{"our_mission" | translate}}</div>
+                        <div class="mt-3">
+                            <div>{{"our_mission_caption" | translate}}
+                            </div>
+                            <ul class="mt-2">
+                                <li>{{"our_mission_feature1" | translate}}</li>
+                                <li class="my-2">{{"our_mission_feature2" | translate}}</li>
+                                <li>{{"our_mission_feature3" | translate}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </span>
+
+                <span class="col-lg-4">
+                    <div class="d-flex flex-column justify-content-between gap-4 h-100">
+                        <div>
+                            <img class="rounded-4"
+                                src="https://img.freepik.com/photos-gratuite/jeunes-femmes-elegantes-voyageant-ensemble-europe-vetues-robes-accessoires-mode-du-printemps_285396-9092.jpg?t=st=1774701220~exp=1774704820~hmac=a1f48092f4013fdad9127030012dad384dabf842b84ead54134aceeb1d85914f&w=740"
+                                width="100%" height="220" loading="lazy" />
+                        </div>
+                        <div class="d-none d-xl-block">
+                            <img class="rounded-4"
+                                src="https://img.freepik.com/photos-gratuite/agence-marketing-authentique-petite-jeune_23-2150167379.jpg?t=st=1774701174~exp=1774704774~hmac=489b9c2d76386bb3dc736060c03010f71b2e2dabcbfd36de4a694e6f30cce9d9&w=740"
+                                width="100%" height="220" loading="lazy" />
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <div class="lower-bg py-3">
+            <div class="container-xl py-5 text-white text-center">
+                <div class="row justify-content-center">
+                    <span class="col-xl-8">
+                        <div class="fs-1 fw-500">{{"weel_rounded_title" | translate}}</div>
+                        <div class="opacity-75 fs-120">{{"weel_rounded_caption" | translate}}</div>
+                    </span>
+                </div>
+                <div class="row row-gap-4 mt-5">
+                    <span class="col-6 col-md-4 col-xl-3" *ngFor="let item of data">
+                        <div class="bg-white rounded-4 p-4 text-dark h-100">
+                            <img [src]="'assets/icons/'+item.img+'.png'" [width]="45" [height]="45" />
+                            <div class="fw-medium mt-2">{{item.title | translate}}</div>
+                            <div>{{item.caption | translate}}</div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xl py-5 my-3">
+        <div class="row justify-content-between align-items-end row-gap-4">
+            <span class="col-xl-6">
+                <ng-container>
+                    <div class="main-text">{{"a_real_mall_of_travel" | translate}}</div>
+                    <div class="fs-3 fw-500">{{"an_eco_for_everyone" | translate}}</div>
+                    <div class="mt-2 fs-120 opacity-75">
+                        <div [innerHTML]="'an_eco_for_everyone_caption' | translate">
+
+                        </div>
+                        <div class="mt-3 fs-90">
+                            <div class="d-flex align-items-center gap-2">
+                                <span>
+                                    <img src="assets/icons/status/success.png" [width]="15" [height]="15" />
+                                </span>
+                                <span>{{"an_eco_for_everyone_feature1" | translate}}</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 my-3">
+                                <span>
+                                    <img src="assets/icons/status/success.png" [width]="15" [height]="15" />
+                                </span>
+                                <span>{{"an_eco_for_everyone_feature2" | translate}}</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 my-3">
+                                <span>
+                                    <img src="assets/icons/status/success.png" [width]="15" [height]="15" />
+                                </span>
+                                <span>{{"an_eco_for_everyone_feature3" | translate}}</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span>
+                                    <img src="assets/icons/status/success.png" [width]="15" [height]="15" />
+                                </span>
+                                <span>{{"an_eco_for_everyone_feature4" | translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </span>
+            <span class="col-xl-6">
+                <div class="d-flex flex-column gap-3">
+                    <div class="border shadow-sm rounded-4 p-3 d-flex align-items-start gap-3">
+                        <span class="size-40 third-bg main-text rounded-3">
+                            <app-icon icon="suitcase-lg-fill"></app-icon>
+                        </span>
+                        <span>
+                            <div class="fw-medium">{{"for_pros" | translate}}</div>
+                            <div class="opacity-75">{{"for_pros_caption" | translate}}</div>
+                        </span>
+                    </div>
+
+                    <div class="border shadow-sm rounded-4 p-3 d-flex align-items-start gap-3">
+                        <span class="size-40 third-bg main-text rounded-3">
+                            <app-icon icon="people-fill"></app-icon>
+                        </span>
+                        <span>
+                            <div class="fw-medium">{{"brands_and_partners" | translate}}</div>
+                            <div class="opacity-75">{{"brands_and_partners_caption" | translate}}</div>
+                        </span>
+                    </div>
+
+                    <div class="border shadow-sm rounded-4 p-3 d-flex align-items-start gap-3">
+                        <span class="size-40 third-bg main-text rounded-3">
+                            <app-icon icon="suitcase-fill"></app-icon>
+                        </span>
+                        <span>
+                            <div class="fw-medium">{{"for_travelers" | translate}}</div>
+                            <div class="opacity-75">{{"for_travelers_caption" | translate}}
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </span>
+        </div>
+        <div class="darkblue-bg d-flex flex-column align-items-center text-center p-3 p-xl-5 rounded-4 mt-5 text-white">
+            <div class="p-xl-3">
+                <div class="fs-2">
+                    <img src="https://cdn-icons-png.flaticon.com/128/11995/11995575.png" [width]="45" [height]="45" />
+                </div>
+                <div class="fw-medium fs-3 sixth-text mt-3">{{"our_commitment" | translate}}</div>
+                <div class="fs-120 opacity-75 mt-3">{{"our_commitment_caption" | translate}}
+                </div>
+                <div class="mt-5 d-flex justify-content-end">
+                    <div>
+                        <div class="d-flex align-items-center gap-2 fs-120">
+                            <span>
+                                🌟
+                            </span>
+                            <span class="fw-medium">{{"signature" | translate}}</span>
+                        </div>
+                        <div class="mt-3 fs-120 d-inline-block px-1 fs-4 dark-text" style="background-color: yellow;">
+                            “Let’s Make the
+                            World One Destination”</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="third-bg py-5">
+        <div class="container-xl py-5">
+            <app-reviews></app-reviews>
+        </div>
+    </div>
+</section>

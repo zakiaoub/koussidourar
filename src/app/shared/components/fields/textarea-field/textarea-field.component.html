@@ -1,0 +1,19 @@
+<div [formGroup]="formGroup">
+    <label [for]="id" *ngIf="labelKey" class="form-label fs-90">{{ labelKey | translate }} <span class="red-text">*</span></label>
+    <div class="bg-white rounded"
+        [ngClass]="{'red-border':control?.touched && control?.invalid, 'green-border':control?.touched && control?.valid, 'border':!control?.touched}">
+        <textarea class="rounded h-100" [id]="id" [formControl]="control" [readOnly]="readonly"
+            [placeholder]="placeholder | translate" [minlength]="minlength" [maxlength]="maxlength" [rows]="rows"
+            style="resize: none;"></textarea>
+    </div>
+
+    <ng-container>
+        <ng-container *ngIf="control?.touched && control?.errors?.['required'] && showMessage">
+            <app-error-fields status="required"></app-error-fields>
+        </ng-container>
+
+        <ng-container *ngIf="control?.touched && control?.errors?.['minlength']?.requiredLength && showMessage">
+            <app-error-fields status="minlength" [chars]="minlength"></app-error-fields>
+        </ng-container>
+    </ng-container>
+</div>

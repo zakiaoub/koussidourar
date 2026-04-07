@@ -1,0 +1,35 @@
+<ng-container>
+    <app-top-banner [target]="'bookings'"></app-top-banner>
+    <section class="container-xl py-5">
+        <app-bookings-numbers></app-bookings-numbers>
+        <div id="bookings-list" class="mt-4">
+            <div class="w-100">
+                <app-bookings-search-form [isLoading]="isLoading()" (search)="onSubmit($event)">
+                </app-bookings-search-form>
+            </div>
+
+            <ng-container *ngIf="isLoading()">
+                <div class="mt-4">
+                    <app-skeleton-bookings></app-skeleton-bookings>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="error()">
+                <div class="mt-4">
+                    <app-error-request></app-error-request>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="!isLoading() && !error()">
+                <div class="mt-4">
+                    <app-bookings-list [data]="data()?.data" (refreshData)="getBookings()"></app-bookings-list>
+                    <div *ngIf="data()?.data.length < totalCount()" class="pt-4">
+                        <p-paginator [rows]="perPage()" [totalRecords]="totalCount()"
+                            (onPageChange)="onPageChange($event)" [first]="(currentPage() - 1) * perPage()">
+                        </p-paginator>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </section>
+</ng-container>

@@ -1,0 +1,11 @@
+<div class="bg-white shadow-sm d-none d-lg-block">
+    <div class="container-xl py-3">
+        <p-stepper [value]="currentStep" class="basis-[50rem]" [linear]="linear">
+            <p-step-list>
+                <ng-container *ngFor="let step of steps; let i = index">
+                    <p-step [value]="i+1">{{step | translate}}</p-step>
+                </ng-container>
+            </p-step-list>
+        </p-stepper>
+    </div>
+</div>

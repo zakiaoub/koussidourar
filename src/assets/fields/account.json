@@ -1,0 +1,120 @@
+{
+  "updateProfile": [
+    {
+      "col": "col-12",
+      "id": "full_name-profile",
+      "label": "full_name",
+      "formControlName": "full_name",
+      "icon": "person",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "minlength": 2,
+      "maxlength": 100,
+      "keyFilter": null,
+      "showMessage": true
+    },
+    {
+      "col": "col-md-6",
+      "id": "email-profile",
+      "label": "email",
+      "formControlName": "email",
+      "icon": "envelope",
+      "type": "email",
+      "placeholder": "",
+      "readonly": false,
+      "minlength": null,
+      "maxlength": null,
+      "keyFilter": null,
+      "showMessage": true
+    },
+    {
+      "col": "col-md-6",
+      "id": "phone-profile",
+      "label": "phone",
+      "formControlName": "phone",
+      "icon": "telephone",
+      "type": "phone",
+      "placeholder": "",
+      "readonly": false,
+      "minlength": null,
+      "maxlength": null,
+      "keyFilter": null,
+      "showMessage": true
+    },
+    {
+      "col": "col-12",
+      "id": "address-profile",
+      "label": "address",
+      "formControlName": "address",
+      "icon": "geo-alt",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "minlength": 5,
+      "maxlength": 150,
+      "keyFilter": null,
+      "showMessage": true
+    }
+  ],
+  "validateProfile": [
+    {
+      "col": "col-12",
+      "id": "token-profile",
+      "label": "security_code",
+      "formControlName": "token",
+      "icon": "key",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "minlength": null,
+      "maxlength": null,
+      "keyFilter": null,
+      "showMessage": true
+    }
+  ],
+  "updatePassword": [
+    {
+      "col": "col-12",
+      "id": "password-settings",
+      "label": "password",
+      "formControlName": "password",
+      "icon": "person-lock",
+      "placeholder": "",
+      "minlength": 8,
+      "maxlength": 100,
+      "toggleMask": true,
+      "feedback": true,
+      "showMessage": true
+    },
+    {
+      "col": "col-12",
+      "id": "confirmPassword-settings",
+      "label": "confirm_password",
+      "formControlName": "confirmPassword",
+      "icon": "person-lock",
+      "placeholder": "",
+      "minlength": 8,
+      "maxlength": 100,
+      "toggleMask": true,
+      "feedback": true,
+      "showMessage": true
+    }
+  ],
+  "validatePassword": [
+    {
+      "col": "col-12",
+      "id": "token-settings",
+      "label": "security_code",
+      "formControlName": "token",
+      "icon": "key",
+      "type": "text",
+      "placeholder": "",
+      "readonly": false,
+      "minlength": null,
+      "maxlength": null,
+      "keyFilter": null,
+      "showMessage": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<section class="py-3">
+    <h2 class="fs-2 fw-600 text-center">{{"promo_title" | translate}}</h2>
+    <p class="fs-5 fw-300 text-secondary text-center">{{"promo_caption" | translate}}</p>
+    <div class="row">
+        <span class="col-md-6 col-lg-4 col-xl-3 my-3" *ngFor="let item of data.slice(0,8)">
+            <!-- <app-card-item [card]="card" [data]="item" [href]="href+'/details/'+item.id"></app-card-item> -->
+        </span>
+    </div>
+</section>

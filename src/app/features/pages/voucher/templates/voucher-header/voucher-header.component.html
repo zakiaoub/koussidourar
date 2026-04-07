@@ -1,0 +1,14 @@
+<ng-container>
+    <div class="row justify-content-between">
+        <span class="col-lg- col-xl-3">
+            <app-logo></app-logo>
+        </span>
+        <span class="col-xl-9">
+            <div class="text-end">
+                <div class="lower-text fs-3 fw-medium">Voucher / {{data?.service | translate}}</div>
+                <div>{{"voucher_header_caption" | translate}}</div>
+                <div *ngIf="data?.bookingNumber">{{"reference_number" | translate}} : {{data?.bookingNumber}}</div>
+            </div>
+        </span>
+    </div>
+</ng-container>

@@ -1,0 +1,40 @@
+<div class="bg-dark bg-opacity-10">
+    <app-session-time [count]="0" [type]="'results'"></app-session-time>
+    <app-stepper [currentStep]="1"></app-stepper>
+    <section class="container-xl pt-3 pb-5">
+        <div class="d-flex justify-content-end">
+            <div class="bg-white p-1 rounded-1">
+                <p-skeleton width="200px" height="40px" styleClass="rounded-1" />
+            </div>
+        </div>
+        <div class="row mt-3">
+            <span class="col-xl-3 d-none d-xl-block">
+                <div class="bg-white rounded-4 p-3">
+                    <p-skeleton width="100%" height="220px" styleClass="rounded-4" />
+                    <div class="my-1">
+                        <p-skeleton width="100%" height="50px" styleClass="rounded" />
+                    </div>
+                    <div class="my-1">
+                        <p-skeleton width="100%" height="50px" styleClass="rounded" />
+                    </div>
+                    <div class="my-1">
+                        <p-skeleton width="100%" height="50px" styleClass="rounded" />
+                    </div>
+                </div>
+
+                <app-skeleton-filters></app-skeleton-filters>
+
+            </span>
+            <span class="col-xl-9">
+                <div [ngSwitch]="service">
+                    <ng-container *ngSwitchCase="'flight'">
+                        <app-skeleton-flight></app-skeleton-flight>
+                    </ng-container>
+                    <ng-container *ngSwitchDefault>
+                        <app-skeleton-attraction></app-skeleton-attraction>
+                    </ng-container>
+                </div>
+            </span>
+        </div>
+    </section>
+</div>

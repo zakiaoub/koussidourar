@@ -1,0 +1,74 @@
+<ng-container>
+    <div class="fs-110 fw-500">{{ "available_rooms" | translate }}</div>
+    <div class="mt-4">
+        <ng-container *ngIf="isLoading()">
+            <app-skeleton-rooms></app-skeleton-rooms>
+        </ng-container>
+
+        <ng-container *ngIf="error()">
+            <app-error-request caption="error_rooms_message"></app-error-request>
+        </ng-container>
+
+        <ng-container *ngIf="!isLoading() && !error()">
+            <ng-container *ngIf="(data()['rooms'] | keyvalue).length >= 1">
+                <div *ngFor="let item of paginatedRooms">
+                    <div class="border grey-bg p-2 rounded-3 my-4">
+                        <div class="bg-white p-3 rounded-3">
+                            <div class="row row-gap-3 align-items-center">
+                                <span class="col-xl-7">
+                                    <ng-container *ngFor="let room of item[1]">
+                                        <div class="row row-gap-3 align-items-center">
+                                            <span class="col-md-6">
+                                                <div class="text-capitalize fw-500">{{room.Name}}</div>
+                                            </span>
+                                            <span class="col-6 col-md-4">
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <span>
+                                                        <img [src]="'assets/icons/interface/bed.png'" [width]="20"
+                                                            [height]="20" />
+                                                    </span>
+                                                    <span>
+                                                        {{room.Board}}
+                                                    </span>
+                                                </div>
+                                            </span>
+                                            <span class="col-6 col-md-2">
+                                                <div class="d-flex justify-content-center gap-1">
+                                                    <span
+                                                        *ngFor="let i of [].constructor(room.Adult+room.Child); let idx = index"
+                                                        class="fs-5">
+                                                        <app-icon icon="person-fill"></app-icon>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </ng-container>
+                                </span>
+                                <span class="col-6 col-md-8 col-xl-3">
+                                    <div class="text-center fs-120 fw-600">
+                                        <app-amount [value]="item[1][0].Price"></app-amount>
+                                    </div>
+                                </span>
+                                <span class="col-6 col-md-4 col-xl-2">
+                                    <div class="d-flex justify-content-end">
+                                        <app-button class="main-bg text-white p-2 w-100 rounded-3 fs-90"
+                                            [title]="'book_now'" [isLoading]="isSubmiting()[item[0]]"
+                                            (action)="onSubmit(item[0])"></app-button>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <p-paginator [first]="first()" [rows]="rows()" [totalRecords]="(data()['rooms'] | keyvalue).length"
+                        (onPageChange)="onPageChange($event)">
+                    </p-paginator>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="(data()['rooms'] | keyvalue).length < 1">
+                <app-no-results-found [isImage]="false" [isCaption]="false"></app-no-results-found>
+            </ng-container>
+        </ng-container>
+    </div>
+</ng-container>

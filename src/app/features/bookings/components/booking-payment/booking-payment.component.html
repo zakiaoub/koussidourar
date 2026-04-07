@@ -1,0 +1,13 @@
+<div class="rounded-3 shadow-sm">
+    <div class="grey-bg py-3 px-4 border-bottom rounded-top-3">
+        <div class="d-flex gap-2">
+            <span class="main-text">
+                <app-icon icon="credit-card-fill"></app-icon>
+            </span>
+            <span>{{"payment_details" | translate}}</span>
+        </div>
+    </div>
+    <div class="p-4">
+        <app-checkout-summary [price]="amountTotal()"></app-checkout-summary>
+    </div>
+</div>

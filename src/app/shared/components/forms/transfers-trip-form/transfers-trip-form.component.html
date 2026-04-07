@@ -1,0 +1,25 @@
+<ng-container>
+    <form [formGroup]="tripForm" (ngSubmit)="onSubmit(RateKey)">
+        <div class="row row-gap-4 g-2 align-items-end">
+            <ng-container *ngFor="let field of fields">
+                <span [class]="field.col">
+                    <ng-container>
+                        <app-input-field [id]="field.id" [labelKey]="field.label"
+                            [controlName]="field.formControlName" [icon]="field.icon" [type]="field.type"
+                            [placeholder]="field.placeholder" [readonly]="field.readonly" [minlength]="field.minlength"
+                            [maxlength]="field.maxlength" [keyFilter]="field.keyFilter"
+                            [showMessage]="field.showMessage" [formGroup]="tripForm">
+                        </app-input-field>
+                    </ng-container>
+                </span>
+            </ng-container>
+            <span class="col-lg-2">
+                <div>
+                    <app-button [type]="'submit'" [title]="'send'"
+                        [class]="'main-bg-gradient text-white p-3 height-60 rounded-3 w-100'"
+                        [isLoading]="isLoading()[RateKey]"></app-button>
+                </div>
+            </span>
+        </div>
+    </form>
+</ng-container>

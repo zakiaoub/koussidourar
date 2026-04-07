@@ -1,0 +1,14 @@
+.line-dash {
+    stroke-dasharray: 4;
+    stroke-dashoffset: 350;
+    animation: line-dash 30s linear infinite alternate-reverse backwards;
+}
+
+@keyframes line-dash {
+    from {
+      stroke-dashoffset: 350;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }

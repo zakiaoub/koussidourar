@@ -1,0 +1,51 @@
+<ng-container>
+    <div class="row fs-90 fw-300 d-none d-md-flex">
+        <span class="col-md-3">
+            <div>{{"name" | translate}}</div>
+        </span>
+        <span class="col-md-3">
+            <div>{{"date" | translate}}</div>
+        </span>
+        <span class="col-md-2">
+            <div>{{"duration" | translate}}</div>
+        </span>
+        <span class="col-md-2">
+            <div>{{"amount" | translate}}</div>
+        </span>
+    </div>
+    <div class="mt-4">
+        <ng-container *ngIf="data()?.category && (data()?.category | keyvalue).length > 0">
+            <div *ngFor="let item of data()?.category | keyvalue" class="my-3 border rounded-3 p-3 bg-light">
+                <div class="row row-gap-3 align-items-center">
+                    <span class="col-6 col-md-3">
+                        <div class="text-dark fw-medium text-capitalize">{{item.value['Name']}}</div>
+                    </span>
+                    <span class="col-6 col-md-3">
+                        <div class="main-input border rounded height-50">
+                            <p-select [options]="item.value['OperationDates']" [(ngModel)]="item.value['DateFrom']"
+                                [autoDisplayFirst]="true" [placeholder]="'date' | translate" />
+                        </div>
+                    </span>
+                    <span class="col-4 col-md-2">
+                        <div>{{item.value['NumberOfDay']}} {{"days" | translate}}</div>
+                    </span>
+                    <span class="col-4 col-md-2">
+                        <div class="green-text fw-medium">
+                            <app-amount [value]="item.value['Price']"></app-amount>
+                        </div>
+                    </span>
+                    <span class="col-4 col-md-2 d-flex justify-content-end">
+                        <div class="w-100 fs-90">
+                            <app-button [isLoading]="isLoading()[item.value['RateKey']]" [type]="'button'"
+                                [class]="'main-bg rounded-5 text-white height-50 w-100'" [title]="'select'"
+                                (action)="onSubmit(item.value['NumberOfDay'], item.value['RateKey'], item.value['DateFrom'])"></app-button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="data()?.category && (data()?.category | keyvalue).length < 1">
+            <app-no-results-found [isImage]="false" [isCaption]="false"></app-no-results-found>
+        </ng-container>
+    </div>
+</ng-container>

@@ -1,0 +1,24 @@
+/* Image scale */
+
+.item-img-scale {
+  overflow: hidden;
+}
+
+.item-img-scale img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.item-img-scale:hover img {
+  transform: scale(1.12);
+  filter: saturate(1.05);
+}
+
+/* Item translate top */
+
+.item-translate-y {
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+
+.item-translate-y:hover {
+  transform: translateY(-20px);
+}

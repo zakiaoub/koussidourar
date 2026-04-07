@@ -1,0 +1,18 @@
+<ng-container>
+    <div class="fs-1 fw-medium">{{"activation_in_progress" | translate}}</div>
+    <p class="fs-110 opacity-75">{{"activation_in_progress_caption" | translate}}</p>
+    <div class="mt-4">
+        <p-progressbar mode="indeterminate" [style]="{'height': '6px'}" />
+    </div>
+    <div class="mt-5 d-flex flex-column gap-4">
+        <div class="d-flex gap-3 mt-2" *ngFor="let item of data">
+            <span class="size-50 third-bg main-text fs-120 rounded-circle">
+                <app-icon [icon]="item.icon"></app-icon>
+            </span>
+            <span>
+                <div class="fw-500">{{item.label | translate}}</div>
+                <div class="fs-95 opacity-75">{{item.caption | translate}}</div>
+            </span>
+        </div>
+    </div>
+</ng-container>

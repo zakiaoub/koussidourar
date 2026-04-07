@@ -1,0 +1,46 @@
+<ng-container *ngIf="data">
+    <div class="bg-white rounded-3 p-3 shadow-sm">
+        <div class="position-relative bg-white rounded-3 shadow-sm rounded-3 overflow-hidden text-capitalize">
+            <app-city-image [city]="data?.dataPost?.To?.CountryName" [height]="'250px'"></app-city-image>
+            <div class="position-absolute top-0 start-0 text-white w-100 h-100 bg-dark bg-opacity-10">
+                <div class="h-100 p-4 opacity-75">
+                    <div>
+                        <div class="fs-120">
+                            {{"your_trip_to" | translate}}
+                        </div>
+                        <div class="fs-1 fw-medium">{{data?.dataPost?.To?.CountryName}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-3 overflow-hidden shadow-sm mt-4 p-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+            <span><strong>{{ countAdults }}</strong> {{"adult" | translate}}{{ countAdults > 1 ? 's' : '' }}</span>
+            |
+            <span><strong>{{ countChildren }}</strong> {{"child" | translate}}{{ countChildren > 1 ? 's' : '' }}</span>
+            |
+            <span>
+                {{ data.transfer?.Trip?.length === 2 ? 'Roundtrip transfer' : 'Oneway transfer' | translate}}
+            </span>
+        </div>
+        <div class="d-flex gap-2">
+            <span class="w-50 text-start">
+                <div>{{"start" | translate}}</div>
+                <div class="fs-120 fw-medium"> {{data.dataPost.DateFrom | date:'MMMM dd, Y HH:MM:a'}}</div>
+            </span>
+            <span>
+                <div class="width-2 height-50 grey-bg"></div>
+            </span>
+            <span class="w-50 text-end" *ngIf="data.dataPost.Trip =='RT'">
+                <div>{{"end" | translate}}</div>
+
+                <div class="fs-120 fw-medium"> {{data.dataPost.DateReturn | date:'MMMM dd, Y HH:MM:a'}}</div>
+            </span>
+        </div>
+    </div>
+    <div class="mt-4">
+        <app-checkout-summary [price]="data?.transfer?.Total"></app-checkout-summary>
+    </div>
+</ng-container>

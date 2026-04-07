@@ -1,0 +1,80 @@
+[
+  {
+    "col": "col-12",
+    "id": "full_name-signup",
+    "label": "full_name",
+    "formControlName": "full_name",
+    "icon": "person",
+    "type": "text",
+    "placeholder": "",
+    "readonly": false,
+    "minlength": 2,
+    "maxlength": 100,
+    "keyFilter": null,
+    "showMessage": true
+  },
+   {
+    "col": "col-md-6",
+    "id": "email-signup",
+    "label": "email",
+    "formControlName": "email",
+    "icon": "envelope",
+    "type": "email",
+    "placeholder": "",
+    "readonly": false,
+    "minlength": null,
+    "maxlength": null,
+    "keyFilter": null,
+    "showMessage": true
+  },
+  {
+    "col": "col-md-6",
+    "id": "phone-signup",
+    "label": "phone",
+    "formControlName": "phone_number",
+    "icon": "telephone",
+    "placeholder": "",
+    "readonly": false,
+    "showMessage": true
+  },
+  {
+    "col": "col-12",
+    "id": "referral_code-signup",
+    "label": "referral_code",
+    "formControlName": "referralCode",
+    "icon": "upc",
+    "type": "text",
+    "placeholder": "",
+    "readonly": false,
+    "minlength": 2,
+    "maxlength": 100,
+    "keyFilter": "alphanum",
+    "showMessage": false
+  },
+  {
+    "col": "col-md-6",
+    "id": "password-signup",
+    "label": "password",
+    "formControlName": "password",
+    "icon": "person-lock",
+    "placeholder": "",
+    "minlength": 8,
+    "maxlength": 100,
+    "toggleMask": true,
+    "feedback": true,
+    "showMessage": true
+  },
+  {
+    "col": "col-md-6",
+    "id": "confirmPassword-signup",
+    "label": "confirm_password",
+    "formControlName": "confirmPassword",
+    "icon": "person-lock",
+    "placeholder": "",
+    "minlength": 8,
+    "maxlength": 100,
+    "toggleMask": true,
+    "feedback": false,
+    "showMessage": true
+  }
+]

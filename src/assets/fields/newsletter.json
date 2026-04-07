@@ -1,0 +1,16 @@
+[
+  {
+    "col": "col-12",
+    "id": "email-newsletter",
+    "label": "",
+    "formControlName": "email",
+    "icon": "envelope",
+    "type": "email",
+    "placeholder": "your_email",
+    "readonly": false,
+    "minlength": null,
+    "maxlength": null,
+    "keyFilter": null,
+    "showMessage": false
+  }
+]

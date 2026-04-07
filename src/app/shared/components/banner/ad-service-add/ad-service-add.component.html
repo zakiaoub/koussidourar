@@ -1,0 +1,52 @@
+<div [ngSwitch]="service">
+    <ng-container *ngSwitchCase="'flight'">
+        <a href="/flights" class="d-flex justify-content-between align-items-center gap-3 rounded-3 p-1 pe-3 dark-text"
+            style="border:1px dashed grey;">
+            <span class="d-flex align-items-center gap-3">
+                <img class="rounded" src="assets/images/flight-bg-1.webp" [width]="70" [height]="40" />
+                <span>{{"flights" | translate}}</span>
+            </span>
+            <span class="fs-5 main-text">
+                <i class="bi bi-plus-circle"></i>
+            </span>
+        </a>
+    </ng-container>
+    <ng-container *ngSwitchCase="'hotel'">
+        <a href="/hotels" class="d-flex justify-content-between align-items-center gap-3 rounded-3 p-1 pe-3 dark-text"
+            style="border:1px dashed grey;">
+            <span class="d-flex align-items-center gap-3">
+                <img class="rounded" src="assets/images/hotel-bg-1.webp" [width]="70" [height]="40" />
+                <span>{{"hotels" | translate}}</span>
+            </span>
+            <span class="fs-5 main-text">
+                <i class="bi bi-plus-circle"></i>
+            </span>
+        </a>
+    </ng-container>
+    <ng-container *ngSwitchCase="'attraction'">
+        <a href="/attractions"
+            class="d-flex justify-content-between align-items-center gap-3 rounded-3 p-1 pe-3 dark-text"
+            style="border:1px dashed grey;">
+            <span class="d-flex align-items-center gap-3">
+                <img class="rounded" src="assets/images/attraction-bg-1.webp" [width]="70" [height]="40" />
+                <span>{{"attractions" | translate}}</span>
+            </span>
+            <span class="fs-5 main-text">
+                <i class="bi bi-plus-circle"></i>
+            </span>
+        </a>
+    </ng-container>
+    <ng-container *ngSwitchCase="'transfer'">
+        <a href="/transfers"
+            class="d-flex justify-content-between align-items-center gap-3 rounded-3 p-1 pe-3 dark-text"
+            style="border:1px dashed grey;">
+            <span class="d-flex align-items-center gap-3">
+                <img class="rounded" src="assets/images/transfer-bg-1.webp" [width]="70" [height]="40" />
+                <span>{{"transfers" | translate}}</span>
+            </span>
+            <span class="fs-5 main-text">
+                <i class="bi bi-plus-circle"></i>
+            </span>
+        </a>
+    </ng-container>
+</div>

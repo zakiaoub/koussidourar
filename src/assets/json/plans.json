@@ -1,0 +1,7 @@
+{
+    "plans": [
+        { "title": "basic", "amount": 19, "caption": "basic_caption", "promo": 5, "features": ["basic_support", "limited_visibility", "promotions_per_month", "space_management"] },
+        { "title": "gold", "amount": 85, "caption": "entreprise_caption", "promo": "unlimited", "features": ["basic_and_premium_features", "max_visibility", "promotions_per_month", "space_management"] },
+        { "title": "premium", "amount": 46, "caption": "premium_caption", "promo": 15, "features": ["premium_support", "intermediate_visibility", "promotions_per_month", "space_management"] }
+      ]
+}

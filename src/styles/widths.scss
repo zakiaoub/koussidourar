@@ -1,0 +1,8 @@
+$width-values:2, 20, 25, 30, 35, 40, 45, 60, 80, 90, 120, 160,170,180;
+
+@each $width in $width-values {
+  .width-#{$width} {
+    --width: #{$width}px;
+    width: var(--width);
+  }
+}

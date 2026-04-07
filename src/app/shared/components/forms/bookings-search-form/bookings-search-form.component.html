@@ -1,0 +1,26 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+    <div class="row row-gap-3">
+        <span class="col-xl-4">
+            <app-input-field formControlName="bookingNumber" [icon]="'search'" [type]="'text'" [formGroup]="formGroup"
+                [placeholder]="'booking_number'">
+            </app-input-field>
+        </span>
+
+        <span class="col-md-4 col-xl-3">
+            <app-select-field formControlName="bookingStatus" [formGroup]="formGroup" [placeholder]="'status'"
+                [options]="BookingStatusOptions">
+            </app-select-field>
+        </span>
+
+        <span class="col-md-4 col-xl-3">
+            <app-dates-field formControlName="dates" [formGroup]="formGroup" [placeholder]="'select_dates'">
+            </app-dates-field>
+        </span>
+
+        <span class="col-md-4 col-xl-2">
+            <app-button [type]="'submit'" [title]="'filter'"
+                [class]="'main-bg-gradient text-white p-3 rounded border-0 w-100 fs-80 height-60'"
+                [isLoading]="isLoading()"></app-button>
+        </span>
+    </div>
+</form>

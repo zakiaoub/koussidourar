@@ -1,0 +1,66 @@
+<ng-container>
+    <div class="grey-bg py-3 px-4 border-bottom rounded-top-3">
+        <div class="d-flex justify-content-between gap-2 fs-3">
+            <span class="fw-500 text-capitalize">{{"transfer_details" | translate}}</span>
+            <span class="main-text">
+                <app-icon icon="car-front-fill"></app-icon>
+            </span>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="lower-bg-gradient text-white d-inline-block p-2 rounded-3 text-capitalize">
+            {{data()?.type}}
+        </div>
+        <div *ngFor="let item of data()?.itinerary" class="my-4">
+            <ng-container>
+                <div class="d-flex flex-wrap gap-3">
+                    <span class="border light-bg rounded py-1 px-2 d-flex gap-2">
+                        <span class="main-text">
+                            <app-icon icon="car-front"></app-icon>
+                        </span>
+                        <span>
+                            {{item.vehicleType}}
+                        </span>
+                    </span>
+
+                    <span class="border light-bg rounded py-1 px-2 d-flex gap-2">
+                        <span class="main-text">
+                            <app-icon icon="star-fill"></app-icon>
+                        </span>
+                        <span>
+                            {{item.vehicleCategory}}
+                        </span>
+                    </span>
+
+                    <span class="border light-bg rounded py-1 px-2 d-flex gap-2">
+                        <span class="main-text">
+                            <app-icon icon="people-fill"></app-icon>
+                        </span>
+                        <span>
+                            {{item.vehicleCapacity}}
+                        </span>
+                    </span>
+                </div>
+                <div class="row mt-4">
+                    <span class="col-md-5">
+                        <div class="text-start">
+                            <div class="fs-120 fw-500 text-capitalize">{{item.from}}</div>
+                            <div class="fs-110">{{item.date | date: "MMM dd, Y"}}</div>
+                        </div>
+                    </span>
+                    <span class="col-md-2">
+                        <div class="d-flex justify-content-center fs-3 green-text">
+                            <app-icon icon="arrow-right-circle-fill"></app-icon>
+                        </div>
+                    </span>
+                    <span class="col-md-5">
+                        <div class="text-end">
+                            <div class="fs-120 fw-500 text-capitalize">{{item.to}}</div>
+                            <div class="fs-110">{{item.time}}</div>
+                        </div>
+                    </span>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>

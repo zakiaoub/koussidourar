@@ -1,0 +1,103 @@
+<ng-container>
+    <form (ngSubmit)="onSubmit()">
+        <div class="bw-form-row--stack">
+            <div *ngFor="let itin of itineraries; let i = index" class="bw-form-row">
+                <div class="bw-input-group bw-input-group--grow" [class.bw-input-group--error]="showErrors[i]?.departure">
+                    <label class="bw-label" [attr.for]="'md-departure-' + i">
+                        <i class="fa-solid fa-plane-departure" aria-hidden="true"></i>
+                        {{ 'departure' | translate }}
+                    </label>
+                    <div class="bw-field">
+                        <p-autocomplete #departureAuto [inputId]="'md-departure-' + i" [(ngModel)]="itin.departure['destination']"
+                            [name]="'departure'+i" [suggestions]="airports"
+                            (completeMethod)="fetchCities($event.query)" field="destination"
+                            (ngModelChange)="itin.departure = $event; showErrors[i].departure = false"
+                            [placeholder]="'departure' | translate">
+                            <ng-template let-item pTemplate="airports">
+                                <div class="w-100">
+                                    <app-autocomplete-suggetions [item]="item"
+                                        [type]="'flight'"></app-autocomplete-suggetions>
+                                </div>
+                            </ng-template>
+                        </p-autocomplete>
+                    </div>
+                    <small class="bw-field-msg" *ngIf="showErrors[i]?.departure">{{'select_an_origin' | translate}}</small>
+                </div>
+
+                <div class="bw-swap-wrap">
+                    <button type="button" class="bw-btn-swap" (click)="swapLocations(i)"
+                        [@rotateIcon]="isRotated ? 'rotated' : 'default'"
+                        [disabled]="!itin.departure?.destination && !itin.arrival?.destination"
+                        aria-label="Swap departure and arrival">
+                        <app-icon icon="repeat"></app-icon>
+                    </button>
+                </div>
+
+                <div class="bw-input-group bw-input-group--grow" [class.bw-input-group--error]="showErrors[i]?.arrival">
+                    <label class="bw-label" [attr.for]="'md-arrival-' + i">
+                        <i class="fa-solid fa-plane-arrival" aria-hidden="true"></i>
+                        {{ 'arrival' | translate }}
+                    </label>
+                    <div class="bw-field">
+                        <p-autocomplete [inputId]="'md-arrival-' + i" [(ngModel)]="itin.arrival['destination']" [name]="'arrival'+i"
+                            [suggestions]="airports" (completeMethod)="fetchCities($event.query)"
+                            field="destination" (ngModelChange)="onArrivalChange($event, i)"
+                            [placeholder]="'arrival' | translate">
+                            <ng-template let-item pTemplate="airports">
+                                <div class="w-100">
+                                    <app-autocomplete-suggetions [item]="item"
+                                        [type]="'flight'"></app-autocomplete-suggetions>
+                                </div>
+                            </ng-template>
+                        </p-autocomplete>
+                    </div>
+                    <small class="bw-field-msg" *ngIf="showErrors[i]?.arrival">{{'select_a_destination' | translate}}</small>
+                </div>
+
+                <div class="bw-input-group" [class.bw-input-group--error]="showErrors[i]?.date">
+                    <label class="bw-label" [attr.for]="'md-date-' + i">
+                        <i class="fa-regular fa-calendar-alt" aria-hidden="true"></i>
+                        {{ 'date' | translate }}
+                    </label>
+                    <div class="bw-field">
+                        <p-datepicker #datePicker [inputId]="'md-date-' + i" [(ngModel)]="itin.date" [name]="'date'+i"
+                            (ngModelChange)="itin.date = $event; showErrors[i].date = false"
+                            [placeholder]="'date' | translate" [minDate]="getMinDate(i)" [readonlyInput]="true" />
+                    </div>
+                    <small class="bw-field-msg" *ngIf="showErrors[i]?.date">{{'select_your_dates' | translate}}</small>
+                </div>
+
+                <div class="bw-input-group bw-input-group--actions">
+                    <label class="bw-label">&nbsp;</label>
+                    <button class="bw-btn-ghost bw-btn-ghost--danger" [disabled]="itineraries.length <= 2" type="button"
+                        (click)="removeFlight(i)">
+                        <app-icon icon="trash"></app-icon>
+                        <span>{{"delete" | translate}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bw-multi-footer">
+            <button *ngIf="itineraries.length < 4" type="button" class="bw-btn-ghost" (click)="addFlight()">
+                <app-icon icon="geo-alt"></app-icon>
+                <span>{{"add_another_itinerary" | translate}}</span>
+            </button>
+            <div class="bw-multi-footer__guests">
+                <label class="bw-label">
+                    <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                    {{ 'travelers' | translate }}
+                </label>
+                <div class="bw-standalone-field">
+                    <app-guests-field [data]="guestData"></app-guests-field>
+                </div>
+            </div>
+            <div class="bw-submit-wrap">
+                <app-submit [isLoading]="isLoading()"></app-submit>
+            </div>
+        </div>
+    </form>
+
+    <app-loader-city [visible]="isLoading()" [city]="itineraries[itineraries.length -1].arrival.city_name"
+        [country]="itineraries[itineraries.length -1].arrival.country_name" [height]="'450px'"></app-loader-city>
+</ng-container>

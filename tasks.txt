@@ -1,0 +1,13 @@
+- Correction du problème de disparition des résultats d’hôtels lors des requêtes effectuées depuis la bannière des offres dans la section « vols ».
+
+- Le service Flight + Hotel ne fonctionne pas. sa fonctionne 
+
+- Intégration d’un QR code sur les vouchers.
+
+- Problème d’affichage des vouchers pour le service Flight,  il s'affiche 
+
+- Vérifier les filtres du service attractions (ne fonctionne pas toujours) , coorigé  car la route de backend n'est pas la meme
+
+- Rendre les éléments des offres de tous les services dynamiques et cliquables.
+
+- Revoir le du système de routage afin de supprimer le temps d’attente avant l’affichage du contenu. 

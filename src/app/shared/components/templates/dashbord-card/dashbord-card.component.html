@@ -1,0 +1,18 @@
+<div class="border shadow-sm rounded-4 p-4 h-100">
+    <div class="d-flex justify-content-between gap-3">
+        <span class="opacity-75">
+            {{label | translate}}
+        </span>
+        <span class="fs-4 lh-1" [ngClass]="color">
+            <app-icon [icon]="icon"></app-icon>
+        </span>
+    </div>
+    <div class="mt-2 fs-300 fw-600">
+        <ng-container *ngIf="isLoading()">
+            <app-spinner [isWhite]="false" [size]="25" [stroke]="3"></app-spinner>
+        </ng-container>
+        <ng-container *ngIf="!isLoading()">
+            {{value}}
+        </ng-container>
+    </div>
+</div>

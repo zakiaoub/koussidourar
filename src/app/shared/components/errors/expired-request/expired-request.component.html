@@ -1,0 +1,27 @@
+<div class="gradient py-5">
+    <div class="container-xl my-5 py-3">
+        <div class="row justify-content-center">
+            <span class="col-xl-6">
+                <div class="d-flex flex-column text-center">
+                    <div class="red-text fs-350 orange-text">
+                        <app-icon icon="exclamation-triangle-fill"></app-icon>
+                    </div>
+                    <div class="text-dark mt-1 fw-500 fs-5">{{"error_request_title" | translate}}</div>
+                    <p class="opacity-75 mt-2">{{"session_expired_text" | translate}}</p>
+                    <div class="mt-4">
+                        <div class="row justify-content-center">
+                            <span class="col-xl-6">
+                                <div class="w-100">
+                                    <app-button [class]="'main-bg-gradient text-white py-3 w-100 rounded-3'"
+                                        [title]="'refresh_the_search'" (action)="refreshSearch()"
+                                        [isLoading]="isLoading()">
+                                    </app-button>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>

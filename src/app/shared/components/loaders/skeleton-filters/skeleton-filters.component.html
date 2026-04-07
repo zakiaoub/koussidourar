@@ -1,0 +1,25 @@
+<div class="bg-white rounded-4 p-4 mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="fw-medium">{{"filters" | translate}}</span>
+        <span role="button" class="fs-90 main-text">{{"reset" | translate}}</span>
+    </div>
+    <hr class="border-secondary my-4" />
+
+    <app-price-filter [min]="0" [max]="5000" [(rangeValues)]="rangeValues"></app-price-filter>
+
+    <div class="my-4" *ngFor="let item of [].constructor(8)">
+        <p-skeleton width="3rem" />
+        <div class="mt-3">
+            <div class="my-2 d-flex justify-content-between align-items-center" *ngFor="let item of [].constructor(5)">
+                <span class="d-flex align-items-center gap-3">
+                    <p-skeleton width="15px" height="15px" />
+                    <p-skeleton width="5rem" height="15px" />
+                </span>
+                <span>
+                    <p-skeleton width="1rem" height="5px" />
+                </span>
+            </div>
+        </div>
+        <hr class="border-secondary my-4" />
+    </div>
+</div>

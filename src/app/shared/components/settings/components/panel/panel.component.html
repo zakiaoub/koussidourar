@@ -1,0 +1,114 @@
+<ng-container>
+    <div class="d-flex justify-content-end align-items-start gap-2">
+
+        <span role="button" class="bg-white bg-opacity-25 height-45" style="border-radius: 50px;"
+            [pTooltip]="'lang' | translate" tooltipPosition="bottom">
+            <app-settings></app-settings>
+        </span>
+
+        <span class="bg-white bg-opacity-25 lower-text size-45 rounded-circle position-relative"
+            [pTooltip]="'cart' | translate" tooltipPosition="bottom">
+            <div class="cursor-pointer text-white" (click)="cart.open()">
+                <app-icon icon="bag-fill"></app-icon>
+            </div>
+
+            <div class="position-absolute red-bg text-white rounded-circle size-20 fs-80 white-border border"
+                style="top: -3px;right: -3px;">
+                <ng-container *ngIf="cart.isLoading()">
+                    <app-spinner [size]="10"></app-spinner>
+                </ng-container>
+
+                <ng-container *ngIf="cart.error() && !cart.isLoading()">
+                    {{cart.cartData()?.count}}
+                </ng-container>
+
+                <ng-container *ngIf="!cart.isLoading() && !cart.error()">
+                    {{cart.cartData()?.count}}
+                </ng-container>
+            </div>
+        </span>
+
+        <span role="button" class="bg-light rounded-5 height-45 d-none d-lg-flex align-items-center p-1 lh-1"
+            (click)="menu.toggle($event)" *ngIf="isAuth">
+
+            <span class="size-40 fs-4">
+                <img src="https://cdn-icons-png.flaticon.com/128/7787/7787479.png" [width]="30" [height]="30" alt=""
+                    [attr.aria-label]="'alt_panel' | translate" loading="lazy" />
+            </span>
+            <span class="size-40 main-bg-gradient text-white rounded-circle text-uppercase fw-medium">
+                {{fullName.slice(0,1)}}
+            </span>
+        </span>
+
+        <a href="/login"
+            class="bg-light main-text rounded-5 height-45 d-none d-sm-flex align-items-center py-1 px-4 lh-1 fs-90 "
+            *ngIf="!isAuth">
+            {{"login" | translate}}
+        </a>
+    </div>
+
+    <p-tieredMenu #menu [model]="items" [popup]="true" appendTo="body">
+        <ng-template pTemplate="item" let-item let-hasSubmenu="hasSubmenu">
+            <a [href]="item.route" target="_blank"
+                class="d-flex justify-content-between align-items-center p-menuitem-link text-dark py-1 px-2"
+                *ngIf="item.route">
+                <span class="d-flex align-items-center gap-2">
+                    <span class="fs-110">
+                        <app-icon [icon]="item.icon"></app-icon>
+                    </span>
+                    <span class="fs-90 fw-medium">{{item.label | translate}}</span>
+                </span>
+            </a>
+            <div role="button"
+                class="d-flex justify-content-between align-items-center p-menuitem-link text-dark py-1 px-2"
+                *ngIf="!item.route" (click)="logOut()">
+                <span class="d-flex align-items-center gap-2">
+                    <span class="fs-110 red-text">
+                        <app-icon [icon]="'box-arrow-in-left'"></app-icon>
+                    </span>
+                    <span class="fs-90 fw-medium">{{item.label | translate}}</span>
+                </span>
+            </div>
+        </ng-template>
+    </p-tieredMenu>
+
+    <p-sidebar [headerTemplate]="header" [footerTemplate]="footer" [visible]="cart.cartModal()" [modal]="true"
+        [dismissible]="false" [showCloseIcon]="false" position="right">
+        <ng-template #header>
+            <div class="d-flex justify-content-between align-items-center gap-2 w-100">
+                <span class="fs-4 fw-medium">{{"cart" | translate}}</span>
+                <span class="size-40 fs-120 border rounded-circle cursor-pointer" (click)="this.cart.close()">
+                    <app-icon icon="x"></app-icon>
+                </span>
+            </div>
+        </ng-template>
+
+        <ng-container *ngIf="!cart.isLoading() && !cart.error()">
+            <app-cart></app-cart>
+        </ng-container>
+
+        <ng-container *ngIf="cart.isLoading()">
+            <app-skeleton-cart></app-skeleton-cart>
+        </ng-container>
+
+        <ng-container *ngIf="!cart.isLoading() && cart.error()">
+            <div class="d-flex flex-column align-items-center text-center">
+                <img src="https://cdn-icons-png.flaticon.com/128/15525/15525396.png" [width]="90" [height]="90" />
+                <h2 class="fs-4 fw-500 mt-4" [innerHTML]="'error_request_title' | translate"></h2>
+                <p class="opacity-75">{{"error_request" | translate}}</p>
+            </div>
+        </ng-container>
+
+        <ng-template #footer>
+            <div class="text-center">
+                <span class="fs-120">
+                    {{"total_amount" | translate}} :
+                </span>
+                <span class="fs-4 fw-medium">
+                    <app-amount [value]="cart.cartData()?.total"></app-amount>
+                </span>
+            </div>
+            <app-cart-form [data]="cart.cartData()"></app-cart-form>
+        </ng-template>
+    </p-sidebar>
+</ng-container>

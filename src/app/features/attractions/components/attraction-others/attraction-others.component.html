@@ -1,0 +1,16 @@
+<ng-container>
+    <ng-container *ngIf="isLoading()">
+          <!-- Vide -->
+    </ng-container>
+
+    <ng-container *ngIf="error()">
+        <!-- Vide -->
+    </ng-container>
+
+    <ng-container *ngIf="!isLoading() && !error()">
+        <div class="grey-bg p-4 rounded-4">
+            <div class="fs-3 fs-110 fw-500 my-3">{{"you_might_also_like" | translate}}</div>
+            <app-attraction-card [searchToken]="searchToken" [items]="data()"></app-attraction-card>
+        </div>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,45 @@
+<div class="bg-white p-3 shadow-sm rounded-3 w-100">
+    <div class="row g-2">
+        <span class="col-xl-4">
+            <div class="h-100 overflow-hidden">
+                <img class="rounded" [src]="data?.image" width="100%" height="90px"
+                    (error)="dis.handleImgError($event, defaultImages)" />
+            </div>
+        </span>
+        <span class="col-xl-8">
+            <ng-container>
+                <div class="fw-600 text-capitalize dark-text fs-90">{{data?.name.slice(0,40)}}</div>
+                <div>
+                    <app-rating [rating]="data?.category"></app-rating>
+                </div>
+                <div class="d-flex align-items-center gap-2 fs-80 mt-2">
+                    <span class="main-bg-gradient text-white py-1 px-3 fw-medium"
+                        style="border-radius: 50px 0 50px 50px;">
+                        <ng-container *ngIf="data?.note >= 3">
+                            {{data?.note | fixed:1}}
+                        </ng-container>
+
+                        <ng-container *ngIf="data?.note < 3">
+                            {{3 | fixed:1}}
+                        </ng-container>
+                    </span>
+                    <span class="main-text-gradient fw-medium">{{data?.note | notation | translate}}</span>
+                </div>
+            </ng-container>
+        </span>
+    </div>
+    <hr class="border-secondary" />
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="opacity-75 fs-90">{{ data?.nights }} {{"nights" | translate}}</span>
+        <span class="text-end">
+            <div class="fs-5 fw-bold dark-text">
+                <app-amount [value]="data?.amount"></app-amount>
+            </div>
+            <div class="fs-80 text-secondary">
+                <app-amount [value]="getPricePerNight(data?.amount, data?.nights)"></app-amount>
+                / {{"night" | translate}}
+            </div>
+        </span>
+    </div>
+
+</div>

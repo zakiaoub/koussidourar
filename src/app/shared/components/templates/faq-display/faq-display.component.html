@@ -1,0 +1,58 @@
+<section class="grey-bg">
+    <div class="container-xl py-3">
+        <div class="row row-gap-3 my-5">
+            <span class="col-lg-5">
+                <div>
+                    <h2 class="fs-350 fw-500">{{"answers_to_your_questions" | translate}}</h2>
+                    <div class="fs-4 fw-300">{{"faq_caption" | translate}} <a href="contact"
+                            class="main-text text-decoration-underline fw-400">{{"contact_us" | translate}}</a></div>
+                </div>
+            </span>
+            <span class="col-lg-7">
+                <div>
+                    <ng-container *ngIf="isLoading()">
+                        <div>
+                            <app-skeleton-faq></app-skeleton-faq>
+                        </div>
+                    </ng-container>
+
+                    <ng-container *ngIf="error()">
+                        <!--Vide -->
+                    </ng-container>
+
+                    <ng-container *ngIf="!isLoading() && !error()">
+                        <p-accordion [value]="service" expandIcon="pi pi-plus" collapseIcon="pi pi-minus">
+                            <ng-container
+                                *ngFor="let question of data()[service].questions | randomItems:5; let i = index">
+                                <p-accordion-panel [value]="question['id']" class="my-3">
+                                    <p-accordion-header>
+                                        <ng-template #toggleicon let-active="active">
+                                            <div class="main-text fs-110">
+                                                @if (active) {
+                                                <app-icon icon="dash-lg"></app-icon>
+                                                } @else {
+                                                <app-icon icon="plus-lg"></app-icon>
+                                                }
+                                            </div>
+                                        </ng-template>
+                                        <div class="dark-text fw-500">
+                                            <span>
+                                                {{question[currentLang]}}
+                                            </span>
+                                        </div>
+                                    </p-accordion-header>
+                                    <p-accordion-content>
+                                        <div class="d-flex flex-column">
+                                            <p class="opacity-75" *ngFor="let answer of question['answers']"
+                                                [innerHTML]="answer[currentLang]"></p>
+                                        </div>
+                                    </p-accordion-content>
+                                </p-accordion-panel>
+                            </ng-container>
+                        </p-accordion>
+                    </ng-container>
+                </div>
+            </span>
+        </div>
+    </div>
+</section>

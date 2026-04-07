@@ -1,0 +1,31 @@
+<div class="bg-white rounded-3 shadow-sm">
+     <div class="d-flex align-items-center gap-2 py-3 px-4 border-bottom">
+        <span class="main-text size-35 rounded-circle main-border fs-80">
+            <app-icon icon="telephone-fill"></app-icon>
+        </span>
+        <span class="fw-500">{{"contact_details" | translate}}</span>
+    </div>
+    <div class="p-4">
+        <div class="row row-gap-4">
+    <span class="col-md-6">
+        <app-input-field [id]="'email'+id" [labelKey]="'email'" [controlName]="'email'" [icon]="'envelope-fill'"
+            [type]="'text'" [placeholder]="''" [readonly]="false" [minlength]="null" [maxlength]="null"
+            [keyFilter]="null" [showMessage]="true" [formGroup]="checkForm">
+        </app-input-field>
+    </span>
+
+    <span class="col-md-6">
+        <app-phone-field [id]="'phone'+id" [labelKey]="'phone'" [controlName]="'phone'" [placeholder]="''"
+            [readonly]="false" [showMessage]="true" [formGroup]="checkForm">
+        </app-phone-field>
+    </span>
+
+    <span class="col-12">
+        <app-textarea-field [id]="'special_requests'+id" [labelKey]="''" [controlName]="'specialRequests'"
+            [placeholder]="'special_requests'" [readonly]="false" [minlength]="20" [maxlength]="300" [rows]="10"
+            [showMessage]="true" [formGroup]="checkForm">
+        </app-textarea-field>
+    </span>
+</div>
+    </div>
+</div>

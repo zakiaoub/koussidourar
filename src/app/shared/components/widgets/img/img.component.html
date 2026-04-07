@@ -1,0 +1,9 @@
+<div class="w-100" [style.height.px]="minHeight">
+    <ng-container *ngIf="!isLoaded()">
+        <p-skeleton width="100%" height="100%" [styleClass]="class" />
+    </ng-container>
+
+    <img *ngIf="compressedSrc()" [class]="class" [src]="compressedSrc()" width="100%" height="100%"
+        [style.minHeight.px]="minHeight" [style.maxHeight.px]="maxHeight" [style.opacity]="isLoaded() ? 1 : 0"
+        loading="lazy" (load)="OnLoadedImg()" />
+</div>

@@ -1,0 +1,112 @@
+<ng-container *ngIf="data && params">
+    <div class="bg-white rounded-3 p-3 shadow-sm">
+        <div class="position-relative rounded-3 shadow-sm rounded-3 overflow-hidden">
+            <app-city-image [city]="params.Itineraries[0].ArrivalCityName" [height]="'250px'"></app-city-image>
+            <div class="position-absolute top-0 start-0 text-white w-100 h-100 bg-dark bg-opacity-10">
+                <div class="h-100 p-4 opacity-75">
+                    <div>
+                        <div class="fs-120">
+                            {{"your_trip_to" | translate}}
+                        </div>
+                        <div class="fs-1 fw-medium">{{params.Itineraries[0].ArrivalCityName}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-3 overflow-hidden shadow-sm mt-4">
+        <div class="p-3">
+            <div *ngFor="let itinerary of data?.itineraries">
+                <div class="d-flex justify-content-between">
+                    <span class="fw-medium main-text">
+                        <ng-container *ngIf="data?.itineraries?.length <= 2">
+                            {{(itinerary.Ref === 1 ? "outbound" : "return") |
+                            translate}}
+                        </ng-container>
+                        <ng-container *ngIf="data?.itineraries.length > 2">
+                            {{"flight" | translate}} 0{{itinerary.Ref}}
+                        </ng-container>
+                    </span>
+                    <span>
+                        {{itinerary.Segments[0].DepartureDateTime | date:'EEE. MMM dd.'}}
+                    </span>
+                </div>
+
+                <div class="my-2 d-flex align-items-center">
+                    <span class="w-25 text-start" [pTooltip]="itinerary.Segments[0].DepartureAirportName">
+                        <div class="fw-medium"> {{itinerary.Segments[0].DepartureDateTime | date:'HH:MM'}}</div>
+                        <div class="fs-90 text-secondary">{{itinerary.Segments[0].DepartureAirportCode}}</div>
+                        <div class="fs-90 text-secondary">{{"terminal" | translate}} :
+                            {{itinerary.Segments[0].DepartureAirportTerminal}}</div>
+                    </span>
+                    <span class="w-50 d-flex align-items-center gap-3">
+                        <hr class="border-secondary w-100" />
+                        <span class="green-text fs-110">
+                            {{itinerary.Duration}}
+                        </span>
+                        <hr class="border-secondary w-100" />
+                    </span>
+                    <span class="w-25 text-end"
+                        [pTooltip]="itinerary.Segments[itinerary.Segments.length - 1].ArrivalAirportName">
+                        <div class="fw-medium"> {{itinerary.Segments[itinerary.Segments.length -1].ArrivalDateTime |
+                            date:'HH:MM'}}</div>
+                        <div class="fs-90 text-secondary">{{itinerary.Segments[itinerary.Segments.length
+                            -1].ArrivalAirportCode}}</div>
+                        <div class="fs-90 text-secondary">{{"terminal" | translate}} :
+                            {{itinerary.Segments[itinerary.Segments.length -1].ArrivalAirportTerminal}}</div>
+                    </span>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <span>
+                        <img [src]="airlines | filter:itinerary.Segments[0].MarketingCarrier:'logo'" [width]="40"
+                            [height]="40" />
+                    </span>
+                    <span>
+                        <div class="fw-medium">{{airlines | filter:itinerary.Segments[0].MarketingCarrier:'name'}}</div>
+                        <div class="fs-90">{{"cabin_class" | translate}} : {{itinerary.Segments[0].BookingClass |
+                            class}} |
+                            {{"stops" | translate}} : {{itinerary?.Segments | stopover:'count'}}
+                        </div>
+                    </span>
+                </div>
+
+
+            </div>
+            <!-- <hr class="border-secondary" />
+           <div class="mt-4">
+                <app-promo-code></app-promo-code>
+            </div> -->
+        </div>
+    </div>
+    <div class="mt-4 bg-white shadow-sm rounded-4 p-4">
+        <div class="row justify-content-center align-items-center">
+            <span class="col-xl-8">
+                <div class="d-flex flex-column">
+                    <div class="main-bg text-white fs-80 rounded-5 py-1 px-2 align-self-start">
+                        <div class="d-flex align-items-center gap-1 lh-1">
+                            <span>
+                                <app-icon icon="chat-dots-fill"></app-icon>
+                            </span>
+                            <span>{{"our_advice" | translate}}</span>
+                        </div>
+                    </div>
+                    <div class="lower-text-gradient fs-120 fw-medium mt-2">{{"register_on_time" | translate}}</div>
+                    <div class="fs-90 opacity-75 mt-2">{{"register_on_time_caption" | translate}}</div>
+                </div>
+            </span>
+            <span class="col-xl-4">
+                <div>
+                    <img src="assets/illustrations/undraw_travelers_kud9.svg" alt="travelers illustration" width="100%"
+                        height="100%" />
+                </div>
+            </span>
+        </div>
+
+    </div>
+    <div class="mt-4">
+        <app-checkout-summary [price]="data?.totalAmount"></app-checkout-summary>
+    </div>
+
+</ng-container>

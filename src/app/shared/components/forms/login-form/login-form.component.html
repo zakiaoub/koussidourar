@@ -1,0 +1,33 @@
+<ng-container>
+    <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+        <div class="row row-gap-4">
+            <ng-container *ngFor="let field of fields">
+                <span [class]="field.col">
+                    <ng-container *ngIf="field.id !== 'password-login'">
+                        <app-input-field [id]="field.id" [labelKey]="field.label"
+                            [controlName]="field.formControlName" [icon]="field.icon" [type]="field.type"
+                            [placeholder]="field.placeholder" [readonly]="field.readonly" [minlength]="field.minlength"
+                            [maxlength]="field.maxlength" [keyFilter]="field.keyFilter"
+                            [showMessage]="field.showMessage" [formGroup]="loginForm">
+                        </app-input-field>
+                    </ng-container>
+
+                    <ng-container *ngIf="field.id === 'password-login'">
+                        <app-password-field [id]="field.id" [labelKey]="field.label"
+                            [controlName]="field.formControlName" [icon]="field.icon" [minlength]="field.minlength"
+                            [maxlength]="field.maxlength" [toggleMask]="field.toggleMask" [feedback]="field.feedback"
+                            [showMessage]="field.showMessage" [formGroup]="loginForm"></app-password-field>
+                    </ng-container>
+                </span>
+            </ng-container>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+            <a href="forgot-password" class="lower-text fw-medium">{{"forgot_password" | translate}}?</a>
+        </div>
+
+        <div class="mt-4">
+            <app-button [type]="'submit'" [title]="'login'" [class]="'height-60 rounded-3 main-bg text-white w-100'"
+                [isLoading]="isLoading()" [disabled]="loginForm.invalid"></app-button>
+        </div>
+    </form>
+</ng-container>

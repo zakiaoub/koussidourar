@@ -1,0 +1,65 @@
+<div class="rounded-3 shadow-sm">
+    <div class="grey-bg py-3 px-4 border-bottom rounded-top-3">
+        <div class="d-flex gap-2">
+            <span class="main-text">
+                <app-icon icon="people-fill"></app-icon>
+            </span>
+            <span>{{"travelers" | translate}}</span>
+        </div>
+    </div>
+    <div class="p-4 d-flex flex-column gap-4">
+        <div *ngFor="let passenger of passengers()" class="bg-light p-3">
+            <div class="row row-gap-4">
+                <span class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                    <ng-container>
+                        <div class="text-secondary text-uppercase fw-500 fs-80">{{"name" | translate}}</div>
+                        <div class="fw-medium mt-2 fs-110 text-capitalize">{{passenger.title}} {{passenger.lastName}}
+                        </div>
+                    </ng-container>
+                </span>
+
+                <span class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                    <ng-container>
+                        <div class="text-secondary text-uppercase fw-500 fs-80">{{"type" | translate}}</div>
+                        <div class="fw-medium mt-2 fs-110 text-capitalize">
+                            {{passenger.type | translate}}
+                        </div>
+                    </ng-container>
+                </span>
+
+                <span class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                    <ng-container>
+                        <div class="text-secondary text-uppercase fw-500 fs-80">{{"gender" | translate}}</div>
+                        <div class="fw-medium mt-2 fs-110 text-capitalize">{{passenger.gender}}
+                        </div>
+                    </ng-container>
+                </span>
+                <span class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                    <ng-container>
+                        <div class="text-secondary text-uppercase fw-500 fs-80">{{"nationality" | translate}}</div>
+                        <div class="mt-2">
+                            <img [src]="`assets/images/countries/${passenger.nationality}.png`" [width]="15"
+                                [height]="11" />
+                        </div>
+                    </ng-container>
+                </span>
+                <span class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                    <ng-container>
+                        <div class="text-secondary text-uppercase fw-500 fs-80">{{"date_of_birth" | translate}}</div>
+                        <div class="fw-medium mt-2 fs-110 text-capitalize">
+                            {{passenger.birth_date ? passenger.birth_date : "/"}}
+                        </div>
+                    </ng-container>
+                </span>
+                <span class="col-6 col-sm-4 col-lg-3 col-xl-2">
+                    <ng-container>
+                        <div class="text-secondary text-uppercase fw-500 fs-80">{{"passport_number" | translate}}</div>
+                        <div class="fw-medium mt-2 fs-110 text-capitalize">
+                            {{passenger.passport_number ? passenger.passport_number : "/"}}
+                        </div>
+                    </ng-container>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

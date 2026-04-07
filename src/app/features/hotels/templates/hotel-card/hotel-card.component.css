@@ -1,0 +1,45 @@
+.overlay {
+  background: rgba(255, 255, 255, 0.4);
+  transition: opacity 0.5s ease;
+}
+
+.icon-container {
+  background-color: white;
+  color: var(--lower);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
+  color: var(--main);
+  stroke: var(--main);
+  stroke-width: 1px;
+}
+
+.p-rating .p-rating-item .p-rating-icon {
+  color: white;
+  stroke: var(--main);
+  stroke-width: 1px;
+}
+
+.p-icon-wrapper {
+  stroke-width: 0;
+}
+
+.card-item .p-galleria-close::before {
+  color: white;
+}
+
+.card-item .p-galleria-item-next::before,
+.card-item .p-galleria-item-prev::before {
+  display: none; /* Masque les icônes originales */
+}
+
+.card-item .p-galleria .p-galleria-item-nav .p-icon-wrapper .p-icon {
+  display: none;
+}

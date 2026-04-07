@@ -1,0 +1,16 @@
+<ng-container>
+    <app-product-background [images]="images" [title]="'hotels_title'" caption="hotels_caption">
+        <app-hotels-search-form></app-hotels-search-form>
+    </app-product-background>
+
+    <div class="container-xl">
+        <app-products-step></app-products-step>
+        <div class="mt-5">
+            <app-ad-referral-program></app-ad-referral-program>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <app-faq-display [service]="'hotel'"></app-faq-display>
+    </div>
+</ng-container>

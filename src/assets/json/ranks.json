@@ -1,0 +1,62 @@
+{
+  "ranks": [
+    {
+      "levels": [
+        {
+          "name": "bronze",
+          "revenue": 50,
+          "caption": "our_basic_rank"
+        },
+        {
+          "name": "silver",
+          "revenue": 10000,
+          "caption": "growing_member"
+        },
+        {
+          "name": "gold",
+          "revenue": 30000,
+          "caption": "elite_godfather"
+        }
+      ],
+      "features": [
+        {
+          "title": "referral_program",
+          "bronze": true,
+          "silver": true,
+          "gold": true
+        },
+        {
+          "title": "your_profits",
+          "info": "your_profits_info",
+          "bronze": "1%",
+          "silver": "2%",
+          "gold": "3%"
+        },
+        {
+          "title": "access_to_exclusive_offers",
+          "bronze": false,
+          "silver": true,
+          "gold": true
+        },
+        {
+          "title": "free_coupons",
+                   "bronze": false,
+          "silver": true,
+          "gold": true
+        },
+        {
+          "title": "priority_customer_support",
+          "bronze": false,
+          "silver": false,
+          "gold": true
+        },
+        {
+          "title": "badge_visible_on_profile",
+          "bronze": "🟤",
+          "silver": "⚪",
+          "gold": "🟡"
+        }
+      ]
+    }
+  ]
+}

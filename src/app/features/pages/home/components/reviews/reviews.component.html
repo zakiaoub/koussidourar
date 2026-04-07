@@ -1,0 +1,50 @@
+<section>
+    <div class="row">
+        <span class="col-md-8 col-xl-6">
+            <div>
+                <p-avatar-group>
+                    <p-avatar size="xlarge" shape="circle" class="item-translate-y" *ngFor="let avatar of avatars">
+                        <img [src]="avatar" width="100%" height="100%" [alt]="'alt_reviews_avatars' | translate"
+                            loading="lazy" />
+                    </p-avatar>
+
+                    <p-avatar label="+12k" shape="circle" class="item-translate-y" size="xlarge"
+                        [style]="{ 'font-size': '120%', 'font-weight': '600', 'background': 'var(--dark)', 'color': 'white'}" />
+                </p-avatar-group>
+            </div>
+            <div class="mt-4">
+                <h2 class="fs-350 dark-text">{{"reviews_title" | translate}}</h2>
+                <p class="opacity-75 fs-120 mt-3">{{"reviews_caption" | translate}}</p>
+            </div>
+        </span>
+
+        <span class="col-md-4 col-xl-6 d-none d-md-block">
+            <div class="d-flex align-items-center justify-content-end h-100">
+                <img class="rounded-circle"
+                    src="assets/images/avatar-1.webp"
+                    [width]="220" [height]="220" [alt]="'alt_review_image' | translate" loading="lazy" />
+            </div>
+        </span>
+    </div>
+
+    <div class="row row-gap-3 mt-5">
+        <span class="col-lg-6" *ngFor="let item of reviews | randomItems:2">
+            <div class="bg-white p-5 rounded-4 h-100 d-flex flex-column justify-content-between shadow-sm">
+                <div class="fs-3 main-text">
+                    <app-icon icon="quote"></app-icon>
+                </div>
+                <p class="fs-4 opacity-75">{{item.review?.[lang]}}</p>
+                <div class="d-flex align-items-center gap-3">
+                    <span>
+                        <img class="rounded-circle" [src]="item.image" [width]="75" [height]="75"
+                            [alt]="'alt_review_user' | translate" loading="lazy" />
+                    </span>
+                    <span>
+                        <div class="fw-400 fs-5">{{item.name}}</div>
+                        <div class="text-secondary">{{item.title | translate}}</div>
+                    </span>
+                </div>
+            </div>
+        </span>
+    </div>
+</section>

@@ -1,0 +1,165 @@
+/* Modern + clean form styling */
+
+:host {
+
+  display: block;
+
+}
+
+
+
+/* Card */
+
+:host ::ng-deep .bg-light {
+
+  background: rgba(255, 255, 255, 0.92) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+}
+
+
+
+:host ::ng-deep .shadow {
+
+  box-shadow:
+
+    0 18px 60px rgba(0, 0, 0, 0.22),
+
+    0 2px 10px rgba(0, 0, 0, 0.08) !important;
+
+}
+
+
+
+/* Flight type buttons */
+
+:host ::ng-deep button.grey-border {
+
+  border: 1px solid rgba(18, 18, 18, 0.10);
+
+  background: rgba(255, 255, 255, 0.7);
+
+  transition:
+
+    transform 120ms ease,
+
+    box-shadow 140ms ease,
+
+    background 140ms ease,
+
+    border-color 140ms ease;
+
+}
+
+
+
+:host ::ng-deep button.grey-border:hover {
+
+  transform: translateY(-1px);
+
+  border-color: rgba(18, 18, 18, 0.18);
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
+
+}
+
+
+
+:host ::ng-deep button.grey-border.main-bg {
+
+  border-color: rgba(255, 255, 255, 0.25);
+
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+
+}
+
+
+
+/* Toggle row - keep it compact and aligned */
+
+:host ::ng-deep label {
+
+  user-select: none;
+
+  opacity: 0.92;
+
+}
+
+
+
+/* Inputs container */
+
+:host ::ng-deep .main-input {
+
+  border: 1px solid rgba(18, 18, 18, 0.10);
+
+  background: rgba(255, 255, 255, 0.78);
+
+  transition: box-shadow 140ms ease, border-color 140ms ease;
+
+}
+
+
+
+:host ::ng-deep .main-input:hover {
+
+  border-color: rgba(18, 18, 18, 0.16);
+
+}
+
+
+
+:host ::ng-deep .main-input:focus-within {
+
+  border-color: rgba(0, 0, 0, 0.25);
+
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+
+}
+
+
+
+/* PrimeNG Select (p-select) */
+
+:host ::ng-deep .p-select {
+
+  width: 100%;
+
+}
+
+
+
+:host ::ng-deep .p-select .p-select-label {
+
+  padding-top: 0.9rem;
+
+  padding-bottom: 0.9rem;
+
+}
+
+
+
+:host ::ng-deep .p-select:not(.p-disabled).p-focus {
+
+  box-shadow: none;
+
+}
+
+
+
+/* Make the whole block feel less dense on mobile */
+
+@media (max-width: 991.98px) {
+
+  :host ::ng-deep .bg-light {
+
+    border-radius: 18px !important;
+
+  }
+
+}

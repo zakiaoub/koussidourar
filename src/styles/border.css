@@ -1,0 +1,46 @@
+.main-border {
+    border: 1px solid var(--main);
+  }
+
+.main-border-2 {
+    border: 2px solid var(--main);
+  }
+  
+  .lower-border {
+    border: 1px solid var(--lower);
+  }
+  
+  .blue-border {
+    border: 1px solid var(--blue);
+  }
+  
+  .green-border {
+    border: 1px solid var(--green);
+  }
+  
+  .red-border {
+    border: 1px solid var(--red);
+  }
+  
+  .orange-border {
+    border: 1px solid var(--orange);
+  }
+  
+  .dark-border {
+    border: 1px solid var(--dark);
+  }
+  
+  .grey-border {
+    border: 1px solid var(--grey);
+  }
+
+
+.main-border-bottom{
+  border-bottom: 1px solid var(--main);
+}
+
+
+.red-border-2{
+  border: 2px solid var(--red);
+}
+

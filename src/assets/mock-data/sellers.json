@@ -1,0 +1,30 @@
+{
+    "sellers": [
+        {
+            "id": 1,
+            "question": {
+                "en": "What commissions ?",
+                "fr": "Quelles commissions ?",
+                "es": "¿Qué comisiones ?"
+            },
+            "answer": {
+                "en": "From 12% (decreasing according to volume)",
+                "fr": "À partir de 12% (dégressif selon volume)",
+                "es": "Desde el 12% (decreciente según volumen)"
+            }
+        },
+        {
+            "id": 2,
+            "question": {
+                "en": "Can I import my existing catalog ?",
+                "fr": "Puis-je importer mon catalogue existant ?",
+                "es": "¿Puedo importar mi catálogo existente ?"
+            },
+            "answer": {
+                "en": "Yes, via CSV or API",
+                "fr": "Oui, via CSV ou API",
+                "es": "Sí, a través de CSV o API"
+            }
+        }
+    ]
+}

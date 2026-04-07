@@ -1,0 +1,75 @@
+<div class="row justify-content-between align-items-end">
+    <span class="d-none d-xl-block col-xl-4">
+        <ng-container>
+            <div class="position-relative" style="width: 190px;height: 190px;" data-aos="fade-down"
+                data-aos-offset="300">
+                <img class="rounded-circle" src="assets/images/reasons-img-1.webp" width="100%" height="100%"
+                    [alt]="'alt_reasons1' | translate" loading="lazy" />
+                <div class="position-absolute d-flex flex-column align-items-end" style="top: 60px; right: -120px;">
+                    <a [href]="'tel:' + phone" class="bg-white p-3 rounded-4 shadow-sm item-translate-y"
+                        style="z-index: 1;">
+                        <div class="red-text fw-medium fs-90">{{"customer_service" | translate}}</div>
+                        <div class="fw-600 fs-110 dark-text">{{ phone }}</div>
+                    </a>
+                    <div>
+                        <img class="rounded-circle shadow-sm" style="margin-top: -10px;z-index:0;"
+                            src="assets/images/reasons-img-2.webp" [width]="120" [alt]="'alt_reasons2' | translate"
+                            loading="lazy" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end align-items-end gap-5 mt-5" data-aos="fade-right"
+                data-aos-offset="300">
+                <span class="position-relative" style="width: 100px;height: 100px;">
+                    <img class="rounded-circle" src="assets/images/reasons-img-3.webp" width="100%" height="100%"
+                        [alt]="'alt_reasons3' | translate" loading="lazy" />
+                    <div class="position-absolute d-flex flex-column align-items-end top-0 item-translate-y"
+                        style="left: -120px;">
+                        <a href="/flights" target="_blank" class="bg-white p-3 fw-medium rounded-5 shadow dark-text"
+                            style="z-index: 1;">{{"flight_tickets" |
+                            translate}}</a>
+                    </div>
+                </span>
+                <a href="/attractions" target="_blank"
+                    class="bg-white p-3 fw-medium rounded-5 shadow item-translate-y dark-text"
+                    style="z-index: 1;">{{"tour_guide" |
+                    translate}}</a>
+            </div>
+
+            <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-offset="300">
+                <img src="assets/images/reasons-img-4.webp" width="40%" height="100%" [alt]="'alt_reasons4' | translate"
+                    loading="lazy" />
+            </div>
+        </ng-container>
+    </span>
+    <span class="col-xl-7">
+        <ng-container>
+            <div class="main-text fs-120">{{"who_we_are" | translate}}</div>
+            <div class="fs-300 fw-600" [innerHTML]="'who_we_are_title' | translate"></div>
+            <div class="opacity-75 fs-120 mt-2" [innerHTML]="'about_home_caption' | translate">
+            </div>
+            <div class="row row-gap-3 mt-4">
+                @for (item of data; track $index) {
+                <span class="col-6 col-md-4">
+                    <div class="border rounded-4 shadow-sm px-3 py-4 d-flex flex-column align-items-center text-center item-translate-y">
+                        <div class="main-text fs-4">
+                            <app-icon [icon]="item.icon"></app-icon>
+                        </div>
+                        <div class="fw-medium fs-90 fs-120">{{item.content | translate}}</div>
+                    </div>
+                </span>
+                }
+
+            </div>
+            <a href="/about" class="d-inline-block mt-5 text-white main-bg-gradient py-4 px-5 rounded-3">
+                <div class="d-flex justify-content-center gap-1 px-3">
+                    <span>En savoir plus</span>
+                    <span>
+                        <app-icon icon="arrow-right"></app-icon>
+                    </span>
+                </div>
+            </a>
+        </ng-container>
+    </span>
+</div>

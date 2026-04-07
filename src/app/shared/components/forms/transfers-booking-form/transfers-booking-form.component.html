@@ -1,0 +1,59 @@
+<ng-container>
+    <app-session-time [type]="'details'"></app-session-time>
+    <app-session-expired [target]="'transfer'"></app-session-expired>
+    <div class="grey-bg">
+        <app-stepper [currentStep]="3"></app-stepper>
+
+        <ng-container *ngIf="isLoading()">
+            <app-skeleton-booking></app-skeleton-booking>
+        </ng-container>
+
+        <ng-container *ngIf="error()">
+            <app-error-request caption="error_checkout_message"></app-error-request>
+        </ng-container>
+
+        <ng-container *ngIf="!isLoading() && !error()">
+            <section class="container-xl py-5">
+                <div class="row justify-content-between row-gap-4">
+                    <span class="col-xl-7">
+                        <form [formGroup]="checkoutForm" (ngSubmit)="addToCart()">
+
+                            <div formGroupName="paxes">
+                                <app-booking-paxes-fields [checkoutForm]="checkoutForm" [paxes]="data()?.paxes"
+                                    [service]="'tranfer'" />
+                            </div>
+                            <hr class="border-secondary my-4" />
+                            <app-booking-contact-fields [checkForm]="checkoutForm" />
+                            <hr class="border-secondary my-4" />
+                            <app-product-cancellation-policy [data]="data()?.cancellationPolicy" />
+
+                            <div class="d-flex align-items-center gap-2 fs-110 mt-4 lh-1">
+                                <p-checkbox [(ngModel)]="terms" [binary]="true" name="terms"
+                                    [ngModelOptions]="{ standalone: true }" inputId="terms">
+                                </p-checkbox>
+                                <label for="terms" class="ml-2" [innerHTML]="'terms_caption' | translate"></label>
+                            </div>
+                            <div class="mt-5">
+                                <ng-container *ngIf="!isCartAdded()">
+                                    <app-button [type]="'submit'" [title]="'add_to_cart'"
+                                        [class]="'p-4 w-100 rounded main-bg text-white'" [disabled]="!terms"
+                                        [isLoading]="isSubmiting()"></app-button>
+                                </ng-container>
+
+                                <ng-container *ngIf="isCartAdded()">
+                                    <app-button [type]="'button'" [title]="'view_the_cart'"
+                                        [class]="'p-4 w-100 rounded main-bg text-white'" [disabled]="!terms"
+                                        (action)="this.cart.open()"></app-button>
+                                </ng-container>
+                            </div>
+                        </form>
+                    </span>
+
+                    <span class="col-xl-4">
+                        <app-checkout-transfer-recap [data]="data()"></app-checkout-transfer-recap>
+                    </span>
+                </div>
+            </section>
+        </ng-container>
+    </div>
+</ng-container>

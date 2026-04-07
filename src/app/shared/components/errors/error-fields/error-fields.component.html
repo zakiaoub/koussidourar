@@ -1,0 +1,58 @@
+<div [ngSwitch]="status">
+    <ng-container *ngSwitchCase="'required'">
+        <div class="mt-2">
+            <p-message severity="error">
+                <div class="d-flex align-items-center gap-2 fs-90 py-1">
+                    <span>
+                        <app-icon icon="exclamation-triangle-fill"></app-icon>
+                    </span>
+                    <span>
+                        {{"this_field_is_required" | translate}}
+                    </span>
+                </div>
+            </p-message>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'email'">
+        <div class="mt-2">
+            <p-message severity="warn">
+                <div class="d-flex align-items-center gap-2 fs-90 py-1">
+                    <span>
+                        <app-icon icon="exclamation-triangle-fill"></app-icon>
+                    </span>
+                    <span>
+                        {{"your_email_is_invalid" | translate}}
+                    </span>
+                </div>
+            </p-message>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'minlength'">
+        <div class="mt-2">
+            <p-message severity="warn">
+                <div class="d-flex align-items-center gap-2 fs-90 py-1">
+                    <span>
+                        <app-icon icon="exclamation-triangle-fill"></app-icon>
+                    </span>
+                    <span>
+                        {{"min_chars_required" | translate}} : {{chars}}
+                    </span>
+                </div>
+            </p-message>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'confirmPasswordValidator'">
+        <div class="mt-2">
+            <p-message severity="error">
+                <div class="d-flex align-items-center gap-2 fs-90 py-1">
+                    <span>
+                        <app-icon icon="exclamation-triangle-fill"></app-icon>
+                    </span>
+                    <span>
+                        {{"the_passwords_do_not_match" | translate}} {{chars}}
+                    </span>
+                </div>
+            </p-message>
+        </div>
+    </ng-container>
+</div>

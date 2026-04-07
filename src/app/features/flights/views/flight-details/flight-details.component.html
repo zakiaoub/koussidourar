@@ -1,0 +1,75 @@
+<ng-container>
+  <app-session-time [type]="'details'"></app-session-time>
+  <app-session-expired [target]="'flight'"> </app-session-expired>
+  <app-stepper [currentStep]="2"></app-stepper>
+  <ng-container *ngIf="isLoading()">
+    <app-skeleton-details [service]="'attraction'"></app-skeleton-details>
+  </ng-container>
+
+  <ng-container *ngIf="error()">
+    <app-error-request caption="error_flight_message"></app-error-request>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading() && !error()">
+    <section class="container-xl py-5">
+      <div [ngSwitch]="data()?.length">
+        <ng-container *ngSwitchCase="0">
+          <app-no-results-found></app-no-results-found>
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          <div class="row row-gap-3 justify-content-between tems-center">
+            <span class="col-xl-9">
+              <app-flight-segment [data]="data()"></app-flight-segment>
+              <div class="mt-4">
+                <app-ad-discount layout="horizontal"></app-ad-discount>
+              </div>
+            </span>
+            <span class="col-xl-3 d-none d-xl-block">
+              <div class="bg-white p-1 rounded-4 border shadow-sm">
+                <app-form-display [service]="'flight'" [params]="params?.dataPost"
+                  [buttonDisplay]="false"></app-form-display>
+              </div>
+              <div class="bg-white border shadow-sm rounded-3 mt-3">
+                <div class="d-flex justify-content-between align-items-end third-bg p-3 rounded-top-3">
+                  <span class="fw-medium fs-90">
+                    {{ "amount" | translate }}
+                  </span>
+                  <span class="fs-5 fw-medium main-text">
+                    <app-amount [value]="
+                        data()?.totalAmount | keyvalue | map: 'min' : 'value'
+                      "></app-amount>
+                  </span>
+                </div>
+                <div class="p-3">
+                  <div class="mt-2 opacity-75 fs-120">
+                    {{ "taxes_and_charges_included" | translate }}
+                  </div>
+
+                  <app-button [appScrollTo]="'flight-pricing-class'" [type]="'button'" [title]="'view_details'"
+                    [class]="'main-bg text-white w-100 p-3 rounded-3 mt-4'"></app-button>
+                </div>
+              </div>
+            </span>
+          </div>
+          <div id="flight-pricing-class">
+            <div *ngIf="
+                data().rateCategory.length == 1 &&
+                  data().rateCategory[0] == 'default';
+                else packFamily
+              ">
+              <app-flight-default [details]="data()" [searchToken]="searchToken" [rateKey]="rateKey" [day]="day"
+                [month]="month" [year]="year" [carrierCode]="carrierCode" (selectFare)="onSelectFare($event)" />
+            </div>
+
+            <ng-template #packFamily>
+              <app-flight-pack [details]="data()" [searchToken]="searchToken" [rateKey]="rateKey" [day]="day"
+                [month]="month" [year]="year" [carrierCode]="carrierCode" [exchangeRate]="data().exchangeRate"
+                (selectFare)="onSelectFare($event)">
+              </app-flight-pack>
+            </ng-template>
+          </div>
+        </ng-container>
+      </div>
+    </section>
+  </ng-container>
+</ng-container>

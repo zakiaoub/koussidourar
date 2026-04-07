@@ -1,0 +1,10 @@
+<div class="row row-gap-3">
+    <span class="col-md-6 col-xl-4" *ngFor="let item of data">
+        <div class="d-flex flex-column align-items-center p-4 p-sm-5 text-center">
+            <img [src]="item.img" [width]="45" [height]="45" [alt]="'Illustration representing a '+item.title" />
+            <div class="fs-120 fw-500 mt-3">{{item.title| translate}}</div>
+            <p class="fs-110 text-secondary mt-2">{{item.caption | translate}}</p>
+            <a *ngIf="href" [href]="href" class="main-text">{{"view_more" | translate}}</a>
+        </div>
+    </span>
+</div>

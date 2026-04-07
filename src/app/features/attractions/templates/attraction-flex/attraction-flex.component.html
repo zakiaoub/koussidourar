@@ -1,0 +1,196 @@
+<ng-container>
+    <div *ngFor="let attraction of items; let i = index">
+        <div class="item-card bg-white rounded-4 mb-4 overflow-hidden">
+            <div class="row">
+                <span class="col-md-3">
+                    <div class="h-100 overflow-hidden">
+                        <img class="image" [src]="attraction.Image" width="100%" height="200px"
+                            style="max-height: 200px; min-height: 100%" />
+                    </div>
+                </span>
+                <span class="col-md-9">
+                    <div class="p-3 ps-md-0">
+                        <div class="row row-gap-3">
+                            <span class="col-sm-8">
+                                <div class="d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <div>
+                                            <app-rating [rating]="3 | random:5" [readonly]="true"></app-rating>
+                                        </div>
+                                        <div class="fs-110 fw-500 text-capitalize">
+                                            {{ attraction.Name }}
+                                        </div>
+                                        <div class="fs-90 d-none d-sm-flex flex-wrap align-items-center gap-1 mt-1">
+                                            <span class="text-secondary text-capitalize">{{attraction.City}},
+                                                {{attraction.Country}}</span>
+                                            <span class="fs-120">
+                                                <app-icon icon="dot"></app-icon>
+                                            </span>
+                                            <button [disabled]="true"
+                                                class="bg-transparent blue-text text-decoration-underline cursor-pointer p-0">
+                                                {{ "show_on_map" | translate }}
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fs-90 mt-1 d-none d-sm-block">
+                                        {{stripHtml(attraction.Description)}}...
+                                    </div>
+
+                                    <div class="d-none d-sm-flex gap-2 mt-2">
+                                        <span class="bg-white border rounded p-2 fs-80"
+                                            *ngFor="let option of  [attraction.Duration, attraction.OptionAvailable]; let o = index">
+                                            <div class="d-flex align-items-center gap-1">
+                                                <span>
+                                                    <img src="assets/icons/status/success.png" alt="check illustration"
+                                                        [width]="15" [height]="15" />
+                                                </span>
+                                                <span>0{{ option }} <ng-container *ngIf="o !== 0">{{'available options'
+                                                        |
+                                                        translate}}</ng-container></span>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="col-sm-4">
+                                <div class="row align-items-center justify-content-between h-100">
+                                    <span class="col-sm-12 d-none d-sm-block">
+                                        <div class="d-flex align-items-start justify-content-end">
+                                            <span>
+                                                <div>{{3 | random:5 | notation | translate}}</div>
+                                                <div class="fs-80 blue-text">
+                                                    {{4 | random:2900}} {{"reviews" |translate}}
+                                                </div>
+                                            </span>
+                                            <span
+                                                class="green-bg text-white p-2 rounded-2 ms-3 fs-90 fw-medium size-35">
+                                                {{3 | random:5 | fixed:1}}
+                                            </span>
+                                        </div>
+                                    </span>
+
+                                    <span class="col-6 col-sm-12">
+                                        <div class="text-end">
+                                            <div class="fs-4 fw-medium">
+                                                <app-amount [value]="attraction.Amount"></app-amount>
+                                            </div>
+                                        </div>
+                                    </span>
+
+                                    <span class="col-6 col-sm-12 d-flex justify-content-end justify-self-end">
+                                        <app-button
+                                            [class]="'fs-80 p-2 main-bg main-border text-white rounded-3 width-160 text-center'"
+                                            [title]="'view_details'" [isLoading]="isLoading()[attraction.ActivityCode]"
+                                            (action)="getCategories(attraction)"></app-button>
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container>
+    <div *ngFor="let attraction of items; let i = index">
+        <div class="item-card bg-white rounded-4 mb-4 overflow-hidden">
+            <div class="row">
+                <span class="col-md-3">
+                    <div class="h-100 overflow-hidden">
+                        <img class="image" [src]="attraction.Image" width="100%" height="100%"
+                            style="max-height: 100%;min-height: 100%;" />
+                    </div>
+                </span>
+                <span class="col-md-9">
+                    <div class="p-3 ps-md-0">
+                        <div class="row row-gap-3">
+                            <span class="col-sm-8">
+                                <div class="d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <app-rating [rating]="3 | random:5" [readonly]="true"></app-rating>
+                                        <div class="fs-120 fw-500 text-capitalize">{{attraction.Name.slice(0,60)}}</div>
+                                        <div class="fs-90 d-none d-sm-flex align-items-center mt-1">
+                                            <span class="text-secondary">{{attraction.City}},
+                                                {{attraction.Country}}</span>
+                                            <span class="fs-120">
+                                                <app-icon icon="dot"></app-icon>
+                                            </span>
+                                            <span class="blue-text text-decoration-underline"
+                                                (click)="Disabled()">{{"show_on_map" |
+                                                translate}}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="fs-90 d-none d-sm-block mt-2"
+                                        [innerHTML]="attraction.Description.slice(0,95)+' ...'">
+                                    </div>
+                                    <div class="d-none d-sm-flex gap-2 mt-1">
+                                        <span class="bg-white border rounded-3 p-2 fs-80"
+                                            *ngFor="let option of [attraction.Duration, attraction.OptionAvailable]; let i = index">
+                                            <div class="d-flex align-items-center gap-1">
+                                                <span>
+                                                    <img src="assets/icons/status/success.png" alt="check illustration"
+                                                        [width]="15" [height]="15" />
+                                                </span>
+                                                <span>
+                                                    0{{ option }} <span *ngIf="i !== 0">{{'available options' |
+                                                        translate}}</span>
+                                                </span>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="col-sm-4">
+                                <div class="row align-items-center justify-content-between h-100">
+                                    <span class="col-sm-12 d-none d-sm-flex justify-content-end">
+                                        <div class="d-flex align-items-start justify-content-end">
+                                            <span>
+                                                <div>{{3 | random:5 | notation | translate}}</div>
+                                                <div class="fs-80 blue-text">
+                                                    {{4 | random:2900}} {{"reviews" |translate}}
+                                                </div>
+                                            </span>
+                                            <span
+                                                class="green-bg text-white p-2 rounded-2 ms-3 fs-90 fw-medium size-35">
+                                                {{3 | random:5 | fixed:1}}
+                                            </span>
+                                        </div>
+                                    </span>
+                                    <span class="col-3 col-sm-12">
+                                        <div class="text-end fw-300">
+                                            <div class="fs-3 fw-medium">
+                                                <app-amount [value]="attraction.Amount"></app-amount>
+                                            </div>
+                                        </div>
+                                    </span>
+                                    <span class="col-9 col-sm-12 d-flex justify-content-end justify-self-end">
+                                        <app-button [type]="'button'" [title]="'view_details'"
+                                            [class]="'fs-90 p-3 main-bg main-border text-white rounded-3 width-160'"
+                                            [isLoading]="isLoading()[attraction.ActivityCode]"
+                                            (action)="getCategories(attraction)"></app-button>
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <ng-container *ngIf="i === 0">
+            <div class="mb-4">
+                <app-ad-discount layout="horizontal"></app-ad-discount>
+            </div>
+        </ng-container>
+
+        <p-dialog [header]="attraction.Name" [modal]="true" [(visible)]="visible[attraction.ActivityCode]"
+            [style]="{ width: '60rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+            <app-attraction-category [data]="data()" [count]="data()?.count" [searchToken]="searchToken"
+                [ActivityCode]="attraction.ActivityCode"></app-attraction-category>
+        </p-dialog>
+    </div>
+</ng-container>

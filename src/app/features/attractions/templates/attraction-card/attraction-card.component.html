@@ -1,0 +1,56 @@
+<ng-container>
+    <div class="row row-gap-4">
+        <span *ngFor="let attraction of items; let i = index" class="col-md-6 col-xl-4">
+            <ng-container>
+                <div class="item-card bg-white rounded-4 h-100 overflow-hidden" (mouseenter)="overlay[i] = true"
+                    (mouseleave)="overlay[i] = false">
+                    <div>
+                        <img class="rounded-top-4" [src]="attraction.Image" alt="" width="100%" height="100%"
+                            style="max-height: 200px;min-height: 200px;" />
+                    </div>
+
+                    <div class="position-relative">
+                        <div class="p-3 d-flex flex-column justify-content-between" style="height: 140px;">
+                            <div>
+                                <div class="fw-medium text-capitalize">{{ attraction.Name.slice(0,45)}}</div>
+                                <div class="d-flex align-items-center gap-2 mt-1">
+                                    <span class="main-text">
+                                        <app-icon icon="geo-alt"></app-icon>
+                                    </span>
+                                    <span class="fs-90 text-secondary">{{ attraction.City }},
+                                        {{attraction.Country}}</span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between mt-2">
+                                <span>
+                                    <app-rating [rating]="2 | random:5"></app-rating>
+                                </span>
+                                <span class="fs-4 fw-medium green-text">
+                                    <app-amount [value]="attraction.Amount"></app-amount>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="overlay w-100 h-100 position-absolute top-0 left-0" *ngIf="overlay[i]">
+                            <div class="d-flex align-items-end justify-content-center h-100 p-4">
+                                <app-button [type]="'button'" [title]="'view_details'"
+                                    [class]="'p-3 main-bg main-border text-white rounded-5 width-180 fs-90'"
+                                    [isLoading]="isLoading()[attraction.ActivityCode]"
+                                    (action)="getCategories(attraction)">
+                                </app-button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <p-dialog [header]="attraction.Name" [modal]="true" [(visible)]="visible[attraction.ActivityCode]"
+                    [style]="{ width: '60rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+                    <app-attraction-category [data]="data()" [count]="data()?.count" [searchToken]="searchToken"
+                        [ActivityCode]="attraction.ActivityCode"></app-attraction-category>
+                </p-dialog>
+            </ng-container>
+        </span>
+    </div>
+</ng-container>

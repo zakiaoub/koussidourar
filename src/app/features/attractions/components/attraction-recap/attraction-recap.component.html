@@ -1,0 +1,21 @@
+<div class="border bg-light p-4 rounded-3 my-3">
+    <div class="border bg-white rounded my-3 p-3">
+        <div class="fw-500">{{"date" | translate}}</div>
+        <div class="mt-2 fs-90 text-secondary">{{data?.dateFrom | date:'MMM dd'}} - {{data?.dateTo | date:'MMM dd'}}
+        </div>
+    </div>
+
+    <div class="border bg-white rounded my-3 p-3">
+        <div class="fw-500">{{"guests" | translate}}</div>
+        <div class="w-100 d-flex mt-2 fs-90 text-secondary">
+            <span>{{data?.category?.Adult}} {{"adults" | translate}}</span>
+            <span>
+                <app-icon icon="dot"></app-icon>
+            </span>
+            <span>{{data?.category?.Child}} {{"childs" | translate}}</span>
+        </div>
+    </div>
+
+    <app-button [title]="'check_availability'" [class]="'main-bg main-border w-100 my-2 text-white rounded p-4'"
+        [appScrollTo]="'attraction-availability'"></app-button>
+</div>

@@ -1,0 +1,60 @@
+<ng-container>
+    <ng-container *ngIf="isLoading()">
+        <app-top-banner [target]="'blog'"></app-top-banner>
+        <div class="container-xl py-3">
+            <app-skeleton-blog-post></app-skeleton-blog-post>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="error()">
+        <app-error-request></app-error-request>
+    </ng-container>
+    <ng-container *ngIf="!isLoading() && !error()">
+        <app-top-banner [target]="'blog'"></app-top-banner>
+        <div class="container-xl py-3">
+            <div class="row row-gap-3 justify-content-between">
+                <span class="col-sm-6 col-lg-4">
+                    <div class="border rounded height-60 d-flex align-items-center">
+                        <label for="blog-search-input" class="ps-3 main-text">
+                            <app-icon icon="search"></app-icon>
+                        </label>
+                        <input id="blog-search-input" type="text" pInputText [placeholder]="'search' | translate"
+                            [ngModel]="searchName()" (ngModelChange)="searchName.set($event)" />
+                    </div>
+                </span>
+                <span class="col-sm-6 col-lg-4">
+                    <div class="border rounded height-60">
+                        <p-select [options]="categories()" [ngModel]="selectedCategory()"
+                            (ngModelChange)="selectedCategory.set($event)"
+                            [placeholder]="'filter_by_category' | translate" [showClear]="true" [checkmark]="true">
+                            <ng-template let-category #item>
+                                <div class="d-flex gap-2 align-iems-center">
+                                    <span [ngClass]="getTag(category).color">
+                                        <app-icon [icon]="getTag(category).icon"></app-icon>
+                                    </span>
+                                    <div>{{ category | translate }}</div>
+                                </div>
+                            </ng-template>
+
+                            <ng-template #selectedItem let-selectedCategory>
+                                <div class="d-flex gap-2 align-iems-center">
+                                    <span [ngClass]="getTag(selectedCategory).color">
+                                        <app-icon [icon]="getTag(selectedCategory).icon"></app-icon>
+                                    </span>
+                                    <div>{{ selectedCategory | translate }}</div>
+                                </div>
+                            </ng-template>
+                        </p-select>
+                    </div>
+                </span>
+            </div>
+            <div class="mt-4">
+                <div class="row row-gap-4">
+                    <span class="col-sm-6 col-lg-3" *ngFor="let item of filteredPosts()">
+                        <app-blog-post [_id]="item.id" [title]="item.title" [image]="item.images[0]"
+                            [created_at]="item.created_at" [category]="item.category"></app-blog-post>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>

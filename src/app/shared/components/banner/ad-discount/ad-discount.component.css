@@ -1,0 +1,8 @@
+.gradient{
+    background: linear-gradient(to right, hsla(216, 77%, 47%, 0.3),  hsla(216, 77%, 47%, 0.1));
+  }
+
+.item{
+  background-image: url(assets/images/discount-bg.webp);
+  background-size: 100% 100%;
+}

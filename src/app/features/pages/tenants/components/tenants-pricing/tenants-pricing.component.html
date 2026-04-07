@@ -1,0 +1,50 @@
+<div class="py-3" id="rent-pricing">
+    <div class="fw-300 fs-5 main-text text-center">{{"pricing_plans" | translate}}</div>
+    <h2 class="fs-2 fw-600 text-center">{{"pricing_caption" | translate}}</h2>
+
+    <div class="row mt-3 py-3">
+        <span class="col-md-6 col-xl-4 my-3 px-4" *ngFor="let item of data; let i = index">
+            <div [ngClass]="{ 'main-bg text-white': i === 1 }"
+                class="main-border py-4 px-5 d-flex flex-column rounded-4">
+
+                <div class="fs-4 fw-medium" [ngClass]="{ 'lower-text': i !== 1 }">{{item.title | translate}}</div>
+                <p [ngClass]="{ 'text-secondary': i !== 1 }" class="fs-6 mt-2">{{item.caption | translate}}</p>
+
+                <ng-container>
+                    <div class="mt-3">{{"start_from" | translate}} :</div>
+
+                    <div>
+                        <span class="fw-bold lh-2 fs-350">{{item.amount}}</span>
+                        <span class="mx-2 fw-300">{{"per_month" | translate}}</span>
+                    </div>
+                </ng-container>
+                <hr [ngClass]="{ 'border-white': i === 1 }" class="border-secondary my-4" />
+
+                <ng-container>
+                    <div class="fs-5 fw-400">{{"features" | translate}} :</div>
+
+                    <div class="mt-2">
+                        <div class="d-flex align-items-center my-2" *ngFor="let feature of item.features">
+                            <span [ngClass]="{ 'green-text': i !== 1 }">
+                                <app-icon icon="arrow-right-circle"></app-icon>
+                            </span>
+                            <span [ngClass]="{ 'text-secondary': i !== 1 }" class="mx-2 fw-300">{{feature |
+                                translate}}</span>
+                        </div>
+                    </div>
+                </ng-container>
+                <!-- <a [href]="extranetHref"
+                    [ngClass]="{ 'main-bg-gradient text-white': i !== 1, 'bg-white main-text': i ===1 }"
+                    class="p-3 rounded-4 w-100 mt-3 main-border text-center">
+                    {{"get_started" | translate}}
+                </a> -->
+
+                <button class="p-3 rounded-4 w-100 mt-3 main-border text-center"
+                    [ngClass]="{ 'main-bg-gradient text-white': i !== 1, 'bg-white main-text': i ===1 }"
+                    [disabled]="true"> {{"coming_soon" |
+                    translate}}</button>
+
+            </div>
+        </span>
+    </div>
+</div>

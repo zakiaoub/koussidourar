@@ -1,0 +1,96 @@
+<ng-container>
+    <div class="grey-bg p-3 fs-90 text-secondary rounded-1 d-none d-lg-block">
+        <div class="row">
+            <span class="col-lg-2">
+                <div>{{"holder" | translate}}</div>
+            </span>
+            <span class="col-lg-2">
+                <div>{{"number" | translate}}</div>
+            </span>
+            <span class="col-lg-2">
+                <div>{{"type" | translate}}</div>
+            </span>
+            <span class="col-lg-2">
+                <div>{{"status" | translate}}</div>
+            </span>
+            <span class="col-lg-2">
+                <div>{{"dates" | translate}}</div>
+            </span>
+            <span class="col-lg-1">
+                <div>{{"amount" | translate}}</div>
+            </span>
+            <span class="col-lg-1">
+                <div>{{"actions" | translate}}</div>
+            </span>
+        </div>
+    </div>
+    <div class="mt-4 fs-90 fw-medium">
+        <ng-container *ngIf="data().length >= 1">
+            <div *ngFor="let item of data(); let i = index" class="border my-3 rounded p-3">
+                <div class="row row-gap-3 align-items-center">
+                    <span class="col-md-3 col-lg-2">
+                        <div class="text-capitalize">{{item.holder_last_name}} {{item.holder_first_name}}</div>
+                    </span>
+                    <span class="col-4 col-md-3 col-lg-2">
+                        <div class="text-capitalize">{{item.bookingNumber}}</div>
+                    </span>
+                    <span class="col-4 col-md-3 col-lg-2">
+                        <div class="text-capitalize">{{item.bookingType}}</div>
+                    </span>
+                    <span class="col-4 col-md-3 col-lg-2">
+                        <div>
+                            <p-tag
+                                [value]=" (item.status === 'confirmed' ? 'confirmed' : (item.status === 'cancelled' ? 'cancelled' : 'pending')) | translate"
+                                [severity]="
+                item.status === 'confirmed' ? 'success' :
+                item.status === 'cancelled' ? 'danger' : 'warn'
+            " />
+                        </div>
+                    </span>
+                    <span class="col-md-6 col-lg-2">
+                        <div>
+                            {{item?.checkin | date:"dd MMM, YY"}} - {{item?.checkout | date:"dd MMM, YY"}}
+                        </div>
+                    </span>
+                    <span class="col-6 col-md-3 col-lg-1">
+                        <div class="d-flex flex-column">
+                            <div>
+                                <app-amount [value]="item.amountTotal"></app-amount>
+                            </div>
+                        </div>
+                    </span>
+                    <span class="col-6 col-md-3 col-lg-1">
+                        <div class="d-flex justify-content-end gap-2">
+                            <a target="_blank" [href]="`bookings/details/${item.bookingNumber}`"
+                                class="size-40 bg-light border rounded-3 cursor-pointer blue-text">
+                                <app-icon icon="eye"></app-icon>
+                            </a>
+                            <button class="size-40 bg-light border rounded-3 cursor-pointer red-text lh-1"
+                                (click)="cancelBooking(item.bookingNumber)"
+                                [disabled]="item.status === 'cancelled' || isLoading()[item.bookingNumber]">
+                                <ng-container *ngIf="isLoading()[item.bookingNumber]">
+                                    <app-spinner [isWhite]="false"></app-spinner>
+                                </ng-container>
+                                <ng-container *ngIf="!isLoading()[item.bookingNumber]">
+                                    <app-icon icon="trash3-fill"></app-icon>
+                                </ng-container>
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="data().length < 1">
+            <app-no-results-found [isImage]="false" [isCaption]="false"></app-no-results-found>
+        </ng-container>
+    </div>
+    <app-confirm-modal [icon]="'shield-fill-exclamation'" [title]="'cancel_booking_title' | translate"
+        [trigger]="'cancel'" [severity]="'warning'" [(visible)]="cancelItemModal" (action)="confirmCancellation()">
+        <div class="d-flex align-items-center gap-2 mt-3 fs-120">
+            <span>{{"cancellation_fees" | translate}} : </span>
+            <span class="red-text fw-medium">
+                <app-amount [value]="response()?.Charge"></app-amount>
+            </span>
+        </div>
+    </app-confirm-modal>
+</ng-container>

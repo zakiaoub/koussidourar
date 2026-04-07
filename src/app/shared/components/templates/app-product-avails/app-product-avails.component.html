@@ -1,0 +1,150 @@
+<div class="bg-dark bg-opacity-10">
+    <app-session-time [count]="count()" [type]="'results'" [service]="service"></app-session-time>
+    <app-stepper [currentStep]="1"></app-stepper>
+    <ng-container>
+        <section class="container-xl pt-3 pb-5">
+            <app-form-display-small (click)="searchModal = true" [params]="params()"
+                [service]="service"></app-form-display-small>
+
+            <div class="d-flex justify-content-xl-end">
+                <div class="bg-white rounded d-xl-none p-3 d-flex align-items-center gap-2 cursor-pointer"
+                    (click)="filtersModal = true">
+                    <span>
+                        <app-icon icon="sliders"></app-icon>
+                    </span>
+                    <span>{{"filters" | translate}}</span>
+                </div>
+                <div class="main-border rounded-1 p-1 h-100 d-flex align-items-center gap-2 fs-90 d-none d-xl-flex"
+                    *ngIf="service !== 'transfer' && service !== 'flight'">
+                    <span *ngFor="let item of ['flex','grid']" class="py-1 px-3 h-100 rounded-1 cursor-pointer"
+                        [ngClass]="{'main-bg text-white': item === layout(), 'bg-white': item !== layout()}"
+                        (click)="setLayout(item)">
+                        <div class="d-flex align-items-center gap-1">
+                            <span>
+                                <app-icon [icon]="item === 'flex' ? 'grid-1x2' : 'grid'"></app-icon>
+                            </span>
+                            <span>{{item | translate}}</span>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <span class="col-xl-3 d-none d-xl-block">
+                    <app-form-display (click)="searchModal = true" [params]="params()"
+                        [service]="service"></app-form-display>
+
+                    <!-- <div class="mt-4" *ngIf="service === 'hotel'">
+                        <app-map-filter [data]="data()" [searchToken]="searchToken"></app-map-filter>
+                    </div>  -->
+
+                    <div class="bg-white rounded-4 p-4 mt-4">
+                        <app-filters [data]="loadedData()" (filterChanged)="onFilterChange($event)"
+                            (resetFilters)="onResetFilters($event)" (priceRangeChange)="onPriceRangeChange($event)"
+                            [service]="service" [min]="min()" [max]="max()" />
+                    </div>
+                    <div class="mt-4">
+                        <app-ad-referral-program layout="square"></app-ad-referral-program>
+                    </div>
+                </span>
+                <span class="col-xl-9">
+
+                    <div>
+                        <ng-container *ngIf="isLoading()">
+                            <app-skeleton-availability [layout]="layout()"
+                                [service]="service"></app-skeleton-availability>
+                        </ng-container>
+                        <ng-container *ngIf="!isLoading()">
+                            <ng-container *ngIf="data()?.length; else noResults">
+                                <div [ngSwitch]="service">
+                                    <ng-container *ngSwitchCase="'attraction'">
+                                        <div *ngIf="layout() === 'flex'">
+                                            <app-attraction-flex [items]="data()"
+                                                [searchToken]="searchToken"></app-attraction-flex>
+                                        </div>
+                                        <div *ngIf="layout() === 'grid'">
+                                            <app-attraction-card [items]="data()"
+                                                [searchToken]="searchToken"></app-attraction-card>
+                                        </div>
+                                    </ng-container>
+
+                                    <ng-container *ngSwitchCase="'hotel'">
+                                        <div *ngIf="layout() === 'flex'">
+                                            <app-hotel-flex [items]="data()" [searchToken]="searchToken"
+                                                [isTruePriceLoad]="isTruePriceLoad()"></app-hotel-flex>
+                                        </div>
+                                        <div *ngIf="layout() === 'grid'">
+                                            <app-hotel-card [items]="data()" [searchToken]="searchToken"
+                                                [isTruePriceLoad]="isTruePriceLoad()"></app-hotel-card>
+                                        </div>
+                                    </ng-container>
+
+                                    <ng-container *ngSwitchCase="'transfer'">
+                                        <app-transfer-flex [items]="data()"
+                                            [searchToken]="searchToken"></app-transfer-flex>
+                                    </ng-container>
+
+                                    <ng-container *ngSwitchCase="'flight'">
+                                        <app-flights-calendar *ngIf="calendar()?.count > 1" [data]="calendar()"
+                                            (dateChanged)="flightChangeDate($event)"></app-flights-calendar>
+                                        <app-flight-flex [items]="data()" [airportsName]="airportsName()"
+                                            [searchToken]="searchToken" [day]="day" [month]="month" [year]="year"
+                                            [params]="params()"></app-flight-flex>
+                                    </ng-container>
+                                </div>
+                                <div class="mt-5" *ngIf="count() > itemsPerPage">
+                                    <p-paginator [rows]="itemsPerPage" [totalRecords]="count()"
+                                        (onPageChange)="onPageChange($event)"
+                                        [first]="(currentPage - 1) * itemsPerPage">
+                                    </p-paginator>
+                                </div>
+                            </ng-container>
+
+                            <ng-template #noResults>
+                                <app-no-results-found></app-no-results-found>
+                            </ng-template>
+                        </ng-container>
+                    </div>
+                </span>
+            </div>
+        </section>
+
+        <p-sidebar [(visible)]="filtersModal" [modal]="true" [dismissible]="false" [showCloseIcon]="false">
+            <ng-template pTemplate="header">
+                <div class="d-flex justify-content-end align-items-center w-100">
+                    <span class="border size-45 rounded-circle cursor-pointer fs-4 light-bg"
+                        (click)="filtersModal = false">
+                        <app-icon icon="x"></app-icon>
+                    </span>
+                </div>
+            </ng-template>
+            <div class="bg-white rounded-4">
+                <app-filters [data]="loadedData()" (filterChanged)="onFilterChange($event)"
+                    (resetFilters)="onResetFilters($event)" (priceRangeChange)="onPriceRangeChange($event)"
+                    [service]="service" [min]="min()" [max]="max()" />
+            </div>
+        </p-sidebar>
+
+        <div class="results-display">
+            <p-dialog [(visible)]="searchModal" [modal]="true" [position]="'top'"
+                [style]="{ width: '100%', height: '100%' }" [draggable]="false" [resizable]="false">
+                <div class="bg-white rounded-4">
+                    <div [ngSwitch]="service">
+                        <ng-container *ngSwitchCase="'attraction'">
+                            <app-attractions-search-form></app-attractions-search-form>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'hotel'">
+                            <app-hotels-search-form></app-hotels-search-form>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'transfer'">
+                            <app-transfers-form-fields></app-transfers-form-fields>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'flight'">
+                            <app-flights-form-fields></app-flights-form-fields>
+                        </ng-container>
+                    </div>
+                </div>
+            </p-dialog>
+        </div>
+        <app-session-expired [target]="service"></app-session-expired>
+    </ng-container>
+</div>

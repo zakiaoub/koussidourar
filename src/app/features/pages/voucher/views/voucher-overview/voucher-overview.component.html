@@ -1,0 +1,97 @@
+<ng-container *ngFor="let item of data; let i = index">
+    <div class="row justify-content-center  align-items-center">
+        <span class="col-lg-10 col-xl-7">
+            <div class="bg-white rounded-3 p-3 w-100 text-center" style="border: 1px dashed var(--main);">
+                <div class="row">
+                    <span class="col-sm-6 col-lg-4 my-3">
+                        <ng-container>
+                            <div class="text-secondary fs-90">{{"order_number" | translate}}</div>
+                            <div class="main-text mt-2 fw-medium">{{item?.bookingNumber}}</div>
+                        </ng-container>
+                    </span>
+
+                    <span class="col-sm-6 col-lg-4 my-3">
+                        <ng-container>
+                            <div class="text-secondary fs-90">{{"dates" | translate}}</div>
+                            <div class="main-text mt-2 fw-medium">{{item?.data?.checkin | date:"MMMM dd"}} -
+                                {{item?.data?.checkout | date:"MMMM dd"}}</div>
+                        </ng-container>
+                    </span>
+
+                    <span class="col-sm-6 col-lg-4 my-3">
+                        <ng-container>
+                            <div class="text-secondary fs-90">{{"status" | translate}}</div>
+                            <div class="green-text mt-2 fw-medium">
+                                {{'confirmed' | translate}}
+                            </div>
+                        </ng-container>
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-sm rounded-3 my-4 p-3 w-100">
+                <div class="d-flex justify-content-between align-items-center p-3 grey-bg">
+                    <span class="text-secondary fs-90">{{"service" | translate}}</span>
+                    <span class="dark-text text-uppercase fw-medium">{{item?.data?.service}}</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center p-3">
+                    <span class="text-secondary fs-90">{{"name" | translate}}</span>
+                    <span class="dark-text text-uppercase fw-medium">{{item?.data?.service_name}}</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center p-3 green-bg">
+                    <span class="text-white fs-90">{{"supplier_confirmation" | translate}}</span>
+                    <span class="text-white text-uppercase fw-medium">{{item?.supplierConfirmation}}</span>
+                </div><br>
+                <div class="d-flex justify-content-between align-items-center p-3  grey-bg">
+                    <span class="text-secondary fs-90">{{"full_name" | translate}}</span>
+                    <span class="dark-text fw-medium">{{item?.data?.holder}}</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center p-3">
+                    <span class="text-secondary fs-90">{{"email" | translate}}</span>
+                    <span class="dark-text fw-medium">{{item?.data?.email}}</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center p-3 grey-bg">
+                    <span class="text-secondary fs-90">{{"phone" | translate}}</span>
+                    <span class="dark-text fw-medium">{{item?.data?.phone}}</span>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end py-3">
+                <app-button [class]="'main-bg p-3 width-180 fs-90 height-60 rounded text-white'"
+                    [title]="'voucher'" (action)="getData(item)"
+                    [isLoading]="isLoading()[item.bookingNumber]"></app-button>
+            </div>
+            <hr class="my-5 border-secondary" />
+        </span>
+    </div>
+
+    <p-dialog [maximizable]="true" [header]="'voucher' | translate" [(visible)]="visible[item.bookingNumber]"
+        [modal]="true" [style]="{width: '90rem', height: '100%'}" [contentStyle]="{'overflow': 'auto'}">
+        <div [id]="'pdf-content'" class="bg-white">
+            <ng-container [ngSwitch]="bookingData()?.bookingType">
+                <ng-container *ngSwitchCase="'transfer'">
+                    <app-voucher-transfert [data]="bookingData()"></app-voucher-transfert>
+                </ng-container>
+                <ng-container *ngSwitchCase="'flight'">
+                    <app-voucher-flight [data]="bookingData()"></app-voucher-flight>
+                </ng-container>
+                <ng-container *ngSwitchCase="'hotel'">
+                    <app-voucher-hotel [data]="bookingData()"></app-voucher-hotel>
+                </ng-container>
+                <ng-container *ngSwitchCase="'activity'">
+                    <app-voucher-attraction [data]="bookingData()"></app-voucher-attraction>
+                </ng-container>
+
+            </ng-container>
+        </div>
+        <ng-template #footer>
+            <div class="d-flex justify-content-center py-3">
+                <button (click)="toPdf('pdf-content')"
+                    class="p-3 rounded px-5 main-bg text-white d-flex align-items-center lh-1 gap-2">
+                    <app-icon icon="cloud-arrow-down"></app-icon>
+                    <span>{{"download" | translate}}</span>
+                </button>
+            </div>
+        </ng-template>
+    </p-dialog>
+</ng-container>

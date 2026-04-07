@@ -1,0 +1,88 @@
+<ng-container>
+  <div *ngFor="let item of items">
+    <div class="border bg-white rounded-4 p-3 mb-4">
+      <div class="row">
+        <span class="col-md-4 col-xl-3">
+          <img class="rounded-3 image" [src]="item.Trip[itinerary].Image" width="100%" />
+        </span>
+        <span class="col-md-8 col-xl-6">
+          <div class="d-flex flex-column justify-content-between h-100">
+            <div>
+              <div class="fs-4 fw-400 text-capitalize">
+                {{ item.Trip[itinerary].VehicleName }} -
+                {{ item.Trip[itinerary].VehicleCategory }}
+              </div>
+              <div class="mt-2 fs-90">
+                <span class="text-secondary">{{
+                  item.Trip[itinerary].Date | date
+                  }}</span>
+                <span>
+                  <app-icon icon="dot"></app-icon>
+                </span>
+                <span class="text-secondary">{{
+                  item.Trip[itinerary].Time
+                  }}</span>
+              </div>
+            </div>
+
+            <p class="my-3 fs-90">
+              {{ item.Trip[itinerary].Description.slice(0, 95) }}...
+            </p>
+
+            <div class="d-flex gap-2">
+              <span class="bg-white border rounded-3 p-2 fs-80 text-capitalize" *ngFor="
+                let option of [
+                  item.Trip[itinerary].VehicleType,
+                  item.Trip[itinerary].VehicleCategory,
+                  item.Trip[itinerary].VehicleCapacity,
+                ]
+              ">
+                <div class="d-flex align-items-center">
+                  <span>
+                    <img src="assets/icons/status/success.png" alt="check illustration" [width]="15" [height]="15" />
+                  </span>
+                  <span class="ms-2">
+                    {{ option }}
+                  </span>
+                </div>
+              </span>
+            </div>
+          </div>
+        </span>
+        <span class="col-xl-3">
+          <div class="row align-items-center justify-content-between">
+            <span class="col-12 d-flex justify-content-end" *ngIf="item.Trip.length > 1">
+              <div class="fs-90 d-flex third-bg p-1 rounded-5">
+                <button *ngFor="let item of itineraries"
+                  class="mx-1 d-flex align-items-center main-border py-1 px-2 rounded-5" [ngClass]="{
+                  'text-white main-bg': itinerary === item.value,
+                  'bg-white dark-text': itinerary !== item.value,
+                }" (click)="setActiveItinerary(item.value)">
+                  {{ item.title | translate }}
+                </button>
+              </div>
+            </span>
+
+            <span class="col-6 col-xl-12 my-4">
+              <div class="text-end fw-300">
+                <div class="fs-2 fw-600 fw-bold">
+                  <app-amount [value]="item.Trip[itinerary].Price"></app-amount>
+                </div>
+              </div>
+            </span>
+
+            <span class="col-6 col-xl-12 d-flex justify-content-end justify-self-end">
+              <app-button [type]="'button'" [title]="'view_details'" [class]="
+                'p-3 fs-90 main-bg main-border text-white rounded width-160'
+              " (action)="showDialog(item.RateKey)"></app-button>
+            </span>
+          </div>
+        </span>
+      </div>
+    </div>
+    <p-dialog [header]="'transfer_trip_numbers_message' | translate" [modal]="true" [(visible)]="visible[item.RateKey]"
+      [style]="{ width: '50rem' }" [draggable]="false">
+      <app-transfers-trip-form [searchToken]="searchToken" [RateKey]="item.RateKey"></app-transfers-trip-form>
+    </p-dialog>
+  </div>
+</ng-container>

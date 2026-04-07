@@ -1,0 +1,46 @@
+<ng-container>
+    <div>
+        <ng-container *ngIf="profile.is_delete_request === 0">
+            <div class="d-flex justify-content-between align-items-center">
+                <span>
+                    <div class="fs-5">{{"account" | translate}}</div>
+                    <div class="fw-300 text-secondary">{{"delete_your_account_permanently" | translate}}</div>
+                </span>
+                <span role="button"
+                    class="p-1 bg-white red-border rounded-5 d-flex justify-content-center align-items-center mx-1">
+                    <div class="d-flex justify-content-center align-items-center px-4 red-text" style="min-height:45px;"
+                        (click)="showDeleteAccountModal()">
+                        <app-icon icon="trash"></app-icon>
+                        <span class="ms-2 fs-90">{{"delete" | translate}}</span>
+                    </div>
+                </span>
+            </div>
+            <app-confirm-modal [icon]="'shield-fill-exclamation'" [title]="'delete_account_title'"
+                [caption]="'delete_account_caption'" [trigger]="'delete'" [severity]="'danger'" [(visible)]="visible"
+                (action)="onDeleteAccount(profile.is_delete_request)">
+            </app-confirm-modal>
+        </ng-container>
+
+        <ng-container *ngIf="profile.is_delete_request === 1">
+            <div class="d-flex justify-content-between align-items-center">
+                <span>
+                    <div class="fs-5">{{"account" | translate}}</div>
+                    <div class="fw-300 red-text">{{"he_account_deletion_request_has_been_sent" | translate}}</div>
+                </span>
+                <span role="button"
+                    class="p-1 bg-white green-border rounded-5 d-flex justify-content-center align-items-center mx-1">
+                    <div class="d-flex justify-content-center align-items-center px-4 green-text"
+                        style="min-height:45px;" (click)="showDeleteAccountModal()">
+                        <app-icon icon="trash"></app-icon>
+                        <span class="ms-2 fs-90">{{"reactivate" | translate}}</span>
+                    </div>
+                </span>
+            </div>
+
+            <app-confirm-modal [icon]="'shield-fill-check'" [title]="'reactivate_account_title'"
+                [caption]="'reactivate_account_caption'" [trigger]="'reactivate'" [severity]="'success'"
+                [(visible)]="visible" (action)="onDeleteAccount(profile.is_delete_request)">
+            </app-confirm-modal>
+        </ng-container>
+    </div>
+</ng-container>

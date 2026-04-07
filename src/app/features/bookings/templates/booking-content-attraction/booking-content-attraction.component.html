@@ -1,0 +1,55 @@
+<ng-container>
+    <div class="grey-bg py-3 px-4 border-bottom rounded-top-3">
+        <div class="d-flex justify-content-between gap-2 fs-3">
+            <span class="fw-500 text-capitalize">{{data()?.name}}</span>
+            <span class="main-text">
+                <app-icon icon="bicycle"></app-icon>
+            </span>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="lower-bg-gradient text-white d-inline-block p-2 rounded-3">
+            {{data()?.category}}
+        </div>
+        <div class="row row-gap-4 mt-4">
+            <span class="col-sm-6 col-md-4 col-xl-3">
+                <div class="d-flex gap-3">
+                    <span class="border bg-light rounded size-45 main-text">
+                        <app-icon icon="calendar2"></app-icon>
+                    </span>
+                    <span>
+                        <div class="opacity-75 fs-90">{{"date" | translate}}</div>
+                        <div class="fw-500 mt-1">{{data()?.date}}</div>
+                    </span>
+                </div>
+            </span>
+            <span class="col-sm-6 col-md-4 col-xl-3">
+                <div class="d-flex gap-3">
+                    <span class="border bg-light rounded size-45 main-text">
+                        <app-icon icon="alarm"></app-icon>
+                    </span>
+                    <span>
+                        <div class="opacity-75 fs-90">{{"duration" | translate}}</div>
+                        <div class="fw-500 mt-1">{{data()?.number_of_days}} {{"day" | translate}} (s)
+                        </div>
+                    </span>
+                </div>
+            </span>
+            <span class="col-sm-6 col-md-4 col-xl-3">
+                <div class="d-flex gap-3">
+                    <span class="border bg-light rounded size-45 main-text">
+                        <app-icon icon="people"></app-icon>
+                    </span>
+                    <span>
+                        <div class="opacity-75 fs-90">{{"travelers" | translate}}</div>
+                        <div class="fw-500 mt-1">{{data()?.adult+data()?.child}}</div>
+                    </span>
+                </div>
+            </span>
+        </div>
+        <div class="mt-4">
+            <app-product-description [title]="'overview'" [text]="data()?.description"
+                [limit]="20"></app-product-description>
+        </div>
+    </div>
+</ng-container>

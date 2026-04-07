@@ -1,0 +1,63 @@
+<main class="hero-main w-100 position-relative">
+    <!-- Fond = photo + dégradé (même visuel que ton maquette Horizon). Ancien fond : carrousel home-bg-1.webp … home-bg-5.webp — voir main.component.ts -->
+    <div class="hero-main__bg" aria-hidden="true">
+        <div class="hero-main__bg-photo"></div>
+    </div>
+
+    <div class="hero-main__foreground">
+        <div class="container-xl text-white text-center">
+            <h1 class="hero-main__title mt-3 fw-600 text-capitalize">{{"main_title" | translate}}</h1>
+            <p class="fs-4 opacity-75">{{"main_subtitle" | translate}}</p>
+
+            <div class="mt-4 hero-search">
+                <div class="bw-widget">
+                    <nav class="bw-tabs" aria-label="Services">
+                        <button type="button" class="bw-tab" [class.bw-tab--active]="activeService === 'flights'"
+                            (click)="setActiveService('flights')">
+                            <i class="fa-solid fa-plane" aria-hidden="true"></i>
+                            <span>{{ 'flights' | translate }}</span>
+                        </button>
+                        <button type="button" class="bw-tab" [class.bw-tab--active]="activeService === 'hotels'"
+                            (click)="setActiveService('hotels')">
+                            <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                            <span>{{ 'hotels' | translate }}</span>
+                        </button>
+                        <button type="button" class="bw-tab" [class.bw-tab--active]="activeService === 'attractions'"
+                            (click)="setActiveService('attractions')">
+                            <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                            <span>{{ 'attractions' | translate }}</span>
+                        </button>
+                        <button type="button" class="bw-tab" [class.bw-tab--active]="activeService === 'transfers'"
+                            (click)="setActiveService('transfers')">
+                            <i class="fa-solid fa-car" aria-hidden="true"></i>
+                            <span>{{ 'transfers' | translate }}</span>
+                        </button>
+                    </nav>
+                    <div class="bw-widget-body">
+                        <ng-container [ngSwitch]="activeService">
+                            <ng-container *ngSwitchCase="'flights'">
+                                <app-flights-form-fields></app-flights-form-fields>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'hotels'">
+                                <app-hotels-search-form></app-hotels-search-form>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'attractions'">
+                                <app-attractions-search-form></app-attractions-search-form>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'transfers'">
+                                <app-transfers-form-fields></app-transfers-form-fields>
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+
+            <p class="hero-scroll-hint mt-4 mb-0">
+                <a href="#home-explore" class="hero-scroll-hint__link text-white text-decoration-none">
+                    <span class="hero-scroll-hint__label">{{ 'scroll_discover_more' | translate }}</span>
+                    <span class="hero-scroll-hint__icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+            </p>
+        </div>
+    </div>
+</main>

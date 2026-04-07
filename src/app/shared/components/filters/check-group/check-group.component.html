@@ -1,0 +1,36 @@
+<ng-container>
+    <div class="fw-400 lower-text">{{ title | translate }}</div>
+    <div class="mt-2 fs-90">
+        <div class="check d-flex justify-content-between align-items-center my-1" *ngFor="let item of visibleItems">
+            <span class="d-flex align-items-center gap-2">
+                <p-checkbox [inputId]="item.id" [value]="groupName + '-' + item.id" name="{{ groupName }}"
+                    [(ngModel)]="selectedItems" (ngModelChange)="selectedItemsChange.emit(selectedItems)">
+                </p-checkbox>
+
+                <img *ngIf="groupName === 'airline'" class="rounded-circle" [src]="airlines | filter:item.id:'logo'"
+                    [width]="20" [height]="20" />
+
+                <ng-container *ngIf="item.icon">
+                    {{item.icon}}
+                </ng-container>
+
+                <label [for]="item.id" class="text-capitalize lh-1">{{ item.name | translate}}</label>
+            </span>
+
+            <span class="text-secondary fs-80" *ngIf="groupName !== 'airline'">
+                <ng-container *ngIf="count[item.id] as groupName">
+                    {{ (groupName | keyvalue).length }}
+                </ng-container>
+            </span>
+
+            <span class="text-secondary fs-80" *ngIf="groupName === 'airline'">
+                <app-amount [value]="count[item.id]"></app-amount>
+            </span>
+        </div>
+
+        <button *ngIf="filterList.length > 5" class="main-text fw-300 text-decoration-underline bg-white p-0 mt-2"
+            (click)="showAll = !showAll">
+            {{ (showAll ? 'show_less' : 'show_more') | translate }}
+        </button>
+    </div>
+</ng-container>

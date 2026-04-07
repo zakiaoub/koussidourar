@@ -1,0 +1,30 @@
+<div class="p-3 rounded-3 red-border bg-danger bg-opacity-10" *ngIf="data">
+    <div class="fs-110 fw-medium d-flex gap-2 red-text">
+        <span>
+            <app-icon icon="shield-x"></app-icon>
+        </span>
+        <span>
+            {{ "cancel_policy" | translate }}
+        </span>
+    </div>
+
+    <hr class="border-secondary my-4" />
+
+    <div class="mt-3">
+        <div *ngFor="let item of data" class="my-1 fs-90">
+            <div class="fs-6 my-2 d-flex flex-wrap gap-2">
+                <span>{{ 'cancel_text' | translate }}</span>
+                <span class="fw-bold">
+                    {{ (item?.date || item?.Date) | date:'MMMM dd, Y' }}
+                    {{ 'at' | translate }}
+                    {{ (item?.date || item?.Date) | date:'HH:mm' }}
+                </span>
+                <span>{{ 'cancel_text2' | translate }}</span>
+                <span class="fw-bold red-text">
+                    <app-amount [value]="item?.amount || item?.Amount"></app-amount>
+                    <!-- <app-amount [value]="item?.amount || item?.Amount" /> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

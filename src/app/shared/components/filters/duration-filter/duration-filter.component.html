@@ -1,0 +1,19 @@
+<div class="my-3">
+    <div class="d-flex justify-content-between align-items-center text-center">
+        <span class="border rounded-3 p-2 w-50 fs-80 main-text" *ngIf="title !== '-'">{{title |
+            translate}}</span>
+        <span class="border rounded-3 p-2 w-50 fs-80 main-text" *ngIf="title === '-'">{{"flight" | translate}}
+            0{{i}}</span>
+
+        <span class="mx-3">-</span>
+
+        <span class="border rounded-3 p-2 w-50 fs-90">
+            {{ filterList[selectedIndex]?.name }}
+        </span>
+    </div>
+    <div class="mt-4">
+        <p-slider [(ngModel)]="selectedIndex" [min]="0" [max]="filterList.length -1" [step]="1"
+            (onSlideEnd)="onTimeChange('duration-'+title+'-'+filterList[selectedIndex]?.id)">
+        </p-slider>
+    </div>
+</div>

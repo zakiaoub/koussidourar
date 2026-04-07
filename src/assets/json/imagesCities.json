@@ -1,0 +1,16 @@
+[
+    {
+        "paris": {
+            "landscape": [
+                "https://img.freepik.com/photos-gratuite/paysage-urbain-paris-sous-lumiere-du-soleil-ciel-bleu-fra_181624-50289.jpg?t=st=1756027714~exp=1756031314~hmac=9c4633880cb1e26fbea569134526819660ed0a31a3bbae440b2e1b1d469d0ff3&w=1480",
+                "https://img.freepik.com/photos-gratuite/vue-du-celebre-arc-triomphe-paris-france_268835-818.jpg?t=st=1756027769~exp=1756031369~hmac=c01cbc01ff672c0a661821756601e448e628d46803d54dcfda7acf9fc4f9ad1c&w=1480",
+                "https://img.freepik.com/photos-gratuite/vue-aerienne-paris-seine_1147-432.jpg?t=st=1756027846~exp=1756031446~hmac=101221789cbeedc80b979581e07dc452e6ae382e589467eeab19270a0f5ca3b5&w=1480"
+            ],
+            "portrait": [
+                "https://img.freepik.com/photos-gratuite/vue-toit-ville-paris-tour-eiffel-au-coucher-du-soleil_649448-4828.jpg?t=st=1756027952~exp=1756031552~hmac=45594c51914dc92b0570132c88c0af01fec3139f43646df2b64424f4d06833ea&w=1480",
+                "https://img.freepik.com/photos-gratuite/pantheon-entoure-gens-sous-ciel-nuageux-pendant-coucher-du-soleil-paris-france_181624-8826.jpg?t=st=1756027946~exp=1756031546~hmac=96ff981c3b4d00f5d6acdb6a47ebbcc900f89842b39b1c9d38d80e6c7ff1d47a&w=1480",
+                "https://img.freepik.com/photos-gratuite/vue-toit-ville-paris-tombeau-napoleon-au-coucher-du-soleil_649448-4970.jpg?t=st=1756028026~exp=1756031626~hmac=4d4c1b6ef0ab47e6fcc52022fe28d3984a6960ce078cec3db11e51fc7a25c214&w=1480"
+            ]
+        }
+    }
+]

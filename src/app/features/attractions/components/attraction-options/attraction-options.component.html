@@ -1,0 +1,43 @@
+<div class="border border-primary border-2 rounded-4">
+    <div class="p-4">
+        <div class="fs-4 fw-medium">{{data.activity.Name}}</div>
+
+        <ng-container>
+            <div class="my-3">
+                <div>{{"pick_up" | translate}}</div>
+                <div class="fs-90 text-secondary">{{data.startingPoints.Name}} -
+                    {{data.startingPoints.Adress}}</div>
+            </div>
+
+            <div class="my-3">
+                <div>{{"drop_off" | translate}}</div>
+                <div class="fs-90 text-secondary">{{data.endPoints}}</div>
+            </div>
+
+            <hr class="border-secondary my-4" />
+            <app-product-cancellation-policy [data]="data.cancellationPolicy" />
+        </ng-container>
+    </div>
+    <div class="grey-bg p-4 rounded-bottom-4">
+        <div class="row justify-content-between align-items-center">
+            <span class="col-6">
+                <div class="fs-80 text-secondary">
+                    <div>{{"total_amount" | translate}}</div>
+                    <div class="fs-2 fw-bold text-dark">
+                        <app-amount [value]="data.totalAmount"></app-amount>
+                    </div>
+                    <div>
+                        {{"taxes_included" | translate}}
+                    </div>
+                </div>
+            </span>
+            <span class="col-6 col-sm-4 col-lg-3 col-xl-3">
+                <div class="d-flex justify-content-end">
+                    <app-button [type]="'button'" [title]="'book_now'"
+                        [class]="'main-bg text-white p-3 rounded-5 width-160'" [isLoading]="isLoading"
+                        (action)="onSubmit()"></app-button>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>

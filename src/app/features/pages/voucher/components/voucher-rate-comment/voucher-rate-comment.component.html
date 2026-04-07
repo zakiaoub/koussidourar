@@ -1,0 +1,5 @@
+<br>
+<div class="lower-text text-decoration-underline fs-120 fw-medium">{{"condition" | translate}}</div>
+<div *ngFor="let item of data" class="my-1 fw-300">
+<div [innerHTML]="item.value.replaceAll('//', '<br>')" class="mt-2"></div>
+</div> 

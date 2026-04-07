@@ -1,0 +1,12 @@
+<app-top-banner target="error"></app-top-banner>
+<div class="bg-danger bg-opacity-10">
+    <section class="container py-5">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <img src="assets/icons/status/failure.png" [width]="15" [height]="15" />
+            <div class="fs-3 mt-3 red-text">{{"payment_error" | translate}}</div>
+            <p class="fs-5 mt-1">{{"payment_error_message" | translate}}</p>
+
+            <a [href]="'checkout/cart'">{{"retry_payment" | translate}}</a>
+        </div>
+    </section>
+</div>

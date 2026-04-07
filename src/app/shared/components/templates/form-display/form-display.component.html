@@ -1,0 +1,370 @@
+<div class="bg-white rounded-4 w-100 text-dark p-2">
+    <div [ngSwitch]="service">
+        <ng-container *ngSwitchCase="'flight'">
+            <div class="position-relative rounded overflow-hidden text-capitalize">
+                <app-city-image [city]="params?.Itineraries[0]?.ArrivalCityName" [height]="'160px'"></app-city-image>
+                <div class="position-absolute top-0 start-0 text-white w-100 h-100 bg-dark bg-opacity-10">
+                    <div class="h-100 p-4 opacity-75">
+                        <div>
+                            <div class="fs-120">
+                                {{"your_trip_to" | translate}}
+                            </div>
+                            <div class="fs-3 fw-medium">{{params?.Itineraries[0]?.ArrivalCityName}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90">
+                <div class="d-flex align-items-center w-100 gap-3 p-2">
+                    <span class="d-flex gap-2 fs-90">
+                        <span class="align-self-center main-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plane-takeoff-icon lucide-plane-takeoff">
+                                <path d="M2 22h20" />
+                                <path
+                                    d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z" />
+                            </svg>
+                        </span>
+                        <span>
+                            {{params?.Itineraries[0]?.DepartureCityName}}
+                        </span>
+                    </span>
+                    <span class="w-100">
+                        <hr class="border-secondary" />
+                    </span>
+                    <span class="d-flex gap-2 fs-90">
+                        <span class="align-self-center main-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plane-landing-icon lucide-plane-landing">
+                                <path d="M2 22h20" />
+                                <path
+                                    d="M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z" />
+                            </svg>
+                        </span>
+                        <span>
+                            {{params?.Itineraries[0]?.ArrivalCityName}}
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 lh-1 fs-90">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="calendar2-check"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"dates" | translate}} : </span>
+                    <span>
+                        {{params?.Itineraries[0]?.Date | date:'MMMM dd'}}
+                        <ng-container *ngIf="params?.Trip === 'RT'">
+                            - {{params?.Itineraries[1]?.Date | date:'MMMM dd'}}
+                        </ng-container>
+                    </span>
+                </span>
+            </div>
+
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="people"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"travelers" | translate}} : </span>
+                    <span>
+                        {{params?.Adult}} {{"adults" | translate}}, {{params?.Child}} {{"childs" | translate}}
+                    </span>
+                </span>
+            </div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'attraction'">
+            <div class="position-relative rounded overflow-hidden text-capitalize">
+                <app-city-image [city]="params?.CityName" [height]="'160px'"></app-city-image>
+                <div class="position-absolute top-0 start-0 text-white w-100 h-100 bg-dark bg-opacity-10">
+                    <div class="h-100 p-4 opacity-75">
+                        <div>
+                            <div class="fs-120">
+                                {{"your_trip_to" | translate}}
+                            </div>
+                            <div class="fs-3 fw-medium">{{params?.CityName}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded d-flex align-items-center my-1 height-45 fs-90 lh-1">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="calendar2-check"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"dates" | translate}} : </span>
+                    <span>
+                        {{params?.DateFrom | date:'MMMM dd'}} -
+                        {{params?.DateTo | date:'MMMM dd'}}
+                    </span>
+                </span>
+            </div>
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90 lh-1">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="people"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"travelers" | translate}} : </span>
+                    <span>
+                        {{params?.Adult}} {{"adults" | translate}}, {{params?.Child}} {{"childs" | translate}}
+                    </span>
+                </span>
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="'hotel'">
+            <div class="position-relative rounded overflow-hidden text-capitalize">
+                <app-city-image [city]="params?.city_name" [height]="'160px'"></app-city-image>
+                <div class="position-absolute top-0 start-0 text-white w-100 h-100 bg-dark bg-opacity-10">
+                    <div class="h-100 p-4 opacity-75">
+                        <div>
+                            <div class="fs-120">
+                                {{"your_trip_to" | translate}}
+                            </div>
+                            <div class="fs-3 fw-medium">{{params?.city_name}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded d-flex align-items-center my-1 height-45 fs-90 lh-1">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="calendar2-check"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"dates" | translate}} : </span>
+                    <span>
+                        {{parseDate(params?.checkin) | date:'MMMM dd'}} -
+                        {{parseDate(params?.checkout) | date:'MMMM dd'}}
+                    </span>
+                </span>
+            </div>
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90 lh-1">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="people"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"travelers" | translate}} : </span>
+                    <span *ngIf="params?.rooms">
+                        {{params?.rooms | sum:'adult'}} {{"adults" | translate}}, {{params?.rooms | sum:'child'}}
+                        {{"childs" |
+                        translate}}
+                    </span>
+                </span>
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="'transfer'">
+            <div class="position-relative rounded overflow-hidden text-capitalize">
+                <app-city-image [city]="params.From?.CountryName" [height]="'160px'"></app-city-image>
+                <div class="position-absolute top-0 start-0 text-white w-100 h-100 bg-dark bg-opacity-10">
+                    <div class="h-100 p-4 opacity-75">
+                        <div>
+                            <div class="fs-120">
+                                {{"your_trip_to" | translate}}
+                            </div>
+                            <div class="fs-3 fw-medium">{{params.From?.CountryName}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded d-flex align-items-center my-1 height-45 fs-90 lh-1">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="calendar2-check"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"dates" | translate}} : </span>
+                    <span>
+                        {{params?.DateFrom | date:'MMMM dd'}} -
+                        {{params?.DateReturn | date:'MMMM dd'}}
+                    </span>
+                </span>
+            </div>
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90 lh-1">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="people"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"travelers" | translate}} : </span>
+                    <span>
+                        {{params?.Adult}} {{"adults" | translate}}, {{params?.Child}} {{"childs" | translate}}
+                    </span>
+                </span>
+            </div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'packages/hotel'">
+            <div class="position-relative rounded overflow-hidden text-capitalize">
+                <app-city-image [city]="params?.flight.Itineraries[0]?.ArrivalCityName"
+                    [height]="'160px'"></app-city-image>
+                <div class="position-absolute top-0 start-0 text-white w-100 h-100 bg-dark bg-opacity-10">
+                    <div class="h-100 p-4 opacity-75">
+                        <div>
+                            <div class="fs-120">
+                                {{"your_trip_to" | translate}}
+                            </div>
+                            <div class="fs-3 fw-medium">{{params?.flight.Itineraries[0]?.ArrivalCityName}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90">
+                <div class="d-flex align-items-center w-100 gap-3 p-2 fs-90">
+                    <span class="d-flex gap-2">
+                        <span class="align-self-center main-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plane-takeoff-icon lucide-plane-takeoff">
+                                <path d="M2 22h20" />
+                                <path
+                                    d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z" />
+                            </svg>
+                        </span>
+                        <span class="fs-0">
+                            {{params?.flight.Itineraries[0]?.DepartureCityName}}
+                        </span>
+                    </span>
+                    <span class="w-100">
+                        <hr class="border-secondary" />
+                    </span>
+                    <span class="d-flex gap-2">
+                        <span class="align-self-center main-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plane-landing-icon lucide-plane-landing">
+                                <path d="M2 22h20" />
+                                <path
+                                    d="M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z" />
+                            </svg>
+                        </span>
+                        <span class="fs-0">
+                            {{params?.flight.Itineraries[0]?.ArrivalCityName}}
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90">
+                <span class="align-self-center ps-2 main-text">
+                    <app-icon icon="calendar2-check"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"dates" | translate}} : </span>
+                    <span class="fs-0">
+                        {{params?.flight.Itineraries[0]?.Date | date:'MMMM dd'}}
+                        <ng-container *ngIf="params?.flight.Trip === 'RT'">
+                            - {{params?.flight.Itineraries[1]?.Date | date:'MMMM dd'}}
+                        </ng-container>
+                    </span>
+                </span>
+            </div>
+
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90">
+                <span class="align-self-center ps-2 main-text">
+                    <app-icon icon="people"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2 fs-90">
+                    <span>{{"travelers" | translate}} : </span>
+                    <span class="fs-0">
+                        {{params?.flight.Adult}} {{"adults" | translate}}, {{params?.flight.Child}} {{"childs" |
+                        translate}}
+                    </span>
+                </span>
+            </div>
+        </ng-container>
+
+
+        <ng-container *ngSwitchCase="'packages/flight'">
+            <div class="position-relative rounded overflow-hidden text-capitalize">
+                <app-city-image [city]="params?.flight.Itineraries[0]?.ArrivalCityName"
+                    [height]="'160px'"></app-city-image>
+                <div class="position-absolute top-0 start-0 text-white w-100 h-100 bg-dark bg-opacity-10">
+                    <div class="h-100 p-4 opacity-75">
+                        <div>
+                            <div class="fs-120">
+                                {{"your_trip_to" | translate}}
+                            </div>
+                            <div class="fs-3 fw-medium">{{params?.flight.Itineraries[0]?.ArrivalCityName}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90">
+                <div class="d-flex align-items-center w-100 gap-3 p-2">
+                    <span class="d-flex gap-2">
+                        <span class="align-self-center main-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plane-takeoff-icon lucide-plane-takeoff">
+                                <path d="M2 22h20" />
+                                <path
+                                    d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z" />
+                            </svg>
+                        </span>
+                        <span class="fs-0">
+                            {{params?.flight.Itineraries[0]?.DepartureCityName}}
+                        </span>
+                    </span>
+                    <span class="w-100">
+                        <hr class="border-secondary" />
+                    </span>
+                    <span class="d-flex gap-2">
+                        <span class="align-self-center main-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plane-landing-icon lucide-plane-landing">
+                                <path d="M2 22h20" />
+                                <path
+                                    d="M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z" />
+                            </svg>
+                        </span>
+                        <span class="fs-0">
+                            {{params?.flight.Itineraries[0]?.ArrivalCityName}}
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="calendar2-check"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2">
+                    <span>{{"dates" | translate}} : </span>
+                    <span class="fs-0">
+                        {{params?.flight.Itineraries[0]?.Date | date:'MMMM dd'}}
+                        <ng-container *ngIf="params?.flight.Trip === 'RT'">
+                            - {{params?.flight.Itineraries[1]?.Date | date:'MMMM dd'}}
+                        </ng-container>
+                    </span>
+                </span>
+            </div>
+
+            <div class="border rounded text-capitalize d-flex align-items-center my-1 height-45 fs-90">
+                <span class="align-self-center ps-2 main-text fs-110">
+                    <app-icon icon="people"></app-icon>
+                </span>
+                <span class="d-flex justify-content-between w-100 p-2">
+                    <span>{{"travelers" | translate}} : </span>
+                    <span class="fs-0">
+                        {{params?.flight.Adult}} {{"adults" | translate}}, {{params?.flight.Child}} {{"childs" |
+                        translate}}
+                    </span>
+                </span>
+            </div>
+        </ng-container>
+    </div>
+    <div role="button"
+        class="main-border main-bg text-white rounded text-capitalize d-flex align-items-center gap-2 my-1 height-45 fs-90 lh-1"
+        *ngIf="buttonDisplay">
+
+        <span class="align-self-center ps-2">
+            <app-icon icon="pen"></app-icon>
+        </span>
+        <span class="w-100 fw-medium">
+            <div>{{"edit_your_trip" | translate}}</div>
+        </span>
+    </div>
+</div>

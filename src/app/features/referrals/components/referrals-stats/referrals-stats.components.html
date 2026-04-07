@@ -1,0 +1,18 @@
+<div class="row row-gap-3">
+    <span class="col-sm-6 col-md-4 col-xl-3">
+        <app-dashbord-card [label]="'referrals'" [value]="data?.referrals" [icon]="'people'"
+            [isLoading]="false"></app-dashbord-card>
+    </span>
+    <span class="col-sm-6 col-md-4 col-xl-3">
+        <app-dashbord-card [label]="'earnings'" [value]="data?.earnings" [icon]="'credit-card'"
+            [isLoading]="false"></app-dashbord-card>
+    </span>
+    <span class="col-sm-6 col-md-4 col-xl-3">
+        <app-dashbord-card [label]="'pending_payouts'" [value]="data?.pendingPayouts" [icon]="'hourglass-split'"
+            [isLoading]="false"></app-dashbord-card>
+    </span>
+    <span class="col-sm-6 col-md-4 col-xl-3">
+        <app-dashbord-card [label]="'coupons'" [value]="data?.coupons" [icon]="'ticket-detailed'"
+            [isLoading]="false"></app-dashbord-card>
+    </span>
+</div>

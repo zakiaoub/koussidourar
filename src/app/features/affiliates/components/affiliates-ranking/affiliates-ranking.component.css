@@ -1,0 +1,18 @@
+.gold{
+    background-color: #ECC25C;
+    border: 2px solid #ECC25C;
+}
+
+.silver{
+    background-color: #A8ABB8;
+     border: 2px solid #A8ABB8;
+}
+
+.bronze{
+    background-color: #BD826F;
+     border: 2px solid #BD826F;
+}
+
+.scale{
+    transform: scale(1.2);
+}

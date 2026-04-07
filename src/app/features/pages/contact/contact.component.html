@@ -1,0 +1,50 @@
+<ng-container>
+    <app-top-banner [target]="'contact' | translate"></app-top-banner>
+    <section class="container-xl py-5">
+        <div class="row justify-content-between align-items-end g-5">
+            <span class="col-lg-6">
+                <ng-container>
+                    <div class="fs-5 fw-300 text-uppercase main-text">{{"contact_us" | translate}}</div>
+                    <div class="fw-600 fs-400">{{"get_in_touch" | translate}}</div>
+                    <p class="fs-5 text-secondary">{{"contact_caption" | translate}}</p>
+
+                    <div class="fs-3 text-dark fw-500 mt-4 border-bottom py-4">{{"our_office" | translate}}</div>
+
+                    <div class="row">
+                        <span class="col-xl-12 my-4">
+                            <div class="d-flex">
+                                <span class="main-text fs-120">
+                                    <app-icon icon="geo-alt"></app-icon>
+                                </span>
+                                <span class="ms-2">
+                                    <div class="text-secondary">{{"location" | translate}}</div>
+                                    <div class="fs-5 fw-400">{{address}}</div>
+                                </span>
+                            </div>
+                        </span>
+                        <span class="col-xl-12 my-4">
+                            <div class="d-flex">
+                                <span class="main-text fs-120">
+                                    <app-icon icon="telephone"></app-icon>
+                                </span>
+                                <span class="ms-2">
+                                    <div class="text-secondary">{{"phone_number" | translate}}</div>
+                                    <div class="fs-5 fw-400">{{phone}}</div>
+                                </span>
+                            </div>
+                        </span>
+                    </div>
+                </ng-container>
+            </span>
+            <span class="col-lg-6">
+                <div>
+                    <img class="rounded-4" src="assets/images/contact-bg.webp" width="100%" height="100%"
+                        [alt]="'alt_contact1' | translate" />
+                </div>
+            </span>
+        </div>
+        <div class="mt-5">
+            <app-contact-form></app-contact-form>
+        </div>
+    </section>
+</ng-container>

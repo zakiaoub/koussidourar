@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://malloftravels.com/</loc>
+  </url>
+  <url>
+    <loc>https://malloftravels.com/flights</loc>
+  </url>
+  <url>
+    <loc>https://malloftravels.com/hotels</loc>
+  </url>
+    <url>
+    <loc>https://malloftravels.com/transfers</loc>
+  </url>
+    <url>
+    <loc>https://malloftravels.com/attractions</loc>
+  </url>
+    <url>
+    <loc>https://malloftravels.com/about</loc>
+  </url>
+    <url>
+    <loc>https://malloftravels.com/contact</loc>
+  </url>
+    <url>
+    <loc>https://malloftravels.com/buyers</loc>
+  </url>
+    <url>
+    <loc>https://malloftravels.com/tenants</loc>
+  </url>
+</urlset>

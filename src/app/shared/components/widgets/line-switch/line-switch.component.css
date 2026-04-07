@@ -1,0 +1,28 @@
+ 
+  .switch-btn {
+    flex: 1;
+    background: transparent;
+    z-index: 2;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .switch-btn.active {
+    color: white;
+  }
+  
+  .slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width:50%;
+    height: calc(100% - 6px);
+    background-color:var(--main);
+    z-index: 1;
+    transition: left 0.3s ease;
+  }
+  
+  .slider.right {
+    left: calc(50% + 3px);
+  }
+  

@@ -1,0 +1,83 @@
+.main-bg {
+  background-color: var(--main);
+}
+
+.lower-bg {
+  background-color: var(--lower);
+}
+
+.third-bg {
+  background-color: var(--third);
+}
+
+.fourth-bg {
+  background-color: var(--fourth);
+}
+
+.blue-bg {
+  background-color: var(--blue);
+}
+
+.green-bg {
+  background-color: var(--green);
+}
+
+.purple-bg {
+  background-color: var(--purple);
+}
+
+.red-bg {
+  background-color: var(--red);
+}
+
+.orange-bg {
+  background-color: var(--orange);
+}
+
+.dark-bg {
+  background-color: var(--dark);
+}
+
+.grey-bg {
+  background-color: var(--grey);
+}
+
+.light-bg {
+  background-color: var(--light);
+}
+
+.fifth-bg {
+  background-color: var(--fifth);
+}
+
+.sixth-bg {
+  background-color: var(--sixth);
+}
+
+.darkblue-bg {
+  background-color: var(--dark-blue);
+}
+
+.main-bg-gradient{
+  background: linear-gradient(to bottom right, var(--fifth), var(--main) );
+}
+
+.lower-bg-gradient{
+  background: linear-gradient(to bottom right, var(--sixth), var(--blue));
+}
+
+.main-text-gradient {
+  background: linear-gradient(to bottom right, var(--main), var(--fifth));
+  -webkit-background-clip: text; /* nécessaire pour Chrome/Safari */
+  -webkit-text-fill-color: transparent; /* rend le texte transparent pour laisser voir le dégradé */
+  background-clip: text; /* standard */
+  color: transparent;
+}
+
+.lower-text-gradient {
+  background: linear-gradient(to bottom right, var(--blue), var(--sixth));
+  -webkit-background-clip: text; /* nécessaire pour Chrome/Safari */
+  -webkit-text-fill-color: transparent; /* rend le texte transparent pour laisser voir le dégradé */
+  background-clip: text; /* standard */
+  color: transparent;
+}

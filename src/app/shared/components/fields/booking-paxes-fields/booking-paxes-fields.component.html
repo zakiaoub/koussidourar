@@ -1,0 +1,75 @@
+<div *ngFor="let item of paxes; let i = index" class="bg-white rounded-3 mb-3 shadow-sm">
+    <div class="d-flex align-items-center gap-2 py-3 px-4 border-bottom">
+        <span class="main-text size-35 rounded-circle main-border fs-80">
+            <app-icon icon="person-vcard-fill"></app-icon>
+        </span>
+        <span class="fw-500">
+            <div>{{ getPaxType(item) | translate }} {{ getPaxNumber(i, item) }}</div>
+            <div *ngIf="service === 'hotel' || service === 'package'" class="opacity-75 fs-80">
+                {{ 'room' | translate }} {{ room + 1 }}
+            </div>
+        </span>
+    </div>
+    <div class="p-4">
+        <div class="row row-gap-4">
+            <span class="col-md-6">
+                <app-select-field [id]="'gender'+id" [labelKey]="'gender'" [controlName]="'Gender'"
+                    [controlPath]="['paxes', item.PaxId, 'Gender']" [options]="item.Gender"
+                    [formGroup]="checkoutForm"></app-select-field>
+            </span>
+            <span class="col-md-6">
+                <app-select-field [id]="'title'+id" [labelKey]="'title'" [controlName]="'Title'"
+                    [controlPath]="['paxes', item.PaxId, 'Title']" [options]="item.Title"
+                    [formGroup]="checkoutForm"></app-select-field>
+            </span>
+            <span class="col-md-6">
+                <app-input-field [id]="'first_name'+id" [labelKey]="'first_name'" [controlName]="'FirstName'"
+                    [controlPath]="['paxes', item.PaxId, 'FirstName']" [icon]="'person-fill'" [type]="'text'"
+                    [placeholder]="''" [readonly]="false" [minlength]="2" [maxlength]="50" [keyFilter]="'alpha'"
+                    [showMessage]="true" [formGroup]="checkoutForm">
+                </app-input-field>
+            </span>
+            <span class="col-md-6">
+                <app-input-field [id]="'last_name'+id" [labelKey]="'last_name'" [controlName]="'LastName'"
+                    [controlPath]="['paxes', item.PaxId, 'LastName']" [icon]="'person-fill'" [type]="'text'"
+                    [placeholder]="''" [readonly]="false" [minlength]="2" [maxlength]="50" [keyFilter]="'alpha'"
+                    [showMessage]="true" [formGroup]="checkoutForm">
+                </app-input-field>
+            </span>
+            <ng-container *ngIf="service=='flight' || service=='package'">
+                <span class="col-md-6">
+                    <app-mask-field [id]="'date_of_birth'+id" [labelKey]="'date_of_birth'" [controlName]="'DateOfBirth'"
+                        [controlPath]="['paxes', item.PaxId, 'DateOfBirth']" icon="calendar3-event-fill"
+                        [mask]="'99/99/9999'" [placeholder]="'dd/mm/yyyy'" [slotChar]="'_'" [formGroup]="checkoutForm"
+                        [showMessage]="true"></app-mask-field>
+                </span>
+                <span class="col-md-6">
+                    <app-countries-field [id]="'passport_country'+id" [labelKey]="'nationality'"
+                        [controlName]="'Nationality'" [controlPath]="['paxes', item.PaxId, 'Nationality']"
+                        icon="flag-fill" [showMessage]="true" [formGroup]="checkoutForm"></app-countries-field>
+                </span>
+
+                <span class="col-md-6">
+                    <app-input-field [id]="'passport_number'+id" [labelKey]="'passport_number'"
+                        [controlName]="'PassportNumber'" [controlPath]="['paxes', item.PaxId, 'PassportNumber']"
+                        [icon]="'passport-fill'" [type]="'text'" [placeholder]="''" [readonly]="false" [minlength]="6"
+                        [maxlength]="50" [keyFilter]="'alphanum'" [showMessage]="true" [formGroup]="checkoutForm">
+                    </app-input-field>
+                </span>
+
+                <span class="col-md-6">
+                    <app-mask-field [id]="'expiry_date'+id" [labelKey]="'expiry_date'" [controlName]="'ExpiryDate'"
+                        [controlPath]="['paxes', item.PaxId, 'ExpiryDate']" icon="calendar-x-fill" [mask]="'99/99/9999'"
+                        [placeholder]="'dd/mm/yyyy'" [slotChar]="'_'" [showMessage]="true"
+                        [formGroup]="checkoutForm"></app-mask-field>
+                </span>
+
+                <!-- <span class="col-12">
+                    <app-countries-field [id]="'passport_country'+id" [labelKey]="'passport_country'"
+                        [controlName]="'PassportCountry'" [controlPath]="['paxes', item.PaxId, 'PassportCountry']"
+                        icon="globe2-fill" [showMessage]="true" [formGroup]="checkoutForm"></app-countries-field>
+                </span> -->
+            </ng-container>
+        </div>
+    </div>
+</div>
