@@ -1,7 +1,7 @@
 <ng-container>
-  <app-session-time [type]="'details'"></app-session-time>
-  <app-session-expired [target]="'flight'"> </app-session-expired>
-  <app-stepper [currentStep]="2"></app-stepper>
+  <app-session-time *ngIf="!popupMode" [type]="'details'"></app-session-time>
+  <app-session-expired *ngIf="!popupMode" [target]="'flight'"> </app-session-expired>
+  <app-stepper *ngIf="!popupMode" [currentStep]="2"></app-stepper>
   <ng-container *ngIf="isLoading()">
     <app-skeleton-details [service]="'attraction'"></app-skeleton-details>
   </ng-container>
@@ -11,20 +11,166 @@
   </ng-container>
 
   <ng-container *ngIf="!isLoading() && !error()">
-    <section class="container-xl py-5">
+    <section [ngClass]="popupMode ? 'flight-popup-body' : 'container-xl py-5'">
       <div [ngSwitch]="data()?.length">
         <ng-container *ngSwitchCase="0">
           <app-no-results-found></app-no-results-found>
         </ng-container>
         <ng-container *ngSwitchDefault>
+          <ng-container *ngIf="popupMode; else defaultDetailsView">
+            <div class="flight-popup-head">
+              <div class="head-left">
+                <h2>
+                  {{ 'your_flight' | translate }}
+                  <ng-container *ngIf="data()?.itineraries?.[0]">
+                    {{ data()?.itineraries?.[0]?.Destination }}
+                  </ng-container>
+                </h2>
+                <button type="button" class="share-btn">
+                  <i class="fa-solid fa-share-nodes"></i>
+                  {{ 'share' | translate }}
+                </button>
+              </div>
+              <button type="button" class="close-x" (click)="closePopup.emit()">&times;</button>
+            </div>
+
+            <div class="flight-popup-card">
+              <div class="flight-popup-body-scroll">
+                <div class="popup-pack-switch" *ngIf="data()?.rateCategory?.length > 1">
+                  <button
+                    *ngFor="let pack of data()?.rateCategory"
+                    type="button"
+                    class="pack-pill"
+                    [ngClass]="{ 'active': selectedPopupPack() === pack }"
+                    (click)="selectedPopupPack.set(pack)">
+                    {{ pack | uppercase }}
+                  </button>
+                </div>
+
+                <div class="flight-block" *ngFor="let itinerary of data()?.itineraries">
+                  <span class="block-title">
+                    {{ getPopupRouteTitle(itinerary) | translate }}
+                  </span>
+                  <span class="block-subtitle">
+                    {{ itinerary?.stops || ('direct' | translate) }} • {{ getPopupDuration(itinerary) }}
+                  </span>
+
+                  <div class="timeline">
+                    <div class="timeline-graphic">
+                      <div class="circle"></div>
+                      <div class="line"></div>
+                      <div class="circle full"></div>
+                    </div>
+
+                    <div class="timeline-data" *ngIf="itinerary?.Segments?.length">
+                      <div class="stops">
+                        <div class="stop">
+                          <p class="stop-time">
+                            {{ itinerary?.Segments?.[0]?.DepartureDateTime | date:'EEE d MMM - HH:mm' }}
+                          </p>
+                          <p class="stop-loc">
+                            {{ itinerary?.Origin }} - {{ airportsName?.[itinerary?.Origin] }}
+                          </p>
+                        </div>
+                        <div class="stop mb-0">
+                          <p class="stop-time">
+                            {{ itinerary?.Segments?.[itinerary?.Segments?.length - 1]?.ArrivalDateTime | date:'EEE d MMM - HH:mm' }}
+                          </p>
+                          <p class="stop-loc">
+                            {{ itinerary?.Destination }} - {{ airportsName?.[itinerary?.Destination] }}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="airline-meta">
+                        <div class="airline-tag">
+                          <i class="fa-solid fa-plane"></i>
+                          {{ getPopupAirline(itinerary?.Segments?.[0]) }}
+                        </div>
+                        <div class="flight-info">
+                          {{ 'flight_number' | translate }} {{ getPopupFlightNumber(itinerary?.Segments?.[0]) }}<br>
+                          {{ 'cabin_class' | translate }} {{ itinerary?.Segments?.[0]?.BookingClass }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="options-table">
+                  <div class="row">
+                    <div class="cell-label">
+                      <span class="label-main">{{ 'baggage' | translate }}</span>
+                      <span class="label-sub">{{ 'included' | translate }}</span>
+                    </div>
+                    <div class="cell-content">
+                      <div class="item" *ngFor="let bag of getPopupBaggageItems()">
+                        <div class="item-left">
+                          <i [class]="bag.icon"></i>
+                          <div>
+                            <p class="item-name">{{ bag.title }}</p>
+                            <p class="item-desc">{{ bag.desc }}</p>
+                          </div>
+                        </div>
+                        <span class="status-inc">{{ bag.status }}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="cell-label">
+                      <span class="label-main">{{ 'conditions' | translate }}</span>
+                    </div>
+                    <div class="cell-content">
+                      <div class="item" *ngFor="let item of getPopupRateComments()">
+                        <div class="item-left">
+                          <i class="fa-regular fa-calendar-check"></i>
+                          <p class="item-name">{{ item?.Value }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="cell-label">
+                      <span class="label-main">Extras</span>
+                      <span class="label-sub">Ajoutes a l'etape suivante</span>
+                    </div>
+                    <div class="cell-content">
+                      <div class="item" *ngFor="let extra of getPopupExtras()">
+                        <div class="item-left">
+                          <i class="fa-solid fa-plus-circle"></i>
+                          <div>
+                            <p class="item-name">{{ extra?.key | translate }}</p>
+                            <p class="item-desc">Option avec supplement</p>
+                          </div>
+                        </div>
+                        <span class="status-avail">Disponible</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <div class="total-price">
+                  <app-amount [value]="data()?.totalAmount?.[selectedPopupPack()]"></app-amount>
+                </div>
+                <button class="continue-btn" type="button" (click)="onSelectFare(selectedPopupPack())">
+                  {{ 'continue' | translate }}
+                </button>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-template #defaultDetailsView>
           <div class="row row-gap-3 justify-content-between tems-center">
-            <span class="col-xl-9">
+            <span [ngClass]="popupMode ? 'col-12' : 'col-xl-9'">
               <app-flight-segment [data]="data()"></app-flight-segment>
-              <div class="mt-4">
+              <div class="mt-4" *ngIf="!popupMode">
                 <app-ad-discount layout="horizontal"></app-ad-discount>
               </div>
             </span>
-            <span class="col-xl-3 d-none d-xl-block">
+            <span class="col-xl-3 d-none d-xl-block" *ngIf="!popupMode">
               <div class="bg-white p-1 rounded-4 border shadow-sm">
                 <app-form-display [service]="'flight'" [params]="params?.dataPost"
                   [buttonDisplay]="false"></app-form-display>
@@ -68,6 +214,7 @@
               </app-flight-pack>
             </ng-template>
           </div>
+          </ng-template>
         </ng-container>
       </div>
     </section>

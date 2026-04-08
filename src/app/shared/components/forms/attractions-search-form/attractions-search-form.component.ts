@@ -18,14 +18,13 @@ import { HistoryService } from '@app/core/services/history.service';
 import { ToastService } from '@app/core/services/toast.service';
 import { AutocompleteService } from '@app/core/services/autocomplete.service';
 import { FormDataService } from '@app/core/services/form-data.service';
-import { IconComponent } from "@app/shared/components/widgets/icon/icon.component";
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { GuestsFieldComponent } from '@app/shared/components/fields/guests-field/guests-field.component';
 import { ReqService } from '@app/core/services/req.service';
 
 @Component({
   selector: 'app-attractions-search-form',
-  imports: [CommonModule, GuestsFieldComponent, FormsModule, SubmitComponent, TranslationModule, AutoCompleteModule, IconFieldModule, InputIconModule, AutocompleteSuggetionsComponent, DatePicker, LoaderCityComponent, IconComponent],
+  imports: [CommonModule, GuestsFieldComponent, FormsModule, SubmitComponent, TranslationModule, AutoCompleteModule, IconFieldModule, InputIconModule, AutocompleteSuggetionsComponent, DatePicker, LoaderCityComponent],
   templateUrl: './attractions-search-form.component.html',
   styleUrl: './attractions-search-form.component.css'
 })

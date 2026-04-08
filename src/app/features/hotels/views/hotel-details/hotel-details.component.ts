@@ -7,14 +7,11 @@ import { HotelsRoomsComponent } from "@features/hotels/components/hotels-rooms/h
 import { ProductAmentiesComponent } from '@app/shared/components/templates/product-amenties/product-amenties.component';
 import { HotelInfosComponent } from "@features/hotels/components/hotel-infos/hotel-infos.component";
 import { HotelRecapComponent } from "@features/hotels/components/hotel-recap/hotel-recap.component";
-import { FaqDisplayComponent } from '@app/shared/components/templates/faq-display/faq-display.component';
 import { SessionTimeComponent } from '@app/shared/components/settings/templates/session-time/session-time.component';
 import { SkeletonDetailsComponent } from '@app/shared/components/loaders/skeleton-details/skeleton-details.component';
 import { SessionExpiredComponent } from '@app/shared/components/settings/templates/session-expired/session-expired.component';
 import { StepperComponent } from "@app/shared/components/widgets/stepper/stepper.component";
 import { RatingComponent } from "@app/shared/components/widgets/rating/rating.component";
-import { WeatherComponent } from '@app/shared/components/templates/app-weather/app-weather.component';
-import { HotelNearbyComponent } from "../../components/hotel-nearby/hotel-nearby.component";
 import { ReqService } from '@app/core/services/req.service';
 import { ErrorRequestComponent } from '@app/shared/components/errors/error-request/error-request.component';
 
@@ -34,8 +31,6 @@ import { ErrorRequestComponent } from '@app/shared/components/errors/error-reque
     SessionExpiredComponent,
     StepperComponent,
     RatingComponent,
-    WeatherComponent,
-    HotelNearbyComponent,
     ErrorRequestComponent
   ],
   templateUrl: './hotel-details.component.html',

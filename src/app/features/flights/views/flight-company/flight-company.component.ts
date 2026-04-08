@@ -10,10 +10,12 @@ import { ButtonComponent } from '@app/shared/components/widgets/button/button.co
 import { Airline } from '@app/core/models/airline.interface';
 import { ToastService } from '@app/core/services/toast.service';
 import { ErrorRequestComponent } from '@app/shared/components/errors/error-request/error-request.component';
+import { AmountComponent } from '@app/shared/components/settings/components/amount/amount.component';
+import { FilterPipe } from '@app/shared/pipes/filter.pipe';
 
 @Component({
   selector: 'app-flight-company',
-  imports: [CommonModule, TranslationModule, SkeletonCompanyComponent, FlightCompanyTimingComponent, FlightCardComponent, ButtonComponent, ErrorRequestComponent],
+  imports: [CommonModule, TranslationModule, SkeletonCompanyComponent, FlightCompanyTimingComponent, FlightCardComponent, ButtonComponent, ErrorRequestComponent, AmountComponent, FilterPipe],
   templateUrl: './flight-company.component.html',
   styleUrl: './flight-company.component.css'
 })

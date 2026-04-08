@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslationModule } from '@modules/translation.module';
-import { TopBannerComponent } from '@app/shared/components/banner/top-banner/top-banner.component';
 import { SkeletonVoucherComponent } from '@app/shared/components/loaders/skeleton-voucher/skeleton-voucher.component';
 import { VoucherOverviewComponent } from '../../voucher/views/voucher-overview/voucher-overview.component';
 import { ReqService } from '@app/core/services/req.service';
@@ -12,7 +11,7 @@ import { StepperComponent } from '@app/shared/components/widgets/stepper/stepper
 
 @Component({
   selector: 'app-confirm',
-  imports: [CommonModule, TranslationModule, TopBannerComponent, VoucherOverviewComponent, SkeletonVoucherComponent, SuccesOverviewComponent, ErrorRequestComponent, StepperComponent],
+  imports: [CommonModule, TranslationModule, VoucherOverviewComponent, SkeletonVoucherComponent, SuccesOverviewComponent, ErrorRequestComponent, StepperComponent],
   templateUrl: './confirm.component.html',
   styleUrl: './confirm.component.css'
 })

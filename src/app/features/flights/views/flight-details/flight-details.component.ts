@@ -45,6 +45,7 @@ export class FlightDetailsComponent implements OnInit, OnChanges {
   @Input() inputDetails?: any;
 
   @Output() checkout = new EventEmitter<string>();
+  @Output() closePopup = new EventEmitter<void>();
 
   params: any
   searchToken: any
@@ -53,10 +54,12 @@ export class FlightDetailsComponent implements OnInit, OnChanges {
   month: any
   year: any
   carrierCode: string
+  airportsName: any = {}
 
   data = signal<any>(null)
   isLoading = signal<boolean>(false)
   error = signal<boolean>(false)
+  selectedPopupPack = signal<string>('default')
 
   ngOnInit(): void {
     this.params = this.FormDataService.getData('flightParams')
@@ -70,8 +73,10 @@ export class FlightDetailsComponent implements OnInit, OnChanges {
 
     if (this.popupMode && this.inputDetails) {
       this.data.set(this.inputDetails);
+      this.airportsName = this.inputDetails?.airportsName || {};
       this.error.set(false);
       this.isLoading.set(false);
+      this.initPopupPack();
       return;
     }
 
@@ -88,8 +93,10 @@ export class FlightDetailsComponent implements OnInit, OnChanges {
 
     if (changes['inputDetails'] && this.inputDetails) {
       this.data.set(this.inputDetails);
+      this.airportsName = this.inputDetails?.airportsName || {};
       this.error.set(false);
       this.isLoading.set(false);
+      this.initPopupPack();
     }
   }
 
@@ -99,9 +106,11 @@ export class FlightDetailsComponent implements OnInit, OnChanges {
     this.api.get(['flight', 'checkrate', this.searchToken, this.day, this.month, this.year, this.rateKey].join('/')).subscribe({
       next: (response: any) => {
         this.data.set(response?.result);
+        this.airportsName = response?.result?.airportsName || {};
         if (response.result?.rateCategory && response.result?.rateCategory.length > 0) {
           this.data.set(response?.result);
         }
+        this.initPopupPack();
         this.isLoading.set(false);
       },
       error: () => {
@@ -129,5 +138,76 @@ export class FlightDetailsComponent implements OnInit, OnChanges {
       this.rateKey,
       pack
     ]);
+  }
+
+  initPopupPack() {
+    const rateCategory = this.data()?.rateCategory || [];
+    if (!rateCategory.length) {
+      this.selectedPopupPack.set('default');
+      return;
+    }
+
+    const preferredPack = rateCategory.find((item: string) => item === 'default') || rateCategory[0];
+    this.selectedPopupPack.set(preferredPack);
+  }
+
+  getPopupRouteTitle(itinerary: any) {
+    if (!itinerary) return '';
+    if (itinerary.Ref === 1) return 'outbound';
+    if (itinerary.Ref === 2) return 'return';
+    return 'flight';
+  }
+
+  getPopupDuration(itinerary: any) {
+    const segment = itinerary?.Segments?.[0];
+    return segment?.Duration || '';
+  }
+
+  getPopupAirline(segment: any) {
+    return segment?.MarketingCarrier || segment?.Operator || '';
+  }
+
+  getPopupFlightNumber(segment: any) {
+    const carrier = this.getPopupAirline(segment);
+    const number = segment?.FlightNumber || '';
+    return `${carrier}${number}`.trim();
+  }
+
+  getPopupBaggageItems() {
+    const details = this.data();
+    const selectedPack = this.selectedPopupPack();
+    const itinerary = details?.itineraries?.[0];
+    const segment = itinerary?.Segments?.[0];
+    const flightNumber = segment?.FlightNumber;
+    const baggageNode = details?.baggages?.[selectedPack]?.[flightNumber]?.Pax?.[0];
+    const quantity = baggageNode?.Quantity;
+
+    if (!quantity) {
+      return [
+        { icon: 'fa-solid fa-briefcase', title: 'Baggage details', desc: 'According to airline fare rules', status: 'Included' }
+      ];
+    }
+
+    return [
+      { icon: 'fa-solid fa-briefcase', title: 'Cabin baggage', desc: `${quantity} piece(s) included`, status: 'Included' }
+    ];
+  }
+
+  getPopupRateComments() {
+    const details = this.data();
+    const selectedPack = this.selectedPopupPack();
+    const comments = details?.rateComment?.[selectedPack] || details?.rateComment?.default || details?.rateComment || [];
+    return Array.isArray(comments) ? comments.slice(0, 4) : [];
+  }
+
+  getPopupExtras() {
+    const details = this.data();
+    const selectedPack = this.selectedPopupPack();
+    const fareDescription = details?.fareFamilyDescription || {};
+
+    return Object.entries(fareDescription)
+      .map(([key, value]: [string, any]) => ({ key, rates: value?.rates || {} }))
+      .filter((item: any) => item?.rates?.[selectedPack] === 'at Charge')
+      .slice(0, 4);
   }
 }

@@ -1,4 +1,4 @@
-<div class="bg-dark bg-opacity-10 p-4">
+<div class="company-modal">
     <ng-container *ngIf="isLoading()">
         <app-skeleton-company [service]="service"></app-skeleton-company>
     </ng-container>
@@ -8,36 +8,64 @@
     </ng-container>
 
     <ng-container *ngIf="!isLoading() && !error()">
-        <div class="d-flex flex-column gap-3">
-            <ng-container *ngFor="let item of data(); let i = index">
-                <div role="button" class="item-card bg-white rounded-4 w-100"
-                    (mouseenter)="overlay[item.RateKey] = true" (mouseleave)="overlay[item.RateKey] = false">
-                    <div class="row justify-content-between align-items-center">
-                        <span class="col-xl-9">
-                            <div *ngFor="let Itinerary of item.Itinerary; let j = index; let last = last">
-                                <app-flight-company-timing [Itinerary]="Itinerary" [stops]="Itinerary.stops"
-                                    [airportsName]="airportsName">
-                                </app-flight-company-timing>
-                                <div class="px-3">
-                                    <hr class="border-secondary my-0" *ngIf="!last" />
+        <div class="premium-results">
+            <div class="ticket-list">
+                <ng-container *ngFor="let item of data(); let i = index">
+                    <article class="ticket-card">
+                        <div class="ticket-flights">
+                            <ng-container *ngFor="let Itinerary of item.Itinerary; let last = last">
+                                <div class="flight-row" *ngIf="Itinerary?.Segments?.length">
+                                    <div class="airline-box">
+                                        <img class="airline-img" [src]="airlines | filter:item.CarrierCode:'logo'" [alt]="item.CarrierName" />
+                                        <div class="airline-name">{{ item.CarrierName }}</div>
+                                    </div>
+
+                                    <div class="flight-timeline">
+                                        <div class="time-box">
+                                            <div class="time">{{ Itinerary?.Segments?.[0]?.DepartureDateTime?.replace(' ', 'T') | date:'HH:mm' }}</div>
+                                            <div class="airport">{{ Itinerary?.Segments?.[0]?.DepartureAirportCode }}</div>
+                                        </div>
+
+                                        <div class="route-line-container">
+                                            <div class="duration">{{ Itinerary?.Duration }}</div>
+                                            <div class="route-line"><i class="fas fa-plane" [ngClass]="{ 'mirror': Itinerary?.Ref === 2 }"></i></div>
+                                            <div class="direct">
+                                                {{ (Itinerary?.Segments?.length - 1) > 0 ? ((Itinerary?.Segments?.length - 1) + ' escale') : ('direct' | translate) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="time-box end">
+                                            <div class="time">{{ Itinerary?.Segments?.[Itinerary?.Segments?.length - 1]?.ArrivalDateTime?.replace(' ', 'T') | date:'HH:mm' }}</div>
+                                            <div class="airport">{{ Itinerary?.Segments?.[Itinerary?.Segments?.length - 1]?.ArrivalAirportCode }}</div>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <div class="flight-divider" *ngIf="!last"></div>
+                            </ng-container>
+                        </div>
+
+                        <div class="ticket-action">
+                            <div class="total-price">
+                                <app-amount [value]="item.TotalAmount"></app-amount>
                             </div>
-                        </span>
-                        <span class="col-xl-3">
-                            <div class="h-100 py-2">
-                                <app-flight-card [amount]="item.TotalAmount" [luggages]="item.Luggages"
-                                    [availStatus]="item.Itinerary[0].Segments[0].AvailStatus"
-                                    [itineraries]="item.Itinerary.length">
-                                    <app-button
-                                        [class]="'fs-90 p-3 main-bg main-border text-white rounded-3 w-100 text-center shadow w-100'"
-                                        [title]="'book'" [isLoading]="isSubmiting()[item.RateKey]"
-                                        (action)="getCheckRate(item, item.RateKey)"></app-button>
-                                </app-flight-card>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-            </ng-container>
+
+                            <button
+                                type="button"
+                                class="btn-book"
+                                [disabled]="isSubmiting()[item.RateKey]"
+                                (click)="getCheckRate(item, item.RateKey)"
+                            >
+                                <span class="btn-loading" *ngIf="isSubmiting()[item.RateKey]">
+                                    <span class="spinner"></span>
+                                    <span>{{ 'loading' | translate }}</span>
+                                </span>
+                                <span *ngIf="!isSubmiting()[item.RateKey]">{{ 'book' | translate }}</span>
+                            </button>
+                        </div>
+                    </article>
+                </ng-container>
+            </div>
         </div>
     </ng-container>
 </div>

@@ -5,13 +5,12 @@ import { AutocompleteService } from '@app/core/services/autocomplete.service';
 import { FormDataService } from '@app/core/services/form-data.service';
 import { finalize } from 'rxjs';
 import { format, parse } from "date-fns";
-import { CityImageComponent } from '../../widgets/city-image/city-image.component';
 import { ButtonComponent } from '../../widgets/button/button.component';
 import { IconComponent } from '../../widgets/icon/icon.component';
 
 @Component({
   selector: 'app-ad-attraction',
-  imports: [CommonModule, TranslationModule, CityImageComponent, ButtonComponent, IconComponent],
+  imports: [CommonModule, TranslationModule, ButtonComponent, IconComponent],
   templateUrl: './ad-attraction.component.html',
   styleUrl: './ad-attraction.component.css'
 })

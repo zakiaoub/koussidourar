@@ -3,13 +3,12 @@ import { Component, Input } from '@angular/core';
 import { TranslationModule } from '@modules/translation.module';
 import { CityImageComponent } from '@app/shared/components/widgets/city-image/city-image.component';
 import { RatingComponent } from "@app/shared/components/widgets/rating/rating.component";
-import { PromoCodeComponent } from '@app/shared/components/templates/promo-code/promo-code.component';
 import { CheckoutSummaryComponent } from '@app/shared/components/templates/checkout-summary/checkout-summary.component';
 
 @Component({
   selector: 'app-checkout-hotel-recap',
   standalone: true,
-  imports: [CommonModule, TranslationModule, PromoCodeComponent, CheckoutSummaryComponent, CityImageComponent, RatingComponent],
+  imports: [CommonModule, TranslationModule, CheckoutSummaryComponent, CityImageComponent, RatingComponent],
   templateUrl: './checkout-hotel-recap.component.html',
   styleUrl: './checkout-hotel-recap.component.css'
 })

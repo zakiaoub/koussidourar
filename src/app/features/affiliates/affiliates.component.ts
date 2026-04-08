@@ -5,12 +5,11 @@ import { TopBannerComponent } from '@app/shared/components/banner/top-banner/top
 import { ServicesBackgroundComponent } from '@app/shared/components/templates/services-background/services-background.component';
 import { AffiliatesRankingComponent } from './components/affiliates-ranking/affiliates-ranking.component';
 import { AffiliatesLevelsComponent } from './components/affiliates-levels/affiliates-levels.component';
-import { LoginBannerComponent } from '@app/shared/components/banner/login-banner/login-banner.component';
 import { ComingSoonComponent } from '@app/shared/components/errors/coming-soon/coming-soon.component';
 
 @Component({
   selector: 'app-affiliates',
-  imports: [CommonModule, TopBannerComponent, ServicesBackgroundComponent, AffiliatesRankingComponent, AffiliatesLevelsComponent, LoginBannerComponent, ComingSoonComponent],
+  imports: [CommonModule, TopBannerComponent, ServicesBackgroundComponent, AffiliatesRankingComponent, AffiliatesLevelsComponent, ComingSoonComponent],
   templateUrl: './affiliates.component.html',
   styleUrl: './affiliates.component.css'
 })

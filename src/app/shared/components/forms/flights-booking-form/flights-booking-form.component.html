@@ -1,8 +1,8 @@
 <ng-container>
-    <app-session-time [type]="'details'"></app-session-time>
-    <app-session-expired [target]="'attraction'"></app-session-expired>
+    <app-session-time *ngIf="!popupMode" [type]="'details'"></app-session-time>
+    <app-session-expired *ngIf="!popupMode" [target]="'attraction'"></app-session-expired>
     <div class="grey-bg">
-        <app-stepper [currentStep]="3"></app-stepper>
+        <app-stepper *ngIf="!popupMode" [currentStep]="3"></app-stepper>
 
         <ng-container *ngIf="isLoading()">
             <app-skeleton-booking></app-skeleton-booking>
@@ -13,9 +13,12 @@
         </ng-container>
 
         <ng-container *ngIf="!isLoading() && !error()">
-            <section class="container-xl py-5">
+            <section [ngClass]="popupMode ? 'popup-checkout-body' : 'container-xl py-5'">
                 <div class="row justify-content-between row-gap-4">
-                    <span class="col-xl-8">
+                    <span [ngClass]="popupMode ? 'col-12' : 'col-xl-8'">
+                        <div class="mb-3" *ngIf="popupMode">
+                            <app-checkout-flight-recap [data]="data()"></app-checkout-flight-recap>
+                        </div>
                         <form [formGroup]="checkoutForm" (ngSubmit)="addToCart()">
                             <div formGroupName="paxes">
                                 <app-booking-paxes-fields [checkoutForm]="checkoutForm" [paxes]="data()?.paxes"
@@ -49,7 +52,7 @@
                             </div>
                         </form>
                     </span>
-                    <span class="col-xl-4 d-none d-xl-block">
+                    <span class="col-xl-4 d-none d-xl-block" *ngIf="!popupMode">
                         <app-checkout-flight-recap [data]="data()"></app-checkout-flight-recap>
                     </span>
                 </div>

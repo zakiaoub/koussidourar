@@ -3,13 +3,12 @@ import { Component } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 import { TranslationModule } from '../../../core/modules/translation.module';
 import { LangComponent } from './components/lang/lang.component';
-import { CurrencyComponent } from './components/currency/currency.component';
 import { SessionService } from '../../../core/services/session.service';
 import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-settings',
-  imports: [DialogModule, CommonModule, TranslationModule, LangComponent, CurrencyComponent],
+  imports: [DialogModule, CommonModule, TranslationModule, LangComponent],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.css'
 })

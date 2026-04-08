@@ -84,7 +84,7 @@
                                     </ng-container>
 
                                     <ng-container *ngSwitchCase="'flight'">
-                                        <app-flights-calendar *ngIf="calendar()?.count > 1" [data]="calendar()"
+                                        <app-flights-calendar *ngIf="calendar()?.count > 1" [data]="calendar()" [day]="day" [month]="month" [year]="year" [searchToken]="searchToken"
                                             (dateChanged)="flightChangeDate($event)"></app-flights-calendar>
                                         <app-flight-flex [items]="data()" [airportsName]="airportsName()"
                                             [searchToken]="searchToken" [day]="day" [month]="month" [year]="year"

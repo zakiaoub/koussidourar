@@ -1,0 +1,218 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.premium-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ticket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ticket-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  overflow: hidden;
+}
+
+.ticket-flights {
+  flex: 1;
+  padding: 1.25rem;
+}
+
+.flight-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.airline-box {
+  text-align: center;
+}
+
+.airline-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.airline-name {
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 4px;
+  color: #6b7280;
+}
+
+.flight-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.time {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+}
+
+.airport {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+.route-line-container {
+  flex: 1;
+  margin: 0 30px;
+  position: relative;
+}
+
+.duration {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.route-line {
+  height: 2px;
+  background: #e5e7eb;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.route-line i {
+  color: var(--main);
+  font-size: 14px;
+  background: #ffffff;
+  padding: 0 5px;
+}
+
+.route-line i.mirror {
+  transform: scaleX(-1);
+}
+
+.direct {
+  font-size: 11px;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.time-box.end {
+  text-align: right;
+}
+
+.flight-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 20px 0;
+  position: relative;
+}
+
+.flight-divider::after {
+  content: 'Retour';
+  position: absolute;
+  top: -10px;
+  right: 0;
+  background: #ffffff;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+
+.ticket-action {
+  width: 240px;
+  background: #fcfcfd;
+  border-left: 1px dashed #e5e7eb;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.total-price {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1;
+}
+
+.btn-book {
+  width: 100%;
+  background: var(--main);
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.btn-book:disabled {
+  opacity: 0.7;
+}
+
+@media (max-width: 950px) {
+  .ticket-card {
+    flex-direction: column;
+  }
+
+  .ticket-action {
+    width: 100%;
+    border-left: none;
+    border-top: 1px dashed #e5e7eb;
+  }
+}
+
+@media (max-width: 1200px) {
+  :host ::ng-deep .my-2.d-flex.align-items-center {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0.5rem;
+  }
+
+  :host ::ng-deep .w-25,
+  :host ::ng-deep .w-50 {
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  :host ::ng-deep .w-25.text-end {
+    text-align: left !important;
+  }
+
+  :host ::ng-deep .bg-white.rounded-3.p-3.shadow-sm {
+    padding: 0.75rem !important;
+  }
+
+  :host ::ng-deep .position-relative.rounded-3.shadow-sm.rounded-3.overflow-hidden app-city-image,
+  :host ::ng-deep .position-relative.rounded-3.shadow-sm.rounded-3.overflow-hidden img {
+    width: 100% !important;
+  }
+
+  :host ::ng-deep .position-relative.rounded-3.shadow-sm.rounded-3.overflow-hidden {
+    min-height: 180px;
+  }
+}
