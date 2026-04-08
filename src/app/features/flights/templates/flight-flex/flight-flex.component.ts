@@ -16,10 +16,12 @@ import { ToastService } from '@app/core/services/toast.service';
 import { TooltipModule } from 'primeng/tooltip';
 import { FlightDetailsComponent } from '@features/flights/views/flight-details/flight-details.component';
 import { FlightsBookingFormComponent } from '@app/shared/components/forms/flights-booking-form/flights-booking-form.component';
+import { AmountComponent } from '@app/shared/components/settings/components/amount/amount.component';
+import { FilterPipe } from '@app/shared/pipes/filter.pipe';
 
 @Component({
   selector: 'app-flight-flex',
-  imports: [CommonModule, TranslationModule, TimelineModule, FlightsItineraryComponent, FlightCardComponent, ButtonComponent, DialogModule, FlightCompanyComponent, TooltipModule, FlightDetailsComponent, FlightsBookingFormComponent],
+  imports: [CommonModule, TranslationModule, TimelineModule, FlightsItineraryComponent, FlightCardComponent, ButtonComponent, DialogModule, FlightCompanyComponent, TooltipModule, FlightDetailsComponent, FlightsBookingFormComponent, AmountComponent, FilterPipe],
   templateUrl: './flight-flex.component.html',
   styleUrl: './flight-flex.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -41,6 +43,8 @@ export class FlightFlexComponent {
   @Input() params: any;
 
   isLoading = signal<Record<string, boolean>>({});
+
+  sortMode = signal<'cheap' | 'fast' | 'best'>('cheap');
 
   overlay: Record<number, boolean> = {};
 
@@ -71,10 +75,74 @@ export class FlightFlexComponent {
     this.bookingStep = 'checkout';
   }
 
+  backToDetails() {
+    this.bookingStep = 'details';
+  }
+
   ngOnInit(): void {
     this.day = this.route.snapshot.paramMap.get('day');
     this.month = this.route.snapshot.paramMap.get('month');
     this.year = this.route.snapshot.paramMap.get('year');
+  }
+
+  setSortMode(mode: 'cheap' | 'fast' | 'best') {
+    this.sortMode.set(mode);
+  }
+
+  getDisplayItems(): any[] {
+    const list = Array.isArray(this.items) ? [...this.items] : [];
+
+    const mode = this.sortMode();
+    if (mode === 'cheap') {
+      return list.sort((a, b) => this.getTotalPrice(a) - this.getTotalPrice(b));
+    }
+
+    if (mode === 'fast') {
+      return list.sort((a, b) => this.getTotalDurationMinutes(a) - this.getTotalDurationMinutes(b));
+    }
+
+    return list.sort((a, b) => {
+      const priceDiff = this.getTotalPrice(a) - this.getTotalPrice(b);
+      if (priceDiff !== 0) return priceDiff;
+      return this.getTotalDurationMinutes(a) - this.getTotalDurationMinutes(b);
+    });
+  }
+
+  private getTotalPrice(item: any): number {
+    const value = item?.TotalAmount;
+    if (typeof value === 'number') return value;
+    if (typeof value === 'string') {
+      const normalized = value.replace(/\s/g, '').replace(',', '.').replace(/[^0-9.]/g, '');
+      const parsed = parseFloat(normalized);
+      return Number.isFinite(parsed) ? parsed : Number.POSITIVE_INFINITY;
+    }
+    return Number.POSITIVE_INFINITY;
+  }
+
+  private getTotalDurationMinutes(item: any): number {
+    const itineraries = item?.Itinerary;
+    if (!Array.isArray(itineraries) || itineraries.length === 0) return Number.POSITIVE_INFINITY;
+
+    return itineraries.reduce((sum: number, it: any) => sum + this.parseDurationToMinutes(it?.Duration), 0);
+  }
+
+  private parseDurationToMinutes(raw: any): number {
+    if (!raw) return 0;
+    if (typeof raw === 'number') return raw;
+
+    const str = String(raw).trim().toLowerCase();
+
+    const hm = str.match(/^(\d{1,2}):(\d{2})$/);
+    if (hm) {
+      return (parseInt(hm[1], 10) * 60) + parseInt(hm[2], 10);
+    }
+
+    let minutes = 0;
+    const h = str.match(/(\d+)\s*h/);
+    const m = str.match(/(\d+)\s*m/);
+    if (h) minutes += parseInt(h[1], 10) * 60;
+    if (m) minutes += parseInt(m[1], 10);
+    return minutes;
   }
 
   getCheckRate(data: any, RateKey: string) {

@@ -36,12 +36,50 @@ export class FlightsCalendarComponent implements OnInit {
 
   currentIndex: number = 0;
 
+  dateStripItems: Array<{ key: string; value: any }> = [];
+
   ngOnInit() {
     this.day = this.route.snapshot.paramMap.get('day');
     this.month = this.route.snapshot.paramMap.get('month');
     this.year = this.route.snapshot.paramMap.get('year');
     this.selectedDate = this.year + '-' + this.month + '-' + this.day
     this.searchToken = this.route.snapshot.paramMap.get('searchToken');
+
+    this.buildDateStrip();
+  }
+
+  ngOnChanges() {
+    this.buildDateStrip();
+  }
+
+  private buildDateStrip() {
+    const itemsObj = this.data?.items;
+    if (!itemsObj) {
+      this.dateStripItems = [];
+      return;
+    }
+
+    const entries = Object.entries(itemsObj)
+      .map(([key, value]) => ({ key, value }))
+      .sort((a, b) => new Date(a.key).getTime() - new Date(b.key).getTime());
+
+    if (!entries.length) {
+      this.dateStripItems = [];
+      return;
+    }
+
+    const selected = this.selectedDate;
+    const selectedIndex = selected ? entries.findIndex(e => e.key === selected) : -1;
+
+    if (selectedIndex === -1) {
+      this.dateStripItems = entries.slice(0, 7);
+      return;
+    }
+
+    const start = Math.max(0, selectedIndex - 3);
+    const end = Math.min(entries.length, start + 7);
+    const adjustedStart = Math.max(0, end - 7);
+    this.dateStripItems = entries.slice(adjustedStart, end);
   }
 
   selectDate(dateString: string) {
@@ -51,6 +89,8 @@ export class FlightsCalendarComponent implements OnInit {
     const month = date[1]
     const year = date[0];
     window.history.pushState({ "html": '', "pageTitle": '' }, "", ['/flights', 'results', this.searchToken, day, month, year].join('/'));
+
+    this.buildDateStrip();
 
     setTimeout(() => {
       this.dateChanged.emit({ day, month, year });

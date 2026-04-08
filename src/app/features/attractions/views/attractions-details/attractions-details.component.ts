@@ -2,7 +2,6 @@ import { Component, signal } from '@angular/core';
 import { ImagesCarouselComponent } from '@app/shared/components/templates/images-carousel/images-carousel.component';
 import { ProductDescriptionComponent } from '@app/shared/components/templates/product-description/product-description.component';
 import { ProductRateCommentComponent } from '@app/shared/components/templates/product-rate-comment/product-rate-comment.component';
-import { FaqDisplayComponent } from '@app/shared/components/templates/faq-display/faq-display.component';
 import { ProductIncludedComponent } from '@app/shared/components/templates/product-included/product-included.component';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -15,7 +14,6 @@ import { AttractionOthersComponent } from "@features/attractions/components/attr
 import { SkeletonDetailsComponent } from '@app/shared/components/loaders/skeleton-details/skeleton-details.component';
 import { SessionExpiredComponent } from '@app/shared/components/settings/templates/session-expired/session-expired.component';
 import { StepperComponent } from "@app/shared/components/widgets/stepper/stepper.component";
-import { WeatherComponent } from '@app/shared/components/templates/app-weather/app-weather.component';
 import { ReqService } from '@app/core/services/req.service';
 import { ErrorRequestComponent } from '@app/shared/components/errors/error-request/error-request.component';
 
@@ -25,7 +23,6 @@ import { ErrorRequestComponent } from '@app/shared/components/errors/error-reque
     ImagesCarouselComponent,
     ProductDescriptionComponent,
     ProductIncludedComponent,
-    FaqDisplayComponent,
     CommonModule,
     AttractionInfosComponent,
     AttractionRecapComponent,
@@ -37,7 +34,6 @@ import { ErrorRequestComponent } from '@app/shared/components/errors/error-reque
     SkeletonDetailsComponent,
     SessionExpiredComponent,
     StepperComponent,
-    WeatherComponent,
     ErrorRequestComponent
   ],
   templateUrl: './attractions-details.component.html',

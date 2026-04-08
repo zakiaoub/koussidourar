@@ -15,69 +15,57 @@
         </div>
     </div>
 
-    <div class="bg-white rounded-3 overflow-hidden shadow-sm mt-4">
-        <div class="p-3">
-            <div *ngFor="let itinerary of data?.itineraries">
-                <div class="d-flex justify-content-between">
-                    <span class="fw-medium main-text">
-                        <ng-container *ngIf="data?.itineraries?.length <= 2">
-                            {{(itinerary.Ref === 1 ? "outbound" : "return") |
-                            translate}}
-                        </ng-container>
-                        <ng-container *ngIf="data?.itineraries.length > 2">
-                            {{"flight" | translate}} 0{{itinerary.Ref}}
-                        </ng-container>
-                    </span>
-                    <span>
-                        {{itinerary.Segments[0].DepartureDateTime | date:'EEE. MMM dd.'}}
-                    </span>
-                </div>
+    <div class="premium-results mt-4">
+        <div class="ticket-list">
+            <article class="ticket-card">
+                <div class="ticket-flights">
+                    <ng-container *ngFor="let itinerary of data?.itineraries; let last = last">
+                        <div class="flight-row" *ngIf="itinerary?.Segments?.length">
+                            <div class="airline-box">
+                                <img
+                                    class="airline-img"
+                                    [src]="airlines | filter:itinerary.Segments[0].MarketingCarrier:'logo'"
+                                    [alt]="airlines | filter:itinerary.Segments[0].MarketingCarrier:'name'" />
+                                <div class="airline-name">
+                                    {{ airlines | filter:itinerary.Segments[0].MarketingCarrier:'name' }}
+                                </div>
+                            </div>
 
-                <div class="my-2 d-flex align-items-center">
-                    <span class="w-25 text-start" [pTooltip]="itinerary.Segments[0].DepartureAirportName">
-                        <div class="fw-medium"> {{itinerary.Segments[0].DepartureDateTime | date:'HH:MM'}}</div>
-                        <div class="fs-90 text-secondary">{{itinerary.Segments[0].DepartureAirportCode}}</div>
-                        <div class="fs-90 text-secondary">{{"terminal" | translate}} :
-                            {{itinerary.Segments[0].DepartureAirportTerminal}}</div>
-                    </span>
-                    <span class="w-50 d-flex align-items-center gap-3">
-                        <hr class="border-secondary w-100" />
-                        <span class="green-text fs-110">
-                            {{itinerary.Duration}}
-                        </span>
-                        <hr class="border-secondary w-100" />
-                    </span>
-                    <span class="w-25 text-end"
-                        [pTooltip]="itinerary.Segments[itinerary.Segments.length - 1].ArrivalAirportName">
-                        <div class="fw-medium"> {{itinerary.Segments[itinerary.Segments.length -1].ArrivalDateTime |
-                            date:'HH:MM'}}</div>
-                        <div class="fs-90 text-secondary">{{itinerary.Segments[itinerary.Segments.length
-                            -1].ArrivalAirportCode}}</div>
-                        <div class="fs-90 text-secondary">{{"terminal" | translate}} :
-                            {{itinerary.Segments[itinerary.Segments.length -1].ArrivalAirportTerminal}}</div>
-                    </span>
-                </div>
+                            <div class="flight-timeline">
+                                <div class="time-box">
+                                    <div class="time">{{ itinerary?.Segments?.[0]?.DepartureDateTime?.replace(' ', 'T') | date:'HH:mm' }}</div>
+                                    <div class="airport">{{ itinerary?.Segments?.[0]?.DepartureAirportCode }}</div>
+                                </div>
 
-                <div class="d-flex gap-2">
-                    <span>
-                        <img [src]="airlines | filter:itinerary.Segments[0].MarketingCarrier:'logo'" [width]="40"
-                            [height]="40" />
-                    </span>
-                    <span>
-                        <div class="fw-medium">{{airlines | filter:itinerary.Segments[0].MarketingCarrier:'name'}}</div>
-                        <div class="fs-90">{{"cabin_class" | translate}} : {{itinerary.Segments[0].BookingClass |
-                            class}} |
-                            {{"stops" | translate}} : {{itinerary?.Segments | stopover:'count'}}
+                                <div class="route-line-container">
+                                    <div class="duration">{{ itinerary?.Duration || itinerary?.Segments?.[0]?.Duration }}</div>
+                                    <div class="route-line"><i class="fas fa-plane" [ngClass]="{ 'mirror': itinerary?.Ref === 2 }"></i></div>
+                                    <div class="direct">
+                                        {{ (itinerary?.Segments?.length - 1) > 0 ? ((itinerary?.Segments?.length - 1) + ' escale') : ('direct' | translate) }}
+                                    </div>
+                                </div>
+
+                                <div class="time-box end">
+                                    <div class="time">{{ itinerary?.Segments?.[itinerary?.Segments?.length - 1]?.ArrivalDateTime?.replace(' ', 'T') | date:'HH:mm' }}</div>
+                                    <div class="airport">{{ itinerary?.Segments?.[itinerary?.Segments?.length - 1]?.ArrivalAirportCode }}</div>
+                                </div>
+                            </div>
                         </div>
-                    </span>
+
+                        <div class="flight-divider" *ngIf="!last"></div>
+                    </ng-container>
                 </div>
 
+                <div class="ticket-action">
+                    <div class="total-price">
+                        <app-amount [value]="data?.totalAmount"></app-amount>
+                    </div>
 
-            </div>
-            <!-- <hr class="border-secondary" />
-           <div class="mt-4">
-                <app-promo-code></app-promo-code>
-            </div> -->
+                    <button type="button" class="btn-book" disabled>
+                        Sélectionné
+                    </button>
+                </div>
+            </article>
         </div>
     </div>
     <div class="mt-4 bg-white shadow-sm rounded-4 p-4">

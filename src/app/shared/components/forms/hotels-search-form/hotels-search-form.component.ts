@@ -18,7 +18,6 @@ import { SessionService } from '@app/core/services/session.service';
 import { HistoryService } from '@app/core/services/history.service';
 import { ToastService } from '@app/core/services/toast.service';
 import { forkJoin } from 'rxjs';
-import { IconComponent } from "@app/shared/components/widgets/icon/icon.component";
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { RoomsFieldComponent } from '@app/shared/components/fields/rooms-field/rooms-field.component';
 import { ReqService } from '@app/core/services/req.service';
@@ -26,7 +25,7 @@ import { ReqService } from '@app/core/services/req.service';
 
 @Component({
   selector: 'app-hotels-search-form',
-  imports: [CommonModule, FormsModule, SubmitComponent, TranslationModule, AutocompleteSuggetionsComponent, AutoCompleteModule, DatePicker, RoomsFieldComponent, MultiSelectModule, RankComponent, LoaderCityComponent, IconComponent],
+  imports: [CommonModule, FormsModule, SubmitComponent, TranslationModule, AutocompleteSuggetionsComponent, AutoCompleteModule, DatePicker, RoomsFieldComponent, MultiSelectModule, RankComponent, LoaderCityComponent],
   templateUrl: './hotels-search-form.component.html',
   styleUrl: './hotels-search-form.component.css'
 })
