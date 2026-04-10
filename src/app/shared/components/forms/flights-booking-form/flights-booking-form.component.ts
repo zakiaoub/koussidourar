@@ -18,11 +18,14 @@ import { BookingPaxesFieldsComponent } from '../../fields/booking-paxes-fields/b
 import { BookingContactFieldsComponent } from '../../fields/booking-contact-fields/booking-contact-fields.component';
 import { ScrollService } from '@app/core/services/scroll.service';
 import { CartService } from '@app/core/services/cart.service';
-import { environment } from 'environments/environment';
+import { AmountComponent } from '@app/shared/components/settings/components/amount/amount.component';
+import { LogoComponent } from '@app/shared/components/logo/logo.component';
+import airlines from '@assets/json/airlines.json';
+import { Airline } from '@app/core/models/airline.interface';
 
 @Component({
   selector: 'app-flights-booking-form',
-  imports: [CommonModule, TranslationModule, FormsModule, ReactiveFormsModule, ButtonComponent, CheckoutFlightRecapComponent, SessionTimeComponent, CheckboxModule, FlightRulesComponent, BookingPaxesFieldsComponent, BookingContactFieldsComponent, SkeletonBookingComponent, SessionExpiredComponent, StepperComponent, ErrorRequestComponent],
+  imports: [CommonModule, TranslationModule, FormsModule, ReactiveFormsModule, ButtonComponent, CheckoutFlightRecapComponent, SessionTimeComponent, CheckboxModule, FlightRulesComponent, BookingPaxesFieldsComponent, BookingContactFieldsComponent, SkeletonBookingComponent, SessionExpiredComponent, StepperComponent, ErrorRequestComponent, AmountComponent, LogoComponent],
   templateUrl: './flights-booking-form.component.html',
   styleUrl: './flights-booking-form.component.css'
 })
@@ -47,6 +50,8 @@ export class FlightsBookingFormComponent {
   @Input() inputRateCategory?: string;
 
   checkoutForm: FormGroup;
+
+  airlines: Airline[] = airlines as any;
 
   isLoading = signal<boolean>(false)
   error = signal<boolean>(false)
@@ -80,6 +85,10 @@ export class FlightsBookingFormComponent {
       email: new FormControl(null, [Validators.required, Validators.email]),
       phone: new FormControl(null, [Validators.required]),
       specialRequests: new FormControl(null, [Validators.minLength(20), Validators.maxLength(300)]),
+      cardName: new FormControl(null),
+      cardNumber: new FormControl(null),
+      expDate: new FormControl(null),
+      cvv: new FormControl(null),
       paxes: this.fb.group({})
     });
 
@@ -116,22 +125,12 @@ export class FlightsBookingFormComponent {
 
     this.api.get(['flight', 'detail', this.searchToken, this.day, this.month, this.year, this.rateKey, this.rateCategory].join('/')).subscribe({
       next: (response: any) => {
-        if (!environment.production) {
-          console.log('[flight/detail] raw response:', response);
-          console.log('[flight/detail] result.rateComment (conditions):', response?.result?.rateComment);
-        }
         this.data.set(response?.result);
-        if (!environment.production) {
-          console.log('[flight/detail] component data() after set:', this.data());
-        }
         this.city = response?.result?.dataPost?.Itineraries[0]?.ArrivalCityName + ' , ' + response?.result?.dataPost?.Itineraries[0]?.ArrivalCountryName
         this.loadPaxes()
         this.isLoading.set(false);
       },
-      error: (err: any) => {
-        if (!environment.production) {
-          console.error('[flight/detail] request error:', err);
-        }
+      error: () => {
         this.error.set(true)
         this.isLoading.set(false);
       }
@@ -139,6 +138,11 @@ export class FlightsBookingFormComponent {
   }
 
   addToCart() {
+    if (!this.popupMode && !this.isPaymentValid()) {
+      this.toastService.show({ severity: 'warn', summary: 'missing_required_fields', detail: 'missing_required_fields_caption', life: 5000 });
+      return;
+    }
+
     if (this.checkoutForm.invalid) {
       this.checkoutForm.markAllAsTouched();
       this.scroll.scrollTo(0);
@@ -174,5 +178,104 @@ export class FlightsBookingFormComponent {
         this.isSubmiting.set(false);
       }
     })
+  }
+
+  private isPaymentValid() {
+    const formValue = this.checkoutForm.value;
+    const cardName = (formValue.cardName || '').trim();
+    const cardNumber = (formValue.cardNumber || '').replace(/\s+/g, '');
+    const expDate = (formValue.expDate || '').trim();
+    const cvv = (formValue.cvv || '').trim();
+    return !!cardName && cardNumber.length === 16 && /^\d{2}\/\d{2}$/.test(expDate) && cvv.length >= 3;
+  }
+
+  formatCardNumber(event: Event) {
+    const input = event.target as HTMLInputElement;
+    let value = (input.value || '').replace(/\D/g, '').slice(0, 16);
+    value = value.replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+    this.checkoutForm.get('cardNumber')?.setValue(value, { emitEvent: false });
+  }
+
+  formatExpDate(event: Event) {
+    const input = event.target as HTMLInputElement;
+    let value = (input.value || '').replace(/\D/g, '').slice(0, 4);
+    if (value.length > 2) value = `${value.slice(0, 2)}/${value.slice(2)}`;
+    this.checkoutForm.get('expDate')?.setValue(value, { emitEvent: false });
+  }
+
+  formatCvv(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const value = (input.value || '').replace(/\D/g, '').slice(0, 4);
+    this.checkoutForm.get('cvv')?.setValue(value, { emitEvent: false });
+  }
+
+  paxGroupById(paxId: string): FormGroup {
+    return this.checkoutForm.get(['paxes', paxId]) as FormGroup;
+  }
+
+  paxTypeLabel(pax: any): string {
+    const type = (pax?.PaxType || '').toUpperCase();
+    if (type === 'ADT') return 'Adulte';
+    if (type === 'CHD') return 'Enfant';
+    if (type === 'INF') return 'Bebe';
+    return 'Voyageur';
+  }
+
+  getAdditionalProducts() {
+    const source = this.data() || {};
+    const candidates = [
+      ...(Array.isArray(source?.hotelItems) ? source.hotelItems : []),
+      ...(Array.isArray(source?.attractionItems) ? source.attractionItems : []),
+      ...(Array.isArray(source?.transferItems) ? source.transferItems : []),
+      ...(Array.isArray(source?.otherItems) ? source.otherItems : [])
+    ];
+    return candidates.slice(0, 4);
+  }
+
+  getFlightPrice(): number {
+    const totalAmount = this.data()?.totalAmount;
+    if (typeof totalAmount === 'number') return totalAmount;
+    if (totalAmount && this.rateCategory && typeof totalAmount[this.rateCategory] === 'number') {
+      return totalAmount[this.rateCategory];
+    }
+    if (totalAmount && typeof totalAmount['default'] === 'number') {
+      return totalAmount['default'];
+    }
+    return 0;
+  }
+
+  getAdditionalProductsTotal(): number {
+    return this.getAdditionalProducts().reduce((sum: number, item: any) => {
+      const amount = Number(item?.amount ?? item?.price ?? 0);
+      return sum + (Number.isFinite(amount) ? amount : 0);
+    }, 0);
+  }
+
+  getGrandTotal(): number {
+    return this.getFlightPrice() + this.getAdditionalProductsTotal();
+  }
+
+  getUniqueCarrierCodes(): string[] {
+    const itineraries = this.data()?.itineraries;
+    if (!Array.isArray(itineraries)) return [];
+
+    const codes = new Set<string>();
+    for (const itinerary of itineraries) {
+      const segments = itinerary?.Segments;
+      if (!Array.isArray(segments)) continue;
+      for (const seg of segments) {
+        const code = (seg?.MarketingCarrier || seg?.Operator || seg?.CarrierCode || '').toString().trim();
+        if (code) codes.add(code);
+      }
+    }
+
+    if (codes.size === 0 && this.carrierCode) codes.add(this.carrierCode);
+    return Array.from(codes);
+  }
+
+  getAirlineLogoUrl(code: string): string {
+    if (!code) return '';
+    const match: any = (this.airlines || []).find((a: any) => (a?.id || '').toString().toUpperCase() === code.toUpperCase());
+    return match?.logo || '';
   }
 }

@@ -1,62 +1,288 @@
 <ng-container>
-    <app-session-time *ngIf="!popupMode" [type]="'details'"></app-session-time>
-    <app-session-expired *ngIf="!popupMode" [target]="'attraction'"></app-session-expired>
-    <div class="grey-bg">
-        <app-stepper *ngIf="!popupMode" [currentStep]="3"></app-stepper>
+  <app-session-time *ngIf="!popupMode" [type]="'details'"></app-session-time>
+  <app-session-expired *ngIf="!popupMode" [target]="'attraction'"></app-session-expired>
 
-        <ng-container *ngIf="isLoading()">
-            <app-skeleton-booking></app-skeleton-booking>
-        </ng-container>
+  <ng-container *ngIf="isLoading()">
+    <app-skeleton-booking></app-skeleton-booking>
+  </ng-container>
 
-        <ng-container *ngIf="error()">
-            <app-error-request caption="error_checkout_message"></app-error-request>
-        </ng-container>
+  <ng-container *ngIf="error()">
+    <app-error-request caption="error_checkout_message"></app-error-request>
+  </ng-container>
 
-        <ng-container *ngIf="!isLoading() && !error()">
-            <section [ngClass]="popupMode ? 'popup-checkout-body' : 'container-xl py-5'">
-                <div class="row justify-content-between row-gap-4">
-                    <span [ngClass]="popupMode ? 'col-12' : 'col-xl-8'">
-                        <div class="mb-3" *ngIf="popupMode">
-                            <app-checkout-flight-recap [data]="data()"></app-checkout-flight-recap>
-                        </div>
-                        <form [formGroup]="checkoutForm" (ngSubmit)="addToCart()">
-                            <div formGroupName="paxes">
-                                <app-booking-paxes-fields [checkoutForm]="checkoutForm" [paxes]="data()?.paxes"
-                                    [service]="'flight'" />
-                            </div>
-                            <hr class="border-secondary my-4" />
-                            <app-booking-contact-fields [checkForm]="checkoutForm" />
-                            <hr class="border-secondary my-4" />
+  <ng-container *ngIf="!isLoading() && !error()">
+    <section *ngIf="popupMode" class="popup-checkout-body">
+      <div class="mb-3">
+        <app-checkout-flight-recap [data]="data()"></app-checkout-flight-recap>
+      </div>
+      <form [formGroup]="checkoutForm" (ngSubmit)="addToCart()">
+        <div formGroupName="paxes">
+          <app-booking-paxes-fields [checkoutForm]="checkoutForm" [paxes]="data()?.paxes" [service]="'flight'" />
+        </div>
+        <hr class="border-secondary my-4" />
+        <app-booking-contact-fields [checkForm]="checkoutForm" />
+        <hr class="border-secondary my-4" />
+        <app-flight-rules [data]="data()?.rateComment"></app-flight-rules>
+        <div class="d-flex align-items-center gap-2 fs-110 mt-4 lh-1">
+          <p-checkbox [(ngModel)]="terms" [binary]="true" name="terms" [ngModelOptions]="{ standalone: true }" inputId="terms"></p-checkbox>
+          <label for="terms" class="ml-2" [innerHTML]="'terms_caption' | translate"></label>
+        </div>
+        <div class="mt-5">
+          <app-button [type]="'submit'" [title]="'add_to_cart'" [class]="'p-4 w-100 rounded main-bg text-white'" [disabled]="!terms" [isLoading]="isSubmiting()"></app-button>
+        </div>
+      </form>
+    </section>
 
-                            <app-flight-rules [data]="data()?.rateComment"></app-flight-rules>
+    <section *ngIf="!popupMode" class="payment-page">
+      <app-stepper [currentStep]="3"></app-stepper>
+      <div class="checkout-layout">
+        <div class="main-panel">
+          <div class="main-content">
+            <div class="brand-logo-wrap">
+              <app-logo></app-logo>
+            </div>
+            <div class="breadcrumbs">Recherche <span>></span> Passagers <span>></span> <span class="active">Paiement & Facturation</span> <span>></span> Confirmation</div>
 
-                            <div class="d-flex align-items-center gap-2 fs-110 mt-4 lh-1">
-                                <p-checkbox [(ngModel)]="terms" [binary]="true" name="terms"
-                                    [ngModelOptions]="{ standalone: true }" inputId="terms">
-                                </p-checkbox>
-                                <label for="terms" class="ml-2" [innerHTML]="'terms_caption' | translate"></label>
-                            </div>
+            <div class="express-title">Paiement Express</div>
+            <div class="express-checkout">
+              <button type="button" class="btn-express btn-shoppay">shop Pay</button>
+              <button type="button" class="btn-express btn-paypal">PayPal</button>
+              <button type="button" class="btn-express btn-gpay">G Pay</button>
+            </div>
 
-                            <div class="mt-5">
-                                <ng-container *ngIf="!isCartAdded()">
-                                    <app-button [type]="'submit'" [title]="'add_to_cart'"
-                                        [class]="'p-4 w-100 rounded main-bg text-white'" [disabled]="!terms"
-                                        [isLoading]="isSubmiting()"></app-button>
-                                </ng-container>
+            <div class="separator"><span>OU SAISISSEZ VOS COORDONNEES</span></div>
 
-                                 <ng-container *ngIf="isCartAdded()">
-                                    <app-button [type]="'button'" [title]="'view_the_cart'"
-                                        [class]="'p-4 w-100 rounded main-bg text-white'" [disabled]="!terms"
-                                        (action)="this.cart.open()"></app-button>
-                                </ng-container>
-                            </div>
-                        </form>
-                    </span>
-                    <span class="col-xl-4 d-none d-xl-block" *ngIf="!popupMode">
-                        <app-checkout-flight-recap [data]="data()"></app-checkout-flight-recap>
-                    </span>
+            <form [formGroup]="checkoutForm" (ngSubmit)="addToCart()">
+              <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <input class="input-field" type="text" formControlName="email" placeholder="E-mail ou numero de telephone portable">
                 </div>
-            </section>
-        </ng-container>
-    </div>
+              </div>
+
+              <div class="checkbox-group">
+                <input type="checkbox" id="news-offers" checked>
+                <label for="news-offers">M'envoyer les mises a jour du vol et les offres</label>
+              </div>
+
+              <h2 class="section-title section-title-spaced">Voyageurs</h2>
+              <div formGroupName="paxes">
+                <div class="traveler-block" *ngFor="let pax of data()?.paxes; let i = index" [formGroup]="paxGroupById(pax.PaxId)">
+                  <div class="traveler-head">{{ paxTypeLabel(pax) }} {{ i + 1 }}</div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <select class="input-field" formControlName="Title">
+                        <option *ngFor="let item of pax?.Title" [value]="item">{{ item }}</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <input class="input-field" type="text" formControlName="FirstName" placeholder="Prenom">
+                    </div>
+                    <div class="form-group">
+                      <input class="input-field" type="text" formControlName="LastName" placeholder="Nom de famille">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <div class="gender-checkboxes">
+                        <label class="gender-check">
+                          <input
+                            type="checkbox"
+                            [checked]="paxGroupById(pax.PaxId)?.get('Gender')?.value === 'Male'"
+                            (change)="paxGroupById(pax.PaxId)?.get('Gender')?.setValue('Male')"
+                          />
+                          <span>Male</span>
+                        </label>
+                        <label class="gender-check">
+                          <input
+                            type="checkbox"
+                            [checked]="paxGroupById(pax.PaxId)?.get('Gender')?.value === 'Female'"
+                            (change)="paxGroupById(pax.PaxId)?.get('Gender')?.setValue('Female')"
+                          />
+                          <span>Female</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input class="input-field" type="text" formControlName="DateOfBirth" placeholder="Date de naissance">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <input class="input-field" type="text" formControlName="Nationality" placeholder="Pays de passeport">
+                    </div>
+                    <div class="form-group">
+                      <input class="input-field" type="text" formControlName="PassportNumber" placeholder="Numero de passeport">
+                    </div>
+                    <div class="form-group">
+                      <input class="input-field" type="text" formControlName="ExpiryDate" placeholder="Expiration passeport">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="section-title section-title-spaced">Reception du billet</h2>
+              <div class="delivery-methods">
+                <label class="delivery-option active">
+                  <div class="option-info">
+                    <input type="radio" name="delivery" checked>
+                    <span>E-Billet (Par E-mail)</span>
+                  </div>
+                  <span class="option-price">Gratuit</span>
+                </label>
+                <label class="delivery-option">
+                  <div class="option-info">
+                    <input type="radio" name="delivery">
+                    <span>Recevoir par SMS</span>
+                  </div>
+                  <span class="option-price">+1,50 EUR</span>
+                </label>
+              </div>
+
+              <h2 class="section-title section-title-spaced">Adresse de facturation</h2>
+              <div class="form-row">
+                <div class="form-group"><input class="input-field" type="text" placeholder="Pays/region" value="France"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><input class="input-field" type="text" placeholder="Adresse"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><input class="input-field" type="text" placeholder="Code postal"></div>
+                <div class="form-group"><input class="input-field" type="text" placeholder="Ville"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><input class="input-field" type="text" formControlName="phone" placeholder="Telephone"></div>
+              </div>
+
+              <h2 class="section-title section-title-spaced">Paiement</h2>
+              <div class="form-row">
+                <div class="form-group"><input class="input-field" type="text" formControlName="cardName" placeholder="Nom figurant sur la carte"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><input class="input-field" type="text" formControlName="cardNumber" placeholder="Numero de carte de credit" maxlength="19" (input)="formatCardNumber($event)"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><input class="input-field" type="text" formControlName="expDate" placeholder="MM/AA" maxlength="5" (input)="formatExpDate($event)"></div>
+                <div class="form-group"><input class="input-field" type="password" formControlName="cvv" placeholder="CVV" maxlength="4" (input)="formatCvv($event)"></div>
+              </div>
+
+              <div class="checkbox-group">
+                <input type="checkbox" id="terms-main" [(ngModel)]="terms" [ngModelOptions]="{ standalone: true }">
+                <label for="terms-main">J'accepte les conditions de reservation</label>
+              </div>
+
+              <div class="actions-row">
+                <a class="return-link" href="#">Retour aux passagers</a>
+                <button class="btn-submit" type="submit" [disabled]="!terms || isSubmiting()">
+                  {{ isSubmiting() ? 'Traitement...' : 'Proceder au paiement' }}
+                </button>
+              </div>
+              <div class="summary-row total mobile-total">
+                <span>Total</span>
+                <div class="total-price-wrap">
+                  <span class="currency">EUR</span>
+                  <span class="price"><app-amount [value]="getGrandTotal()"></app-amount></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="sidebar-panel">
+          <div class="sidebar-content">
+            <div class="product-item product-item-flight">
+              <div class="product-item-head">
+                <div class="product-image">
+                  <ng-container *ngIf="getUniqueCarrierCodes().length && getAirlineLogoUrl(getUniqueCarrierCodes()[0]); else planeIcon">
+                    <img class="airline-logo-main" [src]="getAirlineLogoUrl(getUniqueCarrierCodes()[0])" [alt]="getUniqueCarrierCodes()[0]" />
+                  </ng-container>
+                  <ng-template #planeIcon>✈</ng-template>
+                  <div class="product-badge">{{ data()?.paxes?.length || 1 }}</div>
+                </div>
+                <div class="product-info">
+                  <div class="product-name">Vol aller-retour</div>
+                  <div class="product-variant">Classe Economique • {{ data()?.paxes?.length || 1 }} voyageur(s)</div>
+                  <div class="airline-logos" *ngIf="getUniqueCarrierCodes().length">
+                    <ng-container *ngFor="let code of getUniqueCarrierCodes()">
+                      <img
+                        class="airline-logo"
+                        [src]="getAirlineLogoUrl(code)"
+                        [alt]="code"
+                        *ngIf="getAirlineLogoUrl(code)"
+                      />
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="product-price"><app-amount [value]="getFlightPrice()"></app-amount></div>
+              </div>
+
+              <div class="itinerary-timeline" *ngFor="let itinerary of data()?.itineraries; let i = index">
+                <div class="itinerary-title">{{ itinerary?.Ref === 1 ? 'Aller' : 'Retour' }}</div>
+                <div class="itinerary-line">
+                  <div class="it-dot"></div>
+                  <div class="it-track"></div>
+                  <div class="it-dot filled"></div>
+                </div>
+                <div class="itinerary-content">
+                  <div class="it-row">
+                    <span class="it-time">{{ itinerary?.Segments?.[0]?.DepartureDateTime | date:'EEE d MMM - HH:mm' }}</span>
+                    <span class="it-code">{{ itinerary?.Origin }}</span>
+                  </div>
+                  <div class="it-row">
+                    <span class="it-time">{{ itinerary?.Segments?.[itinerary?.Segments?.length - 1]?.ArrivalDateTime | date:'EEE d MMM - HH:mm' }}</span>
+                    <span class="it-code">{{ itinerary?.Destination }}</span>
+                  </div>
+                  <div class="it-meta">Duree: {{ itinerary?.Duration }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-item product-item-extra" *ngFor="let item of getAdditionalProducts()">
+              <div class="product-image">+</div>
+              <div class="product-info">
+                <div class="product-name">{{ item?.name || item?.title || 'Service additionnel' }}</div>
+                <div class="product-variant">{{ item?.type || 'Option' }}</div>
+              </div>
+              <div class="product-price">
+                <app-amount [value]="item?.amount || item?.price || 0"></app-amount>
+              </div>
+            </div>
+
+            <div class="discount-code">
+              <input type="text" class="input-field" placeholder="Code promo ou bon de reduction">
+              <button type="button" class="btn-apply">Appliquer</button>
+            </div>
+
+            <div class="summary-row">
+              <span>Tarif passager (TTC)</span>
+              <span><app-amount [value]="getFlightPrice()"></app-amount></span>
+            </div>
+            <div class="summary-row" *ngIf="getAdditionalProductsTotal() > 0">
+              <span>Services additionnels</span>
+              <span><app-amount [value]="getAdditionalProductsTotal()"></app-amount></span>
+            </div>
+            <div class="summary-row">
+              <span>Taxes d'aeroport</span>
+              <span>Incluses</span>
+            </div>
+            <div class="summary-row">
+              <span>Frais d'emission</span>
+              <span>Etape suivante</span>
+            </div>
+
+            <div class="summary-row total">
+              <span>Total</span>
+              <div class="total-price-wrap">
+                <span class="currency">EUR</span>
+                <span class="price"><app-amount [value]="getGrandTotal()"></app-amount></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </ng-container>
 </ng-container>
