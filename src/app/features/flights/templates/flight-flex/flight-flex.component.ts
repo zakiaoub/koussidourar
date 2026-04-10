@@ -18,6 +18,7 @@ import { FlightDetailsComponent } from '@features/flights/views/flight-details/f
 import { FlightsBookingFormComponent } from '@app/shared/components/forms/flights-booking-form/flights-booking-form.component';
 import { AmountComponent } from '@app/shared/components/settings/components/amount/amount.component';
 import { FilterPipe } from '@app/shared/pipes/filter.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flight-flex',
@@ -30,7 +31,7 @@ import { FilterPipe } from '@app/shared/pipes/filter.pipe';
 
 export class FlightFlexComponent {
 
-  constructor(private route: ActivatedRoute, private api: ReqService, private toast: ToastService) { }
+  constructor(private route: ActivatedRoute, private api: ReqService, private toast: ToastService, private router: Router) { }
 
   airlines: Airline[] = airlines
 
@@ -72,7 +73,19 @@ export class FlightFlexComponent {
 
   onCheckoutSelected(pack: string) {
     this.selectedRateCategory = pack;
-    this.bookingStep = 'checkout';
+    this.bookingVisible = false;
+    this.router.navigate([
+      'flights',
+      this.selectedCarrierCode,
+      'checkout',
+      this.searchToken,
+      this.selectedCarrierCode,
+      this.day,
+      this.month,
+      this.year,
+      this.selectedRateKey,
+      pack
+    ]);
   }
 
   backToDetails() {

@@ -18,6 +18,6 @@ export class StepperComponent {
   @Input() linear: boolean = true;
 
   steps = [
-    'your_selection', 'details', 'traveler_information', 'review_your_booking'
+    'your_selection', 'details', 'make_payment'
   ]
 }
