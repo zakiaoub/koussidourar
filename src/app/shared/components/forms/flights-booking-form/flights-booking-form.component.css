@@ -2,6 +2,60 @@
   padding: 0.9rem 1rem 1.1rem;
 }
 
+:host ::ng-deep .popup-checkout-body form {
+  padding-bottom: 96px;
+}
+
+.popup-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.popup-action-price {
+  min-width: 160px;
+}
+
+.popup-action-price__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.popup-action-price__value {
+  margin-top: 0.15rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1;
+}
+
+.popup-action-buttons {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.popup-pay-btn {
+  border: 1px solid rgba(229, 231, 235, 0.95);
+  background: #111827;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.popup-pay-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 :host ::ng-deep .popup-checkout-body .bg-white.rounded-3,
 :host ::ng-deep .popup-checkout-body .bg-white.shadow-sm {
   border-radius: 12px !important;
@@ -48,7 +102,7 @@
 
 @media (max-width: 768px) {
   .popup-checkout-body {
-    padding: 0.75rem 0.75rem 1rem;
+    padding: 0.65rem 0.65rem 0.85rem;
   }
 
   :host ::ng-deep .popup-checkout-body .p-4 {
@@ -56,16 +110,121 @@
   }
 
   :host ::ng-deep .popup-checkout-body .mt-5 {
-    margin-top: 1rem !important;
+    margin-top: 0.9rem !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body hr.my-4 {
+    margin-top: 0.8rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .py-3 {
+    padding-top: 0.55rem !important;
+    padding-bottom: 0.55rem !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .px-4 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .shadow-sm {
+    box-shadow: 0 8px 18px rgba(17, 24, 39, 0.06) !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .row-gap-4 {
+    row-gap: 0.65rem !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .col-md-6,
+  :host ::ng-deep .popup-checkout-body .col-xl-7,
+  :host ::ng-deep .popup-checkout-body .col-xl-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .d-flex.align-items-center.gap-2.py-3.px-4.border-bottom {
+    padding-top: 0.65rem !important;
+    padding-bottom: 0.65rem !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .size-35 {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .fs-80 {
+    font-size: 0.75rem !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .mt-5 {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    background: #fff;
+    padding: 0.65rem;
+    margin-left: -0.65rem !important;
+    margin-right: -0.65rem !important;
+    margin-bottom: -0.85rem !important;
+    border-top: 1px solid rgba(229, 231, 235, 0.9);
+    box-shadow: 0 -10px 22px rgba(17, 24, 39, 0.08);
+  }
+
+  .popup-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .popup-action-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    min-width: 0;
+  }
+
+  .popup-action-price__value {
+    font-size: 1.2rem;
+  }
+
+  .popup-action-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  :host ::ng-deep .popup-checkout-body .p-4.w-100 {
+    padding: 0.9rem !important;
+    border-radius: 12px !important;
+    width: 100% !important;
   }
 
   :host ::ng-deep .popup-checkout-body .p-3 {
     padding: 0.65rem !important;
   }
 
-  :host ::ng-deep .popup-checkout-body .p-4.w-100 {
-    padding: 0.78rem !important;
-    font-size: 0.9rem !important;
+  :host ::ng-deep .popup-checkout-body .input-field {
+    width: 100% !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .btn-express {
+    width: 100% !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .traveler-block {
+    margin-bottom: 0.5rem !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .traveler-head {
+    margin-bottom: 0.5rem !important;
+  }
+
+  :host ::ng-deep .popup-checkout-body .delivery-methods {
+    margin-bottom: 1rem !important;
   }
 }
 

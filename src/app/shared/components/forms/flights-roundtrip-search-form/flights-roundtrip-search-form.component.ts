@@ -10,7 +10,6 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DatePicker } from 'primeng/datepicker';
 import { Airport } from '@app/core/models/airport.interface';
 import { FLIGHTS_SUGGETIONS } from '@app/shared/constants/suggestions.constant';
-import { LoaderCityComponent } from "@app/shared/components/widgets/loader-city/loader-city.component";
 import { FormDataService } from '@app/core/services/form-data.service';
 import { HistoryService } from '@app/core/services/history.service';
 import { ToastService } from '@app/core/services/toast.service';
@@ -20,7 +19,7 @@ import { ReqService } from '@app/core/services/req.service';
 
 @Component({
   selector: 'app-flights-roundtrip-search-form',
-  imports: [GuestsFieldComponent, FormsModule, SubmitComponent, CommonModule, TranslationModule, AutocompleteSuggetionsComponent, AutoCompleteModule, DatePicker, LoaderCityComponent, IconComponent],
+  imports: [GuestsFieldComponent, FormsModule, SubmitComponent, CommonModule, TranslationModule, AutocompleteSuggetionsComponent, AutoCompleteModule, DatePicker, IconComponent],
   templateUrl: './flights-roundtrip-search-form.component.html',
   styleUrl: './flights-roundtrip-search-form.component.css',
   animations: [
@@ -33,7 +32,12 @@ import { ReqService } from '@app/core/services/req.service';
 })
 export class FlightsRoundtripSearchFormComponent {
 
-  constructor(private formDataService: FormDataService, private historyService: HistoryService, private toastService: ToastService, private api: ReqService) { }
+  constructor(
+    private formDataService: FormDataService,
+    private historyService: HistoryService,
+    private toastService: ToastService,
+    private api: ReqService
+  ) { }
 
   @Input() fetchCities!: (query: string) => void;
   @Input() airports: Airport[];

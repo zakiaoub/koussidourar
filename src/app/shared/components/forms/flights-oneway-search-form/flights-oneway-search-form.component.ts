@@ -11,7 +11,6 @@ import { AutocompleteSuggetionsComponent } from '@app/shared/components/template
 import { DatePicker } from 'primeng/datepicker';
 import { Airport } from '../../../../core/models/airport.interface';
 import { FLIGHTS_SUGGETIONS } from '../../../../shared/constants/suggestions.constant';
-import { LoaderCityComponent } from "../../../../shared/components/widgets/loader-city/loader-city.component";
 import { FormDataService } from '@app/core/services/form-data.service';
 import { ParseDataService } from '@app/core/services/parse-data.service';
 import { HistoryService } from '@app/core/services/history.service';
@@ -22,7 +21,7 @@ import { ReqService } from '@app/core/services/req.service';
 
 @Component({
   selector: 'app-flights-oneway-search-form',
-  imports: [GuestsFieldComponent, FormsModule, SubmitComponent, CommonModule, TranslationModule, AutoCompleteModule, AutocompleteSuggetionsComponent, DatePicker, LoaderCityComponent, IconComponent],
+  imports: [GuestsFieldComponent, FormsModule, SubmitComponent, CommonModule, TranslationModule, AutoCompleteModule, AutocompleteSuggetionsComponent, DatePicker, IconComponent],
   templateUrl: './flights-oneway-search-form.component.html',
   styleUrl: './flights-oneway-search-form.component.css',
   animations: [
@@ -35,7 +34,14 @@ import { ReqService } from '@app/core/services/req.service';
 })
 export class FlightsOnewaySearchFormComponent {
   
-  constructor(private route: ActivatedRoute, private formDataService: FormDataService, private parseDataService: ParseDataService, private historyService: HistoryService, private toastService: ToastService, private api: ReqService) {
+  constructor(
+    private route: ActivatedRoute,
+    private formDataService: FormDataService,
+    private parseDataService: ParseDataService,
+    private historyService: HistoryService,
+    private toastService: ToastService,
+    private api: ReqService
+  ) {
   }
 
   @Input() fetchCities!: (query: string) => void;

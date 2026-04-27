@@ -22,7 +22,10 @@ import { PrimeNgTranslations } from './core/models/translation.interafce';
 
 export class AppComponent {
 
-  constructor(private sessionService: SessionService, private PrimeNG: PrimeNG) {
+  constructor(
+    private sessionService: SessionService,
+    private PrimeNG: PrimeNG
+  ) {
     this.lang = this.sessionService.getSession()?.lang
   }
 

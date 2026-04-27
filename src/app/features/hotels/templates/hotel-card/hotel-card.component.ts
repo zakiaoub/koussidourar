@@ -10,23 +10,22 @@ import { ToastModule } from 'primeng/toast';
 import { IconComponent } from "@app/shared/components/widgets/icon/icon.component";
 import defaultImages from "@assets/json/defaultImages.json"
 import { DefaultImagesService } from '@app/core/services/default-images.service';
-import { ReqService } from '@app/core/services/req.service';
 import { ButtonComponent } from '@app/shared/components/widgets/button/button.component';
-import { ToastService } from '@app/core/services/toast.service';
 import { SpinnerComponent } from '@app/shared/components/loaders/spinner/spinner.component';
 import { AmountComponent } from '@app/shared/components/settings/components/amount/amount.component';
+import { HotelsRoomsComponent } from '@app/features/hotels/components/hotels-rooms/hotels-rooms.component';
 
 @Component({
   selector: 'app-hotel-card',
   standalone: true,
-  imports: [CommonModule, RatingModule, FormsModule, RatingComponent, TranslationModule, GalleriaModule, DialogModule, ToastModule, IconComponent, ButtonComponent, SpinnerComponent, AmountComponent],
+  imports: [CommonModule, RatingModule, FormsModule, RatingComponent, TranslationModule, GalleriaModule, DialogModule, ToastModule, IconComponent, ButtonComponent, SpinnerComponent, AmountComponent, HotelsRoomsComponent],
   templateUrl: './hotel-card.component.html',
   styleUrl: './hotel-card.component.css'
 })
 
 export class HotelCardComponent {
 
-  constructor(public dis: DefaultImagesService, private api: ReqService, private toast: ToastService) { }
+  constructor(public dis: DefaultImagesService) { }
 
   @Input() items!: any;
   @Input() searchToken!: any;
@@ -34,21 +33,13 @@ export class HotelCardComponent {
 
   isLoading = signal<Record<string, boolean>>({});
   overlay: Record<number, boolean> = {};
+  detailsVisible: boolean = false;
+  selectedHotel: any = null;
 
   defaultImages: string[] = defaultImages.hotels
 
   getRooms(hotel: any) {
-    this.isLoading.update(prev => ({ ...prev, [hotel.id]: true }));
-
-    this.api.get(['hotel', 'rooms', hotel.id, this.searchToken].join('/')).subscribe({
-      next: () => {
-        window.open(['hotels', hotel.country_code, hotel.roomsCount, hotel.adultCount, hotel.childCount, hotel.nights, hotel.id, this.searchToken].join('/'))
-        this.isLoading.update(prev => ({ ...prev, [hotel.id]: false }));
-      },
-      error: () => {
-        this.toast.show({ severity: 'error', summary: 'error', detail: 'error_request', life: 3000 });
-        this.isLoading.update(prev => ({ ...prev, [hotel.id]: false }));
-      }
-    })
+    this.selectedHotel = hotel;
+    this.detailsVisible = true;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, ElementRef, Input, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationModule } from '@app/core/modules/translation.module';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
@@ -22,6 +22,7 @@ import { AmountComponent } from '@app/shared/components/settings/components/amou
 import { LogoComponent } from '@app/shared/components/logo/logo.component';
 import airlines from '@assets/json/airlines.json';
 import { Airline } from '@app/core/models/airline.interface';
+import { ApiService } from '@app/core/services/api.service';
 
 @Component({
   selector: 'app-flights-booking-form',
@@ -37,8 +38,11 @@ export class FlightsBookingFormComponent {
     private route: ActivatedRoute,
     private api: ReqService,
     private scroll: ScrollService,
-    public cart: CartService
+    public cart: CartService,
+    private apiService: ApiService
   ) { }
+
+  @ViewChild('paymentForm') paymentForm!: ElementRef<HTMLFormElement>;
 
   @Input() popupMode: boolean = false;
   @Input() inputSearchToken?: string;
@@ -70,6 +74,10 @@ export class FlightsBookingFormComponent {
   terms: boolean = false
 
   isCartAdded = signal<boolean>(false)
+
+  proceedToPaymentAfterCart = signal<boolean>(false)
+
+  paymentDataForm: any
 
   ngOnInit(): void {
     this.searchToken = this.popupMode ? this.inputSearchToken : this.route.snapshot.paramMap.get('searchToken');
@@ -138,6 +146,34 @@ export class FlightsBookingFormComponent {
   }
 
   addToCart() {
+    this.proceedToPaymentAfterCart.set(false);
+    this.submitCartFlow();
+  }
+
+  proceedToPayment() {
+    this.proceedToPaymentAfterCart.set(true);
+    this.submitCartFlow();
+  }
+
+  private async submitPayment(bookingId: any) {
+    try {
+      this.isSubmiting.set(true);
+      const response = await this.apiService.postData(`payment/shoppingcart`, {
+        bookingIds: [bookingId]
+      });
+
+      this.paymentDataForm = response?.result?.[0];
+
+      setTimeout(() => {
+        this.paymentForm?.nativeElement?.requestSubmit();
+      }, 0);
+    } catch (error) {
+      this.isSubmiting.set(false);
+      this.toastService.show({ severity: 'error', summary: 'error', detail: 'error_request', life: 3000 });
+    }
+  }
+
+  private submitCartFlow() {
     if (!this.popupMode && !this.isPaymentValid()) {
       this.toastService.show({ severity: 'warn', summary: 'missing_required_fields', detail: 'missing_required_fields_caption', life: 5000 });
       return;
@@ -168,6 +204,11 @@ export class FlightsBookingFormComponent {
         if (response?.status == true && response?.result?.preBooking != '' && response?.result?.preBooking) {
           this.isCartAdded.set(true)
           this.cart.open();
+
+          if (this.popupMode && this.proceedToPaymentAfterCart()) {
+            this.submitPayment(response?.result?.preBooking);
+            return;
+          }
         } else {
           this.toastService.show({ severity: 'warn', summary: 'we_are_sorry', detail: 'cart_not_saved', life: 3000 });
         }

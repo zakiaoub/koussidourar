@@ -12,7 +12,6 @@ import { DatePicker } from 'primeng/datepicker';
 import { FormDataService } from '@app/core/services/form-data.service';
 import { ParseDataService } from '@app/core/services/parse-data.service';
 import { ToastService } from '@app/core/services/toast.service';
-import { LoaderCityComponent } from "@app/shared/components/widgets/loader-city/loader-city.component";
 import { IconComponent } from "@app/shared/components/widgets/icon/icon.component";
 import { GuestsFieldComponent } from '@app/shared/components/fields/guests-field/guests-field.component';
 import { ReqService } from '@app/core/services/req.service';
@@ -20,7 +19,7 @@ import { ReqService } from '@app/core/services/req.service';
 
 @Component({
   selector: 'app-flights-multi-search-form',
-  imports: [GuestsFieldComponent, FormsModule, SubmitComponent, CommonModule, TranslationModule, AutoCompleteModule, AutocompleteSuggetionsComponent, DatePicker, LoaderCityComponent, IconComponent],
+  imports: [GuestsFieldComponent, FormsModule, SubmitComponent, CommonModule, TranslationModule, AutoCompleteModule, AutocompleteSuggetionsComponent, DatePicker, IconComponent],
   templateUrl: './flights-multi-search-form.component.html',
   styleUrl: './flights-multi-search-form.component.css',
   animations: [
@@ -33,7 +32,13 @@ import { ReqService } from '@app/core/services/req.service';
 })
 
 export class FlightsMultiSearchFormComponent {
-  constructor(private route: ActivatedRoute, private formDataService: FormDataService, private parseDataService: ParseDataService, private toastService: ToastService, private api: ReqService) {
+  constructor(
+    private route: ActivatedRoute,
+    private formDataService: FormDataService,
+    private parseDataService: ParseDataService,
+    private toastService: ToastService,
+    private api: ReqService
+  ) {
   }
 
   @Input() fetchCities!: (query: string) => void;

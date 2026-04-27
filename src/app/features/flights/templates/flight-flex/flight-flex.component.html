@@ -25,19 +25,26 @@
               <div class="flight-timeline">
                 <div class="time-box">
                   <div class="time">{{ Itinerary?.Segments?.[0]?.DepartureDateTime?.replace(' ', 'T') | date:'HH:mm' }}</div>
+                  <div class="date">{{ Itinerary?.Segments?.[0]?.DepartureDateTime?.replace(' ', 'T') | date:'d MMM' }}</div>
                   <div class="airport">{{ Itinerary?.Segments?.[0]?.DepartureAirportCode }}</div>
                 </div>
 
                 <div class="route-line-container">
                   <div class="duration">{{ Itinerary?.Duration }}</div>
                   <div class="route-line"><i class="fas fa-plane" [ngClass]="{ 'mirror': Itinerary?.Ref === 2 }"></i></div>
-                  <div class="direct">
+                  <div
+                    class="direct"
+                    [pTooltip]="(Itinerary?.Segments?.length - 1) > 0 ? getStopoverTooltip(Itinerary) : null"
+                    tooltipPosition="top"
+                    [tooltipDisabled]="(Itinerary?.Segments?.length - 1) <= 0"
+                  >
                     {{ (Itinerary?.Segments?.length - 1) > 0 ? ((Itinerary?.Segments?.length - 1) + ' escale') : ('direct' | translate) }}
                   </div>
                 </div>
 
                 <div class="time-box end">
                   <div class="time">{{ Itinerary?.Segments?.[Itinerary?.Segments?.length - 1]?.ArrivalDateTime?.replace(' ', 'T') | date:'HH:mm' }}</div>
+                  <div class="date">{{ Itinerary?.Segments?.[Itinerary?.Segments?.length - 1]?.ArrivalDateTime?.replace(' ', 'T') | date:'d MMM' }}</div>
                   <div class="airport">{{ Itinerary?.Segments?.[Itinerary?.Segments?.length - 1]?.ArrivalAirportCode }}</div>
                 </div>
               </div>
@@ -48,6 +55,7 @@
         </div>
 
         <div class="ticket-action">
+          <div class="price-label">Prix</div>
           <div class="total-price">
             <app-amount [value]="item.TotalAmount"></app-amount>
           </div>
@@ -98,36 +106,40 @@
   [dismissableMask]="true"
 >
   <ng-container *ngIf="bookingStep === 'details'">
-    <app-flight-details
-      [popupMode]="true"
-      [inputSearchToken]="searchToken"
-      [inputCarrierCode]="selectedCarrierCode"
-      [inputDay]="day"
-      [inputMonth]="month"
-      [inputYear]="year"
-      [inputRateKey]="selectedRateKey"
-      [inputDetails]="selectedDetails"
-      (checkout)="onCheckoutSelected($event)"
-      (closePopup)="bookingVisible = false">
-    </app-flight-details>
+    <div class="flight-sheet-scroll flight-sheet-scroll--details">
+      <app-flight-details
+        [popupMode]="true"
+        [inputSearchToken]="searchToken"
+        [inputCarrierCode]="selectedCarrierCode"
+        [inputDay]="day"
+        [inputMonth]="month"
+        [inputYear]="year"
+        [inputRateKey]="selectedRateKey"
+        [inputDetails]="selectedDetails"
+        (checkout)="onCheckoutSelected($event)"
+        (closePopup)="bookingVisible = false">
+      </app-flight-details>
+    </div>
   </ng-container>
 
   <ng-container *ngIf="bookingStep === 'checkout'">
-    <div class="px-3 pt-3">
-      <button type="button" class="booking-back-btn" (click)="backToDetails()">
-        <i class="fa-solid fa-arrow-left"></i>
-        Retour
-      </button>
+    <div class="flight-sheet-scroll">
+      <div class="px-3 pt-3">
+        <button type="button" class="booking-back-btn" (click)="backToDetails()">
+          <i class="fa-solid fa-arrow-left"></i>
+          Retour
+        </button>
+      </div>
+      <app-flights-booking-form
+        [popupMode]="true"
+        [inputSearchToken]="searchToken"
+        [inputCarrierCode]="selectedCarrierCode"
+        [inputDay]="day"
+        [inputMonth]="month"
+        [inputYear]="year"
+        [inputRateKey]="selectedRateKey"
+        [inputRateCategory]="selectedRateCategory">
+      </app-flights-booking-form>
     </div>
-    <app-flights-booking-form
-      [popupMode]="true"
-      [inputSearchToken]="searchToken"
-      [inputCarrierCode]="selectedCarrierCode"
-      [inputDay]="day"
-      [inputMonth]="month"
-      [inputYear]="year"
-      [inputRateKey]="selectedRateKey"
-      [inputRateCategory]="selectedRateCategory">
-    </app-flights-booking-form>
   </ng-container>
 </p-dialog>

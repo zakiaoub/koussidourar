@@ -49,7 +49,7 @@ export class FlightFlexComponent {
 
   overlay: Record<number, boolean> = {};
 
-  visible: Record<string, boolean> = {};
+  visible: Record<number, boolean> = {};
 
   bookingVisible: boolean = false;
   bookingStep: 'details' | 'checkout' = 'details';
@@ -73,19 +73,8 @@ export class FlightFlexComponent {
 
   onCheckoutSelected(pack: string) {
     this.selectedRateCategory = pack;
-    this.bookingVisible = false;
-    this.router.navigate([
-      'flights',
-      this.selectedCarrierCode,
-      'checkout',
-      this.searchToken,
-      this.selectedCarrierCode,
-      this.day,
-      this.month,
-      this.year,
-      this.selectedRateKey,
-      pack
-    ]);
+    this.bookingStep = 'checkout';
+    this.bookingVisible = true;
   }
 
   backToDetails() {
@@ -106,19 +95,31 @@ export class FlightFlexComponent {
     const list = Array.isArray(this.items) ? [...this.items] : [];
 
     const mode = this.sortMode();
-    if (mode === 'cheap') {
-      return list.sort((a, b) => this.getTotalPrice(a) - this.getTotalPrice(b));
-    }
+    const sorted = list.sort((a, b) => {
+      if (mode === 'cheap') {
+        return this.getTotalPrice(a) - this.getTotalPrice(b);
+      }
 
-    if (mode === 'fast') {
-      return list.sort((a, b) => this.getTotalDurationMinutes(a) - this.getTotalDurationMinutes(b));
-    }
+      if (mode === 'fast') {
+        return this.getTotalDurationMinutes(a) - this.getTotalDurationMinutes(b);
+      }
 
-    return list.sort((a, b) => {
       const priceDiff = this.getTotalPrice(a) - this.getTotalPrice(b);
       if (priceDiff !== 0) return priceDiff;
       return this.getTotalDurationMinutes(a) - this.getTotalDurationMinutes(b);
     });
+
+    const seen = new Set<string>();
+    const unique: any[] = [];
+    for (const item of sorted) {
+      const carrier = (item?.CarrierCode || '').toString();
+      if (!carrier) continue;
+      if (seen.has(carrier)) continue;
+      seen.add(carrier);
+      unique.push(item);
+    }
+
+    return unique;
   }
 
   private getTotalPrice(item: any): number {
@@ -156,6 +157,41 @@ export class FlightFlexComponent {
     if (h) minutes += parseInt(h[1], 10) * 60;
     if (m) minutes += parseInt(m[1], 10);
     return minutes;
+  }
+
+  getStopoverTooltip(itinerary: any): string {
+    const segments = itinerary?.Segments;
+    if (!Array.isArray(segments) || segments.length <= 1) return '';
+
+    const parts: string[] = [];
+
+    for (let i = 0; i < segments.length - 1; i++) {
+      const current = segments[i];
+      const next = segments[i + 1];
+
+      const arrCode = current?.ArrivalAirportCode || current?.ArrivalAirport || current?.Arrival || '';
+      const depCode = next?.DepartureAirportCode || next?.DepartureAirport || next?.Departure || '';
+
+      const stopCode = arrCode || depCode;
+      if (!stopCode) continue;
+
+      let layover = '';
+      const arrTimeRaw = current?.ArrivalDateTime;
+      const depTimeRaw = next?.DepartureDateTime;
+
+      const arrTime = arrTimeRaw ? new Date(String(arrTimeRaw).replace(' ', 'T')) : null;
+      const depTime = depTimeRaw ? new Date(String(depTimeRaw).replace(' ', 'T')) : null;
+      if (arrTime && depTime && !isNaN(arrTime.getTime()) && !isNaN(depTime.getTime())) {
+        const diffMin = Math.max(0, Math.round((depTime.getTime() - arrTime.getTime()) / 60000));
+        const h = Math.floor(diffMin / 60);
+        const m = diffMin % 60;
+        layover = h > 0 ? `${h}h ${m}m` : `${m}m`;
+      }
+
+      parts.push(layover ? `Escale: ${stopCode} (${layover})` : `Escale: ${stopCode}`);
+    }
+
+    return parts.join('\n');
   }
 
   getCheckRate(data: any, RateKey: string) {

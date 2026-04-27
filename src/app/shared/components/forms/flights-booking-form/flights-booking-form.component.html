@@ -12,24 +12,56 @@
 
   <ng-container *ngIf="!isLoading() && !error()">
     <section *ngIf="popupMode" class="popup-checkout-body">
-      <div class="mb-3">
-        <app-checkout-flight-recap [data]="data()"></app-checkout-flight-recap>
-      </div>
       <form [formGroup]="checkoutForm" (ngSubmit)="addToCart()">
         <div formGroupName="paxes">
           <app-booking-paxes-fields [checkoutForm]="checkoutForm" [paxes]="data()?.paxes" [service]="'flight'" />
         </div>
         <hr class="border-secondary my-4" />
         <app-booking-contact-fields [checkForm]="checkoutForm" />
-        <hr class="border-secondary my-4" />
-        <app-flight-rules [data]="data()?.rateComment"></app-flight-rules>
+        <ng-container *ngIf="!popupMode">
+          <hr class="border-secondary my-4" />
+          <app-flight-rules [data]="data()?.rateComment"></app-flight-rules>
+        </ng-container>
         <div class="d-flex align-items-center gap-2 fs-110 mt-4 lh-1">
           <p-checkbox [(ngModel)]="terms" [binary]="true" name="terms" [ngModelOptions]="{ standalone: true }" inputId="terms"></p-checkbox>
           <label for="terms" class="ml-2" [innerHTML]="'terms_caption' | translate"></label>
         </div>
-        <div class="mt-5">
-          <app-button [type]="'submit'" [title]="'add_to_cart'" [class]="'p-4 w-100 rounded main-bg text-white'" [disabled]="!terms" [isLoading]="isSubmiting()"></app-button>
+        <div class="mt-5 popup-action-bar">
+          <div class="popup-action-price">
+            <div class="popup-action-price__label">Total</div>
+            <div class="popup-action-price__value">
+              <app-amount [value]="getGrandTotal()"></app-amount>
+            </div>
+          </div>
+          <div class="popup-action-buttons">
+            <app-button
+              [type]="'submit'"
+              [title]="'add_to_cart'"
+              [class]="'p-4 w-100 rounded main-bg text-white'"
+              [disabled]="!terms"
+              [isLoading]="isSubmiting()"
+            ></app-button>
+            <button
+              type="button"
+              class="popup-pay-btn"
+              [disabled]="!terms || isSubmiting()"
+              (click)="proceedToPayment()"
+            >
+              Proceder au paiement
+            </button>
+          </div>
         </div>
+      </form>
+
+      <form
+        #paymentForm
+        *ngIf="paymentDataForm?.paymentData"
+        [attr.action]="paymentDataForm?.paymentData?.endpoint"
+        [attr.method]="paymentDataForm?.paymentData?.method"
+      >
+        <ng-container *ngFor="let item of paymentDataForm?.paymentData?.data">
+          <input type="hidden" [attr.name]="item.name" [attr.value]="item.value" />
+        </ng-container>
       </form>
     </section>
 

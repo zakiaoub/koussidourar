@@ -44,3 +44,17 @@
         </div>
     </div>
 </div>
+
+<p-dialog
+    [modal]="true"
+    [(visible)]="detailsVisible"
+    [showHeader]="true"
+    [header]="selectedHotel?.name || ('hotel_details' | translate)"
+    [style]="{ width: '72rem', height: '100%' }"
+    [draggable]="false"
+    [resizable]="false"
+    [dismissableMask]="true">
+    <ng-container *ngIf="selectedHotel">
+        <app-hotels-rooms [id]="selectedHotel?.id" [searchToken]="searchToken"></app-hotels-rooms>
+    </ng-container>
+</p-dialog>

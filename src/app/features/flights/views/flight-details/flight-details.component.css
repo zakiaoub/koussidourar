@@ -1,65 +1,80 @@
+/* --- Conteneur Principal (Sans arrondis) --- */
+.flight-popup-card {
+  background: #fff;
+  border-radius: 0;
+  border: 0;
+  overflow: hidden;
+}
+
 .flight-popup-body {
   padding: 0;
 }
 
-@media (min-width: 992px) {
-  .flight-popup-body {
-    padding: 0;
-  }
-}
-
+/* --- En-tête --- */
 .flight-popup-head {
-  padding: 1rem 1.1rem;
+  padding: 1.25rem 1.5rem;
   border-bottom: 1px solid #e5e7eb;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   background: #fff;
+  border-radius: 0 0 4px 4px;
 }
 
 .head-left h2 {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #1a1a1a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .share-btn {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   border: 0;
   background: none;
   color: #006ce4;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  cursor: pointer;
+  padding: 0;
 }
 
 .close-x {
   border: 0;
   background: none;
-  color: #9ca3af;
-  font-size: 1.8rem;
+  color: #6b7280;
+  font-size: 1.75rem;
+  cursor: pointer;
   line-height: 1;
+  padding: 0.5rem;
 }
 
+/* --- Navigation des Packs --- */
 .popup-pack-switch {
   display: flex;
   gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #e5e7eb;
+  margin-bottom: 1.5rem;
 }
 
 .pack-pill {
   border: 1px solid #d1d5db;
   background: #fff;
   color: #374151;
-  border-radius: 999px;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.78rem;
+  border-radius: 4px; /* Petits arrondis conservés pour les boutons internes uniquement */
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .pack-pill.active {
@@ -68,62 +83,49 @@
   color: #fff;
 }
 
-.flight-popup-card {
-  background: #fff;
-  border-radius: 0;
-  border: 0;
-  overflow: hidden;
-}
-
+/* --- Zone de contenu Scrollable --- */
 .flight-popup-body-scroll {
-  padding: 1rem 1.1rem;
-  max-height: calc(92vh - 250px);
-  overflow: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  padding: 0.75rem 0;
+  max-height: none;
+  overflow: visible;
 }
 
-.flight-popup-body-scroll::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;
-}
-
+/* --- Blocs de Vol & Timeline --- */
 .flight-block {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .block-title {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1rem;
-  display: block;
+  color: #111827;
 }
 
 .block-subtitle {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #6b7280;
-  margin-top: 0.25rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
 .timeline {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .timeline-graphic {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 0.35rem;
+  width: 12px;
 }
 
 .circle {
   width: 10px;
   height: 10px;
-  border: 2px solid #9ca3af;
+  border: 2px solid #d1d5db;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .circle.full {
@@ -132,8 +134,8 @@
 }
 
 .line {
-  width: 2px;
-  height: 56px;
+  width: 1px;
+  flex-grow: 1;
   background: #e5e7eb;
   margin: 4px 0;
 }
@@ -142,24 +144,19 @@
   flex: 1;
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-}
-
-.stop {
-  margin-bottom: 1rem;
 }
 
 .stop-time {
-  font-size: 0.76rem;
-  margin: 0;
-  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.15rem;
 }
 
 .stop-loc {
-  margin: 0.15rem 0 0 0;
-  font-size: 0.93rem;
-  font-weight: 700;
-  color: #111827;
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin-bottom: 1.25rem;
 }
 
 .airline-meta {
@@ -167,32 +164,27 @@
 }
 
 .airline-tag {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.45rem;
   color: #d50000;
-  font-size: 0.82rem;
-  font-weight: 800;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
 }
 
 .flight-info {
-  margin-top: 0.35rem;
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   color: #6b7280;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
+/* --- Tableaux des Options --- */
 .options-table {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 .options-table .row {
   display: grid;
-  grid-template-columns: 230px 1fr;
+  grid-template-columns: 180px 1fr;
   margin: 0;
   border-bottom: 1px solid #e5e7eb;
 }
@@ -202,33 +194,31 @@
 }
 
 .cell-label {
-  background: #fafafa;
+  background: #f9fafb;
+  padding: 0.85rem;
   border-right: 1px solid #e5e7eb;
-  padding: 1rem;
 }
 
 .label-main {
-  font-size: 0.88rem;
-  font-weight: 800;
-  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #374151;
 }
 
 .label-sub {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: #6b7280;
-  margin-top: 0.25rem;
-  display: block;
 }
 
 .cell-content {
-  padding: 1rem;
+  padding: 0.85rem;
 }
 
 .item {
   display: flex;
   justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 0.9rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
 }
 
 .item:last-child {
@@ -237,31 +227,29 @@
 
 .item-left {
   display: flex;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 .item-left i {
   color: #9ca3af;
-  width: 16px;
-  margin-top: 0.15rem;
+  font-size: 0.9rem;
 }
 
 .item-name {
-  margin: 0;
-  font-size: 0.86rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111827;
 }
 
 .item-desc {
-  margin: 0.2rem 0 0 0;
   font-size: 0.75rem;
   color: #6b7280;
 }
 
 .status-inc {
-  color: #16a34a;
+  color: #059669;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 .status-avail {
@@ -269,69 +257,47 @@
   font-size: 0.75rem;
 }
 
+/* --- Pied de page --- */
 .modal-footer {
   border-top: 1px solid #e5e7eb;
-  background: #fff;
-  padding: 0.85rem 1.1rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #fff;
 }
 
 .total-price {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #111827;
 }
 
 .continue-btn {
   border: 0;
-  border-radius: 10px;
+  border-radius: 4px;
   background: #f7732c;
   color: #fff;
   font-weight: 700;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 2.5rem;
+  cursor: pointer;
 }
 
+/* --- Mobile --- */
 @media (max-width: 768px) {
   .flight-popup-head {
     padding: 1rem;
   }
-
   .head-left h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    word-break: break-word;
   }
-
-  .flight-popup-body-scroll {
-    padding: 1rem;
-    max-height: calc(92vh - 220px);
-  }
-
-  .total-price {
-    font-size: 1.2rem;
-  }
-
-  .continue-btn {
-    padding: 0.62rem 1rem;
-    font-size: 0.88rem;
-  }
-
   .options-table .row {
     grid-template-columns: 1fr;
   }
-
   .cell-label {
     border-right: 0;
     border-bottom: 1px solid #e5e7eb;
-  }
-
-  .timeline-data {
-    flex-direction: column;
-  }
-
-  .airline-meta,
-  .airline-tag {
-    text-align: left;
-    justify-content: flex-start;
   }
 }

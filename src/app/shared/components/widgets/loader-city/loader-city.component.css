@@ -1,31 +1,133 @@
-.loader-city .p-dialog {
+.loader-city-dialog .p-dialog {
   overflow: hidden !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
 }
 
-.loader-city .p-dialog-content {
+.loader-city-dialog .p-dialog-content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-city-dialog.p-dialog {
+  border-radius: 0 !important;
+}
+
+:host ::ng-deep .p-dialog-mask.loader-city-dialog {
+  z-index: 9999 !important;
+  background: transparent !important;
+  backdrop-filter: none;
+}
+
+:host ::ng-deep .p-dialog-mask.loader-city-dialog .p-dialog {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+:host ::ng-deep .p-dialog-mask.loader-city-dialog .p-dialog-content {
+  height: 100vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-city-dialog .p-dialog-content {
   padding: 0 !important;
 }
 
-.spinner {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--dark);
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-  animation: rotation 0.2s linear infinite;
+.loader-city-dialog .p-dialog-header {
+  display: none !important;
 }
 
-.gradient {
-  background: linear-gradient(to top, #000000, #00000000);
+.loader-city-dialog .p-dialog-content {
+  background: transparent !important;
+  backdrop-filter: none;
 }
 
+.search-loader {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
 
-@keyframes rotation {
+.plane-loader {
+  position: relative;
+  width: min(680px, 84vw);
+  height: 90px;
+}
+
+.plane-loader i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.2rem;
+  color: var(--main);
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.22));
+  animation: plane-cross 1.9s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.plane-loader::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  opacity: 0.6;
+}
+
+.plane-loader::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 18px;
+  background: radial-gradient(closest-side, rgba(14, 165, 233, 0.18), transparent);
+  opacity: 0.85;
+  filter: blur(2px);
+}
+
+.loader-title {
+  display: none;
+}
+
+.loader-subtitle {
+  display: none;
+}
+
+@keyframes plane-cross {
   0% {
-    transform: rotate(0deg);
+    transform: translate(calc(-50% - 320px), -50%) rotate(18deg) scale(0.9);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  55% {
+    transform: translate(-50%, -56%) rotate(18deg) scale(1.08);
+    opacity: 1;
   }
   100% {
-    transform: rotate(360deg);
+    transform: translate(calc(-50% + 320px), -50%) rotate(18deg) scale(0.92);
+    opacity: 0;
   }
 }
